@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-09-11T08:30:00+08:00",
+  "latest": "2026-09-11",
+  "snapshots": [
+    {
+      "date": "2026-09-11",
+      "capturedAt": "2026-09-11T08:30:00+08:00",
+      "file": "data/daily/2026/09/2026-09-11.json",
+      "count": 100,
+      "publishable": true,
+      "fieldCoverage": {
+        "title": 100,
+        "image": 100,
+        "brand": 99,
+        "price": 99,
+        "mainBsr": 99,
+        "subBsr": 98,
+        "listingDate": 49,
+        "promotion": 100
+      }
+    },
+    {
+      "date": "2026-09-10",
+      "capturedAt": "2026-09-10T16:20:00+08:00",
+      "file": "data/daily/2026/09/2026-09-10.json",
+      "count": 100,
+      "publishable": true,
+      "fieldCoverage": {
+        "title": 100,
+        "image": 100,
+        "brand": 100,
+        "price": 100,
+        "mainBsr": 100,
+        "subBsr": 100,
+        "listingDate": 92,
+        "promotion": 100
+      }
+    }
+  ]
+}

@@ -1,0 +1,3030 @@
+{
+  "schemaVersion": 1,
+  "snapshotDate": "2026-09-11",
+  "capturedAt": "2026-09-11T08:30:00+08:00",
+  "category": {
+    "site": "US",
+    "name": "Women's Blouses & Button-Down Shirts",
+    "node": "2368365011",
+    "ranking": "Hot New Releases",
+    "url": "https://www.amazon.com/gp/new-releases/fashion/2368365011"
+  },
+  "sources": {
+    "ranking": "Amazon 官方新品榜",
+    "productDetails": "Amazon product pages + Ecomtool MCP"
+  },
+  "quality": {
+    "count": 100,
+    "publishable": true,
+    "missingRanks": [],
+    "duplicateRanks": [],
+    "duplicateAsins": [],
+    "requiredMissing": {
+      "asin": 0,
+      "title": 0,
+      "image": 0
+    },
+    "fieldCoverage": {
+      "title": 100,
+      "image": 100,
+      "brand": 99,
+      "price": 99,
+      "mainBsr": 99,
+      "subBsr": 98,
+      "listingDate": 49,
+      "promotion": 100
+    }
+  },
+  "items": [
+    {
+      "rank": 1,
+      "asin": "B0GWZRJ64P",
+      "title": "Zeagoo Womens Flannel Shirts Long Sleeve Button Down Casual Fall Plaid Top",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/91z7wQ8drbL._AC_UL600_SR600,400_.jpg",
+      "price": "$19.99",
+      "url": "https://www.amazon.com/Zeagoo-Flannel-Sleeve-Shacket-Outfits/dp/B0GWZRJ64P/ref=zg_bsnr_g_2368365011_d_sccl_1/144-5202386-4431846?psc=1",
+      "brand": "Zeagoo",
+      "promotion": "Deal",
+      "promotionStatus": "detected",
+      "listingDate": "2026-07-06",
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 400,
+      "subCategory": "Women's Button-Down Shirts Customer Reviews: 4.3 4.3 out of 5 stars",
+      "subBsr": 1,
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts Customer Reviews: 4.3 4.3 out of 5 stars",
+          "rank": 1
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0GWZRJ64P",
+      "listingDateSource": "卖家精灵历史市场分析（日期为稳定字段）",
+      "history": {
+        "firstSeen": "2026-09-10",
+        "appearances": 2,
+        "streak": 2
+      }
+    },
+    {
+      "rank": 2,
+      "asin": "B0H396Y246",
+      "title": "Zeagoo Womens 3/4 Sleeve V Neck T Shirts Dressy Casual Tops",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/81Bh3qB+kdL._AC_UL600_SR600,400_.jpg",
+      "price": "$14.99",
+      "url": "https://www.amazon.com/Zeagoo-Stripes-Casual-Summer-Trendy/dp/B0H396Y246/ref=zg_bsnr_g_2368365011_d_sccl_2/144-5202386-4431846?psc=1",
+      "brand": "Zeagoo",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "listingDate": "2026-07-15",
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 296,
+      "subCategory": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.2 4.2 out of 5 stars",
+      "subBsr": 16,
+      "subRanks": [
+        {
+          "category": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.2 4.2 out of 5 stars",
+          "rank": 16
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H396Y246",
+      "listingDateSource": "卖家精灵历史市场分析（日期为稳定字段）",
+      "history": {
+        "firstSeen": "2026-09-10",
+        "appearances": 2,
+        "streak": 2
+      }
+    },
+    {
+      "rank": 3,
+      "asin": "B0H51CHNMC",
+      "title": "Zeagoo Women Tops Business Casual Satin Blouse V Neck Cap Sleeve Shirts",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/61lnn9ivTEL._AC_UL600_SR600,400_.jpg",
+      "price": "$13.48",
+      "url": "https://www.amazon.com/Zeagoo-Business-Casual-Blouse-Sleeve/dp/B0H51CHNMC/ref=zg_bsnr_g_2368365011_d_sccl_3/144-5202386-4431846?psc=1",
+      "brand": "Zeagoo",
+      "promotion": "Deal",
+      "promotionStatus": "detected",
+      "listingDate": null,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 2560,
+      "subCategory": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.3 4.3 out of 5 stars",
+      "subBsr": 33,
+      "subRanks": [
+        {
+          "category": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.3 4.3 out of 5 stars",
+          "rank": 33
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H51CHNMC",
+      "listingDateSource": "未显示/无法获取",
+      "history": {
+        "firstSeen": "2026-09-11",
+        "appearances": 1,
+        "streak": 1
+      }
+    },
+    {
+      "rank": 4,
+      "asin": "B0H8S36FF1",
+      "title": "Zeagoo Women's Button Down Shirts Long Sleeve Business Casual Blouses Tops",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/61hpsQoZe4L._AC_UL600_SR600,400_.jpg",
+      "price": "$14.99",
+      "url": "https://www.amazon.com/Zeagoo-Button-Shirts-Collared-Sleeve/dp/B0H8S36FF1/ref=zg_bsnr_g_2368365011_d_sccl_4/144-5202386-4431846?psc=1",
+      "brand": "Zeagoo",
+      "promotion": "Deal",
+      "promotionStatus": "detected",
+      "listingDate": "2026-08-17",
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 2839,
+      "subCategory": "Women's Button-Down Shirts Customer Reviews: 4.0 4.0 out of 5 stars",
+      "subBsr": 27,
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts Customer Reviews: 4.0 4.0 out of 5 stars",
+          "rank": 27
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H8S36FF1",
+      "listingDateSource": "卖家精灵历史市场分析（日期为稳定字段）",
+      "history": {
+        "firstSeen": "2026-09-10",
+        "appearances": 2,
+        "streak": 2
+      }
+    },
+    {
+      "rank": 5,
+      "asin": "B0GZW7YSX5",
+      "title": "Zeagoo Womens Flannel Shirts Long Sleeve Plaid Button Down Shirts Fall Tops",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/71TPZ8un6xL._AC_UL600_SR600,400_.jpg",
+      "price": "$17.09",
+      "url": "https://www.amazon.com/ZEAGOO-Womens-Shirts-Flannel-Outfits/dp/B0GZW7YSX5/ref=zg_bsnr_g_2368365011_d_sccl_5/144-5202386-4431846?psc=1",
+      "brand": "Zeagoo",
+      "promotion": "Deal",
+      "promotionStatus": "detected",
+      "listingDate": null,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 4803,
+      "subCategory": "Women's Button-Down Shirts Customer Reviews: 4.2 4.2 out of 5 stars",
+      "subBsr": 62,
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts Customer Reviews: 4.2 4.2 out of 5 stars",
+          "rank": 62
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0GZW7YSX5",
+      "listingDateSource": "未显示/无法获取",
+      "history": {
+        "firstSeen": "2026-09-11",
+        "appearances": 1,
+        "streak": 1
+      }
+    },
+    {
+      "rank": 6,
+      "asin": "B0H4FMPW68",
+      "title": "Zeagoo Womens Satin Shirt Silk Button Down Blouses Long Sleeve Loose Tops",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/71Wro0DhS4L._AC_UL600_SR600,400_.jpg",
+      "price": "$24.99",
+      "url": "https://www.amazon.com/Zeagoo-Champagne-Blouses-Button-Shirts/dp/B0H4FMPW68/ref=zg_bsnr_g_2368365011_d_sccl_6/144-5202386-4431846?psc=1",
+      "brand": "Zeagoo",
+      "promotion": "Deal",
+      "promotionStatus": "detected",
+      "listingDate": null,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 6467,
+      "subCategory": "Women's Button-Down Shirts Customer Reviews: 4.1 4.1 out of 5 stars",
+      "subBsr": 87,
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts Customer Reviews: 4.1 4.1 out of 5 stars",
+          "rank": 87
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H4FMPW68",
+      "listingDateSource": "未显示/无法获取",
+      "history": {
+        "firstSeen": "2026-09-11",
+        "appearances": 1,
+        "streak": 1
+      }
+    },
+    {
+      "rank": 7,
+      "asin": "B0H6JGZHSY",
+      "title": "Zeagoo Satin Blouses for Women Silk Tops Long Sleeve Shirts Fall Clothes",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/81nreM7Mb4L._AC_UL600_SR600,400_.jpg",
+      "price": "$14.99",
+      "url": "https://www.amazon.com/Zeagoo-Blouses-Sleeve-Shirts-Leopard/dp/B0H6JGZHSY/ref=zg_bsnr_g_2368365011_d_sccl_7/144-5202386-4431846?psc=1",
+      "brand": "Zeagoo",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "listingDate": "2026-07-29",
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 7262,
+      "subCategory": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.4 4.4 out of 5 stars",
+      "subBsr": 129,
+      "subRanks": [
+        {
+          "category": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.4 4.4 out of 5 stars",
+          "rank": 129
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H6JGZHSY",
+      "listingDateSource": "卖家精灵历史市场分析（日期为稳定字段）",
+      "history": {
+        "firstSeen": "2026-09-10",
+        "appearances": 2,
+        "streak": 2
+      }
+    },
+    {
+      "rank": 8,
+      "asin": "B0H6B68CYD",
+      "title": "Zeagoo Long Sleeve Shirts for Women Lace Top Button Up Blouse Dressy Casual",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/71g2Z5thDYL._AC_UL600_SR600,400_.jpg",
+      "price": "$24.99",
+      "url": "https://www.amazon.com/ZEAGOO-Womens-Blouses-Dressy-Casual/dp/B0H6B68CYD/ref=zg_bsnr_g_2368365011_d_sccl_8/144-5202386-4431846?psc=1",
+      "brand": "Zeagoo",
+      "promotion": "Deal",
+      "promotionStatus": "detected",
+      "listingDate": null,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 7731,
+      "subCategory": "Women's Button-Down Shirts Customer Reviews: 4.6 4.6 out of 5 stars",
+      "subBsr": 105,
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts Customer Reviews: 4.6 4.6 out of 5 stars",
+          "rank": 105
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H6B68CYD",
+      "listingDateSource": "未显示/无法获取",
+      "history": {
+        "firstSeen": "2026-09-11",
+        "appearances": 1,
+        "streak": 1
+      }
+    },
+    {
+      "rank": 9,
+      "asin": "B0H3X61D28",
+      "title": "WIHOLL V Neck Business Casual Tops Fall Blouses Trendy Long Sleeve Shirts",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/81SxQ9kRheL._AC_UL600_SR600,400_.jpg",
+      "price": "$9.99",
+      "url": "https://www.amazon.com/Womens-Blouses-Business-Casual-Trendy/dp/B0H3X61D28/ref=zg_bsnr_g_2368365011_d_sccl_9/144-5202386-4431846?psc=1",
+      "brand": "WIHOLL",
+      "promotion": "Deal",
+      "promotionStatus": "detected",
+      "listingDate": "2026-08-09",
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 8596,
+      "subCategory": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.3 4.3 out of 5 stars",
+      "subBsr": 156,
+      "subRanks": [
+        {
+          "category": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.3 4.3 out of 5 stars",
+          "rank": 156
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H3X61D28",
+      "listingDateSource": "卖家精灵历史市场分析（日期为稳定字段）",
+      "history": {
+        "firstSeen": "2026-09-10",
+        "appearances": 2,
+        "streak": 2
+      }
+    },
+    {
+      "rank": 10,
+      "asin": "B0H1GKD82H",
+      "title": "IN'VOLAND Women Plus Size Button Down Shirts Long Sleeve Shirt Office Tops",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/71bxslgE-wL._AC_UL600_SR600,400_.jpg",
+      "price": "$14.98",
+      "url": "https://www.amazon.com/INVOLAND-Button-Shirts-Office-Blouses/dp/B0H1GKD82H/ref=zg_bsnr_g_2368365011_d_sccl_10/144-5202386-4431846?psc=1",
+      "brand": "IN'VOLAND",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "listingDate": "2026-06-16",
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 9539,
+      "subCategory": "Women's Button-Down Shirts Customer Reviews: 4.3 4.3 out of 5 stars",
+      "subBsr": 129,
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts Customer Reviews: 4.3 4.3 out of 5 stars",
+          "rank": 129
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H1GKD82H",
+      "listingDateSource": "卖家精灵历史市场分析（日期为稳定字段）",
+      "history": {
+        "firstSeen": "2026-09-10",
+        "appearances": 2,
+        "streak": 2
+      }
+    },
+    {
+      "rank": 11,
+      "asin": "B0GWLT4W1Z",
+      "title": "PRETTYGARDEN Womens Lace Long Sleeve Tops Sheer Mesh Blouse",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/71WjRSnAyJL._AC_UL600_SR600,400_.jpg",
+      "price": "$14.99",
+      "url": "https://www.amazon.com/PRETTYGARDEN-Womens-Sleeve-Sheer-Blouse/dp/B0GWLT4W1Z/ref=zg_bsnr_g_2368365011_d_sccl_11/144-5202386-4431846?psc=1",
+      "brand": "PRETTYGARDEN",
+      "promotion": "Coupon 15% + Deal",
+      "promotionStatus": "detected",
+      "listingDate": "2026-06-21",
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 10032,
+      "subCategory": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.4 4.4 out of 5 stars",
+      "subBsr": 184,
+      "subRanks": [
+        {
+          "category": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.4 4.4 out of 5 stars",
+          "rank": 184
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0GWLT4W1Z",
+      "listingDateSource": "卖家精灵历史市场分析（日期为稳定字段）",
+      "history": {
+        "firstSeen": "2026-09-10",
+        "appearances": 2,
+        "streak": 2
+      }
+    },
+    {
+      "rank": 12,
+      "asin": "B0H5WK5H25",
+      "title": "HOTOUCH Womens 3/4 Length Sleeve Tops Casual Dressy Blouse V Neck Shirts",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/61YcNtdA7KL._AC_UL600_SR600,400_.jpg",
+      "price": "$12.99",
+      "url": "https://www.amazon.com/HOTOUCH-Ladies-Length-Sleeve-Blouses/dp/B0H5WK5H25/ref=zg_bsnr_g_2368365011_d_sccl_12/144-5202386-4431846?psc=1",
+      "brand": "HOTOUCH",
+      "promotion": "Deal",
+      "promotionStatus": "detected",
+      "listingDate": null,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 6497,
+      "subCategory": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.2 4.2 out of 5 stars",
+      "subBsr": 208,
+      "subRanks": [
+        {
+          "category": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.2 4.2 out of 5 stars",
+          "rank": 208
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H5WK5H25",
+      "listingDateSource": "未显示/无法获取",
+      "history": {
+        "firstSeen": "2026-09-11",
+        "appearances": 1,
+        "streak": 1
+      }
+    },
+    {
+      "rank": 13,
+      "asin": "B0GZ3TC35M",
+      "title": "Zeagoo Women Button Down Shirt 3/4 Sleeve Blouses V Neck Tops",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/81aqeQJeEIL._AC_UL600_SR600,400_.jpg",
+      "price": "$14.99",
+      "url": "https://www.amazon.com/Zeagoo-Womens-Button-Shirts-Sleeve/dp/B0GZ3TC35M/ref=zg_bsnr_g_2368365011_d_sccl_13/144-5202386-4431846?psc=1",
+      "brand": "Zeagoo",
+      "promotion": "Deal",
+      "promotionStatus": "detected",
+      "listingDate": "2026-06-23",
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 12148,
+      "subCategory": "Women's Button-Down Shirts Customer Reviews: 4.0 4.0 out of 5 stars",
+      "subBsr": 162,
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts Customer Reviews: 4.0 4.0 out of 5 stars",
+          "rank": 162
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0GZ3TC35M",
+      "listingDateSource": "卖家精灵历史市场分析（日期为稳定字段）",
+      "history": {
+        "firstSeen": "2026-09-10",
+        "appearances": 2,
+        "streak": 2
+      }
+    },
+    {
+      "rank": 14,
+      "asin": "B0GZNS331N",
+      "title": "LOMON Women's Button Down Shirts 3/4 Length Sleeve Tops Casual Work Shirts",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/91DiLUG-wVL._AC_UL600_SR600,400_.jpg",
+      "price": "$17.98",
+      "url": "https://www.amazon.com/LOMON-Womens-Dressy-Blouses-Fashion/dp/B0GZNS331N/ref=zg_bsnr_g_2368365011_d_sccl_14/144-5202386-4431846?psc=1",
+      "brand": "LOMON",
+      "promotion": "Deal",
+      "promotionStatus": "detected",
+      "listingDate": "2026-06-18",
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 11203,
+      "subCategory": "Women's Button-Down Shirts Customer Reviews: 4.0 4.0 out of 5 stars",
+      "subBsr": 163,
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts Customer Reviews: 4.0 4.0 out of 5 stars",
+          "rank": 163
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0GZNS331N",
+      "listingDateSource": "卖家精灵历史市场分析（日期为稳定字段）",
+      "history": {
+        "firstSeen": "2026-09-10",
+        "appearances": 2,
+        "streak": 2
+      }
+    },
+    {
+      "rank": 15,
+      "asin": "B0H3PMRYPC",
+      "title": "OFEEFAN Womens Blouses Business Casual Tops Fall Outfits Long Sleeve Shirts",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/71XSnuAY77L._AC_UL600_SR600,400_.jpg",
+      "price": "$14.99",
+      "url": "https://www.amazon.com/OFEEFAN-Business-Casual-Blouses-Dressy/dp/B0H3PMRYPC/ref=zg_bsnr_g_2368365011_d_sccl_15/144-5202386-4431846?psc=1",
+      "brand": "OFEEFAN",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "listingDate": null,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 14761,
+      "subCategory": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.4 4.4 out of 5 stars",
+      "subBsr": 248,
+      "subRanks": [
+        {
+          "category": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.4 4.4 out of 5 stars",
+          "rank": 248
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H3PMRYPC",
+      "listingDateSource": "未显示/无法获取",
+      "history": {
+        "firstSeen": "2026-09-11",
+        "appearances": 1,
+        "streak": 1
+      }
+    },
+    {
+      "rank": 16,
+      "asin": "B0H32RPW5K",
+      "title": "WIHOLL Womens Tops Lace Long Sleeve Tops for Women Boho V Neck Blouses",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/81FRgJAmjmL._AC_UL600_SR600,400_.jpg",
+      "price": "$12.99",
+      "url": "https://www.amazon.com/Boho-Women-Sleeve-Clothing-Black/dp/B0H32RPW5K/ref=zg_bsnr_g_2368365011_d_sccl_16/144-5202386-4431846?psc=1",
+      "brand": "WIHOLL",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "listingDate": "2026-08-07",
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 7047,
+      "subCategory": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.6 4.6 out of 5 stars",
+      "subBsr": 268,
+      "subRanks": [
+        {
+          "category": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.6 4.6 out of 5 stars",
+          "rank": 268
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H32RPW5K",
+      "listingDateSource": "卖家精灵历史市场分析（日期为稳定字段）",
+      "history": {
+        "firstSeen": "2026-09-10",
+        "appearances": 2,
+        "streak": 2
+      }
+    },
+    {
+      "rank": 17,
+      "asin": "B0H73LF75D",
+      "title": "PRETTYGARDEN Women Fall Plaid Long Puff Sleeve Shirts V Neck Casual Blouses",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/81PPWD0pvZL._AC_UL600_SR600,400_.jpg",
+      "price": "$24.99",
+      "url": "https://www.amazon.com/PRETTYGARDEN-Sleeve-Shirts-Casual-Blouses/dp/B0H73LF75D/ref=zg_bsnr_g_2368365011_d_sccl_17/144-5202386-4431846?psc=1",
+      "brand": "PRETTYGARDEN",
+      "promotion": "Coupon 15%",
+      "promotionStatus": "detected",
+      "listingDate": null,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 17487,
+      "subCategory": "Women's Button-Down Shirts Customer Reviews: 4.2 4.2 out of 5 stars",
+      "subBsr": 197,
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts Customer Reviews: 4.2 4.2 out of 5 stars",
+          "rank": 197
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H73LF75D",
+      "listingDateSource": "未显示/无法获取",
+      "history": {
+        "firstSeen": "2026-09-10",
+        "appearances": 2,
+        "streak": 2
+      }
+    },
+    {
+      "rank": 18,
+      "asin": "B0HHRX1CMG",
+      "title": "Women's Plaid Flannel Shirt Casual Long Sleeve Button Down Blouse",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/817hT1sGvHL._AC_UL600_SR600,400_.jpg",
+      "price": "$6.97",
+      "url": "https://www.amazon.com/Womens-Flannel-Casual-Sleeve-Button/dp/B0HHRX1CMG/ref=zg_bsnr_g_2368365011_d_sccl_18/144-5202386-4431846?psc=1",
+      "brand": "ENCURKUS",
+      "promotion": "Coupon 20% + Deal",
+      "promotionStatus": "detected",
+      "listingDate": "2026-09-07",
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 17889,
+      "subCategory": "Women's Button-Down Shirts Customer Reviews: 5.0 5.0 out of 5 stars",
+      "subBsr": 201,
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts Customer Reviews: 5.0 5.0 out of 5 stars",
+          "rank": 201
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0HHRX1CMG",
+      "listingDateSource": "卖家精灵历史市场分析（日期为稳定字段）",
+      "history": {
+        "firstSeen": "2026-09-10",
+        "appearances": 2,
+        "streak": 2
+      }
+    },
+    {
+      "rank": 19,
+      "asin": "B0H3DMYNST",
+      "title": "Kate Kasin Womens Button Down Collared Ruched Bell Sleeve Slim Y2K Shirts",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/71OnQfHv9NL._AC_UL600_SR600,400_.jpg",
+      "price": "$14.98",
+      "url": "https://www.amazon.com/Kate-Kasin-Womens-Button-Collared/dp/B0H3DMYNST/ref=zg_bsnr_g_2368365011_d_sccl_19/144-5202386-4431846?psc=1",
+      "brand": "Kate Kasin",
+      "promotion": "Deal",
+      "promotionStatus": "detected",
+      "listingDate": null,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 18279,
+      "subCategory": "Women's Button-Down Shirts Customer Reviews: 4.1 4.1 out of 5 stars",
+      "subBsr": 205,
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts Customer Reviews: 4.1 4.1 out of 5 stars",
+          "rank": 205
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H3DMYNST",
+      "listingDateSource": "未显示/无法获取",
+      "history": {
+        "firstSeen": "2026-09-11",
+        "appearances": 1,
+        "streak": 1
+      }
+    },
+    {
+      "rank": 20,
+      "asin": "B0H33TFTHV",
+      "title": "OFEEFAN 3/4 Length Sleeve Womens Tops Crew Neck Petal Sleeve Fall Tops Womens Blouses Dressy Casual",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/9118XzA06fL._AC_UL600_SR600,400_.jpg",
+      "price": "$9.99",
+      "url": "https://www.amazon.com/Length-Sleeve-Outfits-Blouses-Striped/dp/B0H33TFTHV/ref=zg_bsnr_g_2368365011_d_sccl_20/144-5202386-4431846?psc=1",
+      "brand": "OFEEFAN",
+      "promotion": "Deal",
+      "promotionStatus": "detected",
+      "listingDate": "2026-07-02",
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 15733,
+      "subCategory": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.2 4.2 out of 5 stars",
+      "subBsr": 298,
+      "subRanks": [
+        {
+          "category": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.2 4.2 out of 5 stars",
+          "rank": 298
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H33TFTHV",
+      "listingDateSource": "卖家精灵历史市场分析（日期为稳定字段）",
+      "history": {
+        "firstSeen": "2026-09-10",
+        "appearances": 2,
+        "streak": 2
+      }
+    },
+    {
+      "rank": 21,
+      "asin": "B0H79C13DL",
+      "title": "Funlingo Women Long Sleeve Tops Fall Scalloped V Neck Dressy Casual Blouses",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/81brK77lYML._AC_UL600_SR600,400_.jpg",
+      "price": "$16.98",
+      "url": "https://www.amazon.com/Funlingo-Womens-Dressy-Casual-Scalloped/dp/B0H79C13DL/ref=zg_bsnr_g_2368365011_d_sccl_21/144-5202386-4431846?psc=1",
+      "brand": "Funlingo",
+      "promotion": "Deal",
+      "promotionStatus": "detected",
+      "listingDate": "2026-08-13",
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 15628,
+      "subCategory": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.6 4.6 out of 5 stars",
+      "subBsr": 299,
+      "subRanks": [
+        {
+          "category": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.6 4.6 out of 5 stars",
+          "rank": 299
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H79C13DL",
+      "listingDateSource": "卖家精灵历史市场分析（日期为稳定字段）",
+      "history": {
+        "firstSeen": "2026-09-10",
+        "appearances": 2,
+        "streak": 2
+      }
+    },
+    {
+      "rank": 22,
+      "asin": "B0H711VLPF",
+      "title": "HOTOUCH Womens Satin Blouse Silk Button Down Shirts 3/4 Sleeve Casual Tops",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/51EP+ZEhvIL._AC_UL600_SR600,400_.jpg",
+      "price": "$20.99",
+      "url": "https://www.amazon.com/HOTOUCH-Button-Shirts-Length-Sleeve/dp/B0H711VLPF/ref=zg_bsnr_g_2368365011_d_sccl_22/144-5202386-4431846?psc=1",
+      "brand": "HOTOUCH",
+      "promotion": "Coupon 10%",
+      "promotionStatus": "detected",
+      "listingDate": null,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 19557,
+      "subCategory": "Women's Button-Down Shirts Customer Reviews: 4.6 4.6 out of 5 stars",
+      "subBsr": 219,
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts Customer Reviews: 4.6 4.6 out of 5 stars",
+          "rank": 219
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H711VLPF",
+      "listingDateSource": "未显示/无法获取",
+      "history": {
+        "firstSeen": "2026-09-10",
+        "appearances": 2,
+        "streak": 2
+      }
+    },
+    {
+      "rank": 23,
+      "asin": "B0H3NWQBYK",
+      "title": "Rapbin Button Down Shirts for Women Casual Work Long Sleeve Cotton Blouses",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/718ODl66CUL._AC_UL600_SR600,400_.jpg",
+      "price": "$19.99",
+      "url": "https://www.amazon.com/Rapbin-Shirts-Cotton-Business-Professional/dp/B0H3NWQBYK/ref=zg_bsnr_g_2368365011_d_sccl_23/144-5202386-4431846?psc=1",
+      "brand": "Rapbin",
+      "promotion": "Coupon 50%",
+      "promotionStatus": "detected",
+      "listingDate": "2026-08-26",
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 19616,
+      "subCategory": "Women's Button-Down Shirts Customer Reviews: 4.6 4.6 out of 5 stars",
+      "subBsr": 221,
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts Customer Reviews: 4.6 4.6 out of 5 stars",
+          "rank": 221
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H3NWQBYK",
+      "listingDateSource": "卖家精灵历史市场分析（日期为稳定字段）",
+      "history": {
+        "firstSeen": "2026-09-10",
+        "appearances": 2,
+        "streak": 2
+      }
+    },
+    {
+      "rank": 24,
+      "asin": "B0H5K9N1K5",
+      "title": "GRACE KARIN Women Boho Mesh Blouses Dressy Casual Cowl Neck Going Out Tops",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/81WwQgYwQRL._AC_UL600_SR600,400_.jpg",
+      "price": "$25.99",
+      "url": "https://www.amazon.com/GRACE-KARIN-Women-Blouse-Dressy/dp/B0H5K9N1K5/ref=zg_bsnr_g_2368365011_d_sccl_24/144-5202386-4431846?psc=1",
+      "brand": "GRACE KARIN",
+      "promotion": "Coupon 5% + Deal",
+      "promotionStatus": "detected",
+      "listingDate": null,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 18399,
+      "subCategory": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.4 4.4 out of 5 stars",
+      "subBsr": 320,
+      "subRanks": [
+        {
+          "category": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.4 4.4 out of 5 stars",
+          "rank": 320
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H5K9N1K5",
+      "listingDateSource": "未显示/无法获取",
+      "history": {
+        "firstSeen": "2026-09-11",
+        "appearances": 1,
+        "streak": 1
+      }
+    },
+    {
+      "rank": 25,
+      "asin": "B0H25WPBKK",
+      "title": "OFEEFAN Womens Blouses Dressy Casual Long Sleeve Shirts Mock Neck Tops",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/71+82Gs+lEL._AC_UL600_SR600,400_.jpg",
+      "price": "$11.99",
+      "url": "https://www.amazon.com/Blouses-Dressy-Casual-Sleeve-Outfits/dp/B0H25WPBKK/ref=zg_bsnr_g_2368365011_d_sccl_25/144-5202386-4431846?psc=1",
+      "brand": "OFEEFAN",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "listingDate": "2026-07-22",
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 15229,
+      "subCategory": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.3 4.3 out of 5 stars",
+      "subBsr": 328,
+      "subRanks": [
+        {
+          "category": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.3 4.3 out of 5 stars",
+          "rank": 328
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H25WPBKK",
+      "listingDateSource": "卖家精灵历史市场分析（日期为稳定字段）",
+      "history": {
+        "firstSeen": "2026-09-10",
+        "appearances": 2,
+        "streak": 2
+      }
+    },
+    {
+      "rank": 26,
+      "asin": "B0H416H9VK",
+      "title": "Funlingo Womens Silk Satin Long Sleeve Tops Mock Neck Dressy Casual Blouses",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/81hdraBRVIL._AC_UL600_SR600,400_.jpg",
+      "price": "$17.99",
+      "url": "https://www.amazon.com/Funlingo-Sleeve-Pleated-Blouses-Womens/dp/B0H416H9VK/ref=zg_bsnr_g_2368365011_d_sccl_26/144-5202386-4431846?psc=1",
+      "brand": "Funlingo",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "listingDate": "2026-07-17",
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 18652,
+      "subCategory": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.2 4.2 out of 5 stars",
+      "subBsr": 334,
+      "subRanks": [
+        {
+          "category": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.2 4.2 out of 5 stars",
+          "rank": 334
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H416H9VK",
+      "listingDateSource": "卖家精灵历史市场分析（日期为稳定字段）",
+      "history": {
+        "firstSeen": "2026-09-10",
+        "appearances": 2,
+        "streak": 2
+      }
+    },
+    {
+      "rank": 27,
+      "asin": "B0HGFS9NDZ",
+      "title": "Nantdog Flannel Shirt Women Casual Plaid Shirts 2026 Fall Trendy Shackets",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/7152I9dh9EL._AC_UL600_SR600,400_.jpg",
+      "price": "$6.97",
+      "url": "https://www.amazon.com/Flannel-Casual-Shirts-Trendy-Shackets/dp/B0HGFS9NDZ/ref=zg_bsnr_g_2368365011_d_sccl_27/144-5202386-4431846?psc=1",
+      "brand": "Nantdog",
+      "promotion": "Deal",
+      "promotionStatus": "detected",
+      "listingDate": null,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 22541,
+      "subCategory": "Women's Button-Down Shirts Customer Reviews: 5.0 5.0 out of 5 stars",
+      "subBsr": 245,
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts Customer Reviews: 5.0 5.0 out of 5 stars",
+          "rank": 245
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0HGFS9NDZ",
+      "listingDateSource": "未显示/无法获取",
+      "history": {
+        "firstSeen": "2026-09-11",
+        "appearances": 1,
+        "streak": 1
+      }
+    },
+    {
+      "rank": 28,
+      "asin": "B0H3ZW1HVM",
+      "title": "OFEEFAN Long Sleeve Shirts Fall Boho Tops Dressy Casual Western Outfits",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/81VHSqf5t7L._AC_UL600_SR600,400_.jpg",
+      "price": "$9.99",
+      "url": "https://www.amazon.com/OFEEFAN-Womens-Winter-Clothing-Teacher/dp/B0H3ZW1HVM/ref=zg_bsnr_g_2368365011_d_sccl_28/144-5202386-4431846?psc=1",
+      "brand": "OFEEFAN",
+      "promotion": "Deal",
+      "promotionStatus": "detected",
+      "listingDate": null,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 9924,
+      "subCategory": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.3 4.3 out of 5 stars",
+      "subBsr": 365,
+      "subRanks": [
+        {
+          "category": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.3 4.3 out of 5 stars",
+          "rank": 365
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H3ZW1HVM",
+      "listingDateSource": "未显示/无法获取",
+      "history": {
+        "firstSeen": "2026-09-11",
+        "appearances": 1,
+        "streak": 1
+      }
+    },
+    {
+      "rank": 29,
+      "asin": "B0H4FWN8MR",
+      "title": "OFEEFAN Blouses for Women Dressy Casual Long Sleeve Shirts Fall Outfits",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/81sDFlkF7DL._AC_UL600_SR600,400_.jpg",
+      "price": "$12.99",
+      "url": "https://www.amazon.com/Dressy-Blouses-Sleeve-Shirts-Floral/dp/B0H4FWN8MR/ref=zg_bsnr_g_2368365011_d_sccl_29/144-5202386-4431846?psc=1",
+      "brand": "OFEEFAN",
+      "promotion": "Deal",
+      "promotionStatus": "detected",
+      "listingDate": null,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 22025,
+      "subCategory": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.3 4.3 out of 5 stars",
+      "subBsr": 373,
+      "subRanks": [
+        {
+          "category": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.3 4.3 out of 5 stars",
+          "rank": 373
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H4FWN8MR",
+      "listingDateSource": "未显示/无法获取",
+      "history": {
+        "firstSeen": "2026-09-11",
+        "appearances": 1,
+        "streak": 1
+      }
+    },
+    {
+      "rank": 30,
+      "asin": "B0H4R9JJR2",
+      "title": "MEROKEETY Womens Fall Long Sleeve Floral Mesh Blouse Top 2026 Dressy Casual",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/81Q1VpFYLlL._AC_UL600_SR600,400_.jpg",
+      "price": "$19.99",
+      "url": "https://www.amazon.com/MEROKEETY-Womens-Long-Sleeve-Blouse/dp/B0H4R9JJR2/ref=zg_bsnr_g_2368365011_d_sccl_30/144-5202386-4431846?psc=1",
+      "brand": "MEROKEETY",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "listingDate": "2026-07-31",
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 24047,
+      "subCategory": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.4 4.4 out of 5 stars",
+      "subBsr": 375,
+      "subRanks": [
+        {
+          "category": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.4 4.4 out of 5 stars",
+          "rank": 375
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H4R9JJR2",
+      "listingDateSource": "卖家精灵历史市场分析（日期为稳定字段）",
+      "history": {
+        "firstSeen": "2026-09-10",
+        "appearances": 2,
+        "streak": 2
+      }
+    },
+    {
+      "rank": 31,
+      "asin": "B0H5QT2SKJ",
+      "title": "Ivicoer Long Sleeve Button Down Shirts for Women Cotton V Neck Blouses",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/81pQ3rPtzGL._AC_UL300_SR300,200_.jpg",
+      "price": "$14.99",
+      "url": "https://www.amazon.com/Ivicoer-Checked-Blouses-Lightweight-Gingham/dp/B0H5QT2SKJ/ref=zg_bsnr_g_2368365011_d_sccl_31/144-5202386-4431846?psc=1",
+      "brand": "Ivicoer",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "listingDate": "2026-08-08",
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 25347,
+      "subCategory": "Women's Button-Down Shirts Customer Reviews: 3.9 3.9 out of 5 stars",
+      "subBsr": 280,
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts Customer Reviews: 3.9 3.9 out of 5 stars",
+          "rank": 280
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H5QT2SKJ",
+      "listingDateSource": "卖家精灵历史市场分析（日期为稳定字段）",
+      "history": {
+        "firstSeen": "2026-09-10",
+        "appearances": 2,
+        "streak": 2
+      }
+    },
+    {
+      "rank": 32,
+      "asin": "B0H2Q5KG5P",
+      "title": "ZESICA Women Long Sleeve Striped Business Casual Button Shirts",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/81SwDy3hw1L._AC_UL300_SR300,200_.jpg",
+      "price": "$19.95",
+      "url": "https://www.amazon.com/ZESICA-Sleeve-Striped-Business-Casual/dp/B0H2Q5KG5P/ref=zg_bsnr_g_2368365011_d_sccl_32/144-5202386-4431846?psc=1",
+      "brand": "ZESICA",
+      "promotion": "Deal",
+      "promotionStatus": "detected",
+      "listingDate": null,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 26856,
+      "subCategory": "Women's Button-Down Shirts Customer Reviews: 4.3 4.3 out of 5 stars",
+      "subBsr": 290,
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts Customer Reviews: 4.3 4.3 out of 5 stars",
+          "rank": 290
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H2Q5KG5P",
+      "listingDateSource": "未显示/无法获取",
+      "history": {
+        "firstSeen": "2026-09-11",
+        "appearances": 1,
+        "streak": 1
+      }
+    },
+    {
+      "rank": 33,
+      "asin": "B0H7H95Q3W",
+      "title": "Cicy Bell Womens Ruched Button Down Shirts Puff Sleeve Dressy Casual Blouse",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/81TsBaVHSDL._AC_UL300_SR300,200_.jpg",
+      "price": "$39.99",
+      "url": "https://www.amazon.com/Cicy-Bell-Womens-Ruched-Gingham/dp/B0H7H95Q3W/ref=zg_bsnr_g_2368365011_d_sccl_33/144-5202386-4431846?psc=1",
+      "brand": "Cicy Bell",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "listingDate": null,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 27964,
+      "subCategory": "Women's Button-Down Shirts Customer Reviews: 4.5 4.5 out of 5 stars",
+      "subBsr": 300,
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts Customer Reviews: 4.5 4.5 out of 5 stars",
+          "rank": 300
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H7H95Q3W",
+      "listingDateSource": "未显示/无法获取",
+      "history": {
+        "firstSeen": "2026-09-11",
+        "appearances": 1,
+        "streak": 1
+      }
+    },
+    {
+      "rank": 34,
+      "asin": "B0H4QR6FT3",
+      "title": "GRACE KARIN Womens Boho Mesh Tops Long Sleeve Blouses Dressy Casual",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/81ShGrsBkbL._AC_UL300_SR300,200_.jpg",
+      "price": "$17.99",
+      "url": "https://www.amazon.com/GRACE-KARIN-Womens-Sleeve-Burgundy/dp/B0H4QR6FT3/ref=zg_bsnr_g_2368365011_d_sccl_34/144-5202386-4431846?psc=1",
+      "brand": "GRACE KARIN",
+      "promotion": "Deal",
+      "promotionStatus": "detected",
+      "listingDate": null,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 11556,
+      "subCategory": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.2 4.2 out of 5 stars",
+      "subBsr": 426,
+      "subRanks": [
+        {
+          "category": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.2 4.2 out of 5 stars",
+          "rank": 426
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H4QR6FT3",
+      "listingDateSource": "未显示/无法获取",
+      "history": {
+        "firstSeen": "2026-09-11",
+        "appearances": 1,
+        "streak": 1
+      }
+    },
+    {
+      "rank": 35,
+      "asin": "B0H3N1LVC3",
+      "title": "Verdusa Women's Bow Flounce Sleeve Button Up Dressy Blouse Collared Shirts",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/719j64XuazL._AC_UL300_SR300,200_.jpg",
+      "price": "$32.99",
+      "url": "https://www.amazon.com/Verdusa-Womens-Flounce-Sleeve-Collared/dp/B0H3N1LVC3/ref=zg_bsnr_g_2368365011_d_sccl_35/144-5202386-4431846?psc=1",
+      "brand": "Verdusa",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "listingDate": null,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 25460,
+      "subCategory": "Women's Button-Down Shirts Customer Reviews: 4.0 4.0 out of 5 stars",
+      "subBsr": 304,
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts Customer Reviews: 4.0 4.0 out of 5 stars",
+          "rank": 304
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H3N1LVC3",
+      "listingDateSource": "未显示/无法获取",
+      "history": {
+        "firstSeen": "2026-09-11",
+        "appearances": 1,
+        "streak": 1
+      }
+    },
+    {
+      "rank": 36,
+      "asin": "B0HD763FSJ",
+      "title": "Women Boho Leopard Print Blouse Denim Patchwork Floral V‑Neck Elastic Cuff Long Sleeve Casual Tops",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/71fsqHaUUmL._AC_UL300_SR300,200_.jpg",
+      "price": null,
+      "url": "https://www.amazon.com/Leopard-Blouse-Patchwork-Floral-Elastic/dp/B0HD763FSJ/ref=zg_bsnr_g_2368365011_d_sccl_36/144-5202386-4431846?psc=1",
+      "brand": null,
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "listingDate": null,
+      "mainCategory": null,
+      "mainBsr": null,
+      "subCategory": null,
+      "subBsr": null,
+      "subRanks": [],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0HD763FSJ",
+      "listingDateSource": "未显示/无法获取",
+      "history": {
+        "firstSeen": "2026-09-11",
+        "appearances": 1,
+        "streak": 1
+      }
+    },
+    {
+      "rank": 37,
+      "asin": "B0H3PJPMV7",
+      "title": "PRETTYGARDEN Womens Button Down Shirts Long Sleeve Blouse",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/81JbQ6nrOhL._AC_UL300_SR300,200_.jpg",
+      "price": "$24.99",
+      "url": "https://www.amazon.com/PRETTYGARDEN-Womens-Button-Shirts-Sleeve/dp/B0H3PJPMV7/ref=zg_bsnr_g_2368365011_d_sccl_37/144-5202386-4431846?psc=1",
+      "brand": "PRETTYGARDEN",
+      "promotion": "Coupon 20%",
+      "promotionStatus": "detected",
+      "listingDate": "2026-08-31",
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 33597,
+      "subCategory": "Women's Button-Down Shirts Customer Reviews: 4.7 4.7 out of 5 stars",
+      "subBsr": 351,
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts Customer Reviews: 4.7 4.7 out of 5 stars",
+          "rank": 351
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H3PJPMV7",
+      "listingDateSource": "卖家精灵历史市场分析（日期为稳定字段）",
+      "history": {
+        "firstSeen": "2026-09-10",
+        "appearances": 2,
+        "streak": 2
+      }
+    },
+    {
+      "rank": 38,
+      "asin": "B0H9RLLYJ3",
+      "title": "GRECERELLE Striped Long Sleeve Shirt Women Business Casual Tops for Women",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/815Y-gEV8jL._AC_UL300_SR300,200_.jpg",
+      "price": "$14.99",
+      "url": "https://www.amazon.com/GRECERELLE-Striped-Sleeve-Blouse-Stripe-L/dp/B0H9RLLYJ3/ref=zg_bsnr_g_2368365011_d_sccl_38/144-5202386-4431846?psc=1",
+      "brand": "GRECERELLE",
+      "promotion": "Deal",
+      "promotionStatus": "detected",
+      "listingDate": null,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 34342,
+      "subCategory": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.8 4.8 out of 5 stars",
+      "subBsr": 499,
+      "subRanks": [
+        {
+          "category": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.8 4.8 out of 5 stars",
+          "rank": 499
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H9RLLYJ3",
+      "listingDateSource": "未显示/无法获取",
+      "history": {
+        "firstSeen": "2026-09-11",
+        "appearances": 1,
+        "streak": 1
+      }
+    },
+    {
+      "rank": 39,
+      "asin": "B0H38Q1761",
+      "title": "PRETTYGARDEN Women's Peplum Button Down Work Shirts",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/81i7acpho1L._AC_UL300_SR300,200_.jpg",
+      "price": "$23.19",
+      "url": "https://www.amazon.com/PRETTYGARDEN-Womens-Peplum-Button-Striped/dp/B0H38Q1761/ref=zg_bsnr_g_2368365011_d_sccl_39/144-5202386-4431846?psc=1",
+      "brand": "PRETTYGARDEN",
+      "promotion": "Deal",
+      "promotionStatus": "detected",
+      "listingDate": "2026-08-17",
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 34772,
+      "subCategory": "Women's Button-Down Shirts Customer Reviews: 4.4 4.4 out of 5 stars",
+      "subBsr": 358,
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts Customer Reviews: 4.4 4.4 out of 5 stars",
+          "rank": 358
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H38Q1761",
+      "listingDateSource": "卖家精灵历史市场分析（日期为稳定字段）",
+      "history": {
+        "firstSeen": "2026-09-10",
+        "appearances": 2,
+        "streak": 2
+      }
+    },
+    {
+      "rank": 40,
+      "asin": "B0H4GZ6VRK",
+      "title": "SimpleFun Button Down Shirts for Women Long Sleeve Blouse Gingham Work Tops",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/81Q2DyOsxCL._AC_UL300_SR300,200_.jpg",
+      "price": "$29.98",
+      "url": "https://www.amazon.com/Simplefun-Business-Casual-Button-Office/dp/B0H4GZ6VRK/ref=zg_bsnr_g_2368365011_d_sccl_40/144-5202386-4431846?psc=1",
+      "brand": "SimpleFun",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "listingDate": "2026-07-25",
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 29784,
+      "subCategory": "Women's Button-Down Shirts Customer Reviews: 4.3 4.3 out of 5 stars",
+      "subBsr": 362,
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts Customer Reviews: 4.3 4.3 out of 5 stars",
+          "rank": 362
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H4GZ6VRK",
+      "listingDateSource": "卖家精灵历史市场分析（日期为稳定字段）",
+      "history": {
+        "firstSeen": "2026-09-10",
+        "appearances": 2,
+        "streak": 2
+      }
+    },
+    {
+      "rank": 41,
+      "asin": "B0GZK32HS2",
+      "title": "PRETTYGARDEN Women's Bell Sleeve Floral Mesh Crop Tops",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/81yIG1TYU4L._AC_UL300_SR300,200_.jpg",
+      "price": "$14.99",
+      "url": "https://www.amazon.com/PRETTYGARDEN-Womens-Sleeve-Floral-Green/dp/B0GZK32HS2/ref=zg_bsnr_g_2368365011_d_sccl_41/144-5202386-4431846?psc=1",
+      "brand": "PRETTYGARDEN",
+      "promotion": "Coupon 20%",
+      "promotionStatus": "detected",
+      "listingDate": "2026-08-19",
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 35523,
+      "subCategory": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.2 4.2 out of 5 stars",
+      "subBsr": 515,
+      "subRanks": [
+        {
+          "category": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.2 4.2 out of 5 stars",
+          "rank": 515
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0GZK32HS2",
+      "listingDateSource": "卖家精灵历史市场分析（日期为稳定字段）",
+      "history": {
+        "firstSeen": "2026-09-10",
+        "appearances": 2,
+        "streak": 2
+      }
+    },
+    {
+      "rank": 42,
+      "asin": "B0HFHRNP22",
+      "title": "OFEEFAN Womens Mock Neck Mesh Long Sleeve Blouse Double Lined Slim Fit Top",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/81P7KtzDgTL._AC_UL300_SR300,200_.jpg",
+      "price": "$7.99",
+      "url": "https://www.amazon.com/OFEEFAN-Womens-Double-Sleeve-Blouse/dp/B0HFHRNP22/ref=zg_bsnr_g_2368365011_d_sccl_42/144-5202386-4431846?psc=1",
+      "brand": "OFEEFAN",
+      "promotion": "Deal",
+      "promotionStatus": "detected",
+      "listingDate": "2026-08-19",
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 24354,
+      "subCategory": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.5 4.5 out of 5 stars",
+      "subBsr": 532,
+      "subRanks": [
+        {
+          "category": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.5 4.5 out of 5 stars",
+          "rank": 532
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0HFHRNP22",
+      "listingDateSource": "卖家精灵历史市场分析（日期为稳定字段）",
+      "history": {
+        "firstSeen": "2026-09-10",
+        "appearances": 2,
+        "streak": 2
+      }
+    },
+    {
+      "rank": 43,
+      "asin": "B0H3N8F1S2",
+      "title": "KIRUNDO Womens Striped Long Sleeve Button Down Shirts Casual Fall Blouses",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/81eOBmmhaFL._AC_UL300_SR300,200_.jpg",
+      "price": "$29.99",
+      "url": "https://www.amazon.com/KIRUNDO-Womens-Striped-Button-Shirts/dp/B0H3N8F1S2/ref=zg_bsnr_g_2368365011_d_sccl_43/144-5202386-4431846?psc=1",
+      "brand": "KIRUNDO",
+      "promotion": "Coupon 10%",
+      "promotionStatus": "detected",
+      "listingDate": "2026-08-25",
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 37254,
+      "subCategory": "Women's Button-Down Shirts Customer Reviews: 4.9 4.9 out of 5 stars",
+      "subBsr": 375,
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts Customer Reviews: 4.9 4.9 out of 5 stars",
+          "rank": 375
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H3N8F1S2",
+      "listingDateSource": "卖家精灵历史市场分析（日期为稳定字段）",
+      "history": {
+        "firstSeen": "2026-09-10",
+        "appearances": 2,
+        "streak": 2
+      }
+    },
+    {
+      "rank": 44,
+      "asin": "B0H6SBQJXF",
+      "title": "MEROKEETY Womens Fall Asymmetric Lace Long Sleeve Top Casual Cute Shirts",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/71zNAeG78yL._AC_UL300_SR300,200_.jpg",
+      "price": "$16.99",
+      "url": "https://www.amazon.com/MEROKEETY-Asymmetric-Lace-Sleeve-Shirt/dp/B0H6SBQJXF/ref=zg_bsnr_g_2368365011_d_sccl_44/144-5202386-4431846?psc=1",
+      "brand": "MEROKEETY",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "listingDate": null,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 35792,
+      "subCategory": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.2 4.2 out of 5 stars",
+      "subBsr": 542,
+      "subRanks": [
+        {
+          "category": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.2 4.2 out of 5 stars",
+          "rank": 542
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H6SBQJXF",
+      "listingDateSource": "未显示/无法获取",
+      "history": {
+        "firstSeen": "2026-09-11",
+        "appearances": 1,
+        "streak": 1
+      }
+    },
+    {
+      "rank": 45,
+      "asin": "B0H5QRM285",
+      "title": "White Long Sleeve Shirts for Women Business Casual Tops XS-XL",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/613jX2odYJL._AC_UL300_SR300,200_.jpg",
+      "price": "$26.99",
+      "url": "https://www.amazon.com/Gettalocky-Sleeve-Shirts-Business-Casual/dp/B0H5QRM285/ref=zg_bsnr_g_2368365011_d_sccl_45/144-5202386-4431846?psc=1",
+      "brand": "Gettalocky",
+      "promotion": "Coupon 10% + Deal",
+      "promotionStatus": "detected",
+      "listingDate": null,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 32738,
+      "subCategory": "Women's Button-Down Shirts Customer Reviews: 4.3 4.3 out of 5 stars",
+      "subBsr": 377,
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts Customer Reviews: 4.3 4.3 out of 5 stars",
+          "rank": 377
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H5QRM285",
+      "listingDateSource": "未显示/无法获取",
+      "history": {
+        "firstSeen": "2026-09-11",
+        "appearances": 1,
+        "streak": 1
+      }
+    },
+    {
+      "rank": 46,
+      "asin": "B0H4DX7W56",
+      "title": "Funlingo Button Down Shirts for Women Long Sleeve Tops Ruffle Collar Blouse",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/71wN1nMLLaL._AC_UL300_SR300,200_.jpg",
+      "price": "$17.99",
+      "url": "https://www.amazon.com/Funlingo-Blouses-Dressy-Casual-Button/dp/B0H4DX7W56/ref=zg_bsnr_g_2368365011_d_sccl_46/144-5202386-4431846?psc=1",
+      "brand": "Funlingo",
+      "promotion": "Deal",
+      "promotionStatus": "detected",
+      "listingDate": null,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 40544,
+      "subCategory": "Women's Button-Down Shirts Customer Reviews: 4.0 4.0 out of 5 stars",
+      "subBsr": 398,
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts Customer Reviews: 4.0 4.0 out of 5 stars",
+          "rank": 398
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H4DX7W56",
+      "listingDateSource": "未显示/无法获取",
+      "history": {
+        "firstSeen": "2026-09-11",
+        "appearances": 1,
+        "streak": 1
+      }
+    },
+    {
+      "rank": 47,
+      "asin": "B0HF7XBHDF",
+      "title": "Denim Button Down Shirt Women Long Sleeve Collared Casual Jean Shirts",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/81W4xHrKk+L._AC_UL300_SR300,200_.jpg",
+      "price": "$9.98",
+      "url": "https://www.amazon.com/CSVBVSQ-Shirts-Women-Sleeve-Collared/dp/B0HF7XBHDF/ref=zg_bsnr_g_2368365011_d_sccl_47/144-5202386-4431846?psc=1",
+      "brand": "CSVBVSQ",
+      "promotion": "Coupon 10%",
+      "promotionStatus": "detected",
+      "listingDate": "2026-08-26",
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 42441,
+      "subCategory": "Women's Button-Down Shirts Customer Reviews: 5.0 5.0 out of 5 stars",
+      "subBsr": 410,
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts Customer Reviews: 5.0 5.0 out of 5 stars",
+          "rank": 410
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0HF7XBHDF",
+      "listingDateSource": "卖家精灵历史市场分析（日期为稳定字段）",
+      "history": {
+        "firstSeen": "2026-09-10",
+        "appearances": 2,
+        "streak": 2
+      }
+    },
+    {
+      "rank": 48,
+      "asin": "B0H4D2XWWV",
+      "title": "GRACE KARIN Womens Long Sleeve Boho Tops Ruffle Work Blouses Chiffon Shirts",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/81Ckipy5s8L._AC_UL300_SR300,200_.jpg",
+      "price": "$18.99",
+      "url": "https://www.amazon.com/GRACE-KARIN-Womens-Sleeve-Blouses/dp/B0H4D2XWWV/ref=zg_bsnr_g_2368365011_d_sccl_48/144-5202386-4431846?psc=1",
+      "brand": "GRACE KARIN",
+      "promotion": "Deal",
+      "promotionStatus": "detected",
+      "listingDate": null,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 42784,
+      "subCategory": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.2 4.2 out of 5 stars",
+      "subBsr": 591,
+      "subRanks": [
+        {
+          "category": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.2 4.2 out of 5 stars",
+          "rank": 591
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H4D2XWWV",
+      "listingDateSource": "未显示/无法获取",
+      "history": {
+        "firstSeen": "2026-09-11",
+        "appearances": 1,
+        "streak": 1
+      }
+    },
+    {
+      "rank": 49,
+      "asin": "B0H2YM2BM4",
+      "title": "KIRUNDO Womens Long Sleeve Shirts Dressy Casual Blouse Tops",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/819DIDMqN5L._AC_UL300_SR300,200_.jpg",
+      "price": "$14.99",
+      "url": "https://www.amazon.com/KIRUNDO-Womens-Sleeve-Shirts-Dressy/dp/B0H2YM2BM4/ref=zg_bsnr_g_2368365011_d_sccl_49/144-5202386-4431846?psc=1",
+      "brand": "KIRUNDO",
+      "promotion": "Deal",
+      "promotionStatus": "detected",
+      "listingDate": null,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 43272,
+      "subCategory": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.7 4.7 out of 5 stars",
+      "subBsr": 600,
+      "subRanks": [
+        {
+          "category": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.7 4.7 out of 5 stars",
+          "rank": 600
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H2YM2BM4",
+      "listingDateSource": "未显示/无法获取",
+      "history": {
+        "firstSeen": "2026-09-11",
+        "appearances": 1,
+        "streak": 1
+      }
+    },
+    {
+      "rank": 50,
+      "asin": "B0H7HZB74L",
+      "title": "Cotton Linen Shirts for Women 3/4 Sleeve Boho Embroidered Tops",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/71QOSvmpScL._AC_UL300_SR300,200_.jpg",
+      "price": "$8.99",
+      "url": "https://www.amazon.com/Shamonaty-Cotton-Shirts-Sleeve-Embroidered/dp/B0H7HZB74L/ref=zg_bsnr_g_2368365011_d_sccl_50/144-5202386-4431846?psc=1",
+      "brand": "Shamonaty",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "listingDate": "2026-07-31",
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 45285,
+      "subCategory": "Women's Blouses & Button-Down Shirts Customer Reviews: 5.0 5.0 out of 5 stars",
+      "subBsr": 619,
+      "subRanks": [
+        {
+          "category": "Women's Blouses & Button-Down Shirts Customer Reviews: 5.0 5.0 out of 5 stars",
+          "rank": 619
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H7HZB74L",
+      "listingDateSource": "卖家精灵历史市场分析（日期为稳定字段）",
+      "history": {
+        "firstSeen": "2026-09-10",
+        "appearances": 2,
+        "streak": 2
+      }
+    },
+    {
+      "rank": 51,
+      "asin": "B0H36KVW6V",
+      "title": "Dokotoo Womens Striped Button Down Shirt Long Sleeve V Neck Cotton Blouse",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/81qDiZw+3rL._AC_UL600_SR600,400_.jpg",
+      "price": "$19.99",
+      "url": "https://www.amazon.com/Dokotoo-Collared-Shirts-Sleeve-Cotton/dp/B0H36KVW6V/ref=zg_bsnr_g_2368365011_d_sccl_1/144-5202386-4431846?psc=1",
+      "brand": "Dokotoo",
+      "promotion": "Coupon 10% + Deal",
+      "promotionStatus": "detected",
+      "listingDate": "2026-07-16",
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 46228,
+      "subCategory": "Women's Button-Down Shirts Customer Reviews: 3.8 3.8 out of 5 stars",
+      "subBsr": 444,
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts Customer Reviews: 3.8 3.8 out of 5 stars",
+          "rank": 444
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H36KVW6V",
+      "listingDateSource": "卖家精灵历史市场分析（日期为稳定字段）",
+      "history": {
+        "firstSeen": "2026-09-10",
+        "appearances": 2,
+        "streak": 2
+      }
+    },
+    {
+      "rank": 52,
+      "asin": "B0H59Y25WG",
+      "title": "Funlingo Women Long Sleeve Shirts Lace Mock Neck Tops Dressy Casual Blouses",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/81F5hry8ONL._AC_UL600_SR600,400_.jpg",
+      "price": "$17.99",
+      "url": "https://www.amazon.com/Funlingo-Business-Casual-Sleeve-Shirts/dp/B0H59Y25WG/ref=zg_bsnr_g_2368365011_d_sccl_2/144-5202386-4431846?psc=1",
+      "brand": "Funlingo",
+      "promotion": "Deal",
+      "promotionStatus": "detected",
+      "listingDate": null,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 50639,
+      "subCategory": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.7 4.7 out of 5 stars",
+      "subBsr": 672,
+      "subRanks": [
+        {
+          "category": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.7 4.7 out of 5 stars",
+          "rank": 672
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H59Y25WG",
+      "listingDateSource": "未显示/无法获取",
+      "history": {
+        "firstSeen": "2026-09-11",
+        "appearances": 1,
+        "streak": 1
+      }
+    },
+    {
+      "rank": 53,
+      "asin": "B0H1R5VNLX",
+      "title": "MEROKEETY Womens Fall Lace Mesh Long Sleeve Blouse Tops Dressy Casual Shirt",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/71bZUlnyR0L._AC_UL600_SR600,400_.jpg",
+      "price": "$9.99",
+      "url": "https://www.amazon.com/MEROKEETY-Womens-Sleeve-Blouse-Dressy/dp/B0H1R5VNLX/ref=zg_bsnr_g_2368365011_d_sccl_3/144-5202386-4431846?psc=1",
+      "brand": "MEROKEETY",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "listingDate": "2026-06-23",
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 52660,
+      "subCategory": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.3 4.3 out of 5 stars",
+      "subBsr": 696,
+      "subRanks": [
+        {
+          "category": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.3 4.3 out of 5 stars",
+          "rank": 696
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H1R5VNLX",
+      "listingDateSource": "卖家精灵历史市场分析（日期为稳定字段）",
+      "history": {
+        "firstSeen": "2026-09-10",
+        "appearances": 2,
+        "streak": 2
+      }
+    },
+    {
+      "rank": 54,
+      "asin": "B0H6HZ667J",
+      "title": "Sidefeel Womens Denim Shirt Button Down Long Sleeve Jean Blouses Tops",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/71qcFh1KZeL._AC_UL600_SR600,400_.jpg",
+      "price": "$36.99",
+      "url": "https://www.amazon.com/Sidefeel-Womens-Button-Western-Shirts/dp/B0H6HZ667J/ref=zg_bsnr_g_2368365011_d_sccl_4/144-5202386-4431846?psc=1",
+      "brand": "Sidefeel",
+      "promotion": "Coupon 10%",
+      "promotionStatus": "detected",
+      "listingDate": null,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 53645,
+      "subCategory": "Women's Button-Down Shirts Customer Reviews: 4.2 4.2 out of 5 stars",
+      "subBsr": 484,
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts Customer Reviews: 4.2 4.2 out of 5 stars",
+          "rank": 484
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H6HZ667J",
+      "listingDateSource": "未显示/无法获取",
+      "history": {
+        "firstSeen": "2026-09-11",
+        "appearances": 1,
+        "streak": 1
+      }
+    },
+    {
+      "rank": 55,
+      "asin": "B0H36WC6CH",
+      "title": "OFEEFAN Satin Blouses for Women Dressy Casual Long Sleeve Shirts Silk Tops",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/71WaBAqJPcL._AC_UL600_SR600,400_.jpg",
+      "price": "$9.99",
+      "url": "https://www.amazon.com/OFEEFAN-Satin-Blouses-Sleeve-Shirts/dp/B0H36WC6CH/ref=zg_bsnr_g_2368365011_d_sccl_5/144-5202386-4431846?psc=1",
+      "brand": "OFEEFAN",
+      "promotion": "Deal",
+      "promotionStatus": "detected",
+      "listingDate": "2026-08-06",
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 49713,
+      "subCategory": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.1 4.1 out of 5 stars",
+      "subBsr": 710,
+      "subRanks": [
+        {
+          "category": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.1 4.1 out of 5 stars",
+          "rank": 710
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H36WC6CH",
+      "listingDateSource": "卖家精灵历史市场分析（日期为稳定字段）",
+      "history": {
+        "firstSeen": "2026-09-10",
+        "appearances": 2,
+        "streak": 2
+      }
+    },
+    {
+      "rank": 56,
+      "asin": "B0H4G47FVM",
+      "title": "Funlingo Button Down Shirts for Women Long Sleeve Blouse Business Work Tops",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/81ancFu3KGL._AC_UL600_SR600,400_.jpg",
+      "price": "$17.99",
+      "url": "https://www.amazon.com/Funlingo-Button-Shirts-Blouses-Gingham/dp/B0H4G47FVM/ref=zg_bsnr_g_2368365011_d_sccl_6/144-5202386-4431846?psc=1",
+      "brand": "Funlingo",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "listingDate": null,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 53833,
+      "subCategory": "Women's Button-Down Shirts Customer Reviews: 4.1 4.1 out of 5 stars",
+      "subBsr": 486,
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts Customer Reviews: 4.1 4.1 out of 5 stars",
+          "rank": 486
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H4G47FVM",
+      "listingDateSource": "未显示/无法获取",
+      "history": {
+        "firstSeen": "2026-09-11",
+        "appearances": 1,
+        "streak": 1
+      }
+    },
+    {
+      "rank": 57,
+      "asin": "B0H4F2NYKD",
+      "title": "Funlingo Women Puff Long Sleeve Shirts Mock Neck Tops Dressy Casual Blouses",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/81sJlK2VelL._AC_UL600_SR600,400_.jpg",
+      "price": "$17.99",
+      "url": "https://www.amazon.com/Funlingo-Sleeve-Shirts-Dressy-Blouses/dp/B0H4F2NYKD/ref=zg_bsnr_g_2368365011_d_sccl_7/144-5202386-4431846?psc=1",
+      "brand": "Funlingo",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "listingDate": null,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 32873,
+      "subCategory": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.6 4.6 out of 5 stars",
+      "subBsr": 714,
+      "subRanks": [
+        {
+          "category": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.6 4.6 out of 5 stars",
+          "rank": 714
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H4F2NYKD",
+      "listingDateSource": "未显示/无法获取",
+      "history": {
+        "firstSeen": "2026-09-11",
+        "appearances": 1,
+        "streak": 1
+      }
+    },
+    {
+      "rank": 58,
+      "asin": "B0GWZ8HKBK",
+      "title": "BTFBM Satin Blouses for Women Dressy Casual Button Down Shirts",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/71Gp-sByrnL._AC_UL600_SR600,400_.jpg",
+      "price": "$26.89",
+      "url": "https://www.amazon.com/BTFBM-Blouses-Dressy-Casual-Button/dp/B0GWZ8HKBK/ref=zg_bsnr_g_2368365011_d_sccl_8/144-5202386-4431846?psc=1",
+      "brand": "BTFBM",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "listingDate": "2026-08-09",
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 54351,
+      "subCategory": "Women's Button-Down Shirts Customer Reviews: 4.3 4.3 out of 5 stars",
+      "subBsr": 489,
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts Customer Reviews: 4.3 4.3 out of 5 stars",
+          "rank": 489
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0GWZ8HKBK",
+      "listingDateSource": "卖家精灵历史市场分析（日期为稳定字段）",
+      "history": {
+        "firstSeen": "2026-09-10",
+        "appearances": 2,
+        "streak": 2
+      }
+    },
+    {
+      "rank": 59,
+      "asin": "B0HBXBH3MQ",
+      "title": "Boho Tops for Women Fall 3/4 Sleeve Lace Up Peasant Blouse Polka Dot",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/7194W3JjfEL._AC_UL600_SR600,400_.jpg",
+      "price": "$12.98",
+      "url": "https://www.amazon.com/Womens-Shirts-Polka-Blouse-Sleeve/dp/B0HBXBH3MQ/ref=zg_bsnr_g_2368365011_d_sccl_9/144-5202386-4431846?psc=1",
+      "brand": "Generic",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "listingDate": "2026-07-28",
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 13703,
+      "subCategory": "Women's Blouses & Button-Down Shirts Customer Reviews: 2.2 2.2 out of 5 stars",
+      "subBsr": 722,
+      "subRanks": [
+        {
+          "category": "Women's Blouses & Button-Down Shirts Customer Reviews: 2.2 2.2 out of 5 stars",
+          "rank": 722
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0HBXBH3MQ",
+      "listingDateSource": "卖家精灵历史市场分析（日期为稳定字段）",
+      "history": {
+        "firstSeen": "2026-09-10",
+        "appearances": 2,
+        "streak": 2
+      }
+    },
+    {
+      "rank": 60,
+      "asin": "B0H71BYQG2",
+      "title": "Unixseque Womens Blouses Dressy Casual Chiffon Long Sleeve Work Tops",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/81aBsB9UtWL._AC_UL600_SR600,400_.jpg",
+      "price": "$26.99",
+      "url": "https://www.amazon.com/Unixseque-Work-Blouses-Women-Business/dp/B0H71BYQG2/ref=zg_bsnr_g_2368365011_d_sccl_10/144-5202386-4431846?psc=1",
+      "brand": "Unixseque",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "listingDate": null,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 51528,
+      "subCategory": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.6 4.6 out of 5 stars",
+      "subBsr": 729,
+      "subRanks": [
+        {
+          "category": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.6 4.6 out of 5 stars",
+          "rank": 729
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H71BYQG2",
+      "listingDateSource": "未显示/无法获取",
+      "history": {
+        "firstSeen": "2026-09-11",
+        "appearances": 1,
+        "streak": 1
+      }
+    },
+    {
+      "rank": 61,
+      "asin": "B0HCCCZH85",
+      "title": "LOMON Womens Silk Satin Blouse Sleeveless Button Down Shirts V Neck Business Casual Tops Summer Outfits 2026",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/71uP2mTDNzL._AC_UL600_SR600,400_.jpg",
+      "price": "$19.99",
+      "url": "https://www.amazon.com/LOMON-Button-Shirts-Sleeveless-Blouses/dp/B0HCCCZH85/ref=zg_bsnr_g_2368365011_d_sccl_11/144-5202386-4431846?psc=1",
+      "brand": "LOMON",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "listingDate": "2026-08-13",
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 20117,
+      "subCategory": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.3 4.3 out of 5 stars",
+      "subBsr": 740,
+      "subRanks": [
+        {
+          "category": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.3 4.3 out of 5 stars",
+          "rank": 740
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0HCCCZH85",
+      "listingDateSource": "卖家精灵历史市场分析（日期为稳定字段）",
+      "history": {
+        "firstSeen": "2026-09-10",
+        "appearances": 2,
+        "streak": 2
+      }
+    },
+    {
+      "rank": 62,
+      "asin": "B0H7C61GMG",
+      "title": "Timeson Women's Long Sleeve Fall Tops Ruffled Frills V-Neck Work Blouses",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/61zrPknbguL._AC_UL600_SR600,400_.jpg",
+      "price": "$19.99",
+      "url": "https://www.amazon.com/Timeson-Business-Casual-Tops-Women/dp/B0H7C61GMG/ref=zg_bsnr_g_2368365011_d_sccl_12/144-5202386-4431846?psc=1",
+      "brand": "Timeson",
+      "promotion": "Deal",
+      "promotionStatus": "detected",
+      "listingDate": "2026-08-09",
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 56557,
+      "subCategory": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.2 4.2 out of 5 stars",
+      "subBsr": 748,
+      "subRanks": [
+        {
+          "category": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.2 4.2 out of 5 stars",
+          "rank": 748
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H7C61GMG",
+      "listingDateSource": "卖家精灵历史市场分析（日期为稳定字段）",
+      "history": {
+        "firstSeen": "2026-09-10",
+        "appearances": 2,
+        "streak": 2
+      }
+    },
+    {
+      "rank": 63,
+      "asin": "B0H6DSDB1G",
+      "title": "Pink Queen Women's Long Sleeve Peplum Blouse Solid Cotton Fit Top 2026",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/71PlaZR6CSL._AC_UL600_SR600,400_.jpg",
+      "price": "$14.99",
+      "url": "https://www.amazon.com/Pink-Queen-Elastic-Smocked-Dressing/dp/B0H6DSDB1G/ref=zg_bsnr_g_2368365011_d_sccl_13/144-5202386-4431846?psc=1",
+      "brand": "Pink Queen",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "listingDate": "2026-08-12",
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 30192,
+      "subCategory": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.1 4.1 out of 5 stars",
+      "subBsr": 753,
+      "subRanks": [
+        {
+          "category": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.1 4.1 out of 5 stars",
+          "rank": 753
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H6DSDB1G",
+      "listingDateSource": "卖家精灵历史市场分析（日期为稳定字段）",
+      "history": {
+        "firstSeen": "2026-09-10",
+        "appearances": 2,
+        "streak": 2
+      }
+    },
+    {
+      "rank": 64,
+      "asin": "B0H9586C4V",
+      "title": "Tankaneo Womens Button Down Shirts Long Sleeve Dressy Casual Blouse Tops",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/61+wmV9W+SL._AC_UL600_SR600,400_.jpg",
+      "price": "$24.99",
+      "url": "https://www.amazon.com/Tankaneo-Womens-Button-Shirts-Sleeve/dp/B0H9586C4V/ref=zg_bsnr_g_2368365011_d_sccl_14/144-5202386-4431846?psc=1",
+      "brand": "Tankaneo",
+      "promotion": "Coupon 30%",
+      "promotionStatus": "detected",
+      "listingDate": null,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 57348,
+      "subCategory": "Women's Button-Down Shirts Customer Reviews: 4.3 4.3 out of 5 stars",
+      "subBsr": 514,
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts Customer Reviews: 4.3 4.3 out of 5 stars",
+          "rank": 514
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H9586C4V",
+      "listingDateSource": "未显示/无法获取",
+      "history": {
+        "firstSeen": "2026-09-11",
+        "appearances": 1,
+        "streak": 1
+      }
+    },
+    {
+      "rank": 65,
+      "asin": "B0HF87BSV5",
+      "title": "Plaid Flannel Shirt Women Long Sleeve Button Down Collared Fall Shackets",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/81RjBh6guCL._AC_UL600_SR600,400_.jpg",
+      "price": "$7.99",
+      "url": "https://www.amazon.com/Jackets-Flannel-Button-Collared-Shacket/dp/B0HF87BSV5/ref=zg_bsnr_g_2368365011_d_sccl_15/144-5202386-4431846?psc=1",
+      "brand": "Slakkenreis",
+      "promotion": "Deal",
+      "promotionStatus": "detected",
+      "listingDate": "2026-08-20",
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 58398,
+      "subCategory": "Women's Button-Down Shirts Customer Reviews: 5.0 5.0 out of 5 stars",
+      "subBsr": 518,
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts Customer Reviews: 5.0 5.0 out of 5 stars",
+          "rank": 518
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0HF87BSV5",
+      "listingDateSource": "卖家精灵历史市场分析（日期为稳定字段）",
+      "history": {
+        "firstSeen": "2026-09-10",
+        "appearances": 2,
+        "streak": 2
+      }
+    },
+    {
+      "rank": 66,
+      "asin": "B0GX6VDXFP",
+      "title": "PRETTYGARDEN Chiffon Blouses for Women Dressy Casual Mock Neck Tops",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/71BVhH5n4RL._AC_UL600_SR600,400_.jpg",
+      "price": "$14.99",
+      "url": "https://www.amazon.com/PRETTYGARDEN-Chiffon-Blouses-Dressy-Casual/dp/B0GX6VDXFP/ref=zg_bsnr_g_2368365011_d_sccl_16/144-5202386-4431846?psc=1",
+      "brand": "PRETTYGARDEN",
+      "promotion": "Deal",
+      "promotionStatus": "detected",
+      "listingDate": null,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 49164,
+      "subCategory": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.6 4.6 out of 5 stars",
+      "subBsr": 768,
+      "subRanks": [
+        {
+          "category": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.6 4.6 out of 5 stars",
+          "rank": 768
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0GX6VDXFP",
+      "listingDateSource": "未显示/无法获取",
+      "history": {
+        "firstSeen": "2026-09-11",
+        "appearances": 1,
+        "streak": 1
+      }
+    },
+    {
+      "rank": 67,
+      "asin": "B0H3KVV4RV",
+      "title": "BBIBBI Satin Silk Women's Shirts Button Down Long Sleeve",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/71UzNbButLL._AC_UL600_SR600,400_.jpg",
+      "price": "$29.99",
+      "url": "https://www.amazon.com/BBIBBI-Womens-Button-Shirts-Business/dp/B0H3KVV4RV/ref=zg_bsnr_g_2368365011_d_sccl_17/144-5202386-4431846?psc=1",
+      "brand": "BBIBBI",
+      "promotion": "Deal",
+      "promotionStatus": "detected",
+      "listingDate": null,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 58963,
+      "subCategory": "Women's Button-Down Shirts Customer Reviews: 4.4 4.4 out of 5 stars",
+      "subBsr": 523,
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts Customer Reviews: 4.4 4.4 out of 5 stars",
+          "rank": 523
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H3KVV4RV",
+      "listingDateSource": "未显示/无法获取",
+      "history": {
+        "firstSeen": "2026-09-11",
+        "appearances": 1,
+        "streak": 1
+      }
+    },
+    {
+      "rank": 68,
+      "asin": "B0H9M9RCBZ",
+      "title": "JOAU Retro Frayed V Neck Long Sleeve Loose Fit Blouses for Womens",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/71EhaFETgqL._AC_UL600_SR600,400_.jpg",
+      "price": "$10.69",
+      "url": "https://www.amazon.com/JOAU-Frayed-Sleeve-Blouses-Womens/dp/B0H9M9RCBZ/ref=zg_bsnr_g_2368365011_d_sccl_18/144-5202386-4431846?psc=1",
+      "brand": "JOAU",
+      "promotion": "Coupon 10%",
+      "promotionStatus": "detected",
+      "listingDate": null,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 59944,
+      "subCategory": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.2 4.2 out of 5 stars",
+      "subBsr": 778,
+      "subRanks": [
+        {
+          "category": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.2 4.2 out of 5 stars",
+          "rank": 778
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H9M9RCBZ",
+      "listingDateSource": "未显示/无法获取",
+      "history": {
+        "firstSeen": "2026-09-10",
+        "appearances": 2,
+        "streak": 2
+      }
+    },
+    {
+      "rank": 69,
+      "asin": "B0H9SL5F2G",
+      "title": "Women Satin Tie Waist Wrap Tops - Cowl Neck Business Casual Blouse",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/71LzCTV72rL._AC_UL600_SR600,400_.jpg",
+      "price": "$25.99",
+      "url": "https://www.amazon.com/ADORPOP-Women-Satin-Waist-Wrap/dp/B0H9SL5F2G/ref=zg_bsnr_g_2368365011_d_sccl_19/144-5202386-4431846?psc=1",
+      "brand": "ADORPOP",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "listingDate": null,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 61053,
+      "subCategory": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.0 4.0 out of 5 stars",
+      "subBsr": 785,
+      "subRanks": [
+        {
+          "category": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.0 4.0 out of 5 stars",
+          "rank": 785
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H9SL5F2G",
+      "listingDateSource": "未显示/无法获取",
+      "history": {
+        "firstSeen": "2026-09-11",
+        "appearances": 1,
+        "streak": 1
+      }
+    },
+    {
+      "rank": 70,
+      "asin": "B0H4QVJVP3",
+      "title": "siliteelon Button Down Oxford Shirts for Women Long Sleeve Cotton Shirts",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/61rNQSqOkeL._AC_UL600_SR600,400_.jpg",
+      "price": "$19.99",
+      "url": "https://www.amazon.com/siliteelon-Oxford-Button-Shirts-Sleeve/dp/B0H4QVJVP3/ref=zg_bsnr_g_2368365011_d_sccl_20/144-5202386-4431846?psc=1",
+      "brand": "siliteelon",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "listingDate": "2026-08-14",
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 61886,
+      "subCategory": "Women's Button-Down Shirts Customer Reviews: 4.1 4.1 out of 5 stars",
+      "subBsr": 536,
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts Customer Reviews: 4.1 4.1 out of 5 stars",
+          "rank": 536
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H4QVJVP3",
+      "listingDateSource": "卖家精灵历史市场分析（日期为稳定字段）",
+      "history": {
+        "firstSeen": "2026-09-10",
+        "appearances": 2,
+        "streak": 2
+      }
+    },
+    {
+      "rank": 71,
+      "asin": "B0H5KMV33T",
+      "title": "EVALESS Business Casual Tops for Women Satin Button Down Shirts",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/61cT9PcW-HL._AC_UL600_SR600,400_.jpg",
+      "price": "$23.99",
+      "url": "https://www.amazon.com/EVALESS-Business-Casual-Button-Shirts/dp/B0H5KMV33T/ref=zg_bsnr_g_2368365011_d_sccl_21/144-5202386-4431846?psc=1",
+      "brand": "EVALESS",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "listingDate": null,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 62371,
+      "subCategory": "Women's Button-Down Shirts Customer Reviews: 4.0 4.0 out of 5 stars",
+      "subBsr": 538,
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts Customer Reviews: 4.0 4.0 out of 5 stars",
+          "rank": 538
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H5KMV33T",
+      "listingDateSource": "未显示/无法获取",
+      "history": {
+        "firstSeen": "2026-09-11",
+        "appearances": 1,
+        "streak": 1
+      }
+    },
+    {
+      "rank": 72,
+      "asin": "B0HDC5DXN4",
+      "title": "Denim Shirt Women Button Down Loose Fit Tunic Long Sleeve Jeans Jacket Casual Oversized Blouse with Chest Pockets",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/71kMm21Io5L._AC_UL600_SR600,400_.jpg",
+      "price": "$14.98",
+      "url": "https://www.amazon.com/NORIBENREN-Shirt-Women-Oversized-Pockets/dp/B0HDC5DXN4/ref=zg_bsnr_g_2368365011_d_sccl_22/144-5202386-4431846?psc=1",
+      "brand": "NORIBENREN",
+      "promotion": "Coupon 10% + Deal",
+      "promotionStatus": "detected",
+      "listingDate": "2026-08-15",
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 62463,
+      "subCategory": "Women's Button-Down Shirts Customer Reviews: 5.0 5.0 out of 5 stars",
+      "subBsr": 539,
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts Customer Reviews: 5.0 5.0 out of 5 stars",
+          "rank": 539
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0HDC5DXN4",
+      "listingDateSource": "卖家精灵历史市场分析（日期为稳定字段）",
+      "history": {
+        "firstSeen": "2026-09-10",
+        "appearances": 2,
+        "streak": 2
+      }
+    },
+    {
+      "rank": 73,
+      "asin": "B0H6P56L79",
+      "title": "PINKMSTYLE Womens V Neck Long Sleeve Tops Asymmetrical Dressy Shirts Blouse",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/71ghc7iqAkL._AC_UL600_SR600,400_.jpg",
+      "price": "$14.98",
+      "url": "https://www.amazon.com/PINKMSTYLE-Womens-Sleeve-Crossover-Shirts/dp/B0H6P56L79/ref=zg_bsnr_g_2368365011_d_sccl_23/144-5202386-4431846?psc=1",
+      "brand": "PINKMSTYLE",
+      "promotion": "Deal",
+      "promotionStatus": "detected",
+      "listingDate": null,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 63417,
+      "subCategory": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.6 4.6 out of 5 stars",
+      "subBsr": 807,
+      "subRanks": [
+        {
+          "category": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.6 4.6 out of 5 stars",
+          "rank": 807
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H6P56L79",
+      "listingDateSource": "未显示/无法获取",
+      "history": {
+        "firstSeen": "2026-09-11",
+        "appearances": 1,
+        "streak": 1
+      }
+    },
+    {
+      "rank": 74,
+      "asin": "B0H57W61X8",
+      "title": "Cicy Bell Women Striped Peplum Button Shirts Business Casual Pleated Blouse",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/91yESG4kXvL._AC_UL600_SR600,400_.jpg",
+      "price": "$39.99",
+      "url": "https://www.amazon.com/Cicy-Bell-Striped-Business-Pleated/dp/B0H57W61X8/ref=zg_bsnr_g_2368365011_d_sccl_24/144-5202386-4431846?psc=1",
+      "brand": "Cicy Bell",
+      "promotion": "Coupon 10%",
+      "promotionStatus": "detected",
+      "listingDate": null,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 63444,
+      "subCategory": "Women's Button-Down Shirts Customer Reviews: 3.8 3.8 out of 5 stars",
+      "subBsr": 547,
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts Customer Reviews: 3.8 3.8 out of 5 stars",
+          "rank": 547
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H57W61X8",
+      "listingDateSource": "未显示/无法获取",
+      "history": {
+        "firstSeen": "2026-09-11",
+        "appearances": 1,
+        "streak": 1
+      }
+    },
+    {
+      "rank": 75,
+      "asin": "B0H6PQQ4SV",
+      "title": "LOMON Womens Boho Tops 3/4 Length Sleeve Button Down Shirts Loose Fit M-3XL",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/71xgUOTczhL._AC_UL600_SR600,400_.jpg",
+      "price": "$21.99",
+      "url": "https://www.amazon.com/LOMON-Shirts-Dressy-Casual-Business/dp/B0H6PQQ4SV/ref=zg_bsnr_g_2368365011_d_sccl_25/144-5202386-4431846?psc=1",
+      "brand": "LOMON",
+      "promotion": "Coupon 25%",
+      "promotionStatus": "detected",
+      "listingDate": null,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 48662,
+      "subCategory": "Women's Button-Down Shirts Customer Reviews: 4.4 4.4 out of 5 stars",
+      "subBsr": 558,
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts Customer Reviews: 4.4 4.4 out of 5 stars",
+          "rank": 558
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H6PQQ4SV",
+      "listingDateSource": "未显示/无法获取",
+      "history": {
+        "firstSeen": "2026-09-11",
+        "appearances": 1,
+        "streak": 1
+      }
+    },
+    {
+      "rank": 76,
+      "asin": "B0H5C65M4Z",
+      "title": "Button Down Shirts for Women Long Sleeve Collared Dress Shirt Business Casual Stretch Wrinkle Free Work Tops for Women",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/71g9IDzSYGL._AC_UL600_SR600,400_.jpg",
+      "price": "$12.99",
+      "url": "https://www.amazon.com/ONKEEP-Collared-Business-Stretch-Wrinkle/dp/B0H5C65M4Z/ref=zg_bsnr_g_2368365011_d_sccl_26/144-5202386-4431846?psc=1",
+      "brand": "ONKEEP",
+      "promotion": "Deal",
+      "promotionStatus": "detected",
+      "listingDate": "2026-07-27",
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 65317,
+      "subCategory": "Women's Button-Down Shirts Customer Reviews: 4.7 4.7 out of 5 stars",
+      "subBsr": 560,
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts Customer Reviews: 4.7 4.7 out of 5 stars",
+          "rank": 560
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H5C65M4Z",
+      "listingDateSource": "卖家精灵历史市场分析（日期为稳定字段）",
+      "history": {
+        "firstSeen": "2026-09-10",
+        "appearances": 2,
+        "streak": 2
+      }
+    },
+    {
+      "rank": 77,
+      "asin": "B0HBBX5C5W",
+      "title": "Chambray Denim Shirt Women Long Sleeve Button Down Western Jean Shirts",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/81gYv5jKstL._AC_UL600_SR600,400_.jpg",
+      "price": "$14.99",
+      "url": "https://www.amazon.com/Chambray-Sleeve-Oversized-Button-Boyfriend/dp/B0HBBX5C5W/ref=zg_bsnr_g_2368365011_d_sccl_27/144-5202386-4431846?psc=1",
+      "brand": "tobchonp",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "listingDate": "2026-08-05",
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 65873,
+      "subCategory": "Women's Button-Down Shirts Customer Reviews: 4.5 4.5 out of 5 stars",
+      "subBsr": 565,
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts Customer Reviews: 4.5 4.5 out of 5 stars",
+          "rank": 565
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0HBBX5C5W",
+      "listingDateSource": "卖家精灵历史市场分析（日期为稳定字段）",
+      "history": {
+        "firstSeen": "2026-09-10",
+        "appearances": 2,
+        "streak": 2
+      }
+    },
+    {
+      "rank": 78,
+      "asin": "B0H2YC4VB9",
+      "title": "Cicy Bell Womens Puff Long Sleeve Blouse Casual Dressy Plaid V Neck Tops",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/710Yc+qK3fL._AC_UL600_SR600,400_.jpg",
+      "price": "$19.99",
+      "url": "https://www.amazon.com/Cicy-Bell-Womens-Sleeve-Blouse/dp/B0H2YC4VB9/ref=zg_bsnr_g_2368365011_d_sccl_28/144-5202386-4431846?psc=1",
+      "brand": "Cicy Bell",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "listingDate": null,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 66136,
+      "subCategory": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.0 4.0 out of 5 stars",
+      "subBsr": 837,
+      "subRanks": [
+        {
+          "category": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.0 4.0 out of 5 stars",
+          "rank": 837
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H2YC4VB9",
+      "listingDateSource": "未显示/无法获取",
+      "history": {
+        "firstSeen": "2026-09-11",
+        "appearances": 1,
+        "streak": 1
+      }
+    },
+    {
+      "rank": 79,
+      "asin": "B0H5B93TGV",
+      "title": "Women's Oversize Button Down Shirt Long Sleeve Blouse Top",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/61emPHyzwuL._AC_UL600_SR600,400_.jpg",
+      "price": "$26.99",
+      "url": "https://www.amazon.com/QIANZHIDU-Womens-Oversize-Button-X-Large/dp/B0H5B93TGV/ref=zg_bsnr_g_2368365011_d_sccl_29/144-5202386-4431846?psc=1",
+      "brand": "QIANZHIDU",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "listingDate": null,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 66456,
+      "subCategory": "Women's Button-Down Shirts Customer Reviews: 4.3 4.3 out of 5 stars",
+      "subBsr": 571,
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts Customer Reviews: 4.3 4.3 out of 5 stars",
+          "rank": 571
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H5B93TGV",
+      "listingDateSource": "未显示/无法获取",
+      "history": {
+        "firstSeen": "2026-09-11",
+        "appearances": 1,
+        "streak": 1
+      }
+    },
+    {
+      "rank": 80,
+      "asin": "B0H5M9HY82",
+      "title": "Scarlet Darkness Women's Renaissance Peasant Blouse Lace Off Shoulder Tops",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/71ugiWhlFvL._AC_UL600_SR600,400_.jpg",
+      "price": "$28.99",
+      "url": "https://www.amazon.com/Womens-Renaissance-Peasant-Blouse-Shoulder/dp/B0H5M9HY82/ref=zg_bsnr_g_2368365011_d_sccl_30/144-5202386-4431846?psc=1",
+      "brand": "Scarlet Darkness",
+      "promotion": "Coupon 15%",
+      "promotionStatus": "detected",
+      "listingDate": "2026-08-02",
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 66705,
+      "subCategory": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.6 4.6 out of 5 stars",
+      "subBsr": 842,
+      "subRanks": [
+        {
+          "category": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.6 4.6 out of 5 stars",
+          "rank": 842
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H5M9HY82",
+      "listingDateSource": "卖家精灵历史市场分析（日期为稳定字段）",
+      "history": {
+        "firstSeen": "2026-09-10",
+        "appearances": 2,
+        "streak": 2
+      }
+    },
+    {
+      "rank": 81,
+      "asin": "B0H8SGWSLH",
+      "title": "Huaqiao Womens Long Sleeve Ruffled V Neck Tops Pullover Boho Flowy Shirts",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/71+ZYv1sh2L._AC_UL300_SR300,200_.jpg",
+      "price": "$32.99",
+      "url": "https://www.amazon.com/Huaqiao-Womens-Ruffled-Pullover-Black-L/dp/B0H8SGWSLH/ref=zg_bsnr_g_2368365011_d_sccl_81/144-5202386-4431846?psc=1",
+      "brand": "Huaqiao",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "listingDate": null,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 66952,
+      "subCategory": "Women's Blouses & Button-Down Shirts Customer Reviews: 3.0 3.0 out of 5 stars",
+      "subBsr": 847,
+      "subRanks": [
+        {
+          "category": "Women's Blouses & Button-Down Shirts Customer Reviews: 3.0 3.0 out of 5 stars",
+          "rank": 847
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H8SGWSLH",
+      "listingDateSource": "未显示/无法获取",
+      "history": {
+        "firstSeen": "2026-09-11",
+        "appearances": 1,
+        "streak": 1
+      }
+    },
+    {
+      "rank": 82,
+      "asin": "B0H5VR9L2M",
+      "title": "Tankaneo Womens Striped Button Down Shirts Ruffle Puff Long Sleeve Blouse",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/71KQwmHbfZL._AC_UL300_SR300,200_.jpg",
+      "price": "$19.99",
+      "url": "https://www.amazon.com/Tankaneo-Womens-Striped-Button-Shirts/dp/B0H5VR9L2M/ref=zg_bsnr_g_2368365011_d_sccl_82/144-5202386-4431846?psc=1",
+      "brand": "Tankaneo",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "listingDate": "2026-08-12",
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 67153,
+      "subCategory": "Women's Button-Down Shirts Customer Reviews: 4.6 4.6 out of 5 stars",
+      "subBsr": 576,
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts Customer Reviews: 4.6 4.6 out of 5 stars",
+          "rank": 576
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H5VR9L2M",
+      "listingDateSource": "卖家精灵历史市场分析（日期为稳定字段）",
+      "history": {
+        "firstSeen": "2026-09-10",
+        "appearances": 2,
+        "streak": 2
+      }
+    },
+    {
+      "rank": 83,
+      "asin": "B0GWJ3M8P3",
+      "title": "PRETTYGARDEN Womens Long Sleeve Button Down Shirts",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/91lPS88i9EL._AC_UL300_SR300,200_.jpg",
+      "price": "$26.99",
+      "url": "https://www.amazon.com/PRETTYGARDEN-Womens-Sleeve-Button-Shirts/dp/B0GWJ3M8P3/ref=zg_bsnr_g_2368365011_d_sccl_83/144-5202386-4431846?psc=1",
+      "brand": "PRETTYGARDEN",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "listingDate": null,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 69188,
+      "subCategory": "Women's Button-Down Shirts Customer Reviews: 3.9 3.9 out of 5 stars",
+      "subBsr": 592,
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts Customer Reviews: 3.9 3.9 out of 5 stars",
+          "rank": 592
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0GWJ3M8P3",
+      "listingDateSource": "未显示/无法获取",
+      "history": {
+        "firstSeen": "2026-09-11",
+        "appearances": 1,
+        "streak": 1
+      }
+    },
+    {
+      "rank": 84,
+      "asin": "B0HDQ4VT1D",
+      "title": "Boho Tops for Women Fall 3/4 Ruffle Sleeve Lace Up Peasant Blouse",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/81zajf5-b1L._AC_UL300_SR300,200_.jpg",
+      "price": "$5.97",
+      "url": "https://www.amazon.com/Ruffle-Sleeve-Peasant-Blouse-Purple/dp/B0HDQ4VT1D/ref=zg_bsnr_g_2368365011_d_sccl_84/144-5202386-4431846?psc=1",
+      "brand": "Tatumaie",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "listingDate": "2026-08-11",
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 69208,
+      "subCategory": "Women's Blouses & Button-Down Shirts Customer Reviews: 5.0 5.0 out of 5 stars",
+      "subBsr": 876,
+      "subRanks": [
+        {
+          "category": "Women's Blouses & Button-Down Shirts Customer Reviews: 5.0 5.0 out of 5 stars",
+          "rank": 876
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0HDQ4VT1D",
+      "listingDateSource": "卖家精灵历史市场分析（日期为稳定字段）",
+      "history": {
+        "firstSeen": "2026-09-10",
+        "appearances": 2,
+        "streak": 2
+      }
+    },
+    {
+      "rank": 85,
+      "asin": "B0H59VWBYD",
+      "title": "Women Boat Neck Flare Long Sleeve Mesh Sheer Top Slim Fitted Ruched Waist Soft See Through Casual Basic Blouse",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/811AlYA20AL._AC_UL300_SR300,200_.jpg",
+      "price": "$12.99",
+      "url": "https://www.amazon.com/ELARAISE-Sleeve-Fitted-Through-Elegant/dp/B0H59VWBYD/ref=zg_bsnr_g_2368365011_d_sccl_85/144-5202386-4431846?psc=1",
+      "brand": "ELARAISE",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "listingDate": null,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 29213,
+      "subCategory": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.5 4.5 out of 5 stars",
+      "subBsr": 881,
+      "subRanks": [
+        {
+          "category": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.5 4.5 out of 5 stars",
+          "rank": 881
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H59VWBYD",
+      "listingDateSource": "未显示/无法获取",
+      "history": {
+        "firstSeen": "2026-09-11",
+        "appearances": 1,
+        "streak": 1
+      }
+    },
+    {
+      "rank": 86,
+      "asin": "B0H57HW9HY",
+      "title": "Cicy Bell Womens Striped Button Down Shirts Ruffle Color Block Blouses",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/71tWT8cx4sL._AC_UL300_SR300,200_.jpg",
+      "price": "$32.99",
+      "url": "https://www.amazon.com/Cicy-Bell-Womens-Striped-Blouses/dp/B0H57HW9HY/ref=zg_bsnr_g_2368365011_d_sccl_86/144-5202386-4431846?psc=1",
+      "brand": "Cicy Bell",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "listingDate": null,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 69576,
+      "subCategory": "Women's Button-Down Shirts Customer Reviews: 3.8 3.8 out of 5 stars",
+      "subBsr": 597,
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts Customer Reviews: 3.8 3.8 out of 5 stars",
+          "rank": 597
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H57HW9HY",
+      "listingDateSource": "未显示/无法获取",
+      "history": {
+        "firstSeen": "2026-09-11",
+        "appearances": 1,
+        "streak": 1
+      }
+    },
+    {
+      "rank": 87,
+      "asin": "B0HBJXJPW8",
+      "title": "Women Wrap V Neck Long Sleeve Shirt Ruched Slim Fit Casual Solid Color Crop Blouse",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/71iJXGc4sTL._AC_UL300_SR300,200_.jpg",
+      "price": "$8.99",
+      "url": "https://www.amazon.com/Wrapped-Cinched-Crossover-Fashion-Vacation/dp/B0HBJXJPW8/ref=zg_bsnr_g_2368365011_d_sccl_87/144-5202386-4431846?psc=1",
+      "brand": "Coal2ToalPW",
+      "promotion": "Coupon 20%",
+      "promotionStatus": "detected",
+      "listingDate": "2026-08-13",
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 66553,
+      "subCategory": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.5 4.5 out of 5 stars",
+      "subBsr": 886,
+      "subRanks": [
+        {
+          "category": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.5 4.5 out of 5 stars",
+          "rank": 886
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0HBJXJPW8",
+      "listingDateSource": "卖家精灵历史市场分析（日期为稳定字段）",
+      "history": {
+        "firstSeen": "2026-09-10",
+        "appearances": 2,
+        "streak": 2
+      }
+    },
+    {
+      "rank": 88,
+      "asin": "B0H5BS5YJ7",
+      "title": "ONLYSTORY Womens Ruffle Collar Button Down Shirts Puff Long Sleeve Blouse",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/81CyN5jFL9L._AC_UL300_SR300,200_.jpg",
+      "price": "$22.99",
+      "url": "https://www.amazon.com/ONLYSTORY-Womens-Ruffle-Collar-Button/dp/B0H5BS5YJ7/ref=zg_bsnr_g_2368365011_d_sccl_88/144-5202386-4431846?psc=1",
+      "brand": "ONLYSTORY",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "listingDate": "2026-07-14",
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 70313,
+      "subCategory": "Women's Button-Down Shirts Customer Reviews: 4.8 4.8 out of 5 stars",
+      "subBsr": 599,
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts Customer Reviews: 4.8 4.8 out of 5 stars",
+          "rank": 599
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H5BS5YJ7",
+      "listingDateSource": "卖家精灵历史市场分析（日期为稳定字段）",
+      "history": {
+        "firstSeen": "2026-09-10",
+        "appearances": 2,
+        "streak": 2
+      }
+    },
+    {
+      "rank": 89,
+      "asin": "B0H4GL7XLX",
+      "title": "KIRUNDO Striped Fall Outfits V Neck Dressy Women Tops Cute Clothes",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/81HLZxQ2XsL._AC_UL300_SR300,200_.jpg",
+      "price": "$27.99",
+      "url": "https://www.amazon.com/KIRUNDO-Striped-Outfits-Dressy-Women/dp/B0H4GL7XLX/ref=zg_bsnr_g_2368365011_d_sccl_89/144-5202386-4431846?psc=1",
+      "brand": "KIRUNDO",
+      "promotion": "Deal",
+      "promotionStatus": "detected",
+      "listingDate": "2026-08-19",
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 70402,
+      "subCategory": null,
+      "subBsr": null,
+      "subRanks": [],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H4GL7XLX",
+      "listingDateSource": "卖家精灵历史市场分析（日期为稳定字段）",
+      "history": {
+        "firstSeen": "2026-09-10",
+        "appearances": 2,
+        "streak": 2
+      }
+    },
+    {
+      "rank": 90,
+      "asin": "B0H64LS4ZM",
+      "title": "Womens Cotton Linen Boho Tops Summer Gauze Fringe Shirts Retro Short Sleeve V Neck Shirts Raw Hem Loose Beach Clothes",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/71rSrFelqhL._AC_UL300_SR300,200_.jpg",
+      "price": "$8.99",
+      "url": "https://www.amazon.com/Organic-Lightweight-Blouses-Vacation-Outfits/dp/B0H64LS4ZM/ref=zg_bsnr_g_2368365011_d_sccl_90/144-5202386-4431846?psc=1",
+      "brand": "generic",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "listingDate": "2026-06-25",
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 34446,
+      "subCategory": "Women's Blouses & Button-Down Shirts Customer Reviews: 2.3 2.3 out of 5 stars",
+      "subBsr": 893,
+      "subRanks": [
+        {
+          "category": "Women's Blouses & Button-Down Shirts Customer Reviews: 2.3 2.3 out of 5 stars",
+          "rank": 893
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H64LS4ZM",
+      "listingDateSource": "卖家精灵历史市场分析（日期为稳定字段）",
+      "history": {
+        "firstSeen": "2026-09-10",
+        "appearances": 2,
+        "streak": 2
+      }
+    },
+    {
+      "rank": 91,
+      "asin": "B0H7M1M6BB",
+      "title": "Gauze Button Down Shirts for Women Loose Hollow Out Lace 3/4 Sleeves Tops Summer Boho Casual Cute Trendy V Neck Tunics",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/51tpjnx8Y5L._AC_UL300_SR300,200_.jpg",
+      "price": "$14.99",
+      "url": "https://www.amazon.com/FOCLMP-Button-Shirts-Hollow-Sleeves/dp/B0H7M1M6BB/ref=zg_bsnr_g_2368365011_d_sccl_91/144-5202386-4431846?psc=1",
+      "brand": "FOCLMP",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "listingDate": null,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 44026,
+      "subCategory": "Women's Button-Down Shirts Customer Reviews: 3.6 3.6 out of 5 stars",
+      "subBsr": 602,
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts Customer Reviews: 3.6 3.6 out of 5 stars",
+          "rank": 602
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H7M1M6BB",
+      "listingDateSource": "未显示/无法获取",
+      "history": {
+        "firstSeen": "2026-09-11",
+        "appearances": 1,
+        "streak": 1
+      }
+    },
+    {
+      "rank": 92,
+      "asin": "B0HCVDNVF2",
+      "title": "Denim Shirt Women Long Sleeve Button Down Collared Jean Shirt Denim Blouse",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/816h3bVNuVL._AC_UL300_SR300,200_.jpg",
+      "price": "$6.98",
+      "url": "https://www.amazon.com/Length-Sleeve-Womens-Button-Shirts/dp/B0HCVDNVF2/ref=zg_bsnr_g_2368365011_d_sccl_92/144-5202386-4431846?psc=1",
+      "brand": "LAMIEN",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "listingDate": null,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 71593,
+      "subCategory": "Women's Button-Down Shirts Customer Reviews: 5.0 5.0 out of 5 stars",
+      "subBsr": 607,
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts Customer Reviews: 5.0 5.0 out of 5 stars",
+          "rank": 607
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0HCVDNVF2",
+      "listingDateSource": "未显示/无法获取",
+      "history": {
+        "firstSeen": "2026-09-11",
+        "appearances": 1,
+        "streak": 1
+      }
+    },
+    {
+      "rank": 93,
+      "asin": "B0H8THZYHZ",
+      "title": "Gleeivy Womens Button Down Shirt Long Sleeve Business Casual Work Blouse",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/71krq67r3KL._AC_UL300_SR300,200_.jpg",
+      "price": "$19.99",
+      "url": "https://www.amazon.com/Womens-Button-Sleeve-Business-Casual/dp/B0H8THZYHZ/ref=zg_bsnr_g_2368365011_d_sccl_93/144-5202386-4431846?psc=1",
+      "brand": "Gleeivy",
+      "promotion": "Coupon 15%",
+      "promotionStatus": "detected",
+      "listingDate": null,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 72945,
+      "subCategory": "Women's Button-Down Shirts Customer Reviews: 4.8 4.8 out of 5 stars",
+      "subBsr": 614,
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts Customer Reviews: 4.8 4.8 out of 5 stars",
+          "rank": 614
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H8THZYHZ",
+      "listingDateSource": "未显示/无法获取",
+      "history": {
+        "firstSeen": "2026-09-11",
+        "appearances": 1,
+        "streak": 1
+      }
+    },
+    {
+      "rank": 94,
+      "asin": "B0H36428QC",
+      "title": "NOLLSOM Casual Long Sleeve Shirts for Women Fall 2026 Solid Color V Neck Button Down Tops Business Blouses Work",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/81U2+82177L._AC_UL300_SR300,200_.jpg",
+      "price": "$19.99",
+      "url": "https://www.amazon.com/NOLLSOM-Casual-Business-Blouses-X-Large/dp/B0H36428QC/ref=zg_bsnr_g_2368365011_d_sccl_94/144-5202386-4431846?psc=1",
+      "brand": "NOLLSOM",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "listingDate": null,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 73033,
+      "subCategory": "Women's Button-Down Shirts Customer Reviews: 4.0 4.0 out of 5 stars",
+      "subBsr": 615,
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts Customer Reviews: 4.0 4.0 out of 5 stars",
+          "rank": 615
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H36428QC",
+      "listingDateSource": "未显示/无法获取",
+      "history": {
+        "firstSeen": "2026-09-11",
+        "appearances": 1,
+        "streak": 1
+      }
+    },
+    {
+      "rank": 95,
+      "asin": "B0H4GTNWNN",
+      "title": "Tankaneo Womens Scalloped Hem Blouse Puff Sleeve Business Casual Crop Tops",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/61XADvQpwuL._AC_UL300_SR300,200_.jpg",
+      "price": "$27.99",
+      "url": "https://www.amazon.com/Tankaneo-Womens-Scalloped-Blouse-Business/dp/B0H4GTNWNN/ref=zg_bsnr_g_2368365011_d_sccl_95/144-5202386-4431846?psc=1",
+      "brand": "Tankaneo",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "listingDate": "2026-07-22",
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 73035,
+      "subCategory": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.2 4.2 out of 5 stars",
+      "subBsr": 916,
+      "subRanks": [
+        {
+          "category": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.2 4.2 out of 5 stars",
+          "rank": 916
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H4GTNWNN",
+      "listingDateSource": "卖家精灵历史市场分析（日期为稳定字段）",
+      "history": {
+        "firstSeen": "2026-09-10",
+        "appearances": 2,
+        "streak": 2
+      }
+    },
+    {
+      "rank": 96,
+      "asin": "B0H38HXQVL",
+      "title": "MEROKEETY Women Fall Lace Long Bell Sleeve Blouse V Neck Dressy Shirt Tops",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/71ynmccUJ8L._AC_UL300_SR300,200_.jpg",
+      "price": "$24.99",
+      "url": "https://www.amazon.com/MEROKEETY-Womens-Sleeve-Blouse-Dressy/dp/B0H38HXQVL/ref=zg_bsnr_g_2368365011_d_sccl_96/144-5202386-4431846?psc=1",
+      "brand": "MEROKEETY",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "listingDate": "2026-08-09",
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 73246,
+      "subCategory": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.2 4.2 out of 5 stars",
+      "subBsr": 918,
+      "subRanks": [
+        {
+          "category": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.2 4.2 out of 5 stars",
+          "rank": 918
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H38HXQVL",
+      "listingDateSource": "卖家精灵历史市场分析（日期为稳定字段）",
+      "history": {
+        "firstSeen": "2026-09-10",
+        "appearances": 2,
+        "streak": 2
+      }
+    },
+    {
+      "rank": 97,
+      "asin": "B0H74WT81D",
+      "title": "Blooming Jelly Womens Dressy Casual Blouses Ruffle Button Shirts Work Tops",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/81HasTcTKWL._AC_UL300_SR300,200_.jpg",
+      "price": "$19.99",
+      "url": "https://www.amazon.com/Blooming-Jelly-Womens-Dressy-Blouses/dp/B0H74WT81D/ref=zg_bsnr_g_2368365011_d_sccl_97/144-5202386-4431846?psc=1",
+      "brand": "Blooming Jelly",
+      "promotion": "Deal",
+      "promotionStatus": "detected",
+      "listingDate": null,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 73381,
+      "subCategory": "Women's Button-Down Shirts Customer Reviews: 4.5 4.5 out of 5 stars",
+      "subBsr": 617,
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts Customer Reviews: 4.5 4.5 out of 5 stars",
+          "rank": 617
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H74WT81D",
+      "listingDateSource": "未显示/无法获取",
+      "history": {
+        "firstSeen": "2026-09-11",
+        "appearances": 1,
+        "streak": 1
+      }
+    },
+    {
+      "rank": 98,
+      "asin": "B0H75D8VM1",
+      "title": "LUYAA Women Blouses Long Sleeve Shirts Business Casual Tunic Tops",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/71jvOR9JjxL._AC_UL300_SR300,200_.jpg",
+      "price": "$9.99",
+      "url": "https://www.amazon.com/LUYAA-Sleeve-Fashion-Dressy-Blouses/dp/B0H75D8VM1/ref=zg_bsnr_g_2368365011_d_sccl_98/144-5202386-4431846?psc=1",
+      "brand": "LUYAA",
+      "promotion": "Coupon 15% + Deal",
+      "promotionStatus": "detected",
+      "listingDate": null,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 57387,
+      "subCategory": "Women's Button-Down Shirts Customer Reviews: 4.4 4.4 out of 5 stars",
+      "subBsr": 619,
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts Customer Reviews: 4.4 4.4 out of 5 stars",
+          "rank": 619
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H75D8VM1",
+      "listingDateSource": "未显示/无法获取",
+      "history": {
+        "firstSeen": "2026-09-11",
+        "appearances": 1,
+        "streak": 1
+      }
+    },
+    {
+      "rank": 99,
+      "asin": "B0H3TX73WD",
+      "title": "LUYAA Womens 3/4 Length Sleeve Tops Cotton Linen Shirts V Neck Pleated Tees",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/91pUOsSWojL._AC_UL300_SR300,200_.jpg",
+      "price": "$27.99",
+      "url": "https://www.amazon.com/LUYAA-Cotton-Pleated-Bohemian-Blouses/dp/B0H3TX73WD/ref=zg_bsnr_g_2368365011_d_sccl_99/144-5202386-4431846?psc=1",
+      "brand": "LUYAA",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "listingDate": "2026-08-12",
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 15087,
+      "subCategory": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.5 4.5 out of 5 stars",
+      "subBsr": 924,
+      "subRanks": [
+        {
+          "category": "Women's Blouses & Button-Down Shirts Customer Reviews: 4.5 4.5 out of 5 stars",
+          "rank": 924
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0H3TX73WD",
+      "listingDateSource": "卖家精灵历史市场分析（日期为稳定字段）",
+      "history": {
+        "firstSeen": "2026-09-10",
+        "appearances": 2,
+        "streak": 2
+      }
+    },
+    {
+      "rank": 100,
+      "asin": "B0GYDMVBLF",
+      "title": "BTFBM Women's 2026 Fall Tops Dressy Casual Floral Boho Embroidered Blouse",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/81t73XQGhZL._AC_UL300_SR300,200_.jpg",
+      "price": "$19.98",
+      "url": "https://www.amazon.com/BTFBM-Womens-Dressy-Casual-Embroidered/dp/B0GYDMVBLF/ref=zg_bsnr_g_2368365011_d_sccl_100/144-5202386-4431846?psc=1",
+      "brand": "BTFBM",
+      "promotion": "Deal",
+      "promotionStatus": "detected",
+      "listingDate": null,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "mainBsr": 74122,
+      "subCategory": "Women's Button-Down Shirts Customer Reviews: 4.6 4.6 out of 5 stars",
+      "subBsr": 623,
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts Customer Reviews: 4.6 4.6 out of 5 stars",
+          "rank": 623
+        }
+      ],
+      "sourceDate": "2026-09-11",
+      "detailSource": "https://www.amazon.com/dp/B0GYDMVBLF",
+      "listingDateSource": "未显示/无法获取",
+      "history": {
+        "firstSeen": "2026-09-11",
+        "appearances": 1,
+        "streak": 1
+      }
+    }
+  ]
+}
