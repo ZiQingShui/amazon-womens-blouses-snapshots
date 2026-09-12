@@ -47,6 +47,9 @@ class SnapshotArchiveTests(unittest.TestCase):
         self.assertIn("select.enhanced-native{", html)
         self.assertNotIn(".field select.enhanced-native{", html)
         self.assertIn(".snapshot-picker:focus-within{z-index:60}", html)
+        self.assertIn('weekday=["周日","周一","周二","周三","周四","周五","周六"]', html)
+        self.assertIn("snapshotDateLabel(entry.date,entry.capturedAt)", html)
+        self.assertIn("snapshotDateLabel(x.date,x.capturedAt)", html)
 
     def test_data_status_is_integrated_into_sidebar_brand(self):
         html = (ROOT / "dist" / "index.html").read_text(encoding="utf-8")
