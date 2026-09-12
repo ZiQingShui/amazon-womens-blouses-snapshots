@@ -4,7 +4,7 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
-from tools import publish_snapshot
+from tools import add_category, publish_snapshot
 
 
 ROOT = Path(__file__).parents[1]
@@ -90,6 +90,25 @@ class SnapshotArchiveTests(unittest.TestCase):
         nodes = {item["node"] for item in registry["categories"]}
         self.assertIn("2368365011", nodes)
         self.assertIn("2368383011", nodes)
+
+    def test_manual_category_addition_initializes_both_public_roots(self):
+        with tempfile.TemporaryDirectory() as temp:
+            roots = (Path(temp) / "dist", Path(temp) / "docs")
+            seed = {"schemaVersion": 1, "default": "2368365011", "categories": []}
+            for root in roots:
+                path = root / "data" / "categories.json"
+                path.parent.mkdir(parents=True)
+                path.write_text(json.dumps(seed), encoding="utf-8")
+            with patch.object(add_category, "PUBLIC_ROOTS", roots):
+                added = add_category.add_category("1234567890", "Example Category")
+            self.assertEqual(added["node"], "1234567890")
+            for root in roots:
+                registry = json.loads((root / "data" / "categories.json").read_text(encoding="utf-8"))
+                self.assertEqual(registry["categories"][0]["name"], "Example Category")
+                manifest = json.loads(
+                    (root / "data" / "categories" / "1234567890" / "manifest.json").read_text(encoding="utf-8")
+                )
+                self.assertEqual(manifest["snapshots"], [])
 
 
 if __name__ == "__main__":

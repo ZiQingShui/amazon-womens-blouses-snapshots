@@ -16,6 +16,16 @@
 
 `dist` 与 `docs` 始终写入相同数据；`docs` 供 GitHub Pages 发布。
 
+## 手动添加类目
+
+运行以下命令后，依次输入 Amazon 类目节点和英文类目名称：
+
+```powershell
+python tools/add_category.py
+```
+
+新类目会立即写入 `dist` 与 `docs` 的统一类目清单，并显示为“等待首次采集”。之后按下面的方式为该节点发布第一份 Top 100 快照即可。发布器会直接读取类目清单，不需要再修改代码。
+
 ## 发布新快照
 
 ```powershell

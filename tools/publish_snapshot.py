@@ -15,22 +15,7 @@ PUBLIC_ROOTS = (
     ROOT / "docs",
 )
 DEFAULT_NODE = "2368365011"
-CATEGORIES = {
-    DEFAULT_NODE: {
-        "site": "US",
-        "name": "Women's Blouses & Button-Down Shirts",
-        "node": DEFAULT_NODE,
-        "ranking": "Hot New Releases",
-        "url": f"https://www.amazon.com/gp/new-releases/fashion/{DEFAULT_NODE}",
-    },
-    "2368383011": {
-        "site": "US",
-        "name": "Women's Button-Down Shirts",
-        "node": "2368383011",
-        "ranking": "Hot New Releases",
-        "url": "https://www.amazon.com/gp/new-releases/fashion/2368383011",
-    },
-}
+CATEGORY_REGISTRY = ROOT / "dist" / "data" / "categories.json"
 REQUIRED_FIELDS = ("asin", "title", "image")
 COVERAGE_FIELDS = (
     "title",
@@ -42,6 +27,12 @@ COVERAGE_FIELDS = (
     "listingDate",
     "promotion",
 )
+
+
+def load_categories() -> dict[str, dict]:
+    registry = json.loads(CATEGORY_REGISTRY.read_text(encoding="utf-8"))
+    categories = registry.get("categories", [])
+    return {str(category["node"]): category for category in categories}
 
 
 def is_allowed_url(value: object, kind: str) -> bool:
@@ -210,9 +201,10 @@ def rebuild_manifest(public_root: Path, node: str = DEFAULT_NODE) -> dict:
 
 
 def publish(input_path: Path, snapshot_date: str, captured_at: str, detail_source: str, node: str = DEFAULT_NODE) -> dict:
-    if node not in CATEGORIES:
+    categories = load_categories()
+    if node not in categories:
         raise SystemExit(f"未配置的类目节点：{node}")
-    category = CATEGORIES[node]
+    category = categories[node]
     data_roots = [category_data_root(public_root, node) for public_root in PUBLIC_ROOTS]
     items = sorted((clean_item(row, snapshot_date) for row in read_input(input_path)), key=lambda row: row["rank"])
     quality = validate(items)
@@ -276,7 +268,7 @@ def main() -> None:
     parser.add_argument("--input", required=True, type=Path)
     parser.add_argument("--date", required=True)
     parser.add_argument("--captured-at", default=None)
-    parser.add_argument("--node", default=DEFAULT_NODE, choices=sorted(CATEGORIES))
+    parser.add_argument("--node", default=DEFAULT_NODE)
     parser.add_argument("--detail-source", default="Ecomtool MCP + Amazon 商品详情页")
     args = parser.parse_args()
     datetime.strptime(args.date, "%Y-%m-%d")
