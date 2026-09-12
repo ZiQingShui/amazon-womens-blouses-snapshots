@@ -1,6 +1,9 @@
 # Amazon 女式衬衫新品榜快照
 
-公开看板每天保存美国站 `Women's Blouses & Button-Down Shirts` 新品榜 Top 100，支持按日期查看及与前一期对比。
+公开看板按类目保存美国站新品榜 Top 100，支持切换类目、按日期查看及与前一期对比。
+
+- `2368365011`：Women's Blouses & Button-Down Shirts
+- `2368383011`：Women's Button-Down Shirts
 
 ## 数据结构
 
@@ -8,6 +11,8 @@
 - `data/manifest.json`：日期索引与字段覆盖率
 - `data/latest.json`：最近一期完整快照
 - `data/status.json`：最近一次采集/发布状态
+- `data/categories.json`：看板类目注册表
+- `data/categories/<节点>/...`：新增类目的独立快照、索引与状态
 
 `dist` 与 `docs` 始终写入相同数据；`docs` 供 GitHub Pages 发布。
 
@@ -18,6 +23,15 @@ python tools/publish_snapshot.py `
   --input path/to/enriched-products.json `
   --date 2026-09-12 `
   --captured-at 2026-09-12T08:30:00+08:00
+```
+
+发布新增类目时指定节点：
+
+```powershell
+python tools/publish_snapshot.py `
+  --input path/to/button-down-shirts.json `
+  --date 2026-09-12 `
+  --node 2368383011
 ```
 
 发布器只接受名次 1–100 完整、ASIN 唯一、标题和图片齐全，并且商品链接与图片链接来自受信任 HTTPS 域名的数据。已存在的同日快照禁止覆盖；未通过校验时不会覆盖 `latest.json`，只会在 `status.json` 记录失败原因。

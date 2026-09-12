@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "default": "2368365011",
+  "categories": [
+    {
+      "site": "US",
+      "name": "Women's Blouses & Button-Down Shirts",
+      "node": "2368365011",
+      "ranking": "Hot New Releases",
+      "url": "https://www.amazon.com/gp/new-releases/fashion/2368365011",
+      "manifest": "data/manifest.json"
+    },
+    {
+      "site": "US",
+      "name": "Women's Button-Down Shirts",
+      "node": "2368383011",
+      "ranking": "Hot New Releases",
+      "url": "https://www.amazon.com/gp/new-releases/fashion/2368383011",
+      "manifest": "data/categories/2368383011/manifest.json"
+    }
+  ]
+}

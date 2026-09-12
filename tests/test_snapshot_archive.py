@@ -17,9 +17,12 @@ class SnapshotArchiveTests(unittest.TestCase):
     def test_dist_and_docs_are_identical(self):
         for relative in (
             "index.html",
+            "data/categories.json",
             "data/manifest.json",
             "data/latest.json",
             "data/status.json",
+            "data/categories/2368383011/manifest.json",
+            "data/categories/2368383011/status.json",
         ):
             self.assertEqual(
                 (ROOT / "dist" / relative).read_bytes(),
@@ -71,6 +74,22 @@ class SnapshotArchiveTests(unittest.TestCase):
         quality = publish_snapshot.validate(items)
         self.assertFalse(quality["publishable"])
         self.assertEqual(quality["invalidUrls"], {"product": 1, "image": 1})
+
+    def test_category_archives_are_isolated(self):
+        root = Path("public")
+        default = publish_snapshot.archive_path(root, "2026-09-12")
+        button_down = publish_snapshot.archive_path(root, "2026-09-12", "2368383011")
+        self.assertEqual(default.as_posix(), "public/data/daily/2026/09/2026-09-12.json")
+        self.assertEqual(
+            button_down.as_posix(),
+            "public/data/categories/2368383011/daily/2026/09/2026-09-12.json",
+        )
+
+    def test_category_registry_contains_requested_node(self):
+        registry = self.read_json("docs", "data/categories.json")
+        nodes = {item["node"] for item in registry["categories"]}
+        self.assertIn("2368365011", nodes)
+        self.assertIn("2368383011", nodes)
 
 
 if __name__ == "__main__":
