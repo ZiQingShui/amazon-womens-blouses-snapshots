@@ -7,6 +7,7 @@ import shutil
 from datetime import datetime
 from pathlib import Path
 from urllib.parse import urlparse
+from urllib.request import urlopen
 
 
 ROOT = Path(__file__).parents[1]
@@ -16,6 +17,7 @@ PUBLIC_ROOTS = (
 )
 DEFAULT_NODE = "2368365011"
 CATEGORY_REGISTRY = ROOT / "dist" / "data" / "categories.json"
+REMOTE_CATEGORY_REGISTRY = "https://amazon-womens-blouses-snapshots.ziqingshui.chatgpt.site/data/categories.json"
 REQUIRED_FIELDS = ("asin", "title", "image")
 COVERAGE_FIELDS = (
     "title",
@@ -33,6 +35,15 @@ def load_categories() -> dict[str, dict]:
     registry = json.loads(CATEGORY_REGISTRY.read_text(encoding="utf-8"))
     categories = registry.get("categories", [])
     return {str(category["node"]): category for category in categories}
+
+
+def load_remote_categories() -> dict[str, dict]:
+    try:
+        with urlopen(REMOTE_CATEGORY_REGISTRY, timeout=8) as response:
+            registry = json.load(response)
+    except (OSError, ValueError):
+        return {}
+    return {str(category["node"]): category for category in registry.get("categories", [])}
 
 
 def is_allowed_url(value: object, kind: str) -> bool:
@@ -202,6 +213,8 @@ def rebuild_manifest(public_root: Path, node: str = DEFAULT_NODE) -> dict:
 
 def publish(input_path: Path, snapshot_date: str, captured_at: str, detail_source: str, node: str = DEFAULT_NODE) -> dict:
     categories = load_categories()
+    if node not in categories:
+        categories.update(load_remote_categories())
     if node not in categories:
         raise SystemExit(f"未配置的类目节点：{node}")
     category = categories[node]

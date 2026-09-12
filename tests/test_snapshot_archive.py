@@ -53,6 +53,12 @@ class SnapshotArchiveTests(unittest.TestCase):
         self.assertIn('id="brandDataStatus"', html)
         self.assertNotIn('class="workbench-status"', html)
 
+    def test_sidebar_contains_persistent_admin_category_form(self):
+        html = (ROOT / "dist" / "index.html").read_text(encoding="utf-8")
+        self.assertIn('id="addCategoryButton"', html)
+        self.assertIn('id="categoryNodeInput"', html)
+        self.assertIn('fetch("/api/categories"', html)
+
     def test_daily_archives_are_immutable_mirrors(self):
         manifest = self.read_json("docs", "data/manifest.json")
         for entry in manifest["snapshots"]:
