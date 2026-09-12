@@ -42,6 +42,12 @@ class SnapshotArchiveTests(unittest.TestCase):
             self.assertEqual(len({row["asin"] for row in items}), 100)
             self.assertTrue(all(row.get("title") and row.get("image") for row in items))
 
+    def test_custom_select_hides_native_control_in_header_and_filters(self):
+        html = (ROOT / "dist" / "index.html").read_text(encoding="utf-8")
+        self.assertIn("select.enhanced-native{", html)
+        self.assertNotIn(".field select.enhanced-native{", html)
+        self.assertIn(".snapshot-picker:focus-within{z-index:60}", html)
+
     def test_daily_archives_are_immutable_mirrors(self):
         manifest = self.read_json("docs", "data/manifest.json")
         for entry in manifest["snapshots"]:
