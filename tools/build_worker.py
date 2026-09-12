@@ -75,7 +75,7 @@ async function addCategory(request, env, url) {
   let body;
   try { body = await request.json(); } catch { return reply({error: "请输入有效的类目信息"}, 400); }
   const node = String(body.node || "").trim();
-  const name = String(body.name || "").trim() || `Amazon Category ${node}`;
+  const name = String(body.name || "").trim() || `未命名类目 ${node}`;
   const label = String(body.label || "").trim() || name;
   if (!/^\d{6,14}$/.test(node)) return reply({error: "类目节点必须是 6–14 位数字"}, 400);
   if (name.length > 120 || label.length > 120) return reply({error: "类目名称不能超过 120 个字符"}, 400);

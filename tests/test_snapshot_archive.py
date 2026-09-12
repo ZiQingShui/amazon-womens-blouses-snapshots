@@ -58,6 +58,10 @@ class SnapshotArchiveTests(unittest.TestCase):
         self.assertIn('id="addCategoryButton"', html)
         self.assertIn('id="categoryNodeInput"', html)
         self.assertIn('fetch("/api/categories"', html)
+        self.assertIn("＋ 新增类目", html)
+        self.assertIn("类目节点", html)
+        self.assertIn("添加到看板", html)
+        self.assertNotIn("＋ Add Category", html)
 
     def test_daily_archives_are_immutable_mirrors(self):
         manifest = self.read_json("docs", "data/manifest.json")
