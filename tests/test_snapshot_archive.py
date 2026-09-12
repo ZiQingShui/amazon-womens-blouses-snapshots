@@ -48,6 +48,11 @@ class SnapshotArchiveTests(unittest.TestCase):
         self.assertNotIn(".field select.enhanced-native{", html)
         self.assertIn(".snapshot-picker:focus-within{z-index:60}", html)
 
+    def test_data_status_is_integrated_into_sidebar_brand(self):
+        html = (ROOT / "dist" / "index.html").read_text(encoding="utf-8")
+        self.assertIn('id="brandDataStatus"', html)
+        self.assertNotIn('class="workbench-status"', html)
+
     def test_daily_archives_are_immutable_mirrors(self):
         manifest = self.read_json("docs", "data/manifest.json")
         for entry in manifest["snapshots"]:
