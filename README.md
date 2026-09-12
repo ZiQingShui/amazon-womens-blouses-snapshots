@@ -20,7 +20,7 @@ python tools/publish_snapshot.py `
   --captured-at 2026-09-12T08:30:00+08:00
 ```
 
-发布器只接受名次 1–100 完整、ASIN 唯一且标题和图片齐全的数据。未通过校验时不会覆盖 `latest.json`，只会在 `status.json` 记录失败原因。
+发布器只接受名次 1–100 完整、ASIN 唯一、标题和图片齐全，并且商品链接与图片链接来自受信任 HTTPS 域名的数据。已存在的同日快照禁止覆盖；未通过校验时不会覆盖 `latest.json`，只会在 `status.json` 记录失败原因。
 
 ## 验证
 

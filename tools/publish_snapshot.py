@@ -6,6 +6,7 @@ import re
 import shutil
 from datetime import datetime
 from pathlib import Path
+from urllib.parse import urlparse
 
 
 ROOT = Path(__file__).parents[1]
@@ -31,6 +32,23 @@ COVERAGE_FIELDS = (
     "listingDate",
     "promotion",
 )
+
+
+def is_allowed_url(value: object, kind: str) -> bool:
+    try:
+        parsed = urlparse(str(value))
+    except ValueError:
+        return False
+    if parsed.scheme != "https":
+        return False
+    host = (parsed.hostname or "").lower()
+    if kind == "product":
+        return host in {"amazon.com", "www.amazon.com"} and "/dp/" in parsed.path
+    return (
+        host == "images-na.ssl-images-amazon.com"
+        or host.endswith(".media-amazon.com")
+        or host.endswith(".ssl-images-amazon.com")
+    )
 
 
 def read_input(path: Path) -> list[dict]:
@@ -73,6 +91,10 @@ def validate(items: list[dict]) -> dict:
     required_missing = {
         field: sum(not bool(row.get(field)) for row in items) for field in REQUIRED_FIELDS
     }
+    invalid_urls = {
+        "product": sum(not is_allowed_url(row.get("url"), "product") for row in items),
+        "image": sum(not is_allowed_url(row.get("image"), "image") for row in items),
+    }
     coverage = {
         field: sum(bool(row.get(field)) for row in items) for field in COVERAGE_FIELDS
     }
@@ -82,6 +104,7 @@ def validate(items: list[dict]) -> dict:
         and not duplicate_ranks
         and not duplicate_asins
         and not any(required_missing.values())
+        and not any(invalid_urls.values())
     )
     return {
         "count": len(items),
@@ -90,6 +113,7 @@ def validate(items: list[dict]) -> dict:
         "duplicateRanks": duplicate_ranks,
         "duplicateAsins": duplicate_asins,
         "requiredMissing": required_missing,
+        "invalidUrls": invalid_urls,
         "fieldCoverage": coverage,
     }
 
@@ -177,6 +201,22 @@ def publish(input_path: Path, snapshot_date: str, captured_at: str, detail_sourc
             "snapshotDate": snapshot_date,
             "reason": "快照未通过 Top 100 完整性校验",
             "quality": quality,
+        }
+        for public_root in PUBLIC_ROOTS:
+            atomic_json(public_root / "data" / "status.json", failure)
+        raise SystemExit(json.dumps(failure, ensure_ascii=False))
+
+    existing_archives = [
+        archive_path(public_root, snapshot_date)
+        for public_root in PUBLIC_ROOTS
+        if archive_path(public_root, snapshot_date).exists()
+    ]
+    if existing_archives:
+        failure = {
+            "status": "failed",
+            "attemptedAt": captured_at,
+            "snapshotDate": snapshot_date,
+            "reason": "当天快照已存在；历史快照禁止覆盖",
         }
         for public_root in PUBLIC_ROOTS:
             atomic_json(public_root / "data" / "status.json", failure)
