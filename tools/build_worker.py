@@ -53,7 +53,8 @@ function categoryShape(row) {
     departmentSlug,
     ranking: "Hot New Releases",
     url: `https://www.amazon.com/gp/new-releases/${departmentSlug}/${row.node}`,
-    manifest: `data/categories/${row.node}/manifest.json`
+    manifest: `data/categories/${row.node}/manifest.json`,
+    deletable: true
   };
 }
 
@@ -202,10 +203,32 @@ async function addCategory(request, env, url) {
   return reply({category: categoryShape({node, name, label, path, departmentSlug}), status: "waiting"}, 201);
 }
 
+async function deleteCategory(request, env, url, node) {
+  const origin = request.headers.get("origin");
+  if ((origin && origin !== url.origin) || request.headers.get("sec-fetch-site") === "cross-site") {
+    return reply({error: "请求来源无效"}, 403);
+  }
+  if (!/^\d{1,14}$/.test(node)) return reply({error: "类目节点无效"}, 400);
+  if (BASE_REGISTRY.categories.some(item => String(item.node) === node)) {
+    return reply({error: "系统内置类目不能删除"}, 403);
+  }
+  if (!env.DB) return reply({error: "类目服务暂时不可用"}, 503);
+  try {
+    const existing = await env.DB.prepare("SELECT node FROM categories WHERE node = ? LIMIT 1").bind(node).first();
+    if (!existing) return reply({error: "该类目不存在或已被删除"}, 404);
+    await env.DB.prepare("DELETE FROM categories WHERE node = ?").bind(node).run();
+    return reply({deleted: true, node});
+  } catch {
+    return reply({error: "类目删除失败，请稍后重试"}, 500);
+  }
+}
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
     if (url.pathname === "/api/categories" && request.method === "POST") return addCategory(request, env, url);
+    const categoryDeleteMatch = url.pathname.match(/^\/api\/categories\/(\d{1,14})$/);
+    if (categoryDeleteMatch && request.method === "DELETE") return deleteCategory(request, env, url, categoryDeleteMatch[1]);
     if (url.pathname === "/api/category-tree" && request.method === "GET") {
       try { return await categoryTree(env, url); }
       catch { return reply({nodes: []}); }

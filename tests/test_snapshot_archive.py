@@ -86,6 +86,17 @@ class SnapshotArchiveTests(unittest.TestCase):
         self.assertIn("添加到看板", html)
         self.assertNotIn("＋ Add Category", html)
 
+    def test_custom_categories_can_be_removed_without_deleting_history(self):
+        html = (ROOT / "dist" / "index.html").read_text(encoding="utf-8")
+        worker = (ROOT / "tools" / "build_worker.py").read_text(encoding="utf-8")
+        self.assertIn('data-delete-category=', html)
+        self.assertIn('method:"DELETE"', html)
+        self.assertIn("已经保存的历史快照不会被删除", html)
+        self.assertIn("async function deleteCategory", worker)
+        self.assertIn("系统内置类目不能删除", worker)
+        self.assertIn("DELETE FROM categories WHERE node = ?", worker)
+        self.assertIn("deletable: true", worker)
+
     def test_full_category_browser_and_ranking_switch_are_present(self):
         html = (ROOT / "dist" / "index.html").read_text(encoding="utf-8")
         self.assertIn('id="categoryBrowserDialog"', html)
