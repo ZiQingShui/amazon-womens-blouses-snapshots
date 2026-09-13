@@ -137,6 +137,13 @@ class SnapshotArchiveTests(unittest.TestCase):
         self.assertIn("browseNodeLookup/${parentNode}.html", worker)
         self.assertIn('source: "live"', worker)
 
+    def test_category_columns_scroll_independently(self):
+        html = (ROOT / "dist" / "index.html").read_text(encoding="utf-8")
+        self.assertIn(".category-columns{display:flex;height:clamp(300px,52vh,450px);overflow-x:auto;overflow-y:hidden", html)
+        self.assertIn(".category-column{box-sizing:border-box;width:245px;min-width:245px;height:100%", html)
+        self.assertIn("overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain;scrollbar-gutter:stable", html)
+        self.assertIn(".category-column-title{position:sticky;top:0", html)
+
     def test_category_tree_schema_supports_both_rankings(self):
         migration = (ROOT / "drizzle" / "0001_category_tree.sql").read_text(encoding="utf-8")
         self.assertIn("CREATE TABLE category_nodes", migration)
