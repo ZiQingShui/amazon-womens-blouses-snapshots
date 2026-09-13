@@ -63,6 +63,13 @@ class SnapshotArchiveTests(unittest.TestCase):
         self.assertIn("snapshotDateLabel(entry.date,entry.capturedAt)", html)
         self.assertIn("snapshotDateLabel(x.date,x.capturedAt)", html)
 
+    def test_open_dashboard_refreshes_new_snapshots_without_manual_reload(self):
+        html = (ROOT / "dist" / "index.html").read_text(encoding="utf-8")
+        self.assertIn("async function categoryManifest(category,force=false)", html)
+        self.assertIn("async function refreshLatestSnapshot()", html)
+        self.assertIn('window.addEventListener("focus",refreshLatestSnapshot)', html)
+        self.assertIn('setInterval(refreshLatestSnapshot,60000)', html)
+
     def test_data_status_is_integrated_into_sidebar_brand(self):
         html = (ROOT / "dist" / "index.html").read_text(encoding="utf-8")
         self.assertIn('id="brandDataStatus"', html)
