@@ -8,12 +8,15 @@ from pathlib import Path
 ROOT = Path(__file__).parents[1]
 SOURCE = ROOT / "docs"
 OUTPUT = ROOT / "dist" / "server" / "index.js"
+LEGACY_SCRIPT_PREFIX = "amazon_womens_blouses_"
 
 
 def assets() -> dict[str, dict[str, str]]:
     result: dict[str, dict[str, str]] = {}
     for path in SOURCE.rglob("*"):
         if not path.is_file():
+            continue
+        if path.parent == SOURCE and path.name.startswith(LEGACY_SCRIPT_PREFIX) and path.suffix == ".js":
             continue
         route = "/" + path.relative_to(SOURCE).as_posix()
         content_type = mimetypes.guess_type(path.name)[0] or "application/octet-stream"
@@ -54,6 +57,23 @@ function categoryShape(row) {
   };
 }
 
+function categoryNodeShape(row) {
+  let path = row.path;
+  if (typeof path === "string") {
+    try { path = JSON.parse(path); } catch { path = []; }
+  }
+  const rawNode = String(row.node || "");
+  return {
+    name: row.name,
+    node: rawNode.startsWith("slug:") ? null : rawNode,
+    slug: row.department_slug || row.departmentSlug || "fashion",
+    path: Array.isArray(path) && path.length ? path : [row.name],
+    supportsNewReleases: Boolean(row.supports_new_releases ?? row.supportsNewReleases),
+    supportsBestSellers: Boolean(row.supports_best_sellers ?? row.supportsBestSellers),
+    isLeaf: Boolean(row.is_leaf ?? row.isLeaf)
+  };
+}
+
 async function customCategories(env) {
   if (!env.DB) return [];
   const result = await env.DB.prepare("SELECT node, name, label, path, department_slug, created_at FROM categories ORDER BY created_at, node").all();
@@ -68,17 +88,21 @@ async function registry(env) {
 
 async function categoryTree(env, url) {
   if (!env.DB) return reply({nodes: []});
+  if (url.searchParams.get("all") === "1") {
+    const result = await env.DB.prepare("SELECT site, node, name, parent_node, depth, path, department_slug, supports_new_releases, supports_best_sellers, is_leaf FROM category_nodes WHERE site = 'US' ORDER BY depth, name LIMIT 5000").all();
+    return reply({nodes: (result.results || []).map(categoryNodeShape)});
+  }
   const query = String(url.searchParams.get("q") || "").trim();
   if (query) {
     const result = await env.DB.prepare("SELECT site, node, name, parent_node, depth, path, department_slug, supports_new_releases, supports_best_sellers, is_leaf FROM category_nodes WHERE site = 'US' AND (node = ? OR name LIKE ?) ORDER BY depth, name LIMIT 100").bind(query, `%${query}%`).all();
-    return reply({nodes: result.results || []});
+    return reply({nodes: (result.results || []).map(categoryNodeShape)});
   }
   const parent = url.searchParams.get("parent");
   const statement = parent
     ? env.DB.prepare("SELECT site, node, name, parent_node, depth, path, department_slug, supports_new_releases, supports_best_sellers, is_leaf FROM category_nodes WHERE site = 'US' AND parent_node = ? ORDER BY name LIMIT 500").bind(parent)
     : env.DB.prepare("SELECT site, node, name, parent_node, depth, path, department_slug, supports_new_releases, supports_best_sellers, is_leaf FROM category_nodes WHERE site = 'US' AND parent_node IS NULL ORDER BY name LIMIT 500");
   const result = await statement.all();
-  return reply({nodes: result.results || []});
+  return reply({nodes: (result.results || []).map(categoryNodeShape)});
 }
 
 function isOwner(request, env) {

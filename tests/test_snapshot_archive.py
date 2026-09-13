@@ -41,6 +41,7 @@ class SnapshotArchiveTests(unittest.TestCase):
         embedded_latest = json.loads(assets["/data/latest.json"]["body"])
         self.assertEqual(embedded_manifest, self.read_json("dist", "data/manifest.json"))
         self.assertEqual(embedded_latest, self.read_json("dist", "data/latest.json"))
+        self.assertNotIn("/amazon_womens_blouses_new_releases_data.js", assets)
 
     def test_manifest_points_to_complete_snapshots(self):
         manifest = self.read_json("docs", "data/manifest.json")
@@ -92,9 +93,26 @@ class SnapshotArchiveTests(unittest.TestCase):
         self.assertIn('data-ranking="new-releases"', html)
         self.assertIn('data-ranking="best-sellers"', html)
         self.assertIn('currentRanking==="best-sellers"?"bestsellers":"new-releases"', html)
-        self.assertIn('json("data/category-tree.json")', html)
+        self.assertIn('json("/api/category-tree?all=1")', html)
+        self.assertIn('该类目尚未配置热销榜采集', html)
+        self.assertIn('requestedRankingParam', html)
         self.assertNotIn('id="categoryBrowserButton"', html)
         self.assertIn('id="openManualCategory"', html)
+
+    def test_dashboard_recomputes_truthful_coverage_for_old_snapshots(self):
+        html = (ROOT / "dist" / "index.html").read_text(encoding="utf-8")
+        self.assertIn("function actualCoverage(items)", html)
+        self.assertIn("促销 ${coverage.promotion||0}/100", html)
+
+    def test_rank_trend_does_not_connect_across_missing_snapshots(self):
+        html = (ROOT / "dist" / "index.html").read_text(encoding="utf-8")
+        self.assertIn("segments.filter(part=>part.length>1)", html)
+        self.assertIn('p.sourceIndex>0?"重新入榜":"首次记录"', html)
+
+    def test_mobile_cards_use_deferred_rendering_without_hiding_top_100(self):
+        html = (ROOT / "dist" / "index.html").read_text(encoding="utf-8")
+        self.assertIn("content-visibility:auto", html)
+        self.assertIn('rows.map(p=>card(p,cmp.oldMap,compare))', html)
 
     def test_seed_categories_include_hierarchical_paths(self):
         registry = self.read_json("docs", "data/categories.json")
@@ -147,6 +165,24 @@ class SnapshotArchiveTests(unittest.TestCase):
         quality = publish_snapshot.validate(items)
         self.assertFalse(quality["publishable"])
         self.assertEqual(quality["invalidUrls"], {"product": 1, "image": 1})
+
+    def test_placeholder_values_do_not_inflate_field_coverage(self):
+        items = self.read_json("dist", "data/latest.json")["items"]
+        quality = publish_snapshot.validate(items)
+        self.assertEqual(quality["fieldCoverage"]["listingDate"], 84)
+        self.assertEqual(quality["fieldCoverage"]["promotion"], 76)
+        self.assertEqual(quality["fieldCoverage"]["mainBsr"], 74)
+
+    def test_history_streak_breaks_when_a_calendar_day_is_missing(self):
+        item = {"asin": "B000000001"}
+        earlier = [
+            {"snapshotDate": "2026-09-10", "items": [item]},
+            {"snapshotDate": "2026-09-12", "items": [item]},
+        ]
+        current = [{"asin": "B000000001"}]
+        publish_snapshot.add_history(current, earlier, "2026-09-13")
+        self.assertEqual(current[0]["history"]["appearances"], 3)
+        self.assertEqual(current[0]["history"]["streak"], 2)
 
     def test_category_archives_are_isolated(self):
         root = Path("public")

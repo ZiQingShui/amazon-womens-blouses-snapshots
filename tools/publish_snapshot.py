@@ -4,7 +4,7 @@ import argparse
 import json
 import re
 import shutil
-from datetime import datetime
+from datetime import date, datetime
 from pathlib import Path
 from urllib.parse import urlparse
 from urllib.request import urlopen
@@ -29,6 +29,7 @@ COVERAGE_FIELDS = (
     "listingDate",
     "promotion",
 )
+MISSING_TEXT = {"", "未显示", "未显示/无法获取", "待补齐", "未知", "unknown", "n/a", "none"}
 
 
 def load_categories() -> dict[str, dict]:
@@ -80,7 +81,12 @@ def clean_item(item: dict, snapshot_date: str) -> dict:
     row["rank"] = int(row["rank"])
     row["asin"] = str(row.get("asin", "")).strip().upper()
     row["sourceDate"] = snapshot_date
-    if row.get("promotionStatus") == "none" or row.get("promotion") in {"未检测到", "否", ""}:
+    promotions = [str(value).strip() for value in row.get("promotions", []) if str(value).strip()]
+    if promotions:
+        row["promotions"] = list(dict.fromkeys(promotions))
+        row["promotion"] = " + ".join(row["promotions"])
+        row["promotionStatus"] = "detected"
+    elif row.get("promotionStatus") == "none" or row.get("promotion") in {"未检测到", "否", ""}:
         row["promotion"] = "暂无促销"
         row["promotionStatus"] = "none"
     elif row.get("promotion"):
@@ -92,6 +98,24 @@ def clean_item(item: dict, snapshot_date: str) -> dict:
         row["url"] = f"https://www.amazon.com/dp/{row['asin']}"
     row.pop("error", None)
     return row
+
+
+def has_coverage_value(row: dict, field: str) -> bool:
+    value = row.get(field)
+    if field in {"mainBsr", "subBsr"}:
+        try:
+            return int(value) > 0
+        except (TypeError, ValueError):
+            return False
+    if field == "listingDate":
+        try:
+            date.fromisoformat(str(value))
+            return True
+        except (TypeError, ValueError):
+            return False
+    if field == "promotion":
+        return row.get("promotionStatus") in {"detected", "none"}
+    return str(value or "").strip().lower() not in MISSING_TEXT
 
 
 def validate(items: list[dict]) -> dict:
@@ -108,7 +132,7 @@ def validate(items: list[dict]) -> dict:
         "image": sum(not is_allowed_url(row.get("image"), "image") for row in items),
     }
     coverage = {
-        field: sum(bool(row.get(field)) for row in items) for field in COVERAGE_FIELDS
+        field: sum(has_coverage_value(row, field) for row in items) for field in COVERAGE_FIELDS
     }
     publishable = (
         len(items) == 100
@@ -161,22 +185,39 @@ def add_history(items: list[dict], earlier: list[dict], snapshot_date: str) -> N
     first_seen: dict[str, str] = {}
     last_seen: set[str] = set()
     streaks: dict[str, int] = {}
+    previous_date: date | None = None
     for snapshot in earlier:
+        current_date = date.fromisoformat(snapshot["snapshotDate"])
+        follows_previous_day = previous_date is not None and (current_date - previous_date).days == 1
         current = {row["asin"] for row in snapshot.get("items", [])}
         for asin in current:
             appearances[asin] = appearances.get(asin, 0) + 1
             first_seen.setdefault(asin, snapshot["snapshotDate"])
-            streaks[asin] = streaks.get(asin, 0) + 1 if asin in last_seen else 1
+            streaks[asin] = streaks.get(asin, 0) + 1 if follows_previous_day and asin in last_seen else 1
         for asin in set(streaks) - current:
             streaks[asin] = 0
         last_seen = current
+        previous_date = current_date
+    current_date = date.fromisoformat(snapshot_date)
+    follows_previous_day = previous_date is not None and (current_date - previous_date).days == 1
     for row in items:
         asin = row["asin"]
         row["history"] = {
             "firstSeen": first_seen.get(asin, snapshot_date),
             "appearances": appearances.get(asin, 0) + 1,
-            "streak": streaks.get(asin, 0) + 1 if asin in last_seen else 1,
+            "streak": streaks.get(asin, 0) + 1 if follows_previous_day and asin in last_seen else 1,
         }
+
+
+def persist_remote_category(category: dict) -> None:
+    node = str(category["node"])
+    for public_root in PUBLIC_ROOTS:
+        path = public_root / "data" / "categories.json"
+        registry = json.loads(path.read_text(encoding="utf-8"))
+        rows = registry.setdefault("categories", [])
+        if not any(str(row.get("node")) == node for row in rows):
+            rows.append(category)
+            atomic_json(path, registry)
 
 
 def atomic_json(path: Path, payload: object) -> None:
@@ -214,7 +255,10 @@ def rebuild_manifest(public_root: Path, node: str = DEFAULT_NODE) -> dict:
 def publish(input_path: Path, snapshot_date: str, captured_at: str, detail_source: str, node: str = DEFAULT_NODE) -> dict:
     categories = load_categories()
     if node not in categories:
-        categories.update(load_remote_categories())
+        remote_categories = load_remote_categories()
+        categories.update(remote_categories)
+        if node in remote_categories:
+            persist_remote_category(remote_categories[node])
     if node not in categories:
         raise SystemExit(f"未配置的类目节点：{node}")
     category = categories[node]
