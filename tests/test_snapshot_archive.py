@@ -31,6 +31,17 @@ class SnapshotArchiveTests(unittest.TestCase):
                 relative,
             )
 
+    def test_sites_worker_embeds_current_snapshot_manifest(self):
+        worker = (ROOT / "dist" / "server" / "index.js").read_text(encoding="utf-8")
+        first_line = worker.splitlines()[1]
+        prefix = "const STATIC_ASSETS = "
+        self.assertTrue(first_line.startswith(prefix))
+        assets = json.loads(first_line[len(prefix):-1])
+        embedded_manifest = json.loads(assets["/data/manifest.json"]["body"])
+        embedded_latest = json.loads(assets["/data/latest.json"]["body"])
+        self.assertEqual(embedded_manifest, self.read_json("dist", "data/manifest.json"))
+        self.assertEqual(embedded_latest, self.read_json("dist", "data/latest.json"))
+
     def test_manifest_points_to_complete_snapshots(self):
         manifest = self.read_json("docs", "data/manifest.json")
         self.assertEqual(manifest["latest"], manifest["snapshots"][0]["date"])

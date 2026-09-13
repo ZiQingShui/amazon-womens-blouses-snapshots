@@ -287,6 +287,11 @@ def main() -> None:
     datetime.strptime(args.date, "%Y-%m-%d")
     captured_at = args.captured_at or f"{args.date}T08:30:00+08:00"
     result = publish(args.input.resolve(), args.date, captured_at, args.detail_source, args.node)
+    # Sites serves data embedded in the Worker bundle, so every successful
+    # snapshot publication must refresh that bundle before deployment.
+    from build_worker import main as build_worker_main
+
+    build_worker_main()
     print(json.dumps(result, ensure_ascii=False))
 
 
