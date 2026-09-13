@@ -36,20 +36,27 @@ function reply(payload, status = 200) {
 }
 
 function categoryShape(row) {
+  let path = row.path;
+  if (typeof path === "string") {
+    try { path = JSON.parse(path); } catch { path = []; }
+  }
+  const departmentSlug = row.department_slug || row.departmentSlug || "fashion";
   return {
     site: "US",
     name: row.name,
     label: row.label || row.name,
     node: row.node,
+    path: Array.isArray(path) && path.length ? path : [row.name],
+    departmentSlug,
     ranking: "Hot New Releases",
-    url: `https://www.amazon.com/gp/new-releases/fashion/${row.node}`,
+    url: `https://www.amazon.com/gp/new-releases/${departmentSlug}/${row.node}`,
     manifest: `data/categories/${row.node}/manifest.json`
   };
 }
 
 async function customCategories(env) {
   if (!env.DB) return [];
-  const result = await env.DB.prepare("SELECT node, name, label, created_at FROM categories ORDER BY created_at, node").all();
+  const result = await env.DB.prepare("SELECT node, name, label, path, department_slug, created_at FROM categories ORDER BY created_at, node").all();
   return (result.results || []).map(categoryShape);
 }
 
@@ -92,16 +99,20 @@ async function addCategory(request, env, url) {
   const node = String(body.node || "").trim();
   const name = String(body.name || "").trim() || `未命名类目 ${node}`;
   const label = String(body.label || "").trim() || name;
+  const path = Array.isArray(body.path) ? body.path.map(part => String(part).trim()).filter(Boolean).slice(0, 12) : [];
+  const departmentSlug = String(body.departmentSlug || "fashion").trim().toLowerCase();
   if (!/^\d{6,14}$/.test(node)) return reply({error: "类目节点必须是 6–14 位数字"}, 400);
   if (name.length > 120 || label.length > 120) return reply({error: "类目名称不能超过 120 个字符"}, 400);
+  if (!/^[a-z0-9-]{2,60}$/.test(departmentSlug)) return reply({error: "Amazon 类目标识无效"}, 400);
+  if (path.some(part => part.length > 120)) return reply({error: "类目路径内容过长"}, 400);
   if (BASE_REGISTRY.categories.some(item => String(item.node) === node)) return reply({error: "该类目已经存在"}, 409);
   try {
-    await env.DB.prepare("INSERT INTO categories (node, name, label) VALUES (?, ?, ?)").bind(node, name, label).run();
+    await env.DB.prepare("INSERT INTO categories (node, name, label, path, department_slug) VALUES (?, ?, ?, ?, ?)").bind(node, name, label, JSON.stringify(path.length ? path : [name]), departmentSlug).run();
   } catch (error) {
     if (String(error).toLowerCase().includes("unique")) return reply({error: "该类目已经存在"}, 409);
     return reply({error: "类目保存失败，请稍后重试"}, 500);
   }
-  return reply({category: categoryShape({node, name, label}), status: "waiting"}, 201);
+  return reply({category: categoryShape({node, name, label, path, departmentSlug}), status: "waiting"}, 201);
 }
 
 export default {

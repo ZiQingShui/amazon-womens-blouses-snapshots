@@ -18,6 +18,7 @@ class SnapshotArchiveTests(unittest.TestCase):
         for relative in (
             "index.html",
             "data/categories.json",
+            "data/category-tree.json",
             "data/manifest.json",
             "data/latest.json",
             "data/status.json",
@@ -73,11 +74,21 @@ class SnapshotArchiveTests(unittest.TestCase):
         self.assertIn('data-ranking="new-releases"', html)
         self.assertIn('data-ranking="best-sellers"', html)
         self.assertIn('currentRanking==="best-sellers"?"bestsellers":"new-releases"', html)
-        self.assertIn("AMAZON_DEPARTMENTS", html)
+        self.assertIn('json("data/category-tree.json")', html)
+        self.assertNotIn('id="categoryBrowserButton"', html)
+        self.assertIn('id="openManualCategory"', html)
 
     def test_seed_categories_include_hierarchical_paths(self):
         registry = self.read_json("docs", "data/categories.json")
-        self.assertTrue(all(len(item.get("path", [])) == 4 for item in registry["categories"]))
+        self.assertEqual([len(item.get("path", [])) for item in registry["categories"]], [5, 6])
+
+    def test_official_amazon_category_catalog_contains_real_hierarchy(self):
+        catalog = self.read_json("docs", "data/category-tree.json")
+        self.assertEqual(catalog["source"], "https://www.amazon.com/gp/new-releases")
+        nodes = {str(item.get("node")): item for item in catalog["entries"] if item.get("node")}
+        self.assertEqual(nodes["2368343011"]["name"], "Tops, Tees & Blouses")
+        self.assertEqual(nodes["2368365011"]["path"][-1], "Blouses & Button-Down Shirts")
+        self.assertEqual(nodes["2368383011"]["path"][-2:], ["Blouses & Button-Down Shirts", "Button-Down Shirts"])
 
     def test_category_tree_schema_supports_both_rankings(self):
         migration = (ROOT / "drizzle" / "0001_category_tree.sql").read_text(encoding="utf-8")
