@@ -66,6 +66,26 @@ class SnapshotArchiveTests(unittest.TestCase):
         self.assertIn("添加到看板", html)
         self.assertNotIn("＋ Add Category", html)
 
+    def test_full_category_browser_and_ranking_switch_are_present(self):
+        html = (ROOT / "dist" / "index.html").read_text(encoding="utf-8")
+        self.assertIn('id="categoryBrowserDialog"', html)
+        self.assertIn('id="categoryColumns"', html)
+        self.assertIn('data-ranking="new-releases"', html)
+        self.assertIn('data-ranking="best-sellers"', html)
+        self.assertIn('currentRanking==="best-sellers"?"bestsellers":"new-releases"', html)
+        self.assertIn("AMAZON_DEPARTMENTS", html)
+
+    def test_seed_categories_include_hierarchical_paths(self):
+        registry = self.read_json("docs", "data/categories.json")
+        self.assertTrue(all(len(item.get("path", [])) == 4 for item in registry["categories"]))
+
+    def test_category_tree_schema_supports_both_rankings(self):
+        migration = (ROOT / "drizzle" / "0001_category_tree.sql").read_text(encoding="utf-8")
+        self.assertIn("CREATE TABLE category_nodes", migration)
+        self.assertIn("parent_node TEXT", migration)
+        self.assertIn("supports_new_releases", migration)
+        self.assertIn("supports_best_sellers", migration)
+
     def test_daily_archives_are_immutable_mirrors(self):
         manifest = self.read_json("docs", "data/manifest.json")
         for entry in manifest["snapshots"]:

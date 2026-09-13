@@ -59,6 +59,21 @@ async function registry(env) {
   return {...BASE_REGISTRY, categories: [...BASE_REGISTRY.categories, ...custom.filter(item => !known.has(String(item.node)))]};
 }
 
+async function categoryTree(env, url) {
+  if (!env.DB) return reply({nodes: []});
+  const query = String(url.searchParams.get("q") || "").trim();
+  if (query) {
+    const result = await env.DB.prepare("SELECT site, node, name, parent_node, depth, path, department_slug, supports_new_releases, supports_best_sellers, is_leaf FROM category_nodes WHERE site = 'US' AND (node = ? OR name LIKE ?) ORDER BY depth, name LIMIT 100").bind(query, `%${query}%`).all();
+    return reply({nodes: result.results || []});
+  }
+  const parent = url.searchParams.get("parent");
+  const statement = parent
+    ? env.DB.prepare("SELECT site, node, name, parent_node, depth, path, department_slug, supports_new_releases, supports_best_sellers, is_leaf FROM category_nodes WHERE site = 'US' AND parent_node = ? ORDER BY name LIMIT 500").bind(parent)
+    : env.DB.prepare("SELECT site, node, name, parent_node, depth, path, department_slug, supports_new_releases, supports_best_sellers, is_leaf FROM category_nodes WHERE site = 'US' AND parent_node IS NULL ORDER BY name LIMIT 500");
+  const result = await statement.all();
+  return reply({nodes: result.results || []});
+}
+
 function isOwner(request, env) {
   const userId = request.headers.get("oai-authenticated-user-id");
   return Boolean(env.OWNER_USER_ID && userId && userId === env.OWNER_USER_ID);
@@ -93,6 +108,10 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
     if (url.pathname === "/api/categories" && request.method === "POST") return addCategory(request, env, url);
+    if (url.pathname === "/api/category-tree" && request.method === "GET") {
+      try { return await categoryTree(env, url); }
+      catch { return reply({nodes: []}); }
+    }
     if (url.pathname === "/data/categories.json" && request.method === "GET") {
       try { return reply(await registry(env)); }
       catch { return reply(BASE_REGISTRY); }
