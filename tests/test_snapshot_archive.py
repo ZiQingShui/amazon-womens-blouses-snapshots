@@ -76,7 +76,7 @@ class SnapshotArchiveTests(unittest.TestCase):
         self.assertIn('id="brandDataStatus"', html)
         self.assertNotIn('class="workbench-status"', html)
 
-    def test_sidebar_contains_persistent_admin_category_form(self):
+    def test_sidebar_contains_persistent_category_form(self):
         html = (ROOT / "dist" / "index.html").read_text(encoding="utf-8")
         self.assertIn('id="addCategoryButton"', html)
         self.assertIn('id="categoryNodeInput"', html)
@@ -143,6 +143,13 @@ class SnapshotArchiveTests(unittest.TestCase):
         self.assertIn(".category-column{box-sizing:border-box;width:245px;min-width:245px;height:100%", html)
         self.assertIn("overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain;scrollbar-gutter:stable", html)
         self.assertIn(".category-column-title{position:sticky;top:0", html)
+
+    def test_category_addition_does_not_require_admin_login(self):
+        html = (ROOT / "dist" / "index.html").read_text(encoding="utf-8")
+        worker = (ROOT / "tools" / "build_worker.py").read_text(encoding="utf-8")
+        self.assertNotIn("管理员登录", html)
+        self.assertNotIn("需要管理员使用 ChatGPT 登录", worker)
+        self.assertNotIn("function isOwner", worker)
 
     def test_category_tree_schema_supports_both_rankings(self):
         migration = (ROOT / "drizzle" / "0001_category_tree.sql").read_text(encoding="utf-8")

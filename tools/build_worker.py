@@ -176,18 +176,10 @@ async function categoryTree(env, url) {
   }
 }
 
-function isOwner(request, env) {
-  const userId = request.headers.get("oai-authenticated-user-id");
-  return Boolean(env.OWNER_USER_ID && userId && userId === env.OWNER_USER_ID);
-}
-
 async function addCategory(request, env, url) {
   const origin = request.headers.get("origin");
   if ((origin && origin !== url.origin) || request.headers.get("sec-fetch-site") === "cross-site") {
     return reply({error: "请求来源无效"}, 403);
-  }
-  if (!isOwner(request, env)) {
-    return reply({error: "需要管理员使用 ChatGPT 登录", signIn: "/signin-with-chatgpt?return_to=/"}, 401);
   }
   let body;
   try { body = await request.json(); } catch { return reply({error: "请输入有效的类目信息"}, 400); }
