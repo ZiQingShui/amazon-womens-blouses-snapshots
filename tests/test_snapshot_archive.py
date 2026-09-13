@@ -94,6 +94,8 @@ class SnapshotArchiveTests(unittest.TestCase):
         self.assertIn('data-ranking="best-sellers"', html)
         self.assertIn('currentRanking==="best-sellers"?"bestsellers":"new-releases"', html)
         self.assertIn('json("/api/category-tree?all=1")', html)
+        self.assertIn("async function loadCategoryChildren(entry)", html)
+        self.assertIn("点击类目可继续展开下级节点", html)
         self.assertIn('该类目尚未配置热销榜采集', html)
         self.assertIn('requestedRankingParam', html)
         self.assertNotIn('id="categoryBrowserButton"', html)
@@ -125,6 +127,15 @@ class SnapshotArchiveTests(unittest.TestCase):
         self.assertEqual(nodes["2368343011"]["name"], "Tops, Tees & Blouses")
         self.assertEqual(nodes["2368365011"]["path"][-1], "Blouses & Button-Down Shirts")
         self.assertEqual(nodes["2368383011"]["path"][-2:], ["Blouses & Button-Down Shirts", "Button-Down Shirts"])
+        self.assertEqual(nodes["2619526011"]["name"], "Appliances")
+        self.assertEqual(nodes["7141124011"]["name"], "Clothing, Shoes & Jewelry")
+        self.assertEqual(nodes["2102313011"]["path"], ["Amazon Devices & Accessories", "Amazon Devices"])
+
+    def test_worker_can_load_uncached_category_children(self):
+        worker = (ROOT / "tools" / "build_worker.py").read_text(encoding="utf-8")
+        self.assertIn("async function remoteBrowseChildren", worker)
+        self.assertIn("browseNodeLookup/${parentNode}.html", worker)
+        self.assertIn('source: "live"', worker)
 
     def test_category_tree_schema_supports_both_rankings(self):
         migration = (ROOT / "drizzle" / "0001_category_tree.sql").read_text(encoding="utf-8")
