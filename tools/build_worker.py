@@ -16,7 +16,12 @@ def assets() -> dict[str, dict[str, str]]:
     for path in SOURCE.rglob("*"):
         if not path.is_file():
             continue
-        if path.is_relative_to(SOURCE / "data" / "images"):
+        try:
+            path.relative_to(SOURCE / "data" / "images")
+            is_product_image = True
+        except ValueError:
+            is_product_image = False
+        if is_product_image:
             # Product images are served by GitHub Pages using their canonical
             # public URLs; embedding binary assets would bloat the Worker.
             continue
