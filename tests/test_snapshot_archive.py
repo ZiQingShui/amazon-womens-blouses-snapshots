@@ -97,6 +97,19 @@ class SnapshotArchiveTests(unittest.TestCase):
         self.assertIn("DELETE FROM categories WHERE node = ?", worker)
         self.assertIn("deletable: true", worker)
 
+    def test_manual_capture_button_queues_and_tracks_requests(self):
+        html = (ROOT / "dist" / "index.html").read_text(encoding="utf-8")
+        worker = (ROOT / "tools" / "build_worker.py").read_text(encoding="utf-8")
+        migration = (ROOT / "drizzle" / "0003_manual_capture_requests.sql").read_text(encoding="utf-8")
+        self.assertIn('id="manualCapture"', html)
+        self.assertIn("立即抓取", html)
+        self.assertIn('fetch("/api/capture-requests"', html)
+        self.assertIn("async function pollCaptureRequest()", html)
+        self.assertIn('url.pathname === "/api/capture-requests"', worker)
+        self.assertIn("crypto.randomUUID()", worker)
+        self.assertIn("CREATE TABLE capture_requests", migration)
+        self.assertIn("idx_capture_requests_daily_category", migration)
+
     def test_full_category_browser_and_ranking_switch_are_present(self):
         html = (ROOT / "dist" / "index.html").read_text(encoding="utf-8")
         self.assertIn('id="categoryBrowserDialog"', html)

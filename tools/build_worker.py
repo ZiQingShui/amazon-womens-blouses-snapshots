@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import mimetypes
+import shutil
 from pathlib import Path
 
 
@@ -45,6 +46,17 @@ const JSON_HEADERS = {"content-type":"application/json; charset=utf-8","cache-co
 
 function reply(payload, status = 200) {
   return new Response(JSON.stringify(payload), {status, headers: JSON_HEADERS});
+}
+
+function sameOrigin(request, url) {
+  const origin = request.headers.get("origin");
+  return (!origin || origin === url.origin) && request.headers.get("sec-fetch-site") !== "cross-site";
+}
+
+function beijingDate() {
+  const parts = new Intl.DateTimeFormat("en-US", {timeZone: "Asia/Shanghai", year: "numeric", month: "2-digit", day: "2-digit"}).formatToParts(new Date());
+  const values = Object.fromEntries(parts.map(part => [part.type, part.value]));
+  return `${values.year}-${values.month}-${values.day}`;
 }
 
 function categoryShape(row) {
@@ -187,10 +199,7 @@ async function categoryTree(env, url) {
 }
 
 async function addCategory(request, env, url) {
-  const origin = request.headers.get("origin");
-  if ((origin && origin !== url.origin) || request.headers.get("sec-fetch-site") === "cross-site") {
-    return reply({error: "请求来源无效"}, 403);
-  }
+  if (!sameOrigin(request, url)) return reply({error: "请求来源无效"}, 403);
   let body;
   try { body = await request.json(); } catch { return reply({error: "请输入有效的类目信息"}, 400); }
   const node = String(body.node || "").trim();
@@ -213,10 +222,7 @@ async function addCategory(request, env, url) {
 }
 
 async function deleteCategory(request, env, url, node) {
-  const origin = request.headers.get("origin");
-  if ((origin && origin !== url.origin) || request.headers.get("sec-fetch-site") === "cross-site") {
-    return reply({error: "请求来源无效"}, 403);
-  }
+  if (!sameOrigin(request, url)) return reply({error: "请求来源无效"}, 403);
   if (!/^\d{1,14}$/.test(node)) return reply({error: "类目节点无效"}, 400);
   if (BASE_REGISTRY.categories.some(item => String(item.node) === node)) {
     return reply({error: "系统内置类目不能删除"}, 403);
@@ -232,9 +238,95 @@ async function deleteCategory(request, env, url, node) {
   }
 }
 
+function captureShape(row) {
+  return {
+    id: row.id,
+    categoryNode: row.category_node,
+    ranking: row.ranking,
+    requestedDate: row.requested_date,
+    status: row.status,
+    requestedAt: row.requested_at,
+    startedAt: row.started_at || null,
+    completedAt: row.completed_at || null,
+    message: row.message || "",
+    attempts: Number(row.attempts || 1)
+  };
+}
+
+async function createCaptureRequest(request, env, url) {
+  if (!sameOrigin(request, url)) return reply({error: "请求来源无效"}, 403);
+  if (!env.DB) return reply({error: "抓取服务暂时不可用"}, 503);
+  let body;
+  try { body = await request.json(); } catch { return reply({error: "请选择要抓取的类目"}, 400); }
+  const categoryNode = String(body.categoryNode || "").trim();
+  const ranking = String(body.ranking || "new-releases");
+  if (!/^\d{1,14}$/.test(categoryNode)) return reply({error: "类目节点无效"}, 400);
+  if (!['new-releases', 'best-sellers'].includes(ranking)) return reply({error: "榜单类型无效"}, 400);
+  const allCategories = await registry(env);
+  const category = allCategories.categories.find(item => String(item.node) === categoryNode);
+  if (!category) return reply({error: "该类目尚未添加到看板"}, 404);
+  if (ranking === "best-sellers" && !category.bestSellersManifest) return reply({error: "该类目尚未配置热销榜采集"}, 409);
+  const requestedDate = beijingDate();
+  const selectSql = "SELECT id, category_node, ranking, requested_date, status, requested_at, started_at, completed_at, message, attempts FROM capture_requests WHERE category_node = ? AND ranking = ? AND requested_date = ? LIMIT 1";
+  const existing = await env.DB.prepare(selectSql).bind(categoryNode, ranking, requestedDate).first();
+  if (existing) {
+    if (existing.status === "failed") {
+      await env.DB.prepare("UPDATE capture_requests SET status = 'pending', requested_at = CURRENT_TIMESTAMP, started_at = NULL, completed_at = NULL, message = NULL, attempts = attempts + 1 WHERE id = ?").bind(existing.id).run();
+      const retried = await env.DB.prepare(selectSql).bind(categoryNode, ranking, requestedDate).first();
+      return reply({request: captureShape(retried), reused: true}, 202);
+    }
+    return reply({request: captureShape(existing), reused: true}, existing.status === "completed" ? 200 : 202);
+  }
+  const id = crypto.randomUUID();
+  await env.DB.prepare("INSERT INTO capture_requests (id, category_node, ranking, requested_date) VALUES (?, ?, ?, ?)").bind(id, categoryNode, ranking, requestedDate).run();
+  const created = await env.DB.prepare(selectSql).bind(categoryNode, ranking, requestedDate).first();
+  return reply({request: captureShape(created), reused: false}, 202);
+}
+
+async function captureRequests(request, env, url) {
+  if (!env.DB) return reply({error: "抓取服务暂时不可用"}, 503);
+  if (request.method === "POST") return createCaptureRequest(request, env, url);
+  if (request.method !== "GET") return new Response("Method Not Allowed", {status: 405});
+  const status = String(url.searchParams.get("status") || "");
+  if (status === "pending") {
+    const result = await env.DB.prepare("SELECT id, category_node, ranking, requested_date, status, requested_at, started_at, completed_at, message, attempts FROM capture_requests WHERE status = 'pending' ORDER BY requested_at LIMIT 10").all();
+    return reply({requests: (result.results || []).map(captureShape)});
+  }
+  return reply({error: "请指定抓取请求"}, 400);
+}
+
+async function captureRequestById(request, env, url, id) {
+  if (!env.DB) return reply({error: "抓取服务暂时不可用"}, 503);
+  const selectSql = "SELECT id, category_node, ranking, requested_date, status, requested_at, started_at, completed_at, message, attempts FROM capture_requests WHERE id = ? LIMIT 1";
+  if (request.method === "GET") {
+    const row = await env.DB.prepare(selectSql).bind(id).first();
+    return row ? reply({request: captureShape(row)}) : reply({error: "抓取请求不存在"}, 404);
+  }
+  if (request.method !== "PATCH") return new Response("Method Not Allowed", {status: 405});
+  if (!sameOrigin(request, url)) return reply({error: "请求来源无效"}, 403);
+  let body;
+  try { body = await request.json(); } catch { return reply({error: "状态内容无效"}, 400); }
+  const status = String(body.status || ""), message = String(body.message || "").trim().slice(0, 240);
+  if (!['running', 'completed', 'failed'].includes(status)) return reply({error: "抓取状态无效"}, 400);
+  const current = await env.DB.prepare(selectSql).bind(id).first();
+  if (!current) return reply({error: "抓取请求不存在"}, 404);
+  if (status === "running" && current.status !== "pending") return reply({error: "该请求已被处理"}, 409);
+  if (['completed', 'failed'].includes(status) && current.status !== "running") return reply({error: "该请求尚未开始"}, 409);
+  if (status === "running") {
+    await env.DB.prepare("UPDATE capture_requests SET status = 'running', started_at = CURRENT_TIMESTAMP, message = ? WHERE id = ? AND status = 'pending'").bind(message, id).run();
+  } else {
+    await env.DB.prepare("UPDATE capture_requests SET status = ?, completed_at = CURRENT_TIMESTAMP, message = ? WHERE id = ? AND status = 'running'").bind(status, message, id).run();
+  }
+  const updated = await env.DB.prepare(selectSql).bind(id).first();
+  return reply({request: captureShape(updated)});
+}
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
+    if (url.pathname === "/api/capture-requests") return captureRequests(request, env, url);
+    const captureRequestMatch = url.pathname.match(/^\/api\/capture-requests\/([0-9a-f-]{36})$/i);
+    if (captureRequestMatch) return captureRequestById(request, env, url, captureRequestMatch[1]);
     if (url.pathname === "/api/categories" && request.method === "POST") return addCategory(request, env, url);
     const categoryDeleteMatch = url.pathname.match(/^\/api\/categories\/(\d{1,14})$/);
     if (categoryDeleteMatch && request.method === "DELETE") return deleteCategory(request, env, url, categoryDeleteMatch[1]);
@@ -272,6 +364,10 @@ def main() -> None:
     built_config = ROOT / "dist" / ".openai" / "hosting.json"
     built_config.parent.mkdir(parents=True, exist_ok=True)
     built_config.write_text((ROOT / ".openai" / "hosting.json").read_text(encoding="utf-8"), encoding="utf-8")
+    built_migrations = ROOT / "dist" / ".openai" / "drizzle"
+    built_migrations.mkdir(parents=True, exist_ok=True)
+    for migration in (ROOT / "drizzle").glob("*.sql"):
+        shutil.copy2(migration, built_migrations / migration.name)
     print(f"Built {OUTPUT.relative_to(ROOT)} with {len(assets())} assets")
 
 
