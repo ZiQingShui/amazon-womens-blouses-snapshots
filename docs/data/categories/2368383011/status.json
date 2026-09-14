@@ -1,7 +1,12 @@
 {
-  "status": "ok",
-  "updatedAt": "2026-09-14T08:42:14+08:00",
+  "status": "failed",
+  "attemptedAt": "2026-09-14T08:42:14+08:00",
   "snapshotDate": "2026-09-14",
-  "count": 100,
-  "manifestSnapshots": 1
+  "reason": "历史快照未通过新的来源与详情采集校验，已从看板索引隔离；等待完整 Top 100 重新采集",
+  "quality": {
+    "count": 100,
+    "publishable": false,
+    "detailChecked": 0,
+    "detailSourceValid": false
+  }
 }

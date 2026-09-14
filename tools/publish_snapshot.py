@@ -30,6 +30,7 @@ COVERAGE_FIELDS = (
     "promotion",
 )
 MISSING_TEXT = {"", "未显示", "未显示/无法获取", "待补齐", "未知", "unknown", "n/a", "none"}
+DETAIL_STATUSES = {"complete", "partial"}
 
 
 def load_categories() -> dict[str, dict]:
@@ -120,7 +121,20 @@ def has_coverage_value(row: dict, field: str) -> bool:
     return str(value or "").strip().lower() not in MISSING_TEXT
 
 
-def validate(items: list[dict]) -> dict:
+def detail_was_checked(row: dict) -> bool:
+    try:
+        attempts = int(row.get("detailAttempts", 0))
+    except (TypeError, ValueError):
+        attempts = 0
+    return row.get("detailStatus") in DETAIL_STATUSES and attempts >= 1
+
+
+def trusted_detail_source(value: str) -> bool:
+    normalized = str(value or "").strip().lower()
+    return "ecomtool mcp" in normalized and "unavailable" not in normalized
+
+
+def validate(items: list[dict], detail_source: str | None = None) -> dict:
     ranks = [row.get("rank") for row in items]
     asins = [row.get("asin") for row in items]
     duplicate_ranks = sorted({rank for rank in ranks if ranks.count(rank) > 1})
@@ -136,6 +150,8 @@ def validate(items: list[dict]) -> dict:
     coverage = {
         field: sum(has_coverage_value(row, field) for row in items) for field in COVERAGE_FIELDS
     }
+    detail_checked = sum(detail_was_checked(row) for row in items)
+    source_valid = None if detail_source is None else trusted_detail_source(detail_source)
     publishable = (
         len(items) == 100
         and not missing_ranks
@@ -143,6 +159,8 @@ def validate(items: list[dict]) -> dict:
         and not duplicate_asins
         and not any(required_missing.values())
         and not any(invalid_urls.values())
+        and detail_checked == len(items)
+        and source_valid is not False
     )
     return {
         "count": len(items),
@@ -153,6 +171,8 @@ def validate(items: list[dict]) -> dict:
         "requiredMissing": required_missing,
         "invalidUrls": invalid_urls,
         "fieldCoverage": coverage,
+        "detailChecked": detail_checked,
+        "detailSourceValid": source_valid,
     }
 
 
@@ -266,7 +286,7 @@ def publish(input_path: Path, snapshot_date: str, captured_at: str, detail_sourc
     category = categories[node]
     data_roots = [category_data_root(public_root, node) for public_root in PUBLIC_ROOTS]
     items = sorted((clean_item(row, snapshot_date) for row in read_input(input_path)), key=lambda row: row["rank"])
-    quality = validate(items)
+    quality = validate(items, detail_source)
     if not quality["publishable"]:
         failure = {
             "status": "failed",

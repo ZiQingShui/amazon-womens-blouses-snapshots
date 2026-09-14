@@ -247,6 +247,28 @@ class SnapshotArchiveTests(unittest.TestCase):
         self.assertTrue(publish_snapshot.has_coverage_value({"promotionStatus": "none"}, "promotion"))
         self.assertTrue(publish_snapshot.has_coverage_value({"mainBsr": 1}, "mainBsr"))
 
+    def test_structurally_complete_snapshot_requires_real_detail_collection(self):
+        items = self.read_json("dist", "data/latest.json")["items"]
+        unchecked = [dict(item) for item in items]
+        unchecked[0].pop("detailStatus", None)
+        unchecked[0].pop("detailAttempts", None)
+        quality = publish_snapshot.validate(unchecked, "Ecomtool MCP + Amazon 商品详情页")
+        self.assertFalse(quality["publishable"])
+        self.assertEqual(quality["detailChecked"], 99)
+
+    def test_non_mcp_detail_source_cannot_be_published(self):
+        items = self.read_json("dist", "data/latest.json")["items"]
+        quality = publish_snapshot.validate(items, "SellerSprite browser export; Ecomtool MCP unavailable")
+        self.assertFalse(quality["publishable"])
+        self.assertFalse(quality["detailSourceValid"])
+
+    def test_invalid_button_down_snapshot_is_not_indexed(self):
+        manifest = self.read_json("docs", "data/categories/2368383011/manifest.json")
+        status = self.read_json("docs", "data/categories/2368383011/status.json")
+        self.assertIsNone(manifest["latest"])
+        self.assertEqual(manifest["snapshots"], [])
+        self.assertEqual(status["status"], "failed")
+
     def test_history_streak_breaks_when_a_calendar_day_is_missing(self):
         item = {"asin": "B000000001"}
         earlier = [
