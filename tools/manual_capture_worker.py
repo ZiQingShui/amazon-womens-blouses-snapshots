@@ -138,7 +138,10 @@ def main() -> None:
     args = parser.parse_args()
     config = load_config(args.config.resolve())
     log_path = ROOT / "manual-capture-worker.log"
-    logging.basicConfig(filename=log_path, level=logging.INFO, encoding="utf-8", format="%(asctime)s %(levelname)s %(message)s")
+    handler = logging.FileHandler(log_path, encoding="utf-8")
+    handler.setFormatter(logging.Formatter("%(asctime)s %(levelname)s %(message)s"))
+    logging.getLogger().setLevel(logging.INFO)
+    logging.getLogger().addHandler(handler)
     run(config)
 
 
