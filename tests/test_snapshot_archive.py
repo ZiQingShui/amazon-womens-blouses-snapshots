@@ -109,6 +109,19 @@ class SnapshotArchiveTests(unittest.TestCase):
         self.assertIn("crypto.randomUUID()", worker)
         self.assertIn("CREATE TABLE capture_requests", migration)
         self.assertIn("idx_capture_requests_daily_category", migration)
+        self.assertIn('json("/api/capture-worker")', html)
+        self.assertIn('captureWorkerOnline', html)
+        self.assertIn('workerAuthorized(request, env)', worker)
+        self.assertIn('url.pathname === "/api/capture-worker"', worker)
+        self.assertTrue((ROOT / "tools" / "manual_capture_worker.py").exists())
+        self.assertTrue((ROOT / "tools" / "manual_capture_task.md").exists())
+
+    def test_manual_capture_can_refresh_only_current_day(self):
+        publisher = (ROOT / "tools" / "publish_snapshot.py").read_text(encoding="utf-8")
+        worker = (ROOT / "tools" / "build_worker.py").read_text(encoding="utf-8")
+        self.assertIn("--replace-current-day", publisher)
+        self.assertIn("只能用于当天快照", publisher)
+        self.assertIn("['failed', 'completed'].includes(existing.status)", worker)
 
     def test_full_category_browser_and_ranking_switch_are_present(self):
         html = (ROOT / "dist" / "index.html").read_text(encoding="utf-8")

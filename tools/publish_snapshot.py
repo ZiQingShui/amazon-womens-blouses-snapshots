@@ -254,7 +254,7 @@ def rebuild_manifest(public_root: Path, node: str = DEFAULT_NODE) -> dict:
     return manifest
 
 
-def publish(input_path: Path, snapshot_date: str, captured_at: str, detail_source: str, node: str = DEFAULT_NODE) -> dict:
+def publish(input_path: Path, snapshot_date: str, captured_at: str, detail_source: str, node: str = DEFAULT_NODE, replace_current_day: bool = False) -> dict:
     categories = load_categories()
     if node not in categories:
         remote_categories = load_remote_categories()
@@ -284,7 +284,10 @@ def publish(input_path: Path, snapshot_date: str, captured_at: str, detail_sourc
         for public_root in PUBLIC_ROOTS
         if archive_path(public_root, snapshot_date, node).exists()
     ]
-    if existing_archives:
+    today_beijing = datetime.now().astimezone().strftime("%Y-%m-%d")
+    if replace_current_day and snapshot_date != today_beijing:
+        raise SystemExit("--replace-current-day 只能用于当天快照")
+    if existing_archives and not replace_current_day:
         failure = {
             "status": "failed",
             "attemptedAt": captured_at,
@@ -329,10 +332,11 @@ def main() -> None:
     parser.add_argument("--captured-at", default=None)
     parser.add_argument("--node", default=DEFAULT_NODE)
     parser.add_argument("--detail-source", default="Ecomtool MCP + Amazon 商品详情页")
+    parser.add_argument("--replace-current-day", action="store_true", help="仅允许替换今天的快照，用于手动修复或刷新")
     args = parser.parse_args()
     datetime.strptime(args.date, "%Y-%m-%d")
     captured_at = args.captured_at or f"{args.date}T08:30:00+08:00"
-    result = publish(args.input.resolve(), args.date, captured_at, args.detail_source, args.node)
+    result = publish(args.input.resolve(), args.date, captured_at, args.detail_source, args.node, args.replace_current_day)
     # Sites serves data embedded in the Worker bundle, so every successful
     # snapshot publication must refresh that bundle before deployment.
     from build_worker import main as build_worker_main

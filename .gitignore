@@ -1,3 +1,5 @@
 __pycache__/
 *.pyc
 work/
+manual-capture-worker.local.json
+manual-capture-worker.log

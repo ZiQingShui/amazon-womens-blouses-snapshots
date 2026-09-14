@@ -53,6 +53,14 @@ function sameOrigin(request, url) {
   return (!origin || origin === url.origin) && request.headers.get("sec-fetch-site") !== "cross-site";
 }
 
+function workerAuthorized(request, env) {
+  const configured = String(env.CAPTURE_WORKER_TOKEN || "");
+  if (!configured) return false;
+  const authorization = String(request.headers.get("authorization") || "");
+  const token = authorization.startsWith("Bearer ") ? authorization.slice(7) : String(request.headers.get("x-capture-worker-token") || "");
+  return token.length === configured.length && token === configured;
+}
+
 function beijingDate() {
   const parts = new Intl.DateTimeFormat("en-US", {timeZone: "Asia/Shanghai", year: "numeric", month: "2-digit", day: "2-digit"}).formatToParts(new Date());
   const values = Object.fromEntries(parts.map(part => [part.type, part.value]));
@@ -270,7 +278,7 @@ async function createCaptureRequest(request, env, url) {
   const selectSql = "SELECT id, category_node, ranking, requested_date, status, requested_at, started_at, completed_at, message, attempts FROM capture_requests WHERE category_node = ? AND ranking = ? AND requested_date = ? LIMIT 1";
   const existing = await env.DB.prepare(selectSql).bind(categoryNode, ranking, requestedDate).first();
   if (existing) {
-    if (existing.status === "failed") {
+    if (['failed', 'completed'].includes(existing.status)) {
       await env.DB.prepare("UPDATE capture_requests SET status = 'pending', requested_at = CURRENT_TIMESTAMP, started_at = NULL, completed_at = NULL, message = NULL, attempts = attempts + 1 WHERE id = ?").bind(existing.id).run();
       const retried = await env.DB.prepare(selectSql).bind(categoryNode, ranking, requestedDate).first();
       return reply({request: captureShape(retried), reused: true}, 202);
@@ -287,6 +295,7 @@ async function captureRequests(request, env, url) {
   if (!env.DB) return reply({error: "抓取服务暂时不可用"}, 503);
   if (request.method === "POST") return createCaptureRequest(request, env, url);
   if (request.method !== "GET") return new Response("Method Not Allowed", {status: 405});
+  if (!workerAuthorized(request, env)) return reply({error: "本机处理器认证失败"}, 401);
   const status = String(url.searchParams.get("status") || "");
   if (status === "pending") {
     const result = await env.DB.prepare("SELECT id, category_node, ranking, requested_date, status, requested_at, started_at, completed_at, message, attempts FROM capture_requests WHERE status = 'pending' ORDER BY requested_at LIMIT 10").all();
@@ -303,7 +312,7 @@ async function captureRequestById(request, env, url, id) {
     return row ? reply({request: captureShape(row)}) : reply({error: "抓取请求不存在"}, 404);
   }
   if (request.method !== "PATCH") return new Response("Method Not Allowed", {status: 405});
-  if (!sameOrigin(request, url)) return reply({error: "请求来源无效"}, 403);
+  if (!workerAuthorized(request, env)) return reply({error: "本机处理器认证失败"}, 401);
   let body;
   try { body = await request.json(); } catch { return reply({error: "状态内容无效"}, 400); }
   const status = String(body.status || ""), message = String(body.message || "").trim().slice(0, 240);
@@ -321,10 +330,30 @@ async function captureRequestById(request, env, url, id) {
   return reply({request: captureShape(updated)});
 }
 
+async function captureWorker(request, env) {
+  if (!env.DB) return reply({online: false, state: "offline", message: "抓取服务暂时不可用"}, 503);
+  if (request.method === "GET") {
+    const row = await env.DB.prepare("SELECT worker_id, state, active_request_id, message, last_seen_at, CAST((julianday('now') - julianday(last_seen_at)) * 86400 AS INTEGER) AS age_seconds FROM capture_worker_status WHERE id = 1 LIMIT 1").first();
+    const online = Boolean(row && Number(row.age_seconds) <= 30);
+    return reply({online, state: online ? row.state : "offline", activeRequestId: online ? row.active_request_id || null : null, message: online ? row.message || "" : "本机采集器未连接", lastSeenAt: row?.last_seen_at || null});
+  }
+  if (request.method !== "POST") return new Response("Method Not Allowed", {status: 405});
+  if (!workerAuthorized(request, env)) return reply({error: "本机处理器认证失败"}, 401);
+  let body;
+  try { body = await request.json(); } catch { body = {}; }
+  const workerId = String(body.workerId || "local-worker").trim().slice(0, 80) || "local-worker";
+  const state = ['idle', 'busy', 'error'].includes(String(body.state)) ? String(body.state) : "idle";
+  const activeRequestId = /^[0-9a-f-]{36}$/i.test(String(body.activeRequestId || "")) ? String(body.activeRequestId) : null;
+  const message = String(body.message || "").trim().slice(0, 240);
+  await env.DB.prepare("INSERT INTO capture_worker_status (id, worker_id, state, active_request_id, message, last_seen_at) VALUES (1, ?, ?, ?, ?, CURRENT_TIMESTAMP) ON CONFLICT(id) DO UPDATE SET worker_id = excluded.worker_id, state = excluded.state, active_request_id = excluded.active_request_id, message = excluded.message, last_seen_at = CURRENT_TIMESTAMP").bind(workerId, state, activeRequestId, message).run();
+  return reply({ok: true, online: true, state, activeRequestId});
+}
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
     if (url.pathname === "/api/capture-requests") return captureRequests(request, env, url);
+    if (url.pathname === "/api/capture-worker") return captureWorker(request, env);
     const captureRequestMatch = url.pathname.match(/^\/api\/capture-requests\/([0-9a-f-]{36})$/i);
     if (captureRequestMatch) return captureRequestById(request, env, url, captureRequestMatch[1]);
     if (url.pathname === "/api/categories" && request.method === "POST") return addCategory(request, env, url);
