@@ -129,7 +129,18 @@ class SnapshotArchiveTests(unittest.TestCase):
 
     def test_seed_categories_include_hierarchical_paths(self):
         registry = self.read_json("docs", "data/categories.json")
-        self.assertEqual([len(item.get("path", [])) for item in registry["categories"]], [5, 6])
+        paths = {item["node"]: item.get("path", []) for item in registry["categories"]}
+        self.assertEqual(len(paths["2368365011"]), 5)
+        self.assertEqual(len(paths["2368383011"]), 6)
+        self.assertEqual(paths["370783011"], ["Amazon Devices & Accessories", "Amazon Device Accessories"])
+
+    def test_archived_images_may_use_the_project_github_pages_host(self):
+        self.assertTrue(
+            publish_snapshot.is_allowed_url(
+                "https://ziqingshui.github.io/amazon-womens-blouses-snapshots/data/images/2026-09-14/2368365011/B000000001.png",
+                "image",
+            )
+        )
 
     def test_official_amazon_category_catalog_contains_real_hierarchy(self):
         catalog = self.read_json("docs", "data/category-tree.json")
@@ -203,11 +214,12 @@ class SnapshotArchiveTests(unittest.TestCase):
         self.assertEqual(quality["invalidUrls"], {"product": 1, "image": 1})
 
     def test_placeholder_values_do_not_inflate_field_coverage(self):
-        items = self.read_json("dist", "data/latest.json")["items"]
-        quality = publish_snapshot.validate(items)
-        self.assertEqual(quality["fieldCoverage"]["listingDate"], 84)
-        self.assertEqual(quality["fieldCoverage"]["promotion"], 76)
-        self.assertEqual(quality["fieldCoverage"]["mainBsr"], 74)
+        self.assertFalse(publish_snapshot.has_coverage_value({"listingDate": "未显示/无法获取"}, "listingDate"))
+        self.assertFalse(publish_snapshot.has_coverage_value({"promotionStatus": "unknown"}, "promotion"))
+        self.assertFalse(publish_snapshot.has_coverage_value({"mainBsr": None}, "mainBsr"))
+        self.assertTrue(publish_snapshot.has_coverage_value({"listingDate": "2026-09-14"}, "listingDate"))
+        self.assertTrue(publish_snapshot.has_coverage_value({"promotionStatus": "none"}, "promotion"))
+        self.assertTrue(publish_snapshot.has_coverage_value({"mainBsr": 1}, "mainBsr"))
 
     def test_history_streak_breaks_when_a_calendar_day_is_missing(self):
         item = {"asin": "B000000001"}

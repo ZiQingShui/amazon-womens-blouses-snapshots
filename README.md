@@ -4,6 +4,7 @@
 
 - `2368365011`：Women's Blouses & Button-Down Shirts
 - `2368383011`：Women's Button-Down Shirts
+- `370783011`：Amazon Device Accessories（等待首次完整 Top 100）
 
 ## 数据结构
 
@@ -46,7 +47,7 @@ python tools/publish_snapshot.py `
   --node 2368383011
 ```
 
-发布器只接受名次 1–100 完整、ASIN 唯一、标题和图片齐全，并且商品链接与图片链接来自受信任 HTTPS 域名的数据。已存在的同日快照禁止覆盖；未通过校验时不会覆盖 `latest.json`，只会在 `status.json` 记录失败原因。字段完整率不会把“未显示/无法获取”等占位文字当成有效数据；多个促销会去重后全部保留。
+发布器只接受名次 1–100 完整、ASIN 唯一、标题和图片齐全，并且商品链接与图片链接来自受信任 HTTPS 域名的数据。Amazon 原图或本项目 GitHub Pages 托管的榜单导出图均可通过图片校验。已存在的同日快照禁止覆盖；未通过校验时不会覆盖 `latest.json`，只会在 `status.json` 记录失败原因。字段完整率不会把“未显示/无法获取”等占位文字当成有效数据；多个促销会去重后全部保留。
 
 ## 验证
 

@@ -57,6 +57,8 @@ def is_allowed_url(value: object, kind: str) -> bool:
     host = (parsed.hostname or "").lower()
     if kind == "product":
         return host in {"amazon.com", "www.amazon.com"} and "/dp/" in parsed.path
+    if host == "ziqingshui.github.io":
+        return parsed.path.startswith("/amazon-womens-blouses-snapshots/data/images/")
     return (
         host == "images-na.ssl-images-amazon.com"
         or host.endswith(".media-amazon.com")

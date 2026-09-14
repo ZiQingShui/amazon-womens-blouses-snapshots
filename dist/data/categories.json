@@ -23,6 +23,18 @@
       "ranking": "Hot New Releases",
       "url": "https://www.amazon.com/gp/new-releases/fashion/2368383011",
       "manifest": "data/categories/2368383011/manifest.json"
+    },
+    {
+      "site": "US",
+      "name": "Amazon Device Accessories",
+      "label": "Amazon Device Accessories",
+      "node": "370783011",
+      "path": ["Amazon Devices & Accessories", "Amazon Device Accessories"],
+      "departmentSlug": "amazon-devices",
+      "ranking": "Hot New Releases",
+      "url": "https://www.amazon.com/gp/new-releases/amazon-devices/370783011",
+      "manifest": "data/categories/370783011/manifest.json",
+      "deletable": true
     }
   ]
 }

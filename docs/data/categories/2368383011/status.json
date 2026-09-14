@@ -1,5 +1,7 @@
 {
-  "status": "waiting",
-  "categoryNode": "2368383011",
-  "reason": "等待首次 Top 100 快照"
+  "status": "ok",
+  "updatedAt": "2026-09-14T08:42:14+08:00",
+  "snapshotDate": "2026-09-14",
+  "count": 100,
+  "manifestSnapshots": 1
 }
