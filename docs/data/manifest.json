@@ -13,12 +13,12 @@
       "fieldCoverage": {
         "title": 100,
         "image": 100,
-        "brand": 65,
-        "price": 0,
-        "mainBsr": 0,
-        "subBsr": 0,
-        "listingDate": 51,
-        "promotion": 0
+        "brand": 100,
+        "price": 96,
+        "mainBsr": 100,
+        "subBsr": 100,
+        "listingDate": 88,
+        "promotion": 100
       }
     },
     {
