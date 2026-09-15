@@ -296,8 +296,14 @@ class SnapshotArchiveTests(unittest.TestCase):
         self.assertEqual(quality["invalidUrls"], {"product": 1, "image": 1})
 
     def test_placeholder_values_do_not_inflate_field_coverage(self):
-        items = self.read_json("dist", "data/latest.json")["items"]
-        quality = publish_snapshot.validate(items)
+        """占位文字（「未显示/无法获取」）不能算作有效字段。
+
+        样本固定用 2026-09-13 那一期：它含 16 条 listingDate 占位、24 条
+        promotion 未知，覆盖率必须如实反映，而不是像旧版那样记成 100。
+        这里刻意不读 latest.json —— latest 会随新快照滚动，旧的断言会因此失效。
+        """
+        snapshot = self.read_json("docs", "data/daily/2026/09/2026-09-13.json")
+        quality = publish_snapshot.validate(snapshot["items"])
         self.assertEqual(quality["fieldCoverage"]["listingDate"], 84)
         self.assertEqual(quality["fieldCoverage"]["promotion"], 76)
         self.assertEqual(quality["fieldCoverage"]["mainBsr"], 74)
