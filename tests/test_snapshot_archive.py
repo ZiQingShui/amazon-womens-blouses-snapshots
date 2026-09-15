@@ -39,9 +39,18 @@ class SnapshotArchiveTests(unittest.TestCase):
         assets = json.loads(first_line[len(prefix):-1])
         embedded_manifest = json.loads(assets["/data/manifest.json"]["body"])
         embedded_latest = json.loads(assets["/data/latest.json"]["body"])
+        self.assertEqual(assets["/index.html"]["body"], (ROOT / "docs" / "index.html").read_text(encoding="utf-8"))
         self.assertEqual(embedded_manifest, self.read_json("dist", "data/manifest.json"))
         self.assertEqual(embedded_latest, self.read_json("dist", "data/latest.json"))
         self.assertNotIn("/amazon_womens_blouses_new_releases_data.js", assets)
+
+    def test_upload_controls_and_worker_route_exist(self):
+        html = (ROOT / "docs" / "index.html").read_text(encoding="utf-8")
+        worker = (ROOT / "dist" / "server" / "index.js").read_text(encoding="utf-8")
+        self.assertIn('id="openRankingUpload"', html)
+        self.assertIn('id="rankingUploadFile"', html)
+        self.assertIn('fetch("/api/ranking-uploads"', html)
+        self.assertIn('if (url.pathname === "/api/ranking-uploads")', worker)
 
     def test_manifest_points_to_complete_snapshots(self):
         manifest = self.read_json("docs", "data/manifest.json")

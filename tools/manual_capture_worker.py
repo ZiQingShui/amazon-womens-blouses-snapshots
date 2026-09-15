@@ -66,10 +66,11 @@ def request_age_minutes(request: dict) -> float:
 
 
 def task_prompt(request: dict) -> str:
+    source = request.get("rankingSource", "official")
     return (
         "这是由公开看板‘立即抓取’按钮触发的手动采集任务，不是定时任务。\n"
         f"请求 ID：{request['id']}\n类目节点：{request['categoryNode']}\n"
-        f"榜单：{request['ranking']}\n快照日期：{request['requestedDate']}\n\n"
+        f"榜单：{request['ranking']}\n快照日期：{request['requestedDate']}\n榜单来源：{source}\n\n"
         "请读取 published-dashboard/README.md 和 published-dashboard/tools/manual_capture_task.md，"
         "调用当前可用的 Ecomtool MCP 完成真实采集、校验、生成快照并发布到现有 Sites 看板。"
         "每日自动抓取必须继续保持暂停。处理完成后务必按任务说明把该请求更新为 completed；"
@@ -115,7 +116,7 @@ def run(config: dict) -> None:
             request = pending[0]
             request_id = request["id"]
             update_request(config, request_id, "running", "本机处理器已接单")
-            if request_age_minutes(request) > float(config["staleMinutes"]):
+            if request.get("rankingSource", "official") != "upload" and request_age_minutes(request) > float(config["staleMinutes"]):
                 update_request(config, request_id, "failed", "这是处理器上线前遗留的旧任务，请重新点击立即抓取")
                 logging.info("已关闭遗留任务 %s", request_id)
                 continue

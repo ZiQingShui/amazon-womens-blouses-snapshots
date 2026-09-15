@@ -274,7 +274,11 @@ def rebuild_manifest(public_root: Path, node: str = DEFAULT_NODE) -> dict:
     return manifest
 
 
-def publish(input_path: Path, snapshot_date: str, captured_at: str, detail_source: str, node: str = DEFAULT_NODE, replace_current_day: bool = False) -> dict:
+def publish(input_path: Path, snapshot_date: str, captured_at: str, detail_source: str, node: str = DEFAULT_NODE, replace_current_day: bool = False, ranking_source: str = "official", ranking_source_captured_at: str | None = None, ranking_source_sha256: str | None = None) -> dict:
+    if ranking_source not in {"official", "user-upload"}:
+        raise SystemExit("榜单来源只允许 official 或 user-upload")
+    if ranking_source == "user-upload" and (not ranking_source_captured_at or not ranking_source_sha256):
+        raise SystemExit("用户上传榜单必须记录文件采集时间和 SHA-256")
     categories = load_categories()
     if node not in categories:
         remote_categories = load_remote_categories()
@@ -325,7 +329,7 @@ def publish(input_path: Path, snapshot_date: str, captured_at: str, detail_sourc
         "snapshotDate": snapshot_date,
         "capturedAt": captured_at,
         "category": category,
-        "sources": {"ranking": "Amazon 官方新品榜", "productDetails": detail_source},
+        "sources": {"ranking": "用户上传榜单导出" if ranking_source == "user-upload" else "Amazon 官方新品榜", "rankingSourceType": ranking_source, "rankingCapturedAt": ranking_source_captured_at, "rankingFileSha256": ranking_source_sha256, "productDetails": detail_source},
         "quality": quality,
         "items": items,
     }
@@ -352,11 +356,14 @@ def main() -> None:
     parser.add_argument("--captured-at", default=None)
     parser.add_argument("--node", default=DEFAULT_NODE)
     parser.add_argument("--detail-source", default="Ecomtool MCP + Amazon 商品详情页")
+    parser.add_argument("--ranking-source", choices=["official", "user-upload"], default="official")
+    parser.add_argument("--ranking-source-captured-at", default=None)
+    parser.add_argument("--ranking-source-sha256", default=None)
     parser.add_argument("--replace-current-day", action="store_true", help="仅允许替换今天的快照，用于手动修复或刷新")
     args = parser.parse_args()
     datetime.strptime(args.date, "%Y-%m-%d")
     captured_at = args.captured_at or f"{args.date}T08:30:00+08:00"
-    result = publish(args.input.resolve(), args.date, captured_at, args.detail_source, args.node, args.replace_current_day)
+    result = publish(args.input.resolve(), args.date, captured_at, args.detail_source, args.node, args.replace_current_day, args.ranking_source, args.ranking_source_captured_at, args.ranking_source_sha256)
     # Sites serves data embedded in the Worker bundle, so every successful
     # snapshot publication must refresh that bundle before deployment.
     from build_worker import main as build_worker_main
