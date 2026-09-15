@@ -4,7 +4,7 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
-from tools import add_category, publish_snapshot
+from tools import add_category, build_worker, publish_snapshot
 
 
 ROOT = Path(__file__).parents[1]
@@ -50,10 +50,110 @@ class SnapshotArchiveTests(unittest.TestCase):
         for entry in manifest["snapshots"]:
             snapshot = self.read_json("docs", entry["file"])
             items = snapshot["items"]
-            self.assertTrue(snapshot["quality"]["publishable"])
+            # 硬性完整性：与采集质量无关，任何一期都必须满足。
             self.assertEqual([row["rank"] for row in items], list(range(1, 101)))
             self.assertEqual(len({row["asin"] for row in items}), 100)
             self.assertTrue(all(row.get("title") and row.get("image") for row in items))
+            # manifest 不得与快照内写死的 quality 脱节。
+            self.assertEqual(entry["publishable"], snapshot["quality"]["publishable"], entry["date"])
+
+    def test_archived_quality_matches_recomputed_quality(self):
+        """存档里的 quality 必须能被当前 validate() 复现。
+
+        2026-09-13 那期曾长期标注 8 个字段全 100%，而 mainBsr 实际只有
+        74/100：校验口径在发布当天被收紧，但没人回算历史存档。
+        """
+        for entry in self.read_json("docs", "data/manifest.json")["snapshots"]:
+            snapshot = self.read_json("docs", entry["file"])
+            fresh = publish_snapshot.validate(snapshot["items"])
+            self.assertEqual(snapshot["quality"], fresh, entry["date"])
+            self.assertEqual(entry["fieldCoverage"], fresh["fieldCoverage"], entry["date"])
+            self.assertEqual(entry["provenance"], fresh["provenance"], entry["date"])
+            self.assertEqual(entry["coverageFailures"], fresh["coverageFailures"], entry["date"])
+
+    def test_manifest_never_trusts_the_quality_stored_in_archives(self):
+        """rebuild_manifest 必须从 items 现算，而不是照抄存档里的 quality。"""
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            forged = {
+                "snapshotDate": "2026-01-01",
+                "capturedAt": "2026-01-01T08:30:00+08:00",
+                "items": [],
+                "quality": {"count": 100, "publishable": True, "fieldCoverage": {"brand": 100}},
+            }
+            target = publish_snapshot.archive_path(root, "2026-01-01")
+            target.parent.mkdir(parents=True, exist_ok=True)
+            target.write_text(json.dumps(forged), encoding="utf-8")
+            rebuilt = publish_snapshot.build_manifest(root, publish_snapshot.DEFAULT_NODE)
+        self.assertEqual(rebuilt["snapshots"][0]["count"], 0)
+        self.assertFalse(rebuilt["snapshots"][0]["publishable"])
+        self.assertEqual(rebuilt["snapshots"][0]["fieldCoverage"]["brand"], 0)
+
+    def test_degraded_snapshots_fail_the_coverage_gate(self):
+        manifest = self.read_json("docs", "data/manifest.json")
+        degraded = [entry for entry in manifest["snapshots"] if entry["provenance"]["degraded"]]
+        self.assertTrue(degraded, "至少应有一期带降级标记，用于验证门禁生效")
+        for entry in degraded:
+            quality = publish_snapshot.validate(self.read_json("docs", entry["file"])["items"])
+            self.assertFalse(quality["publishable"], entry["date"])
+            self.assertTrue(quality["coverageFailures"], entry["date"])
+
+    def test_healthy_snapshots_pass_the_coverage_gate(self):
+        manifest = self.read_json("docs", "data/manifest.json")
+        healthy = [entry for entry in manifest["snapshots"] if not entry["provenance"]["degraded"]]
+        self.assertTrue(healthy)
+        for entry in healthy:
+            quality = publish_snapshot.validate(self.read_json("docs", entry["file"])["items"])
+            self.assertTrue(quality["publishable"], entry["date"])
+            self.assertEqual(quality["coverageFailures"], {}, entry["date"])
+
+    def test_provenance_separates_fallback_from_reuse(self):
+        items = [
+            {"asin": "B1", "detailStatus": "fallback_after_mcp_failure", "detailSource": "Ecomtool browser extension"},
+            {"asin": "B2", "detailSource": "近三日历史快照（仅复用标题、品牌、上架日）"},
+            {"asin": "B3", "reusedFields": ["title"], "detailSource": "Amazon product detail page"},
+            {"asin": "B4", "detailSource": "Amazon product detail page"},
+        ]
+        result = publish_snapshot.provenance(items)
+        self.assertEqual(result["fallbackRows"], 1)
+        self.assertEqual(result["reusedRows"], 2)
+        self.assertTrue(result["degraded"])
+        self.assertEqual(result["sources"]["Amazon product detail page"], 2)
+
+    def test_worker_bundle_is_built_from_current_docs(self):
+        """提交的 Worker bundle 必须与当前 docs/ 一致，且不含二进制资源。
+
+        docs 下的商品图曾让 assets() 抛 UnicodeDecodeError，而
+        publish_snapshot 末尾会重建 bundle，于是整条发布链路在写盘后崩掉。
+        """
+        bundle = build_worker.assets()
+        self.assertTrue(bundle)
+        self.assertFalse(
+            [route for route in bundle if route.endswith((".png", ".jpg", ".jpeg", ".webp", ".gif"))],
+            "二进制资源不应进入 Worker bundle",
+        )
+        worker = (ROOT / "dist" / "server" / "index.js").read_text(encoding="utf-8")
+        embedded = json.loads(worker.split("const STATIC_ASSETS = ", 1)[1].split("\n", 1)[0].rstrip(";"))
+        self.assertEqual(embedded, bundle, "dist/server/index.js 尚未按最新 docs/ 重建")
+
+    def test_worker_validates_category_nodes_with_the_same_rule_as_cli(self):
+        worker = (ROOT / "tools" / "build_worker.py").read_text(encoding="utf-8")
+        self.assertIn("!/^\\d{6,14}$/.test(node)", worker)
+        self.assertNotIn("!/^\\d{1,14}$/.test(node)", worker)
+
+    def test_unparsable_input_is_recorded_as_a_failure(self):
+        """脏输入要写进 status.json 并走失败路径，而不是抛裸异常。"""
+        with tempfile.TemporaryDirectory() as temp:
+            roots = (Path(temp) / "dist", Path(temp) / "docs")
+            with patch.object(publish_snapshot, "PUBLIC_ROOTS", roots):
+                with self.assertRaises(SystemExit):
+                    publish_snapshot.publish(
+                        Path("does-not-exist.json"), "2026-09-20", "2026-09-20T08:30:00+08:00", "test"
+                    )
+            for root in roots:
+                status = json.loads((root / "data" / "status.json").read_text(encoding="utf-8"))
+                self.assertEqual(status["status"], "failed")
+                self.assertIn("输入数据无法规整", status["reason"])
 
     def test_custom_select_hides_native_control_in_header_and_filters(self):
         html = (ROOT / "dist" / "index.html").read_text(encoding="utf-8")
@@ -118,7 +218,11 @@ class SnapshotArchiveTests(unittest.TestCase):
 
     def test_seed_categories_include_hierarchical_paths(self):
         registry = self.read_json("docs", "data/categories.json")
-        self.assertEqual([len(item.get("path", [])) for item in registry["categories"]], [5, 6])
+        self.assertTrue(registry["categories"])
+        for item in registry["categories"]:
+            # 每个类目都要带层级路径与 Amazon 类目标识，否则看板会把类目树压平。
+            self.assertTrue(item.get("path"), item["node"])
+            self.assertTrue(item.get("departmentSlug"), item["node"])
 
     def test_official_amazon_category_catalog_contains_real_hierarchy(self):
         catalog = self.read_json("docs", "data/category-tree.json")
@@ -234,11 +338,19 @@ class SnapshotArchiveTests(unittest.TestCase):
                 path.parent.mkdir(parents=True)
                 path.write_text(json.dumps(seed), encoding="utf-8")
             with patch.object(add_category, "PUBLIC_ROOTS", roots):
-                added = add_category.add_category("1234567890", "Example Category")
+                added = add_category.add_category(
+                    "1234567890", "Example Category", None, ["Women", "Tops, Tees & Blouses", "Example"], "fashion"
+                )
             self.assertEqual(added["node"], "1234567890")
+            # CLI 必须写出与看板 POST /api/categories 相同的字段集，
+            # 否则类目树会缺层级，仓库自带的 path 断言也会失败。
+            self.assertEqual(added["path"], ["Women", "Tops, Tees & Blouses", "Example"])
+            self.assertEqual(added["departmentSlug"], "fashion")
+            self.assertIn("fashion/1234567890", added["url"])
             for root in roots:
                 registry = json.loads((root / "data" / "categories.json").read_text(encoding="utf-8"))
                 self.assertEqual(registry["categories"][0]["name"], "Example Category")
+                self.assertTrue(registry["categories"][0]["path"])
                 manifest = json.loads(
                     (root / "data" / "categories" / "1234567890" / "manifest.json").read_text(encoding="utf-8")
                 )

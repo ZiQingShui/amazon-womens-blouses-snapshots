@@ -9,14 +9,24 @@ ROOT = Path(__file__).parents[1]
 SOURCE = ROOT / "docs"
 OUTPUT = ROOT / "dist" / "server" / "index.js"
 LEGACY_SCRIPT_PREFIX = "amazon_womens_blouses_"
+# The Sites Worker bundle only carries UTF-8 text。Binary assets（例如
+# data/images 下的商品图）无法按文本内嵌，且看板始终引用 Amazon CDN 图片地址，
+# 因此不参与构建，避免 read_text 抛 UnicodeDecodeError。
+BINARY_SUFFIXES = {
+    ".png", ".jpg", ".jpeg", ".gif", ".webp", ".avif", ".bmp", ".ico", ".svgz",
+    ".woff", ".woff2", ".ttf", ".otf", ".eot",
+    ".zip", ".gz", ".pdf", ".mp4", ".webm",
+}
 
 
 def assets() -> dict[str, dict[str, str]]:
     result: dict[str, dict[str, str]] = {}
-    for path in SOURCE.rglob("*"):
+    for path in sorted(SOURCE.rglob("*")):
         if not path.is_file():
             continue
         if path.parent == SOURCE and path.name.startswith(LEGACY_SCRIPT_PREFIX) and path.suffix == ".js":
+            continue
+        if path.suffix.lower() in BINARY_SUFFIXES:
             continue
         route = "/" + path.relative_to(SOURCE).as_posix()
         content_type = mimetypes.guess_type(path.name)[0] or "application/octet-stream"
@@ -188,7 +198,7 @@ async function addCategory(request, env, url) {
   const label = String(body.label || "").trim() || name;
   const path = Array.isArray(body.path) ? body.path.map(part => String(part).trim()).filter(Boolean).slice(0, 12) : [];
   const departmentSlug = String(body.departmentSlug || "fashion").trim().toLowerCase();
-  if (!/^\d{1,14}$/.test(node)) return reply({error: "类目节点必须是 1–14 位数字"}, 400);
+  if (!/^\d{6,14}$/.test(node)) return reply({error: "类目节点必须是 6–14 位数字"}, 400);
   if (name.length > 120 || label.length > 120) return reply({error: "类目名称不能超过 120 个字符"}, 400);
   if (!/^[a-z0-9-]{2,60}$/.test(departmentSlug)) return reply({error: "Amazon 类目标识无效"}, 400);
   if (path.some(part => part.length > 120)) return reply({error: "类目路径内容过长"}, 400);
@@ -208,7 +218,8 @@ export default {
     if (url.pathname === "/api/categories" && request.method === "POST") return addCategory(request, env, url);
     if (url.pathname === "/api/category-tree" && request.method === "GET") {
       try { return await categoryTree(env, url); }
-      catch { return reply({nodes: []}); }
+      // 不要把故障伪装成「该类目没有子类目」，否则前端会误报为叶子节点。
+      catch { return reply({nodes: [], error: "类目服务暂时不可用"}, 502); }
     }
     if (url.pathname === "/data/categories.json" && request.method === "GET") {
       try { return reply(await registry(env)); }
@@ -233,14 +244,26 @@ export default {
 '''
 
 
+def build_bundle(bundle: dict[str, dict[str, str]] | None = None) -> str:
+    """生成 Worker 源码字符串（不写盘），bundle 省略时现收集 docs/。"""
+    return WORKER.replace(
+        "__ASSETS__",
+        json.dumps(bundle if bundle is not None else assets(), ensure_ascii=False, separators=(",", ":")),
+    )
+
+
+def hosting_config(target: Path | None = None) -> None:
+    destination = target or (ROOT / "dist" / ".openai" / "hosting.json")
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    destination.write_text((ROOT / ".openai" / "hosting.json").read_text(encoding="utf-8"), encoding="utf-8")
+
+
 def main() -> None:
-    payload = WORKER.replace("__ASSETS__", json.dumps(assets(), ensure_ascii=False, separators=(",", ":")))
+    bundle = assets()
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
-    OUTPUT.write_text(payload, encoding="utf-8")
-    built_config = ROOT / "dist" / ".openai" / "hosting.json"
-    built_config.parent.mkdir(parents=True, exist_ok=True)
-    built_config.write_text((ROOT / ".openai" / "hosting.json").read_text(encoding="utf-8"), encoding="utf-8")
-    print(f"Built {OUTPUT.relative_to(ROOT)} with {len(assets())} assets")
+    OUTPUT.write_text(build_bundle(bundle), encoding="utf-8")
+    hosting_config()
+    print(f"Built {OUTPUT.relative_to(ROOT)} with {len(bundle)} assets")
 
 
 if __name__ == "__main__":

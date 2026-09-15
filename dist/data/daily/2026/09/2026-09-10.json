@@ -24,6 +24,10 @@
       "title": 0,
       "image": 0
     },
+    "invalidUrls": {
+      "product": 0,
+      "image": 0
+    },
     "fieldCoverage": {
       "title": 100,
       "image": 100,
@@ -33,6 +37,15 @@
       "subBsr": 100,
       "listingDate": 92,
       "promotion": 100
+    },
+    "coverageFailures": {},
+    "provenance": {
+      "fallbackRows": 0,
+      "reusedRows": 0,
+      "degraded": false,
+      "sources": {
+        "未标注": 100
+      }
     }
   },
   "items": [
