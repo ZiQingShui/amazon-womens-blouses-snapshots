@@ -79,6 +79,11 @@ def parse_date(value: str) -> str | None:
         return None
 
 
+def high_resolution_image(value: str) -> str:
+    match = re.fullmatch(r"(https://m\.media-amazon\.com/images/I/[A-Za-z0-9+_-]+)\.SR\d+,\d+\.jpg", value)
+    return f"{match.group(1)}._AC_SL1000_.jpg" if match else value
+
+
 def ranking_table(source: str) -> tuple[list[list[str]], str | None]:
     if source.lower().endswith(".json"):
         payload = json.loads(read_bytes(source).decode("utf-8-sig"))
@@ -164,7 +169,7 @@ def main() -> None:
         listing_date = parse_date(clean(market.get("上架日期")))
         item = {
             "rank": rank, "asin": asin, "title": clean(product.get("标题")) or title,
-            "image": image, "imageExportMismatch": image_id not in image, "imageSource": "Ecomtool MCP 商品详情", "url": f"https://www.amazon.com/dp/{asin}",
+            "image": high_resolution_image(image), "imageExportMismatch": image_id not in image, "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本", "url": f"https://www.amazon.com/dp/{asin}",
             "brand": clean(product.get("品牌")) or clean(market.get("品牌名")) or "未显示/无法获取",
             "price": f"${price}" if price else "未显示/无法获取", "currency": "USD",
             "priceSource": "Ecomtool MCP 商品详情" if clean(product.get("Buybox价格")) else "用户上传榜单",
