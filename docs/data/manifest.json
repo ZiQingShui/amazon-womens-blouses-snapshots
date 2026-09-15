@@ -1,9 +1,26 @@
 {
   "schemaVersion": 1,
   "categoryNode": "2368365011",
-  "updatedAt": "2026-09-14T08:33:00+08:00",
-  "latest": "2026-09-14",
+  "updatedAt": "2026-09-15T17:02:22+08:00",
+  "latest": "2026-09-15",
   "snapshots": [
+    {
+      "date": "2026-09-15",
+      "capturedAt": "2026-09-15T17:02:22+08:00",
+      "file": "data/daily/2026/09/2026-09-15.json",
+      "count": 100,
+      "publishable": true,
+      "fieldCoverage": {
+        "title": 100,
+        "image": 100,
+        "brand": 100,
+        "price": 100,
+        "mainBsr": 100,
+        "subBsr": 98,
+        "listingDate": 90,
+        "promotion": 100
+      }
+    },
     {
       "date": "2026-09-14",
       "capturedAt": "2026-09-14T08:33:00+08:00",

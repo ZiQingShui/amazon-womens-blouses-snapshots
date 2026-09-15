@@ -13,7 +13,9 @@ def main() -> None:
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--config", type=Path, default=DEFAULT_CONFIG)
     args = parser.parse_args()
-    if not args.output.resolve().is_relative_to(Path(__file__).parents[1].resolve()):
+    try:
+        args.output.resolve().relative_to(Path(__file__).parents[1].resolve())
+    except ValueError:
         raise SystemExit("输出文件必须位于 published-dashboard 中")
     config = load_config(args.config.resolve())
     payload = api(config, f"/api/ranking-uploads/{args.request_id}")
