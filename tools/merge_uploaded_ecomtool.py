@@ -102,7 +102,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="合并用户上传的名次与真实 Ecomtool MCP 批量结果")
     parser.add_argument("--ranking", required=True, help="用户导出的 UTF-8 网页表格 .xls 或上传接口下载的 JSON")
     parser.add_argument("--product-info", required=True, help="Ecomtool amazon_get_product_info 的结果网址或本地文件")
-    parser.add_argument("--market-analysis", required=True, help="Ecomtool amazon_get_market_analysis_data 的结果网址或本地文件")
+    parser.add_argument("--market-analysis", required=True, action="append", help="Ecomtool amazon_get_market_analysis_data 的结果网址或本地文件；分批结果可重复传入")
     parser.add_argument("--output", required=True, type=Path)
     parser.add_argument("--node", default="2368365011")
     args = parser.parse_args()
@@ -130,10 +130,19 @@ def main() -> None:
     product_rows, product_images = html_table(args.product_info)
     product_headers = product_rows[0]
     products = {row[0]: (dict(zip(product_headers, row)), image) for row, image in zip(product_rows[1:], product_images[1:]) if len(row) == len(product_headers)}
-    market_book = load_workbook(io.BytesIO(read_bytes(args.market_analysis)), read_only=True, data_only=True)
-    market_rows = market_book.active.iter_rows(values_only=True)
-    market_headers = [clean(value) for value in next(market_rows)]
-    markets = {clean(row[0]): dict(zip(market_headers, row)) for row in market_rows if len(row) == len(market_headers) and clean(row[0])}
+    markets = {}
+    for source in args.market_analysis:
+        market_book = load_workbook(io.BytesIO(read_bytes(source)), read_only=True, data_only=True)
+        market_rows = market_book.active.iter_rows(values_only=True)
+        market_headers = [clean(value) for value in next(market_rows)]
+        for row in market_rows:
+            asin = clean(row[0]) if row else ""
+            if len(row) != len(market_headers) or not asin:
+                continue
+            if asin in markets:
+                raise SystemExit(f"Ecomtool 分批市场分析结果 ASIN {asin} 重复")
+            markets[asin] = dict(zip(market_headers, row))
+        market_book.close()
     expected = {row[0] for row in ranking.values()}
     if set(products) != expected or set(markets) != expected:
         raise SystemExit(json.dumps({"reason": "Ecomtool 结果 ASIN 不完整或不匹配", "productInfoMissing": sorted(expected - set(products)), "marketAnalysisMissing": sorted(expected - set(markets))}, ensure_ascii=False))
