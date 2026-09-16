@@ -54,7 +54,16 @@
       "promotion": 100
     },
     "detailChecked": 100,
-    "detailSourceValid": true
+    "detailSourceValid": null,
+    "coverageFailures": {},
+    "provenance": {
+      "fallbackRows": 0,
+      "reusedRows": 0,
+      "degraded": false,
+      "sources": {
+        "Ecomtool MCP 商品详情 + 市场调研": 100
+      }
+    }
   },
   "items": [
     {

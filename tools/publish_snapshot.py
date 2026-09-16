@@ -3,7 +3,6 @@ from __future__ import annotations
 import argparse
 import json
 import re
-import shutil
 from datetime import date, datetime
 from pathlib import Path
 from urllib.parse import urlparse
@@ -31,6 +30,18 @@ COVERAGE_FIELDS = (
 )
 MISSING_TEXT = {"", "未显示", "未显示/无法获取", "待补齐", "未知", "unknown", "n/a", "none"}
 DETAIL_STATUSES = {"complete", "partial"}
+# 字段覆盖下限。标题与图片已由 REQUIRED_FIELDS 强制 100%；这里约束的是
+# 「明细采集降级」最容易打穿的四个字段——2026-09-13 那期 BSR 只剩 74/100
+# 却依然被判定为可发布，正是缺少这道门禁。
+# listingDate 与 promotion 不设下限：Amazon 本身不保证提供，只做如实统计。
+MIN_COVERAGE = {
+    "brand": 95,
+    "price": 95,
+    "mainBsr": 90,
+    "subBsr": 90,
+}
+# 类目节点位数口径，与 build_worker.py 里 Worker 侧校验保持一致。
+CATEGORY_NODE_PATTERN = r"\d{6,14}"
 
 
 def load_categories() -> dict[str, dict]:
@@ -70,7 +81,10 @@ def is_allowed_url(value: object, kind: str) -> bool:
 def read_input(path: Path) -> list[dict]:
     raw = path.read_text(encoding="utf-8-sig").strip()
     if path.suffix.lower() == ".js":
-        raw = raw.split("=", 1)[1].strip().rstrip(";")
+        # 兼容 window.X = [...] / const X = [...] 这类脚本包裹；匹配不到就按原样解析。
+        raw = re.sub(
+            r"^\s*(?:(?:const|let|var)\s+)?(?:window\.)?[A-Za-z_$][\w$]*\s*=\s*", "", raw
+        ).strip().rstrip(";")
     payload = json.loads(raw)
     if isinstance(payload, dict):
         payload = payload.get("items", payload.get("new_releases"))
@@ -80,8 +94,14 @@ def read_input(path: Path) -> list[dict]:
 
 
 def clean_item(item: dict, snapshot_date: str) -> dict:
+    if not isinstance(item, dict):
+        raise ValueError(f"商品条目必须是对象，收到 {type(item).__name__}")
     row = dict(item)
-    row["rank"] = int(row["rank"])
+    try:
+        row["rank"] = int(row["rank"])
+    except (KeyError, TypeError, ValueError) as error:
+        label = row.get("asin") or row.get("title") or "未知商品"
+        raise ValueError(f"商品 {label} 缺少有效名次") from error
     row["asin"] = str(row.get("asin", "")).strip().upper()
     row["sourceDate"] = snapshot_date
     promotions = [str(value).strip() for value in row.get("promotions", []) if str(value).strip()]
@@ -134,6 +154,34 @@ def trusted_detail_source(value: str) -> bool:
     return "ecomtool mcp" in normalized and "unavailable" not in normalized
 
 
+def provenance(items: list[dict]) -> dict:
+    """统计这一期有多少数据不是当期实测。
+
+    明细采集失败时，采集侧会退化为 fallback，或直接复用近几日快照里的
+    标题/品牌/上架日。这类值以前没有任何标记，看板会当成实测值展示，
+    从而污染上架天数、新入榜等判断 —— 这里把它们显式统计出来。
+    """
+    fallback_rows = sum(
+        1 for row in items if str(row.get("detailStatus") or "").strip().lower().startswith("fallback")
+    )
+    reused_rows = sum(
+        1
+        for row in items
+        if row.get("reusedFields")
+        or re.search(r"历史快照|复用|reuse", str(row.get("detailSource") or ""), re.IGNORECASE)
+    )
+    sources: dict[str, int] = {}
+    for row in items:
+        key = str(row.get("detailSource") or "未标注")
+        sources[key] = sources.get(key, 0) + 1
+    return {
+        "fallbackRows": fallback_rows,
+        "reusedRows": reused_rows,
+        "degraded": bool(fallback_rows or reused_rows),
+        "sources": sources,
+    }
+
+
 def validate(items: list[dict], detail_source: str | None = None) -> dict:
     ranks = [row.get("rank") for row in items]
     asins = [row.get("asin") for row in items]
@@ -152,6 +200,11 @@ def validate(items: list[dict], detail_source: str | None = None) -> dict:
     }
     detail_checked = sum(detail_was_checked(row) for row in items)
     source_valid = None if detail_source is None else trusted_detail_source(detail_source)
+    coverage_failures = {
+        field: {"actual": coverage[field], "required": minimum}
+        for field, minimum in MIN_COVERAGE.items()
+        if coverage[field] < minimum
+    }
     publishable = (
         len(items) == 100
         and not missing_ranks
@@ -161,6 +214,7 @@ def validate(items: list[dict], detail_source: str | None = None) -> dict:
         and not any(invalid_urls.values())
         and detail_checked == len(items)
         and source_valid is not False
+        and not coverage_failures
     )
     return {
         "count": len(items),
@@ -173,6 +227,8 @@ def validate(items: list[dict], detail_source: str | None = None) -> dict:
         "fieldCoverage": coverage,
         "detailChecked": detail_checked,
         "detailSourceValid": source_valid,
+        "coverageFailures": coverage_failures,
+        "provenance": provenance(items),
     }
 
 
@@ -249,28 +305,39 @@ def atomic_json(path: Path, payload: object) -> None:
     temp.replace(path)
 
 
-def rebuild_manifest(public_root: Path, node: str = DEFAULT_NODE) -> dict:
+def build_manifest(public_root: Path, node: str = DEFAULT_NODE) -> dict:
+    """从每日存档现算 manifest（不写盘）。"""
     entries = []
     data_root = category_data_root(public_root, node)
-    for path in (data_root / "daily").glob("*/*/*.json"):
+    for path in sorted((data_root / "daily").glob("*/*/*.json")):
         payload = json.loads(path.read_text(encoding="utf-8"))
+        # 不读取快照里存的 quality：校验口径一旦变化，存档里的旧值就会
+        # 与事实脱节（2026-09-13 那期因此长期虚报 100%）。这里每次从
+        # items 现算，manifest 永远反映当前口径。
+        quality = validate(payload.get("items", []))
         entries.append({
             "date": payload["snapshotDate"],
             "capturedAt": payload["capturedAt"],
             "file": path.relative_to(public_root).as_posix(),
-            "count": payload["quality"]["count"],
-            "publishable": payload["quality"]["publishable"],
-            "fieldCoverage": payload["quality"]["fieldCoverage"],
+            "count": quality["count"],
+            "publishable": quality["publishable"],
+            "coverageFailures": quality["coverageFailures"],
+            "provenance": quality["provenance"],
+            "fieldCoverage": quality["fieldCoverage"],
         })
     entries.sort(key=lambda row: row["date"], reverse=True)
-    manifest = {
+    return {
         "schemaVersion": 1,
         "categoryNode": node,
         "updatedAt": entries[0]["capturedAt"] if entries else None,
         "latest": entries[0]["date"] if entries else None,
         "snapshots": entries,
     }
-    atomic_json(data_root / "manifest.json", manifest)
+
+
+def rebuild_manifest(public_root: Path, node: str = DEFAULT_NODE) -> dict:
+    manifest = build_manifest(public_root, node)
+    atomic_json(category_data_root(public_root, node) / "manifest.json", manifest)
     return manifest
 
 
@@ -289,14 +356,34 @@ def publish(input_path: Path, snapshot_date: str, captured_at: str, detail_sourc
         raise SystemExit(f"未配置的类目节点：{node}")
     category = categories[node]
     data_roots = [category_data_root(public_root, node) for public_root in PUBLIC_ROOTS]
-    items = sorted((clean_item(row, snapshot_date) for row in read_input(input_path)), key=lambda row: row["rank"])
-    quality = validate(items, detail_source)
-    if not quality["publishable"]:
+    try:
+        raw_items = read_input(input_path)
+        items = sorted((clean_item(row, snapshot_date) for row in raw_items), key=lambda row: row["rank"])
+    except (OSError, ValueError, TypeError) as error:
+        # 脏输入走既有的失败路径：写 status.json 记录原因，而不是抛裸异常。
         failure = {
             "status": "failed",
             "attemptedAt": captured_at,
             "snapshotDate": snapshot_date,
-            "reason": "快照未通过 Top 100 完整性校验",
+            "reason": f"输入数据无法规整：{error}",
+        }
+        for data_root in data_roots:
+            atomic_json(data_root / "status.json", failure)
+        raise SystemExit(json.dumps(failure, ensure_ascii=False)) from error
+    quality = validate(items, detail_source)
+    if not quality["publishable"]:
+        reason = "快照未通过 Top 100 完整性校验"
+        if quality["coverageFailures"]:
+            detail = "、".join(
+                f"{field} 仅 {value['actual']}/{value['required']}"
+                for field, value in quality["coverageFailures"].items()
+            )
+            reason = f"采集质量不达标：{detail}"
+        failure = {
+            "status": "failed",
+            "attemptedAt": captured_at,
+            "snapshotDate": snapshot_date,
+            "reason": reason,
             "quality": quality,
         }
         for data_root in data_roots:

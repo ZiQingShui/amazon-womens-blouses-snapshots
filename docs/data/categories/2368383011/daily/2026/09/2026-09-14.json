@@ -26,7 +26,7 @@
   },
   "quality": {
     "count": 100,
-    "publishable": true,
+    "publishable": false,
     "missingRanks": [],
     "duplicateRanks": [],
     "duplicateAsins": [],
@@ -48,6 +48,34 @@
       "subBsr": 0,
       "listingDate": 27,
       "promotion": 0
+    },
+    "detailChecked": 0,
+    "detailSourceValid": null,
+    "coverageFailures": {
+      "brand": {
+        "actual": 36,
+        "required": 95
+      },
+      "price": {
+        "actual": 0,
+        "required": 95
+      },
+      "mainBsr": {
+        "actual": 0,
+        "required": 90
+      },
+      "subBsr": {
+        "actual": 0,
+        "required": 90
+      }
+    },
+    "provenance": {
+      "fallbackRows": 100,
+      "reusedRows": 0,
+      "degraded": true,
+      "sources": {
+        "SellerSprite browser export of Amazon Hot New Releases": 100
+      }
     }
   },
   "items": [

@@ -15,7 +15,7 @@
   },
   "quality": {
     "count": 100,
-    "publishable": true,
+    "publishable": false,
     "missingRanks": [],
     "duplicateRanks": [],
     "duplicateAsins": [],
@@ -24,15 +24,41 @@
       "title": 0,
       "image": 0
     },
+    "invalidUrls": {
+      "product": 0,
+      "image": 0
+    },
     "fieldCoverage": {
       "title": 100,
       "image": 100,
-      "brand": 100,
-      "price": 100,
+      "brand": 99,
+      "price": 98,
       "mainBsr": 74,
       "subBsr": 74,
-      "listingDate": 100,
-      "promotion": 100
+      "listingDate": 84,
+      "promotion": 76
+    },
+    "detailChecked": 0,
+    "detailSourceValid": null,
+    "coverageFailures": {
+      "mainBsr": {
+        "actual": 74,
+        "required": 90
+      },
+      "subBsr": {
+        "actual": 74,
+        "required": 90
+      }
+    },
+    "provenance": {
+      "fallbackRows": 100,
+      "reusedRows": 24,
+      "degraded": true,
+      "sources": {
+        "Ecomtool browser extension": 60,
+        "近三日历史快照（仅复用标题、品牌、上架日）": 24,
+        "Amazon product detail page": 16
+      }
     }
   },
   "items": [

@@ -10,11 +10,20 @@
       "file": "data/categories/2368383011/daily/2026/09/2026-09-16.json",
       "count": 100,
       "publishable": true,
+      "coverageFailures": {},
+      "provenance": {
+        "fallbackRows": 0,
+        "reusedRows": 0,
+        "degraded": false,
+        "sources": {
+          "Ecomtool MCP 商品详情 + 市场调研": 100
+        }
+      },
       "fieldCoverage": {
         "title": 100,
         "image": 100,
         "brand": 100,
-        "price": 100,
+        "price": 97,
         "mainBsr": 100,
         "subBsr": 99,
         "listingDate": 86,
@@ -26,7 +35,33 @@
       "capturedAt": "2026-09-14T08:42:14+08:00",
       "file": "data/categories/2368383011/daily/2026/09/2026-09-14.json",
       "count": 100,
-      "publishable": true,
+      "publishable": false,
+      "coverageFailures": {
+        "brand": {
+          "actual": 36,
+          "required": 95
+        },
+        "price": {
+          "actual": 0,
+          "required": 95
+        },
+        "mainBsr": {
+          "actual": 0,
+          "required": 90
+        },
+        "subBsr": {
+          "actual": 0,
+          "required": 90
+        }
+      },
+      "provenance": {
+        "fallbackRows": 100,
+        "reusedRows": 0,
+        "degraded": true,
+        "sources": {
+          "SellerSprite browser export of Amazon Hot New Releases": 100
+        }
+      },
       "fieldCoverage": {
         "title": 100,
         "image": 100,

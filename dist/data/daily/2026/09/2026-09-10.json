@@ -15,13 +15,17 @@
   },
   "quality": {
     "count": 100,
-    "publishable": true,
+    "publishable": false,
     "missingRanks": [],
     "duplicateRanks": [],
     "duplicateAsins": [],
     "requiredMissing": {
       "asin": 0,
       "title": 0,
+      "image": 0
+    },
+    "invalidUrls": {
+      "product": 0,
       "image": 0
     },
     "fieldCoverage": {
@@ -33,6 +37,17 @@
       "subBsr": 100,
       "listingDate": 92,
       "promotion": 100
+    },
+    "detailChecked": 0,
+    "detailSourceValid": null,
+    "coverageFailures": {},
+    "provenance": {
+      "fallbackRows": 0,
+      "reusedRows": 0,
+      "degraded": false,
+      "sources": {
+        "未标注": 100
+      }
     }
   },
   "items": [

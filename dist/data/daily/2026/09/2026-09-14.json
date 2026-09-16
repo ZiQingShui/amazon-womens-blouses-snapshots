@@ -48,10 +48,16 @@
       "listingDate": 88,
       "promotion": 100
     },
-    "detailCapturedAt": "2026-09-14T17:21:48+08:00",
-    "anomalies": {
-      "priceUnavailable": 4,
-      "marketRowsDatedEarlier": 22
+    "detailChecked": 100,
+    "detailSourceValid": null,
+    "coverageFailures": {},
+    "provenance": {
+      "fallbackRows": 0,
+      "reusedRows": 0,
+      "degraded": false,
+      "sources": {
+        "Ecomtool MCP：Amazon 前台商品信息 + 市场分析": 100
+      }
     }
   },
   "items": [
