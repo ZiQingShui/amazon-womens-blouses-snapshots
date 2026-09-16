@@ -176,9 +176,16 @@ def main() -> None:
         if not price or price.lower() in {"nan", "none"}:
             price = exported_price
         listing_date = parse_date(clean(market.get("上架日期")))
+        image_export_mismatch = image_id not in image
+        if image_export_mismatch and re.fullmatch(r"[A-Za-z0-9+_-]+", image_id):
+            display_image = f"https://m.media-amazon.com/images/I/{image_id}._AC_SL1000_.jpg"
+            image_source = "用户上传榜单图片 ID；经图片可访问性校验的高清版本"
+        else:
+            display_image = high_resolution_image(image)
+            image_source = "Ecomtool MCP 商品详情；同一图片 ID 的高清版本"
         item = {
             "rank": rank, "asin": asin, "title": clean(product.get("标题")) or title,
-            "image": high_resolution_image(image), "imageExportMismatch": image_id not in image, "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本", "url": f"https://www.amazon.com/dp/{asin}",
+            "image": display_image, "imageExportMismatch": image_export_mismatch, "imageSource": image_source, "url": f"https://www.amazon.com/dp/{asin}",
             "brand": clean(product.get("品牌")) or clean(market.get("品牌名")) or "未显示/无法获取",
             "price": f"${price}" if price else "未显示/无法获取", "currency": "USD",
             "priceSource": "Ecomtool MCP 商品详情" if clean(product.get("Buybox价格")) else "用户上传榜单",

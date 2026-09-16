@@ -1,7 +1,42 @@
 {
   "schemaVersion": 1,
   "categoryNode": "2368383011",
-  "updatedAt": null,
-  "latest": null,
-  "snapshots": []
+  "updatedAt": "2026-09-16T10:12:52+08:00",
+  "latest": "2026-09-16",
+  "snapshots": [
+    {
+      "date": "2026-09-16",
+      "capturedAt": "2026-09-16T10:12:52+08:00",
+      "file": "data/categories/2368383011/daily/2026/09/2026-09-16.json",
+      "count": 100,
+      "publishable": true,
+      "fieldCoverage": {
+        "title": 100,
+        "image": 100,
+        "brand": 100,
+        "price": 100,
+        "mainBsr": 100,
+        "subBsr": 99,
+        "listingDate": 86,
+        "promotion": 100
+      }
+    },
+    {
+      "date": "2026-09-14",
+      "capturedAt": "2026-09-14T08:42:14+08:00",
+      "file": "data/categories/2368383011/daily/2026/09/2026-09-14.json",
+      "count": 100,
+      "publishable": true,
+      "fieldCoverage": {
+        "title": 100,
+        "image": 100,
+        "brand": 36,
+        "price": 0,
+        "mainBsr": 0,
+        "subBsr": 0,
+        "listingDate": 27,
+        "promotion": 0
+      }
+    }
+  ]
 }

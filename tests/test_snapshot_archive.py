@@ -271,12 +271,15 @@ class SnapshotArchiveTests(unittest.TestCase):
         self.assertFalse(quality["publishable"])
         self.assertFalse(quality["detailSourceValid"])
 
-    def test_invalid_button_down_snapshot_is_not_indexed(self):
+    def test_valid_button_down_snapshot_is_indexed_without_invalid_date(self):
         manifest = self.read_json("docs", "data/categories/2368383011/manifest.json")
         status = self.read_json("docs", "data/categories/2368383011/status.json")
-        self.assertIsNone(manifest["latest"])
-        self.assertEqual(manifest["snapshots"], [])
-        self.assertEqual(status["status"], "failed")
+        snapshot = self.read_json("docs", "data/categories/2368383011/daily/2026/09/2026-09-16.json")
+        self.assertEqual(manifest["latest"], "2026-09-16")
+        self.assertIn("2026-09-16", [entry["date"] for entry in manifest["snapshots"]])
+        self.assertNotIn("2026-09-15", [entry["date"] for entry in manifest["snapshots"]])
+        self.assertEqual(status["status"], "ok")
+        self.assertEqual(len(snapshot["items"]), 100)
 
     def test_history_streak_breaks_when_a_calendar_day_is_missing(self):
         item = {"asin": "B000000001"}
