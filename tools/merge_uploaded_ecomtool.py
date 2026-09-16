@@ -4,6 +4,7 @@ import argparse
 import io
 import json
 import re
+from decimal import Decimal, InvalidOperation
 from datetime import datetime, timedelta, timezone
 from html.parser import HTMLParser
 from pathlib import Path
@@ -66,6 +67,37 @@ def html_table(source: str) -> tuple[list[list[str]], list[str | None]]:
 
 def clean(value: object) -> str:
     return "" if value is None else str(value).strip()
+
+
+def parse_feedback(row: list[str]) -> tuple[int | None, float | None]:
+    """Read review count and rating from the ranking export without inventing missing values."""
+    reviews_raw, rating_raw = row[4].replace(",", "").strip(), row[5].strip()
+    reviews = None
+    rating = None
+    if reviews_raw:
+        if not reviews_raw.isdigit():
+            raise ValueError(f"评论数不是非负整数：{row[4]}")
+        reviews = int(reviews_raw)
+    if rating_raw:
+        try:
+            rating = float(rating_raw)
+        except ValueError as error:
+            raise ValueError(f"评分不是数字：{row[5]}") from error
+        if not 0 <= rating <= 5:
+            raise ValueError(f"评分不在 0–5 范围内：{row[5]}")
+    return reviews, rating
+
+
+def valid_price(value: object) -> str | None:
+    """Treat zero, unavailable labels and malformed values as missing prices."""
+    raw = clean(value)
+    if not re.fullmatch(r"\$?[\d,]+(?:\.\d+)?", raw):
+        return None
+    number = (raw[1:] if raw.startswith("$") else raw).replace(",", "")
+    try:
+        return number if Decimal(number) > 0 else None
+    except InvalidOperation:
+        return None
 
 
 def best_seller_ranks(value: str) -> list[dict]:
@@ -150,6 +182,10 @@ def main() -> None:
     items = []
     for rank, exported in sorted(ranking.items()):
         asin, image_id, title, exported_price = exported[:4]
+        try:
+            review_count, rating = parse_feedback(exported)
+        except ValueError as error:
+            raise SystemExit(f"{asin} 的榜单反馈字段有误：{error}") from error
         product, image = products[asin]
         market = markets[asin]
         if not image or not image.startswith("https://"):
@@ -172,9 +208,19 @@ def main() -> None:
             promotions.append(f"促销折扣 {discount}")
         if activity not in {"", "nan", "None", "否"}:
             promotions.append(activity)
-        price = clean(product.get("Buybox价格"))
-        if not price or price.lower() in {"nan", "none"}:
-            price = exported_price
+        raw_detail_price = clean(product.get("Buybox价格"))
+        detail_price = valid_price(raw_detail_price)
+        export_price = valid_price(exported_price)
+        price = detail_price or export_price
+        price_source = "Ecomtool MCP 商品详情" if detail_price else "用户上传榜单" if export_price else "未显示/无法获取"
+        if detail_price:
+            price_note = ""
+        elif raw_detail_price in {"0", "0.0", "0.00"} and export_price:
+            price_note = "详情价格 0 非有效报价；采用原始榜单价"
+        elif exported_price == "不可售":
+            price_note = "详情价格 0 非有效报价；原始榜单标记不可售" if raw_detail_price in {"0", "0.0", "0.00"} else "原始榜单标记不可售"
+        else:
+            price_note = "详情价格 0 非有效报价" if raw_detail_price in {"0", "0.0", "0.00"} else ""
         listing_date = parse_date(clean(market.get("上架日期")))
         image_export_mismatch = image_id not in image
         if image_export_mismatch and re.fullmatch(r"[A-Za-z0-9+_-]+", image_id):
@@ -188,7 +234,9 @@ def main() -> None:
             "image": display_image, "imageExportMismatch": image_export_mismatch, "imageSource": image_source, "url": f"https://www.amazon.com/dp/{asin}",
             "brand": clean(product.get("品牌")) or clean(market.get("品牌名")) or "未显示/无法获取",
             "price": f"${price}" if price else "未显示/无法获取", "currency": "USD",
-            "priceSource": "Ecomtool MCP 商品详情" if clean(product.get("Buybox价格")) else "用户上传榜单",
+            "priceSource": price_source,
+            "priceNote": price_note,
+            "rating": rating, "reviewCount": review_count, "feedbackSource": "用户上传榜单导出", "feedbackCapturedAt": next(iter(captured_times)),
             "promotions": promotions, "promotionStatus": "detected" if promotions else "none",
             "listingDate": listing_date or "未显示/无法获取", "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
             "mainCategory": ranks[0]["category"] if ranks else "未显示/无法获取",

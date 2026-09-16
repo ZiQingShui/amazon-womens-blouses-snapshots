@@ -24,7 +24,9 @@
     "rankingSourceType": "user-upload",
     "rankingCapturedAt": "2026-9-16 09:44:51",
     "rankingFileSha256": "23e9e1a3d17c215bab345e5b04dd63d9cd2155db7b4580288ff26a60216dec6b",
-    "productDetails": "Ecomtool MCP 商品详情 + 市场调研；上架日期未核验为 Amazon Date First Available"
+    "productDetails": "Ecomtool MCP 商品详情 + 市场调研；上架日期未核验为 Amazon Date First Available",
+    "feedback": "用户上传榜单导出",
+    "feedbackCapturedAt": "2026-9-16 09:44:51"
   },
   "quality": {
     "count": 100,
@@ -45,7 +47,7 @@
       "title": 100,
       "image": 100,
       "brand": 100,
-      "price": 100,
+      "price": 97,
       "mainBsr": 100,
       "subBsr": 99,
       "listingDate": 88,
@@ -92,7 +94,11 @@
         "firstSeen": "2026-09-10",
         "appearances": 7,
         "streak": 7
-      }
+      },
+      "reviewCount": 552,
+      "rating": 4.3,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 2,
@@ -103,9 +109,9 @@
       "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
       "url": "https://www.amazon.com/dp/B0H9LJB9Z4",
       "brand": "Zeagoo",
-      "price": "$0",
+      "price": "未显示/无法获取",
       "currency": "USD",
-      "priceSource": "Ecomtool MCP 商品详情",
+      "priceSource": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "none",
       "listingDate": "2026-08-17",
@@ -131,7 +137,12 @@
         "firstSeen": "2026-09-16",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "reviewCount": 23,
+      "rating": 4.7,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "priceNote": "商品详情价格 0 非有效报价；原始榜单标记不可售"
     },
     {
       "rank": 3,
@@ -170,7 +181,11 @@
         "firstSeen": "2026-09-10",
         "appearances": 6,
         "streak": 1
-      }
+      },
+      "reviewCount": 656,
+      "rating": 4.2,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 4,
@@ -209,7 +224,11 @@
         "firstSeen": "2026-09-16",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "reviewCount": 46,
+      "rating": 4.1,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 5,
@@ -248,7 +267,11 @@
         "firstSeen": "2026-09-12",
         "appearances": 5,
         "streak": 5
-      }
+      },
+      "reviewCount": 98,
+      "rating": 4.2,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 6,
@@ -287,7 +310,11 @@
         "firstSeen": "2026-09-10",
         "appearances": 5,
         "streak": 3
-      }
+      },
+      "reviewCount": 139,
+      "rating": 4.2,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 7,
@@ -326,7 +353,11 @@
         "firstSeen": "2026-09-14",
         "appearances": 2,
         "streak": 1
-      }
+      },
+      "reviewCount": 48,
+      "rating": 4.4,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 8,
@@ -365,7 +396,11 @@
         "firstSeen": "2026-09-10",
         "appearances": 7,
         "streak": 7
-      }
+      },
+      "reviewCount": 46,
+      "rating": 4.2,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 9,
@@ -404,7 +439,11 @@
         "firstSeen": "2026-09-16",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "reviewCount": 25,
+      "rating": 4.6,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 10,
@@ -445,7 +484,11 @@
         "firstSeen": "2026-09-13",
         "appearances": 2,
         "streak": 1
-      }
+      },
+      "reviewCount": 56,
+      "rating": 4.2,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 11,
@@ -486,7 +529,11 @@
         "firstSeen": "2026-09-15",
         "appearances": 2,
         "streak": 2
-      }
+      },
+      "reviewCount": 20,
+      "rating": 4.4,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 12,
@@ -525,7 +572,11 @@
         "firstSeen": "2026-09-15",
         "appearances": 2,
         "streak": 2
-      }
+      },
+      "reviewCount": 183,
+      "rating": 4.2,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 13,
@@ -564,7 +615,11 @@
         "firstSeen": "2026-09-10",
         "appearances": 7,
         "streak": 7
-      }
+      },
+      "reviewCount": 36,
+      "rating": 4.4,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 14,
@@ -603,7 +658,11 @@
         "firstSeen": "2026-09-14",
         "appearances": 3,
         "streak": 3
-      }
+      },
+      "reviewCount": 21,
+      "rating": 4.5,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 15,
@@ -642,7 +701,11 @@
         "firstSeen": "2026-09-10",
         "appearances": 4,
         "streak": 3
-      }
+      },
+      "reviewCount": 53,
+      "rating": 4.2,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 16,
@@ -681,7 +744,11 @@
         "firstSeen": "2026-09-16",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "reviewCount": 40,
+      "rating": 4.4,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 17,
@@ -722,7 +789,11 @@
         "firstSeen": "2026-09-13",
         "appearances": 4,
         "streak": 4
-      }
+      },
+      "reviewCount": 56,
+      "rating": 4.5,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 18,
@@ -763,7 +834,11 @@
         "firstSeen": "2026-09-16",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "reviewCount": 22,
+      "rating": 4.6,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 19,
@@ -802,7 +877,11 @@
         "firstSeen": "2026-09-16",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "reviewCount": 54,
+      "rating": 4.5,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 20,
@@ -843,7 +922,11 @@
         "firstSeen": "2026-09-11",
         "appearances": 6,
         "streak": 6
-      }
+      },
+      "reviewCount": 2,
+      "rating": 5.0,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 21,
@@ -882,7 +965,11 @@
         "firstSeen": "2026-09-10",
         "appearances": 6,
         "streak": 2
-      }
+      },
+      "reviewCount": 50,
+      "rating": 4.4,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 22,
@@ -923,7 +1010,11 @@
         "firstSeen": "2026-09-10",
         "appearances": 3,
         "streak": 2
-      }
+      },
+      "reviewCount": 73,
+      "rating": 4.2,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 23,
@@ -962,7 +1053,11 @@
         "firstSeen": "2026-09-14",
         "appearances": 2,
         "streak": 1
-      }
+      },
+      "reviewCount": 10,
+      "rating": 4.5,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 24,
@@ -1001,7 +1096,11 @@
         "firstSeen": "2026-09-15",
         "appearances": 2,
         "streak": 2
-      }
+      },
+      "reviewCount": 24,
+      "rating": 4.6,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 25,
@@ -1040,7 +1139,11 @@
         "firstSeen": "2026-09-15",
         "appearances": 2,
         "streak": 2
-      }
+      },
+      "reviewCount": 35,
+      "rating": 4.1,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 26,
@@ -1079,7 +1182,11 @@
         "firstSeen": "2026-09-10",
         "appearances": 6,
         "streak": 3
-      }
+      },
+      "reviewCount": 34,
+      "rating": 4.3,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 27,
@@ -1120,7 +1227,11 @@
         "firstSeen": "2026-09-10",
         "appearances": 6,
         "streak": 1
-      }
+      },
+      "reviewCount": 19,
+      "rating": 4.2,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 28,
@@ -1159,7 +1270,11 @@
         "firstSeen": "2026-09-10",
         "appearances": 7,
         "streak": 7
-      }
+      },
+      "reviewCount": 2,
+      "rating": 5.0,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 29,
@@ -1198,7 +1313,11 @@
         "firstSeen": "2026-09-11",
         "appearances": 4,
         "streak": 1
-      }
+      },
+      "reviewCount": 32,
+      "rating": 4.0,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 30,
@@ -1237,7 +1356,11 @@
         "firstSeen": "2026-09-12",
         "appearances": 5,
         "streak": 5
-      }
+      },
+      "reviewCount": 4,
+      "rating": 4.2,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 31,
@@ -1278,7 +1401,11 @@
         "firstSeen": "2026-09-16",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "reviewCount": 19,
+      "rating": 4.3,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 32,
@@ -1317,7 +1444,11 @@
         "firstSeen": "2026-09-15",
         "appearances": 2,
         "streak": 2
-      }
+      },
+      "reviewCount": 47,
+      "rating": 4.3,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 33,
@@ -1358,7 +1489,11 @@
         "firstSeen": "2026-09-10",
         "appearances": 5,
         "streak": 4
-      }
+      },
+      "reviewCount": 30,
+      "rating": 4.6,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 34,
@@ -1397,7 +1532,11 @@
         "firstSeen": "2026-09-16",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "reviewCount": 41,
+      "rating": 3.9,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 35,
@@ -1436,7 +1575,11 @@
         "firstSeen": "2026-09-14",
         "appearances": 3,
         "streak": 3
-      }
+      },
+      "reviewCount": 27,
+      "rating": 4.2,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 36,
@@ -1475,7 +1618,11 @@
         "firstSeen": "2026-09-11",
         "appearances": 4,
         "streak": 2
-      }
+      },
+      "reviewCount": 22,
+      "rating": 4.8,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 37,
@@ -1514,7 +1661,11 @@
         "firstSeen": "2026-09-12",
         "appearances": 5,
         "streak": 5
-      }
+      },
+      "reviewCount": 26,
+      "rating": 4.7,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 38,
@@ -1553,7 +1704,11 @@
         "firstSeen": "2026-09-10",
         "appearances": 4,
         "streak": 3
-      }
+      },
+      "reviewCount": 38,
+      "rating": 4.4,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 39,
@@ -1594,7 +1749,11 @@
         "firstSeen": "2026-09-14",
         "appearances": 2,
         "streak": 1
-      }
+      },
+      "reviewCount": 38,
+      "rating": 4.3,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 40,
@@ -1635,7 +1794,11 @@
         "firstSeen": "2026-09-16",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "reviewCount": 30,
+      "rating": 4.6,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 41,
@@ -1674,7 +1837,11 @@
         "firstSeen": "2026-09-10",
         "appearances": 5,
         "streak": 4
-      }
+      },
+      "reviewCount": 3,
+      "rating": 5.0,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 42,
@@ -1716,7 +1883,11 @@
         "firstSeen": "2026-09-16",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "reviewCount": 22,
+      "rating": 4.5,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 43,
@@ -1757,7 +1928,11 @@
         "firstSeen": "2026-09-11",
         "appearances": 6,
         "streak": 6
-      }
+      },
+      "reviewCount": 25,
+      "rating": 4.6,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 44,
@@ -1796,7 +1971,11 @@
         "firstSeen": "2026-09-15",
         "appearances": 2,
         "streak": 2
-      }
+      },
+      "reviewCount": 21,
+      "rating": 4.2,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 45,
@@ -1835,7 +2014,11 @@
         "firstSeen": "2026-09-10",
         "appearances": 6,
         "streak": 3
-      }
+      },
+      "reviewCount": 0,
+      "rating": 0.0,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 46,
@@ -1876,7 +2059,11 @@
         "firstSeen": "2026-09-16",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "reviewCount": 20,
+      "rating": 4.2,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 47,
@@ -1915,7 +2102,11 @@
         "firstSeen": "2026-09-10",
         "appearances": 2,
         "streak": 1
-      }
+      },
+      "reviewCount": 43,
+      "rating": 4.1,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 48,
@@ -1954,7 +2145,11 @@
         "firstSeen": "2026-09-12",
         "appearances": 2,
         "streak": 1
-      }
+      },
+      "reviewCount": 43,
+      "rating": 4.0,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 49,
@@ -1993,7 +2188,11 @@
         "firstSeen": "2026-09-16",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "reviewCount": 24,
+      "rating": 4.5,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 50,
@@ -2032,7 +2231,11 @@
         "firstSeen": "2026-09-16",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "reviewCount": 5,
+      "rating": 4.1,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 51,
@@ -2071,7 +2274,11 @@
         "firstSeen": "2026-09-10",
         "appearances": 7,
         "streak": 7
-      }
+      },
+      "reviewCount": 29,
+      "rating": 4.2,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 52,
@@ -2110,7 +2317,11 @@
         "firstSeen": "2026-09-16",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "reviewCount": 2,
+      "rating": 5.0,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 53,
@@ -2149,7 +2360,11 @@
         "firstSeen": "2026-09-10",
         "appearances": 4,
         "streak": 3
-      }
+      },
+      "reviewCount": 0,
+      "rating": 0.0,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 54,
@@ -2188,7 +2403,11 @@
         "firstSeen": "2026-09-10",
         "appearances": 6,
         "streak": 2
-      }
+      },
+      "reviewCount": 15,
+      "rating": 4.7,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 55,
@@ -2227,7 +2446,11 @@
         "firstSeen": "2026-09-16",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "reviewCount": 18,
+      "rating": 4.2,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 56,
@@ -2266,7 +2489,11 @@
         "firstSeen": "2026-09-10",
         "appearances": 4,
         "streak": 3
-      }
+      },
+      "reviewCount": 39,
+      "rating": 4.4,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 57,
@@ -2305,7 +2532,11 @@
         "firstSeen": "2026-09-16",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "reviewCount": 286,
+      "rating": 4.2,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 58,
@@ -2346,7 +2577,11 @@
         "firstSeen": "2026-09-16",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "reviewCount": 47,
+      "rating": 4.3,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 59,
@@ -2385,7 +2620,11 @@
         "firstSeen": "2026-09-15",
         "appearances": 2,
         "streak": 2
-      }
+      },
+      "reviewCount": 26,
+      "rating": 4.2,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 60,
@@ -2426,7 +2665,11 @@
         "firstSeen": "2026-09-14",
         "appearances": 3,
         "streak": 3
-      }
+      },
+      "reviewCount": 20,
+      "rating": 4.1,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 61,
@@ -2465,7 +2708,11 @@
         "firstSeen": "2026-09-14",
         "appearances": 2,
         "streak": 1
-      }
+      },
+      "reviewCount": 19,
+      "rating": 4.7,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 62,
@@ -2504,7 +2751,11 @@
         "firstSeen": "2026-09-10",
         "appearances": 7,
         "streak": 7
-      }
+      },
+      "reviewCount": 101,
+      "rating": 4.3,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 63,
@@ -2545,7 +2796,11 @@
         "firstSeen": "2026-09-16",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "reviewCount": 19,
+      "rating": 4.6,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 64,
@@ -2586,7 +2841,11 @@
         "firstSeen": "2026-09-16",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "reviewCount": 29,
+      "rating": 4.1,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 65,
@@ -2625,7 +2884,11 @@
         "firstSeen": "2026-09-10",
         "appearances": 7,
         "streak": 7
-      }
+      },
+      "reviewCount": 29,
+      "rating": 4.2,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 66,
@@ -2666,7 +2929,11 @@
         "firstSeen": "2026-09-16",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "reviewCount": 18,
+      "rating": 4.8,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 67,
@@ -2705,7 +2972,11 @@
         "firstSeen": "2026-09-13",
         "appearances": 4,
         "streak": 4
-      }
+      },
+      "reviewCount": 187,
+      "rating": 2.3,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 68,
@@ -2746,7 +3017,11 @@
         "firstSeen": "2026-09-12",
         "appearances": 3,
         "streak": 1
-      }
+      },
+      "reviewCount": 38,
+      "rating": 4.0,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 69,
@@ -2785,7 +3060,11 @@
         "firstSeen": "2026-09-16",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "reviewCount": 162,
+      "rating": 4.3,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 70,
@@ -2824,7 +3103,11 @@
         "firstSeen": "2026-09-16",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "reviewCount": 24,
+      "rating": 4.2,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 71,
@@ -2863,7 +3146,11 @@
         "firstSeen": "2026-09-16",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "reviewCount": 4,
+      "rating": 5.0,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 72,
@@ -2904,7 +3191,11 @@
         "firstSeen": "2026-09-16",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "reviewCount": 2,
+      "rating": 5.0,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 73,
@@ -2943,7 +3234,11 @@
         "firstSeen": "2026-09-16",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "reviewCount": 29,
+      "rating": 4.4,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 74,
@@ -2982,7 +3277,11 @@
         "firstSeen": "2026-09-10",
         "appearances": 7,
         "streak": 7
-      }
+      },
+      "reviewCount": 18,
+      "rating": 4.6,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 75,
@@ -3021,7 +3320,11 @@
         "firstSeen": "2026-09-12",
         "appearances": 2,
         "streak": 1
-      }
+      },
+      "reviewCount": 30,
+      "rating": 4.0,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 76,
@@ -3060,7 +3363,11 @@
         "firstSeen": "2026-09-14",
         "appearances": 3,
         "streak": 3
-      }
+      },
+      "reviewCount": 31,
+      "rating": 4.0,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 77,
@@ -3099,7 +3406,11 @@
         "firstSeen": "2026-09-10",
         "appearances": 5,
         "streak": 4
-      }
+      },
+      "reviewCount": 33,
+      "rating": 4.1,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 78,
@@ -3138,7 +3449,11 @@
         "firstSeen": "2026-09-14",
         "appearances": 3,
         "streak": 3
-      }
+      },
+      "reviewCount": 62,
+      "rating": 4.4,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 79,
@@ -3149,9 +3464,9 @@
       "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
       "url": "https://www.amazon.com/dp/B0H8PC3SG9",
       "brand": "Generic",
-      "price": "$0",
+      "price": "$15.08",
       "currency": "USD",
-      "priceSource": "Ecomtool MCP 商品详情",
+      "priceSource": "用户上传榜单导出",
       "promotions": [],
       "promotionStatus": "none",
       "listingDate": "2026-09-05",
@@ -3177,7 +3492,12 @@
         "firstSeen": "2026-09-16",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "reviewCount": 2,
+      "rating": 5.0,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "priceNote": "商品详情价格 0 非有效报价；采用原始榜单价"
     },
     {
       "rank": 80,
@@ -3216,7 +3536,11 @@
         "firstSeen": "2026-09-16",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "reviewCount": 45,
+      "rating": 3.9,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 81,
@@ -3255,7 +3579,11 @@
         "firstSeen": "2026-09-16",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "reviewCount": 25,
+      "rating": 4.1,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 82,
@@ -3294,7 +3622,11 @@
         "firstSeen": "2026-09-12",
         "appearances": 5,
         "streak": 5
-      }
+      },
+      "reviewCount": 39,
+      "rating": 4.1,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 83,
@@ -3335,7 +3667,11 @@
         "firstSeen": "2026-09-16",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "reviewCount": 12,
+      "rating": 4.5,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 84,
@@ -3346,9 +3682,9 @@
       "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
       "url": "https://www.amazon.com/dp/B0H8PZDZJP",
       "brand": "Tankaneo",
-      "price": "$0",
+      "price": "未显示/无法获取",
       "currency": "USD",
-      "priceSource": "Ecomtool MCP 商品详情",
+      "priceSource": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "none",
       "listingDate": "未显示/无法获取",
@@ -3374,7 +3710,12 @@
         "firstSeen": "2026-09-15",
         "appearances": 2,
         "streak": 2
-      }
+      },
+      "reviewCount": 16,
+      "rating": 4.3,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "priceNote": "商品详情价格 0 非有效报价；原始榜单标记不可售"
     },
     {
       "rank": 85,
@@ -3415,7 +3756,11 @@
         "firstSeen": "2026-09-16",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "reviewCount": 41,
+      "rating": 4.3,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 86,
@@ -3454,7 +3799,11 @@
         "firstSeen": "2026-09-14",
         "appearances": 2,
         "streak": 1
-      }
+      },
+      "reviewCount": 24,
+      "rating": 4.7,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 87,
@@ -3493,7 +3842,11 @@
         "firstSeen": "2026-09-16",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "reviewCount": 30,
+      "rating": 4.2,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 88,
@@ -3532,7 +3885,11 @@
         "firstSeen": "2026-09-10",
         "appearances": 2,
         "streak": 1
-      }
+      },
+      "reviewCount": 214,
+      "rating": 4.1,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 89,
@@ -3571,7 +3928,11 @@
         "firstSeen": "2026-09-11",
         "appearances": 3,
         "streak": 2
-      }
+      },
+      "reviewCount": 27,
+      "rating": 4.2,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 90,
@@ -3610,7 +3971,11 @@
         "firstSeen": "2026-09-11",
         "appearances": 4,
         "streak": 2
-      }
+      },
+      "reviewCount": 9,
+      "rating": 4.2,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 91,
@@ -3649,7 +4014,11 @@
         "firstSeen": "2026-09-16",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "reviewCount": 37,
+      "rating": 4.3,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 92,
@@ -3690,7 +4059,11 @@
         "firstSeen": "2026-09-14",
         "appearances": 3,
         "streak": 3
-      }
+      },
+      "reviewCount": 25,
+      "rating": 4.6,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 93,
@@ -3729,7 +4102,11 @@
         "firstSeen": "2026-09-16",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "reviewCount": 3,
+      "rating": 4.7,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 94,
@@ -3768,7 +4145,11 @@
         "firstSeen": "2026-09-10",
         "appearances": 5,
         "streak": 3
-      }
+      },
+      "reviewCount": 2,
+      "rating": 4.5,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 95,
@@ -3807,7 +4188,11 @@
         "firstSeen": "2026-09-12",
         "appearances": 3,
         "streak": 2
-      }
+      },
+      "reviewCount": 28,
+      "rating": 4.1,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 96,
@@ -3818,9 +4203,9 @@
       "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
       "url": "https://www.amazon.com/dp/B0H69JZPKJ",
       "brand": "Astylish",
-      "price": "$0",
+      "price": "未显示/无法获取",
       "currency": "USD",
-      "priceSource": "Ecomtool MCP 商品详情",
+      "priceSource": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "none",
       "listingDate": "2026-08-04",
@@ -3846,7 +4231,12 @@
         "firstSeen": "2026-09-10",
         "appearances": 2,
         "streak": 1
-      }
+      },
+      "reviewCount": 24,
+      "rating": 4.7,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "priceNote": "商品详情价格 0 非有效报价；原始榜单标记不可售"
     },
     {
       "rank": 97,
@@ -3885,7 +4275,11 @@
         "firstSeen": "2026-09-16",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "reviewCount": 1,
+      "rating": 5.0,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 98,
@@ -3924,7 +4318,11 @@
         "firstSeen": "2026-09-16",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "reviewCount": 7,
+      "rating": 4.2,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 99,
@@ -3963,7 +4361,11 @@
         "firstSeen": "2026-09-16",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "reviewCount": 32,
+      "rating": 3.9,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     },
     {
       "rank": 100,
@@ -4005,7 +4407,11 @@
         "firstSeen": "2026-09-13",
         "appearances": 3,
         "streak": 1
-      }
+      },
+      "reviewCount": 15,
+      "rating": 5.0,
+      "feedbackSource": "用户上传榜单导出",
+      "feedbackCapturedAt": "2026-9-16 09:44:51"
     }
   ]
 }

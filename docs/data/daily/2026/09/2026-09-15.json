@@ -45,7 +45,7 @@
       "title": 100,
       "image": 100,
       "brand": 100,
-      "price": 100,
+      "price": 94,
       "mainBsr": 100,
       "subBsr": 98,
       "listingDate": 90,
@@ -2116,9 +2116,9 @@
       "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
       "url": "https://www.amazon.com/dp/B0H717TJCS",
       "brand": "Unixseque",
-      "price": "$0",
+      "price": "未显示/无法获取",
       "currency": "USD",
-      "priceSource": "Ecomtool MCP 商品详情",
+      "priceSource": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "none",
       "listingDate": "2026-08-10",
@@ -2144,7 +2144,8 @@
         "firstSeen": "2026-09-15",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "priceNote": "商品详情价格 0 非有效报价；原始榜单不可核对"
     },
     {
       "rank": 54,
@@ -2511,9 +2512,9 @@
       "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
       "url": "https://www.amazon.com/dp/B0HD7K4Y1B",
       "brand": "Generic",
-      "price": "$0",
+      "price": "未显示/无法获取",
       "currency": "USD",
-      "priceSource": "Ecomtool MCP 商品详情",
+      "priceSource": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "none",
       "listingDate": "未显示/无法获取",
@@ -2539,7 +2540,8 @@
         "firstSeen": "2026-09-13",
         "appearances": 2,
         "streak": 1
-      }
+      },
+      "priceNote": "商品详情价格 0 非有效报价；原始榜单不可核对"
     },
     {
       "rank": 64,
@@ -2669,9 +2671,9 @@
       "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
       "url": "https://www.amazon.com/dp/B0H8PZDZJP",
       "brand": "Tankaneo",
-      "price": "$0",
+      "price": "未显示/无法获取",
       "currency": "USD",
-      "priceSource": "Ecomtool MCP 商品详情",
+      "priceSource": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "none",
       "listingDate": "未显示/无法获取",
@@ -2697,7 +2699,8 @@
         "firstSeen": "2026-09-15",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "priceNote": "商品详情价格 0 非有效报价；原始榜单不可核对"
     },
     {
       "rank": 68,
@@ -2708,9 +2711,9 @@
       "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
       "url": "https://www.amazon.com/dp/B0H69CBGBZ",
       "brand": "Astylish",
-      "price": "$0",
+      "price": "未显示/无法获取",
       "currency": "USD",
-      "priceSource": "Ecomtool MCP 商品详情",
+      "priceSource": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "none",
       "listingDate": "2026-08-10",
@@ -2736,7 +2739,8 @@
         "firstSeen": "2026-09-15",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "priceNote": "商品详情价格 0 非有效报价；原始榜单不可核对"
     },
     {
       "rank": 69,
@@ -2909,9 +2913,9 @@
       "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
       "url": "https://www.amazon.com/dp/B0H8P5XK84",
       "brand": "Generic",
-      "price": "$0",
+      "price": "未显示/无法获取",
       "currency": "USD",
-      "priceSource": "Ecomtool MCP 商品详情",
+      "priceSource": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "none",
       "listingDate": "2026-08-16",
@@ -2937,7 +2941,8 @@
         "firstSeen": "2026-09-13",
         "appearances": 3,
         "streak": 3
-      }
+      },
+      "priceNote": "商品详情价格 0 非有效报价；原始榜单不可核对"
     },
     {
       "rank": 74,
@@ -3623,9 +3628,9 @@
       "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
       "url": "https://www.amazon.com/dp/B0H5W4PXYM",
       "brand": "Totatuit",
-      "price": "$0",
+      "price": "未显示/无法获取",
       "currency": "USD",
-      "priceSource": "Ecomtool MCP 商品详情",
+      "priceSource": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "none",
       "listingDate": "2026-08-29",
@@ -3651,7 +3656,8 @@
         "firstSeen": "2026-09-14",
         "appearances": 2,
         "streak": 2
-      }
+      },
+      "priceNote": "商品详情价格 0 非有效报价；原始榜单不可核对"
     },
     {
       "rank": 92,
