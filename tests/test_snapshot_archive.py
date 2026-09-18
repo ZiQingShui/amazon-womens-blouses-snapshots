@@ -329,6 +329,29 @@ class SnapshotArchiveTests(unittest.TestCase):
         self.assertLess(html.index('id="filterState"'), html.index('class="filter-grid primary"'))
         self.assertNotIn('<div class="active-filters" id="activeFilters" aria-live="polite"></div></section>', html)
 
+    def test_comparison_falls_back_to_asin_when_previous_lacks_parent_asin(self):
+        """对比期缺父体数据时必须回退到 ASIN 比对。
+
+        2026-09-18 现象：09-10~09-16 七期快照的 parentAsin 全为空（0/100），而看板默认
+        「同款合并」按 parentAsin 匹配 → 对比这些日期时 100 件全被判成「新进」，脉搏没有升降。
+        修法：pk() 改由 parentKeyActive 驱动，只有两期父体覆盖率都够时才用父体键。
+        """
+        html = (ROOT / "dist" / "index.html").read_text(encoding="utf-8")
+        self.assertIn("function hasParentData(items){", html)
+        self.assertIn("function refreshParentKey(){", html)
+        # 覆盖率阈值 80%
+        self.assertIn("items.filter(x=>x.parentAsin).length>=items.length*0.8", html)
+        # pk 由 parentKeyActive 决定，且 comparison 复用 pk（不再自己写一份 key 逻辑）
+        self.assertIn("function pk(x){return parentKeyActive?(x.parentAsin||x.asin):x.asin}", html)
+        self.assertIn("key=pk,", html)
+        self.assertNotIn("key=parentView?x=>(x.parentAsin||x.asin):x=>x.asin", html)
+        # 四个加载/切换时机都要重算
+        self.assertGreaterEqual(html.count("refreshParentKey()"), 4)
+        self.assertIn("parentKeyActive=false;", html)
+        # 图例要有降级提示
+        self.assertIn('class="lg-note"', html)
+        self.assertIn("按 ASIN 对比", html)
+
     def test_start_server_bat_is_windows_encoded(self):
         """start-server.bat 必须能被 cmd 正确解析（换行符 + 编码 + UNC 支持）。
 
