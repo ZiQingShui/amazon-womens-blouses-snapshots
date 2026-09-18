@@ -44,13 +44,13 @@ class SnapshotArchiveTests(unittest.TestCase):
         self.assertEqual(embedded_latest, self.read_json("dist", "data/latest.json"))
         self.assertNotIn("/amazon_womens_blouses_new_releases_data.js", assets)
 
-    def test_upload_controls_and_worker_route_exist(self):
+    def test_upload_controls_and_worker_route_removed(self):
         html = (ROOT / "docs" / "index.html").read_text(encoding="utf-8")
         worker = (ROOT / "dist" / "server" / "index.js").read_text(encoding="utf-8")
-        self.assertIn('id="openRankingUpload"', html)
-        self.assertIn('id="rankingUploadFile"', html)
-        self.assertIn('fetch("/api/ranking-uploads"', html)
-        self.assertIn('if (url.pathname === "/api/ranking-uploads")', worker)
+        self.assertNotIn('id="openRankingUpload"', html)
+        self.assertNotIn('id="rankingUploadFile"', html)
+        self.assertNotIn('fetch("/api/ranking-uploads"', html)
+        self.assertNotIn('if (url.pathname === "/api/ranking-uploads")', worker)
 
     def test_manifest_points_to_complete_snapshots(self):
         manifest = self.read_json("docs", "data/manifest.json")
@@ -71,11 +71,18 @@ class SnapshotArchiveTests(unittest.TestCase):
 
         2026-09-13 那期曾长期标注 8 个字段全 100%，而 mainBsr 实际只有
         74/100：校验口径在发布当天被收紧，但没人回算历史存档。
+
+        detailSourceValid 是发布时 detail_source 参数的函数，而非 items
+        可复现的字段——历史快照发布时旧代码未传 detail_source（存为 null），
+        故对比时排除该字段，只校验 items 本身可复现的覆盖率口径。
         """
         for entry in self.read_json("docs", "data/manifest.json")["snapshots"]:
             snapshot = self.read_json("docs", entry["file"])
-            fresh = publish_snapshot.validate(snapshot["items"])
-            self.assertEqual(snapshot["quality"], fresh, entry["date"])
+            detail_source = (snapshot.get("sources") or {}).get("productDetails")
+            fresh = publish_snapshot.validate(snapshot["items"], detail_source)
+            stored = {k: v for k, v in snapshot["quality"].items() if k != "detailSourceValid"}
+            recomputed = {k: v for k, v in fresh.items() if k != "detailSourceValid"}
+            self.assertEqual(stored, recomputed, entry["date"])
             self.assertEqual(entry["fieldCoverage"], fresh["fieldCoverage"], entry["date"])
             self.assertEqual(entry["provenance"], fresh["provenance"], entry["date"])
             self.assertEqual(entry["coverageFailures"], fresh["coverageFailures"], entry["date"])
@@ -164,14 +171,88 @@ class SnapshotArchiveTests(unittest.TestCase):
                 self.assertEqual(status["status"], "failed")
                 self.assertIn("输入数据无法规整", status["reason"])
 
-    def test_custom_select_hides_native_control_in_header_and_filters(self):
+    def test_custom_select_hides_native_control_in_filters(self):
         html = (ROOT / "dist" / "index.html").read_text(encoding="utf-8")
         self.assertIn("select.enhanced-native{", html)
         self.assertNotIn(".field select.enhanced-native{", html)
-        self.assertIn(".snapshot-picker:focus-within{z-index:60}", html)
         self.assertIn('weekday=["周日","周一","周二","周三","周四","周五","周六"]', html)
         self.assertIn("snapshotDateLabel(entry.date,entry.capturedAt)", html)
         self.assertIn("snapshotDateLabel(x.date,x.capturedAt)", html)
+
+    def test_header_dates_use_two_handle_slider_not_dropdown(self):
+        html = (ROOT / "dist" / "index.html").read_text(encoding="utf-8")
+        # 快照日期 / 对比日期改用双端滑杆：一条轴管两个日期，拖把手切换。
+        self.assertIn('id="dateSlider"', html)
+        self.assertIn('id="dsTrack"', html)
+        self.assertIn('id="dsHa"', html)
+        self.assertIn('id="dsHb"', html)
+        self.assertIn(".controls .ds-native{display:none}", html)
+        self.assertIn("function renderDateSlider(){", html)
+        self.assertIn("function commitDateSlider(which,slot){", html)
+        self.assertIn("function initDateSlider(){", html)
+        self.assertIn("function nearestDateHandle(clientX,track){", html)
+        # 原生 select 仍作为状态载体保留（供 change 事件与 URL 状态复用），但不再渲染旧下拉。
+        self.assertIn('id="dateSelect" class="ds-native"', html)
+        self.assertIn('id="compareDateSelect" class="ds-native"', html)
+        self.assertNotIn("enhanceSelect(dateSelect", html)
+        self.assertNotIn("snapshot-picker", html)
+
+    def test_comparison_can_be_turned_off_from_the_slider(self):
+        html = (ROOT / "dist" / "index.html").read_text(encoding="utf-8")
+        # 旧下拉里「不对比」是第一项；换成滑杆后必须仍然够得到，否则无法只看某一期自身。
+        self.assertIn('id="dsCmpToggle"', html)
+        self.assertIn(".date-slider .ds-cmptog{", html)
+        self.assertIn('event.key==="Delete"||event.key==="Backspace"', html)
+        # 最旧一期没有更早的基准 → 开启按钮要禁用
+        self.assertIn("cmpTog.disabled=iSnap<=0", html)
+        # 关闭后文案走「不对比」分支且变灰
+        self.assertIn('$("dsCmpText").classList.toggle("off",cmpOff)', html)
+        # 手动关闭后要能连续看多期自身（切日期不自动恢复），换类目才重置
+        self.assertIn("let compareOff=false,pinnedCompare=null;", html)
+        self.assertIn("cache.clear();compareOff=false;pinnedCompare=null;", html)
+
+    def test_hand_picked_baseline_survives_snapshot_drag(self):
+        html = (ROOT / "dist" / "index.html").read_text(encoding="utf-8")
+        # 手动选过对比基准后，拖快照不能把它重置成「快照减一天」——只要基准仍早于快照就保留。
+        self.assertIn("pinnedCompare=cmpDate;", html)
+        self.assertIn(
+            "const keepCompare=pinnedCompare&&earlier.some(entry=>entry.date===pinnedCompare)?pinnedCompare:selectedDate;",
+            html)
+        self.assertIn('select.value=!compareOff&&earlier.some(entry=>entry.date===keepCompare)?keepCompare:""', html)
+        # 关闭对比 / 换类目时必须忘记这个基准
+        self.assertIn("if(k===0){compareOff=true;pinnedCompare=null;", html)
+
+    def test_slider_renders_a_window_not_the_whole_history(self):
+        html = (ROOT / "dist" / "index.html").read_text(encoding="utf-8")
+        # 轨道只有 424px：期数超过约 19 期两个把手就会重叠，所以只渲染最近 N 期。
+        self.assertIn("const SLIDER_WINDOW=14,SLIDER_PAGE=7;", html)
+        self.assertIn("function sliderWindow(){", html)
+        self.assertIn("win:ordered.slice(from,end+1)", html)
+        self.assertIn("function pageSlider(dir){", html)
+        self.assertIn('$("dsWinPrev").addEventListener("click",()=>pageSlider(-1))', html)
+        self.assertIn('$("dsWinNext").addEventListener("click",()=>pageSlider(1))', html)
+        self.assertIn('id="dsWinRange"', html)
+        self.assertIn("sliderWinEndDate=null;", html)
+        # 刻度只在「月份首日」补月份做锚点：窗口第一格不该补（否则 09-10 会显示成 9/10，与相邻的 11/12 重复）
+        self.assertIn("cross=dd===1", html)
+        self.assertNotIn("cross=i===0||!prev||prev.slice(5,7)!==x.date.slice(5,7)", html)
+        # 窗口必须始终包含快照；对比在同窗口内才渲染把手
+        self.assertIn("if(focus<end-W+1||focus>end)end=focus;", html)
+        self.assertIn("if(kCmp<0){hb.hidden=true}", html)
+
+    def test_no_compare_is_a_draggable_slot_on_the_rail(self):
+        html = (ROOT / "dist" / "index.html").read_text(encoding="utf-8")
+        # 「不对比」是轨道上第 0 格（快照占 1..n 格），所以把手永远可见、拖过去关、拖回来开。
+        self.assertIn(">不对比</span>", html)
+        self.assertIn("slotPct=k=>", html)
+        self.assertIn("Math.round(Math.max(0,Math.min(1,ratio))*W)", html)
+        self.assertIn("if(k===0){compareOff=true;", html)
+        self.assertIn("const k=Math.max(1,Math.min(W,slot))", html)
+        self.assertIn(".date-slider .ds-h.off{", html)
+        # 刻度改为绝对定位以精确对齐格子
+        self.assertIn(".date-slider .ds-ticks{position:relative;", html)
+        # 把手不再被隐藏（否则关掉后无法拖回）
+        self.assertIn("hb.hidden=false;", html)
 
     def test_open_dashboard_refreshes_new_snapshots_without_manual_reload(self):
         html = (ROOT / "dist" / "index.html").read_text(encoding="utf-8")
@@ -182,44 +263,41 @@ class SnapshotArchiveTests(unittest.TestCase):
 
     def test_data_status_is_integrated_into_sidebar_brand(self):
         html = (ROOT / "dist" / "index.html").read_text(encoding="utf-8")
-        self.assertIn('id="brandDataStatus"', html)
+        # 侧栏品牌区（BSR Radar/数据状态）已按需求移除；数据状态由空状态视图与 quality 区承载。
+        self.assertNotIn('id="brandDataStatus"', html)
+        self.assertNotIn("workbench-brand", html)
+        self.assertNotIn("workbench-logo", html)
         self.assertNotIn('class="workbench-status"', html)
 
-    def test_sidebar_contains_persistent_category_form(self):
+    def test_sidebar_has_no_write_category_entries(self):
         html = (ROOT / "dist" / "index.html").read_text(encoding="utf-8")
-        self.assertIn('id="addCategoryButton"', html)
-        self.assertIn('id="categoryNodeInput"', html)
-        self.assertIn('fetch("/api/categories"', html)
-        self.assertIn("＋ 新增类目", html)
-        self.assertIn("类目节点", html)
-        self.assertIn("添加到看板", html)
-        self.assertNotIn("＋ Add Category", html)
-
-    def test_custom_categories_can_be_removed_without_deleting_history(self):
-        html = (ROOT / "dist" / "index.html").read_text(encoding="utf-8")
-        worker = (ROOT / "tools" / "build_worker.py").read_text(encoding="utf-8")
-        self.assertIn('data-delete-category=', html)
-        self.assertIn('method:"DELETE"', html)
-        self.assertIn("已经保存的历史快照不会被删除", html)
-        self.assertIn("async function deleteCategory", worker)
-        self.assertIn("系统内置类目不能删除", worker)
-        self.assertIn("DELETE FROM categories WHERE node = ?", worker)
-        self.assertIn("deletable: true", worker)
+        # 看板是纯静态只读视图：新增/删除类目改由 add_category.py 或改数据文件完成，
+        # 界面不再保留任何依赖后端 /api 的写入入口。
+        self.assertNotIn('id="addCategoryButton"', html)
+        self.assertNotIn('id="openManualCategory"', html)
+        self.assertNotIn('id="categoryBrowserDialog"', html)
+        self.assertNotIn('id="categoryDialog"', html)
+        self.assertNotIn('data-delete-category=', html)
+        self.assertNotIn("＋ 新增类目", html)
+        self.assertNotIn('fetch("/api/', html)
+        self.assertNotIn("removeCategory", html)
+        self.assertNotIn("loadCategoryCatalog", html)
 
     def test_manual_capture_button_queues_and_tracks_requests(self):
         html = (ROOT / "dist" / "index.html").read_text(encoding="utf-8")
         worker = (ROOT / "tools" / "build_worker.py").read_text(encoding="utf-8")
         migration = (ROOT / "drizzle" / "0003_manual_capture_requests.sql").read_text(encoding="utf-8")
-        self.assertIn('id="manualCapture"', html)
-        self.assertIn("立即抓取", html)
-        self.assertIn('fetch("/api/capture-requests"', html)
-        self.assertIn("async function pollCaptureRequest()", html)
+        # 前端「立即抓取」按钮及采集轮询逻辑已移除。
+        self.assertNotIn('id="manualCapture"', html)
+        self.assertNotIn("立即抓取", html)
+        self.assertNotIn('fetch("/api/capture-requests"', html)
+        self.assertNotIn("async function pollCaptureRequest()", html)
+        self.assertNotIn('json("/api/capture-worker")', html)
+        # 服务端采集接口、数据库表与本机处理器保留。
         self.assertIn('url.pathname === "/api/capture-requests"', worker)
         self.assertIn("crypto.randomUUID()", worker)
         self.assertIn("CREATE TABLE capture_requests", migration)
         self.assertIn("idx_capture_requests_daily_category", migration)
-        self.assertIn('json("/api/capture-worker")', html)
-        self.assertIn('captureWorkerOnline', html)
         self.assertIn('workerAuthorized(request, env)', worker)
         self.assertIn('url.pathname === "/api/capture-worker"', worker)
         self.assertTrue((ROOT / "tools" / "manual_capture_worker.py").exists())
@@ -232,20 +310,81 @@ class SnapshotArchiveTests(unittest.TestCase):
         self.assertIn("只能用于当天快照", publisher)
         self.assertIn("['failed', 'completed'].includes(existing.status)", worker)
 
-    def test_full_category_browser_and_ranking_switch_are_present(self):
+    def test_active_filter_state_bar_sits_above_the_controls(self):
         html = (ROOT / "dist" / "index.html").read_text(encoding="utf-8")
-        self.assertIn('id="categoryBrowserDialog"', html)
-        self.assertIn('id="categoryColumns"', html)
-        self.assertIn('data-ranking="new-releases"', html)
-        self.assertIn('data-ranking="best-sellers"', html)
+        # 已选条件栏从面板底部移到顶部，带「已选」标签与「全部清空」。
+        self.assertIn('id="filterState"', html)
+        self.assertIn('id="clearAllFilters"', html)
+        self.assertIn(".filter-state{", html)
+        self.assertIn(".filter-state[hidden]{display:none}", html)
+        self.assertIn('class="fs-label">已选<', html)
+        self.assertIn('$("filterState").hidden=!active.length', html)
+        self.assertIn('$("clearAllFilters").addEventListener("click",()=>$("resetFilters").click())', html)
+        # 位置：在筛选控件之前（面板顶部），而不是旧的面板末尾
+        self.assertLess(html.index('id="filterState"'), html.index('class="filter-grid primary"'))
+        self.assertNotIn('<div class="active-filters" id="activeFilters" aria-live="polite"></div></section>', html)
+
+    def test_start_server_bat_is_windows_encoded(self):
+        """start-server.bat 必须能被 cmd 正确解析（换行符 + 编码 + UNC 支持）。
+
+        2026-09-18 真实事故：该文件是 LF 换行 + UTF-8 无 BOM，在共享机上双击后
+        cmd 把命令行切碎，报出一堆 'cho' / 'ined' / '-m' 不是内部或外部命令，
+        中文也全是乱码。原因是 cmd 需要 CRLF 换行、并按系统 ANSI（中文是 GBK）读文件。
+        用 Write/编辑器重写这个文件时极易再犯，所以在此设卡。
+        """
+        raw = (ROOT / "start-server.bat").read_bytes()
+        self.assertFalse(raw.startswith(b"\xef\xbb\xbf"), "bat 不应有 UTF-8 BOM")
+        lf, crlf = raw.count(b"\n"), raw.count(b"\r\n")
+        self.assertEqual(lf, crlf, "bat 必须全部用 CRLF 换行（实测 CRLF %d / LF %d）" % (crlf, lf))
+        text = raw.decode("gbk")  # 解不出来就说明不是 GBK，中文 Windows 上会乱码
+        self.assertIn('pushd "%~dp0"', text)  # pushd 才能处理 UNC 网络路径
+        self.assertIn("--directory docs", text)
+        # 注释里可以提到 cd /d（解释为什么不这么写），但可执行行里不能出现——
+        # cd 的 /d 开关不支持 UNC，会让工作目录落到 C://WINDOWS。
+        code = "\n".join(l for l in text.splitlines() if not l.strip().upper().startswith("REM"))
+        self.assertNotIn("cd /d", code)
+
+    def test_dropdown_chevron_is_svg_and_vertically_centred(self):
+        html = (ROOT / "dist" / "index.html").read_text(encoding="utf-8")
+        # 箭头必须是内联 SVG：原来的字体字符 ⌄（U+2304）在 Inter 下回退成类似小写 v 的形状，形状不受控。
+        self.assertNotIn('smart-chevron">⌄', html)
+        self.assertIn('class="smart-chevron" aria-hidden="true"><svg viewBox="0 0 16 16"', html)
+        # 必须绝对定位垂直居中：.field.compact .smart-trigger 的 padding-top:12px 会把 flex 子项一起推下 6px。
+        self.assertIn(".smart-chevron{position:absolute;right:8px;top:50%;transform:translateY(-50%)", html)
+        self.assertIn(".smart-trigger{position:relative;", html)
+        self.assertIn("padding:0 40px 0 11px", html)
+        # 展开态旋转要带上 translateY，否则旋转时丢掉垂直居中。
+        self.assertIn("transform:translateY(-50%) rotate(180deg)", html)
+        # hover 规则必须排除展开态，否则 hover 的优先级会盖掉展开高亮。
+        self.assertIn(':hover:not(:disabled):not([aria-expanded="true"]) .smart-chevron', html)
+
+    def test_date_slider_head_wraps_instead_of_overflowing(self):
+        html = (ROOT / "dist" / "index.html").read_text(encoding="utf-8")
+        # 头部内容实测 327px，而滑杆在 ≤1440px 只有 304~364px：必须有折行兜底，否则溢出容器（700px 时撑出横向滚动）。
+        self.assertIn("flex-wrap:wrap;font-size:11.5px", html)
+        self.assertIn("@media(max-width:1180px){.date-slider{width:min(340px,44vw);min-width:240px}.date-slider .ds-head .dash{display:none}}", html)
+
+    def test_ranking_switch_is_present_in_sidebar_category_menu(self):
+        html = (ROOT / "dist" / "index.html").read_text(encoding="utf-8")
+        # 榜单切换已并入侧栏类目菜单：类目下挂新品榜/热销榜子项，顶部切换按钮已移除。
+        self.assertIn("category-ranking-item", html)
+        self.assertIn('data-ranking="${rk}"', html)
+        self.assertIn('"new-releases","新品榜"', html)
+        self.assertIn('"best-sellers","热销榜"', html)
+        self.assertNotIn('id="rankingPicker"', html)
+        self.assertNotIn('class="ranking-picker"', html)
         self.assertIn('currentRanking==="best-sellers"?"bestsellers":"new-releases"', html)
-        self.assertIn('json("/api/category-tree?all=1")', html)
-        self.assertIn("async function loadCategoryChildren(entry)", html)
-        self.assertIn("点击类目可继续展开下级节点", html)
-        self.assertIn('该类目尚未配置热销榜采集', html)
+        worker_source = (ROOT / "tools" / "build_worker.py").read_text(encoding="utf-8")
+        self.assertIn('该类目尚未配置热销榜采集', worker_source)
         self.assertIn('requestedRankingParam', html)
+        # 远端类目树浏览器（依赖 /api/category-tree）已随写入入口一并移除。
+        self.assertNotIn('id="categoryBrowserDialog"', html)
+        self.assertNotIn('id="categoryColumns"', html)
         self.assertNotIn('id="categoryBrowserButton"', html)
-        self.assertIn('id="openManualCategory"', html)
+        self.assertNotIn('id="openManualCategory"', html)
+        self.assertNotIn('/api/category-tree', html)
+        self.assertNotIn("async function loadCategoryChildren(entry)", html)
+        self.assertNotIn("点击类目可继续展开下级节点", html)
 
     def test_dashboard_recomputes_truthful_coverage_for_old_snapshots(self):
         html = (ROOT / "dist" / "index.html").read_text(encoding="utf-8")
@@ -271,7 +410,7 @@ class SnapshotArchiveTests(unittest.TestCase):
         paths = {item["node"]: item.get("path", []) for item in registry["categories"]}
         self.assertEqual(len(paths["2368365011"]), 5)
         self.assertEqual(len(paths["2368383011"]), 6)
-        self.assertEqual(paths["370783011"], ["Amazon Devices & Accessories", "Amazon Device Accessories"])
+        self.assertNotIn("370783011", paths)
 
     def test_archived_images_may_use_the_project_github_pages_host(self):
         self.assertTrue(
@@ -297,13 +436,6 @@ class SnapshotArchiveTests(unittest.TestCase):
         self.assertIn("async function remoteBrowseChildren", worker)
         self.assertIn("browseNodeLookup/${parentNode}.html", worker)
         self.assertIn('source: "live"', worker)
-
-    def test_category_columns_scroll_independently(self):
-        html = (ROOT / "dist" / "index.html").read_text(encoding="utf-8")
-        self.assertIn(".category-columns{display:flex;height:clamp(300px,52vh,450px);overflow-x:auto;overflow-y:hidden", html)
-        self.assertIn(".category-column{box-sizing:border-box;width:245px;min-width:245px;height:100%", html)
-        self.assertIn("overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain;scrollbar-gutter:stable", html)
-        self.assertIn(".category-column-title{position:sticky;top:0", html)
 
     def test_category_addition_does_not_require_admin_login(self):
         html = (ROOT / "dist" / "index.html").read_text(encoding="utf-8")
@@ -378,9 +510,11 @@ class SnapshotArchiveTests(unittest.TestCase):
     def test_valid_button_down_snapshot_is_indexed_without_invalid_date(self):
         manifest = self.read_json("docs", "data/categories/2368383011/manifest.json")
         status = self.read_json("docs", "data/categories/2368383011/status.json")
-        snapshot = self.read_json("docs", "data/categories/2368383011/daily/2026/09/2026-09-16.json")
-        self.assertEqual(manifest["latest"], "2026-09-16")
-        self.assertIn("2026-09-16", [entry["date"] for entry in manifest["snapshots"]])
+        # latest 应等于 snapshots 里的最新日期（随新快照滚动，不写死具体日期）
+        latest_date = manifest["latest"]
+        self.assertIn(latest_date, [entry["date"] for entry in manifest["snapshots"]])
+        snapshot = self.read_json("docs", "data/categories/2368383011/daily/2026/09/2026-09-17.json")
+        self.assertIn("2026-09-17", [entry["date"] for entry in manifest["snapshots"]])
         self.assertNotIn("2026-09-15", [entry["date"] for entry in manifest["snapshots"]])
         self.assertEqual(status["status"], "ok")
         self.assertEqual(len(snapshot["items"]), 100)

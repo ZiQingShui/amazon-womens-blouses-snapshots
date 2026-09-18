@@ -1,0 +1,4072 @@
+{
+  "schemaVersion": 1,
+  "snapshotDate": "2026-09-17",
+  "capturedAt": "2026-09-17T11:13:12+08:00",
+  "category": {
+    "site": "US",
+    "name": "Women's Button-Down Shirts",
+    "label": "女式纽扣衬衫",
+    "node": "2368383011",
+    "path": [
+      "Clothing, Shoes & Jewelry",
+      "Women",
+      "Clothing",
+      "Tops, Tees & Blouses",
+      "Blouses & Button-Down Shirts",
+      "Button-Down Shirts"
+    ],
+    "departmentSlug": "fashion",
+    "ranking": "Hot New Releases",
+    "url": "https://www.amazon.com/gp/new-releases/fashion/2368383011",
+    "manifest": "data/categories/2368383011/manifest.json",
+    "bestSellersManifest": "data/best-sellers/2368383011/manifest.json"
+  },
+  "sources": {
+    "ranking": "Amazon 官方热销榜",
+    "rankingSourceType": "official",
+    "productDetails": "Ecomtool MCP + Amazon 商品详情页"
+  },
+  "quality": {
+    "count": 100,
+    "publishable": true,
+    "missingRanks": [],
+    "duplicateRanks": [],
+    "duplicateAsins": [],
+    "requiredMissing": {
+      "asin": 0,
+      "title": 0,
+      "image": 0
+    },
+    "invalidUrls": {
+      "product": 0,
+      "image": 0
+    },
+    "fieldCoverage": {
+      "title": 100,
+      "image": 100,
+      "brand": 100,
+      "price": 100,
+      "mainBsr": 100,
+      "subBsr": 100,
+      "listingDate": 100,
+      "promotion": 100
+    },
+    "detailChecked": 100,
+    "detailSourceValid": true,
+    "coverageFailures": {},
+    "provenance": {
+      "fallbackRows": 0,
+      "reusedRows": 0,
+      "degraded": false,
+      "sources": {
+        "Ecomtool MCP 商品详情": 100
+      }
+    }
+  },
+  "items": [
+    {
+      "rank": 1,
+      "asin": "B0GYXS3DLN",
+      "title": "Zeagoo Blouses for Women Long Sleeve Dressy Casual Button Down Shirts | Lady Collared Tops Business Casual Work Outfits Clothing for Fall Spring",
+      "image": "https://m.media-amazon.com/images/I/716E7hvssRL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0GYXS3DLN",
+      "brand": "Zeagoo",
+      "price": "$11.18",
+      "currency": "USD",
+      "reviewCount": 786,
+      "rating": 4.1,
+      "mainBsr": 191,
+      "subBsr": 1,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 1
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2026-06-15",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0GZ3W53N8",
+      "variantCount": 110,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 2,
+      "asin": "B0FGQFMWSX",
+      "title": "Zeagoo Satin Blouses for Women Silk Button Down Shirts Long Sleeve Tops | Dressy Casual Shirts, Business Casual Outfits, Ladys Fashion Clothes for Spring Summer Fall",
+      "image": "https://m.media-amazon.com/images/I/71ADTVaVy3L._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0FGQFMWSX",
+      "brand": "Zeagoo",
+      "price": "$25.97",
+      "currency": "USD",
+      "reviewCount": 4854,
+      "rating": 4.2,
+      "mainBsr": 302,
+      "subBsr": 2,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 2
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2025-07-15",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0FBRF15TH",
+      "variantCount": 125,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 3,
+      "asin": "B0GYYF51K2",
+      "title": "Zeagoo Blouses for Women Dressy Casual Long Sleeve Button Down Shirts Tops | Collared Summer Tops, Fall Fashion Clothes, 2026 Trendy Top, Work Outfits",
+      "image": "https://m.media-amazon.com/images/I/71Mhqj-CkHL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0GYYF51K2",
+      "brand": "Zeagoo",
+      "price": "$14.23",
+      "currency": "USD",
+      "reviewCount": 1047,
+      "rating": 4.0,
+      "mainBsr": 335,
+      "subBsr": 3,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 3
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2026-06-03",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0GYYTB23R",
+      "variantCount": 161,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 4,
+      "asin": "B0GWZRJ64P",
+      "title": "Zeagoo Womens Flannel Shirts Long Sleeve Button Down Casual Fall Plaid Top | flannel plaid shirt, lightweight loose fit blouse, business casual outfits, 2026 fashion fall western shackets jacket",
+      "image": "https://m.media-amazon.com/images/I/91z7wQ8drbL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0GWZRJ64P",
+      "brand": "Zeagoo",
+      "price": "$24.99",
+      "currency": "USD",
+      "reviewCount": 570,
+      "rating": 4.3,
+      "mainBsr": 443,
+      "subBsr": 4,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 4
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2026-07-06",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0GWR3M54M",
+      "variantCount": 101,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 5,
+      "asin": "B0FNWKWCMW",
+      "title": "Zeagoo Womens Tops Long Sleeve Satin Silk Button Down Shirts Dressy Blouses | Business Casual Outfits, Fall Clothes, Button Up Shirts, Work Office Outfits, Professional formal Tops",
+      "image": "https://m.media-amazon.com/images/I/71i62zlmiJL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0FNWKWCMW",
+      "brand": "Zeagoo",
+      "price": "$14.99",
+      "currency": "USD",
+      "reviewCount": 1934,
+      "rating": 4.2,
+      "mainBsr": 451,
+      "subBsr": 5,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 5
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2025-09-07",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0FJDMJX3B",
+      "variantCount": 137,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 6,
+      "asin": "B09VXY6W8C",
+      "title": "J.VER Womens Dress Shirts Long Sleeve Button Down Shirt Wrinkle-Free Business Casual Blouse Office Work Tops",
+      "image": "https://m.media-amazon.com/images/I/51u6EBvcAjL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B09VXY6W8C",
+      "brand": "J.VER",
+      "price": "$14.99",
+      "currency": "USD",
+      "reviewCount": 8856,
+      "rating": 4.4,
+      "mainBsr": 571,
+      "subBsr": 6,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 6
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2022-05-30",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B09VXYJFS7",
+      "variantCount": 168,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 7,
+      "asin": "B0FZB6JGBY",
+      "title": "EVALESS Business Casual Tops for Women Button Down Shirts | Summer Pleated V Neck Work Dressy Blouses,Short Sleeve,Office Interview Professional Formal Outfits",
+      "image": "https://m.media-amazon.com/images/I/617rPTirnBL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0FZB6JGBY",
+      "brand": "EVALESS",
+      "price": "$14.24",
+      "currency": "USD",
+      "reviewCount": 781,
+      "rating": 4.0,
+      "mainBsr": 728,
+      "subBsr": 7,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 7
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2025-11-27",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0FZB87S7D",
+      "variantCount": 136,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 8,
+      "asin": "B0FXH5YW1V",
+      "title": "Zeagoo Button Down Shirts for Women Short Sleeve Tops Dressy Casual Blouses | Cute Summer Tops for Women, Spring Clothes, Button Up Collared Shirts, Business Casual Blouses, 2026 Office Work Clothing",
+      "image": "https://m.media-amazon.com/images/I/71dAm9PR60L._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0FXH5YW1V",
+      "brand": "Zeagoo",
+      "price": "$14.99",
+      "currency": "USD",
+      "reviewCount": 3930,
+      "rating": 4.0,
+      "mainBsr": 745,
+      "subBsr": 8,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 8
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2025-12-26",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0FXH9G3JV",
+      "variantCount": 173,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 9,
+      "asin": "B09K3M17PJ",
+      "title": "Ruisin Super Soft Wrinkle Free Button Down Shirts for Women Solid Long Sleeve Striped Formal Work Dress Blouses Tops",
+      "image": "https://m.media-amazon.com/images/I/61NxUznFlML._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B09K3M17PJ",
+      "brand": "Ruisin",
+      "price": "$13.53",
+      "currency": "USD",
+      "reviewCount": 3420,
+      "rating": 4.4,
+      "mainBsr": 656,
+      "subBsr": 10,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 10
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2021-11-05",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0BTYMTNP7",
+      "variantCount": 438,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 10,
+      "asin": "B0GWR748JN",
+      "title": "Zeagoo Women's Wrinkle Free Button Down Shirts Long Sleeve Business Tops | XS-3XL,Dress Shirts,Collared Blouses,Lightweight No Iron Material,Solid Color,Work Blouse,Easy Care,Office Interviews Tops",
+      "image": "https://m.media-amazon.com/images/I/61jRssm-bdL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0GWR748JN",
+      "brand": "Zeagoo",
+      "price": "$17.09",
+      "currency": "USD",
+      "reviewCount": 417,
+      "rating": 4.3,
+      "mainBsr": 1074,
+      "subBsr": 12,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 12
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2026-05-20",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0GWQVY57F",
+      "variantCount": 71,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 11,
+      "asin": "B0FX9QW5J6",
+      "title": "LOMON Button Down Shirts for Women 3/4 Length Sleeve Business Casual Blouses 2026 Summer Tops",
+      "image": "https://m.media-amazon.com/images/I/81qanB2-XDL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0FX9QW5J6",
+      "brand": "LOMON",
+      "price": "$12.99",
+      "currency": "USD",
+      "reviewCount": 1504,
+      "rating": 4.1,
+      "mainBsr": 815,
+      "subBsr": 13,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 13
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2025-12-08",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0FX9NXWCL",
+      "variantCount": 109,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 12,
+      "asin": "B0CP7ZBQND",
+      "title": "siliteelon Women's Button Down Shirts Long Sleeve Dress Shirts Wrinkle Free Collared Work Office Solid Blouses Corset Tops",
+      "image": "https://m.media-amazon.com/images/I/61efkymTqaL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0CP7ZBQND",
+      "brand": "siliteelon",
+      "price": "$18.99",
+      "currency": "USD",
+      "reviewCount": 6868,
+      "rating": 4.4,
+      "mainBsr": 982,
+      "subBsr": 9,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 9
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2023-12-06",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0CRVLHN9J",
+      "variantCount": 226,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 13,
+      "asin": "B0BGPYRLB6",
+      "title": "CHYRII Womens Button Down Flannel Shirts Long Sleeve Plaid Shackets Business Casual Blouse Top",
+      "image": "https://m.media-amazon.com/images/I/61RbY8mGaYL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0BGPYRLB6",
+      "brand": "CHYRII",
+      "price": "$19.99",
+      "currency": "USD",
+      "reviewCount": 5352,
+      "rating": 4.3,
+      "mainBsr": 1071,
+      "subBsr": 11,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 11
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2022-10-12",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0BGYLT8KW",
+      "variantCount": 185,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 14,
+      "asin": "B0FXM51WL3",
+      "title": "siliteelon Button Down Shirts for Women: Wrinkle Free Long Sleeve Classic Fit Collared Dress Shirt Solid Formal Office",
+      "image": "https://m.media-amazon.com/images/I/51m3V4AdzUL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0FXM51WL3",
+      "brand": "siliteelon",
+      "price": "$12.99",
+      "currency": "USD",
+      "reviewCount": 1032,
+      "rating": 4.4,
+      "mainBsr": 1192,
+      "subBsr": 14,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 14
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2025-11-24",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0FXM49DQG",
+      "variantCount": 60,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 15,
+      "asin": "B0DF1TN6GJ",
+      "title": "Zeagoo Womens Button Up Flannel Plaid Shirt Long Sleeve Blouse Fall Tops | Loose fit Blouses, Classic Button Down, with Single Chest Pocket, 2026 Fashion Fall Outfit for Retro Solo or Layered",
+      "image": "https://m.media-amazon.com/images/I/71SrmwN3udL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0DF1TN6GJ",
+      "brand": "Zeagoo",
+      "price": "$19.99",
+      "currency": "USD",
+      "reviewCount": 1369,
+      "rating": 4.2,
+      "mainBsr": 1449,
+      "subBsr": 18,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 18
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2024-09-11",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0D8TXVG4F",
+      "variantCount": 78,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 16,
+      "asin": "B08QJPJ3RB",
+      "title": "Dokotoo Womens Tops Plaid Cotton Cuffed 3/4 Sleeve Shirts Blouses | Basic,V Neck,Work Tops,Tunic Blouses,Business Casual Outfits,Loose Fit,Tunic,Fall,Winter,Dressy,Office",
+      "image": "https://m.media-amazon.com/images/I/81NnbIeofVL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B08QJPJ3RB",
+      "brand": "Dokotoo",
+      "price": "$25.88",
+      "currency": "USD",
+      "reviewCount": 6903,
+      "rating": 4.2,
+      "mainBsr": 1011,
+      "subBsr": 15,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 15
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2020-12-17",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B08QJRZNYH",
+      "variantCount": 101,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 17,
+      "asin": "B0G11QT6DV",
+      "title": "Zeagoo Womens Satin Blouse Short Sleeve Silk Tops Button Down Shirts | Fashion Collared Shirt, Office Work Top, Wedding Date Night Party Outfit, Trendy Spring Summer Fall Clothes",
+      "image": "https://m.media-amazon.com/images/I/812KlxqOXjL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0G11QT6DV",
+      "brand": "Zeagoo",
+      "price": "$19.97",
+      "currency": "USD",
+      "reviewCount": 1496,
+      "rating": 4.1,
+      "mainBsr": 1293,
+      "subBsr": 16,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 16
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2025-12-16",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0G12RBPBL",
+      "variantCount": 91,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 18,
+      "asin": "B0H9LJB9Z4",
+      "title": "Zeagoo Long Sleeve Shirts for Women Lace Top Button Up Blouse Dressy Casual | Lace Sheer Tops,Puffy Lantern Sleeve,Embroidery Crew Neck Blouse,2 PCS,Stretch Knit,Work Office Outfits,Party Dating Wear",
+      "image": "https://m.media-amazon.com/images/I/81QawdPDKoL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0H9LJB9Z4",
+      "brand": "Zeagoo",
+      "price": "$0.00",
+      "currency": "USD",
+      "reviewCount": 28,
+      "rating": 4.8,
+      "mainBsr": 1563,
+      "subBsr": 19,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 19
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2026-08-17",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0H6B5RV4M",
+      "variantCount": 58,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 19,
+      "asin": "B0GWF2N1FP",
+      "title": "Zeagoo Button Down Shirts for Women Long Sleeve Blouse Casual Business Tops | Wrinkle-Resistant Womens Shirt,Lightweight Work Blouse,Soft Basic Buttonned Shirts,Classic Fall Fashion Outfit 2026",
+      "image": "https://m.media-amazon.com/images/I/61k1TWrW0PL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0GWF2N1FP",
+      "brand": "Zeagoo",
+      "price": "$11.99",
+      "currency": "USD",
+      "reviewCount": 240,
+      "rating": 4.2,
+      "mainBsr": 1582,
+      "subBsr": 20,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 20
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2026-05-12",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0H1C8JZQ8",
+      "variantCount": 60,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 20,
+      "asin": "B0BR356L6R",
+      "title": "siliteelon Womens Classic-Fit Dress Shirts Long Sleeve Button Down Wrinkle-Free Stretch Solid Casual Work Office Blouse Top",
+      "image": "https://m.media-amazon.com/images/I/61Y-OQbVMDL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0BR356L6R",
+      "brand": "siliteelon",
+      "price": "$17.99",
+      "currency": "USD",
+      "reviewCount": 8162,
+      "rating": 4.4,
+      "mainBsr": 1405,
+      "subBsr": 17,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 17
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2023-01-28",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0DLKFZFK4",
+      "variantCount": 236,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 21,
+      "asin": "B0FFSH7RX2",
+      "title": "Women's Stain-Resistant Shirts Wrinkle Free Long Sleeve Blouse Office Tops",
+      "image": "https://m.media-amazon.com/images/I/81w4Sm8VTuL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0FFSH7RX2",
+      "brand": "CBOO",
+      "price": "$14.99",
+      "currency": "USD",
+      "reviewCount": 646,
+      "rating": 4.1,
+      "mainBsr": 1649,
+      "subBsr": 22,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 22
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2025-08-03",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0G34QGX3W",
+      "variantCount": 146,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 22,
+      "asin": "B0FX9L3NXZ",
+      "title": "OFEEFAN Button Down Shirts for Women 3/4 Length Sleeve Tops V Neck Blouses Business Casual Outfits Loose Fit",
+      "image": "https://m.media-amazon.com/images/I/710BVS+PsrL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0FX9L3NXZ",
+      "brand": "OFEEFAN",
+      "price": "$12.99",
+      "currency": "USD",
+      "reviewCount": 2299,
+      "rating": 4.2,
+      "mainBsr": 1742,
+      "subBsr": 21,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 21
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2025-12-14",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0FX9JFYNX",
+      "variantCount": 153,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 23,
+      "asin": "B0CPHZRQ9S",
+      "title": "CUNLIN Women's Wrinkle-Resistant Striped Long Sleeve Button Down Shirt | Regular Fit,Business Casual,Cotton Blend,Lightweight,Breathable,Easy Care,Perfect for work,weekends,vacations and travel",
+      "image": "https://m.media-amazon.com/images/I/81hLhi3tjgL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0CPHZRQ9S",
+      "brand": "CUNLIN",
+      "price": "$17.99",
+      "currency": "USD",
+      "reviewCount": 2917,
+      "rating": 4.3,
+      "mainBsr": 1807,
+      "subBsr": 23,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 23
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2024-01-05",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0CPJ1XGQM",
+      "variantCount": 215,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 24,
+      "asin": "B0G58LTWXS",
+      "title": "HOTOUCH Button Down Shirts for Women Long Sleeve Stretch Dress Shirts | Wrinkle-Free, Work Blouses, Slim Fit, Office Tops",
+      "image": "https://m.media-amazon.com/images/I/61Xpo39wmCL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0G58LTWXS",
+      "brand": "HOTOUCH",
+      "price": "$9.99",
+      "currency": "USD",
+      "reviewCount": 680,
+      "rating": 4.2,
+      "mainBsr": 2107,
+      "subBsr": 25,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 25
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2026-01-14",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0FNVY5R93",
+      "variantCount": 51,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 25,
+      "asin": "B0DKT557H3",
+      "title": "siliteelon Button Down Shirts for Women Slim fit Long Sleeve Stretch Dress Shirts Work Shirt Wrinkle Free Office Blouses",
+      "image": "https://m.media-amazon.com/images/I/81xB0uzn8QL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0DKT557H3",
+      "brand": "siliteelon",
+      "price": "$14.99",
+      "currency": "USD",
+      "reviewCount": 2452,
+      "rating": 4.3,
+      "mainBsr": 2036,
+      "subBsr": 24,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 24
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2024-11-06",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0DKT5VW3Q",
+      "variantCount": 159,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 26,
+      "asin": "B0BWXJZDJH",
+      "title": "CUNLIN Womens Cotton Button Down Shirts for Women Fitted Long Sleeve Formal Dress Shirt Work Blouses Tops",
+      "image": "https://m.media-amazon.com/images/I/61Q+kt8Q45L._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0BWXJZDJH",
+      "brand": "CUNLIN",
+      "price": "$14.39",
+      "currency": "USD",
+      "reviewCount": 1603,
+      "rating": 4.4,
+      "mainBsr": 1985,
+      "subBsr": 26,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 26
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2023-04-26",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0BWXL8QZ8",
+      "variantCount": 411,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 27,
+      "asin": "B0DC9YKNCK",
+      "title": "hearain Soft Wrinkle-Free Women's Button Down Dress Shirts Long Sleeve Work Blouses Casual Tops XXS-6XL Regular Petite Tall",
+      "image": "https://m.media-amazon.com/images/I/61+oZfFlpbL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0DC9YKNCK",
+      "brand": "hearain",
+      "price": "$13.98",
+      "currency": "USD",
+      "reviewCount": 526,
+      "rating": 4.4,
+      "mainBsr": 1920,
+      "subBsr": 27,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 27
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2024-09-12",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0DJNRC19P",
+      "variantCount": 556,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 28,
+      "asin": "B0D7LVYRM2",
+      "title": "Button Down Shirts for Women Cotton Oxford Shirts Long Sleeve Dress Shirts Collared Blouses Work Casual Solid Tunic Tops",
+      "image": "https://m.media-amazon.com/images/I/61n8tAxIYNL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0D7LVYRM2",
+      "brand": "Aoudery",
+      "price": "$17.99",
+      "currency": "USD",
+      "reviewCount": 1437,
+      "rating": 4.1,
+      "mainBsr": 2212,
+      "subBsr": 28,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 28
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2024-07-31",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0D7M91H73",
+      "variantCount": 111,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 29,
+      "asin": "B0DJHNDVLQ",
+      "title": "Mutitop Button Down Shirts for Women Long Sleeve Dress Shirts Wrinkle Free Collared Work Office Solid Blouses Corset Tops",
+      "image": "https://m.media-amazon.com/images/I/619Ct3qXCqL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0DJHNDVLQ",
+      "brand": "Mutitop",
+      "price": "$14.99",
+      "currency": "USD",
+      "reviewCount": 1523,
+      "rating": 4.4,
+      "mainBsr": 2346,
+      "subBsr": 31,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 31
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2024-10-22",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0DJHPFD49",
+      "variantCount": 122,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 30,
+      "asin": "B09HC6P2BT",
+      "title": "AUTOMET Shackets for Women Plaid Flannel Shirts | Fall Jackets Cute Tops Trendy Western Cowgirl juniors Country Outfits Winter Coats",
+      "image": "https://m.media-amazon.com/images/I/71cJHdH2UUL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B09HC6P2BT",
+      "brand": "AUTOMET",
+      "price": "$17.99",
+      "currency": "USD",
+      "reviewCount": 19313,
+      "rating": 4.4,
+      "mainBsr": 2327,
+      "subBsr": 30,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 30
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2021-10-06",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0CVVQ4N66",
+      "variantCount": 98,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 31,
+      "asin": "B0DPF4BSYP",
+      "title": "LOMON Women's Summer Hawaiian Shirts Floral Short Sleeve Button Down Shirts | Chiffon Tropical Printed Shirts,Cool Beach Cover Ups Tops,Vacation Outfits",
+      "image": "https://m.media-amazon.com/images/I/81w-57HkkQL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0DPF4BSYP",
+      "brand": "LOMON",
+      "price": "$12.99",
+      "currency": "USD",
+      "reviewCount": 1030,
+      "rating": 4.3,
+      "mainBsr": 2292,
+      "subBsr": 29,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 29
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2025-02-12",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0DPF4KLY8",
+      "variantCount": 143,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 32,
+      "asin": "B0H392HWP7",
+      "title": "Zeagoo Womens Satin Blouses Button Down Shirts 3/4 Sleeve Dressy Tops S-2XL | Silk 3/4 Length Sleeve Tops, Satin Button Down Shirts, Business Dressy Casual Blouses, Summer Fall Outfits",
+      "image": "https://m.media-amazon.com/images/I/71xZIc6BPnL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0H392HWP7",
+      "brand": "Zeagoo",
+      "price": "$17.99",
+      "currency": "USD",
+      "reviewCount": 120,
+      "rating": 4.3,
+      "mainBsr": 2402,
+      "subBsr": 33,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 33
+        }
+      ],
+      "promotions": [
+        "Coupon $6.00"
+      ],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2026-07-28",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "Coupon $6.00",
+      "promotionStatus": "detected",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0H39483DF",
+      "variantCount": 93,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 33,
+      "asin": "B0DBZ984HQ",
+      "title": "KevaMolly Plaid Flannel Shirts for Women Long Sleeve | Loose Fit,Boyfriend Button Down Shirts,Work Collared Blouse,Business Casual Checkered Tops,Spring Fall Outfits Clothes",
+      "image": "https://m.media-amazon.com/images/I/81ZMb-fF-4L._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0DBZ984HQ",
+      "brand": "KevaMolly",
+      "price": "$22.49",
+      "currency": "USD",
+      "reviewCount": 1935,
+      "rating": 4.3,
+      "mainBsr": 2406,
+      "subBsr": 34,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 34
+        }
+      ],
+      "promotions": [
+        "Coupon $2.50"
+      ],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2024-08-16",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "Coupon $2.50",
+      "promotionStatus": "detected",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0D9VXHNZL",
+      "variantCount": 143,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 34,
+      "asin": "B0FW595WML",
+      "title": "BBIBBI Blouses for Women Long Sleeve Button Down Dressy Casual Work Shirts | Wrinkle-free cotton-blend stretch fabric. Regular/Petite/Tall fits, XS-6XL. Ideal at office, weekends, vacations and travel.",
+      "image": "https://m.media-amazon.com/images/I/71fBhbQCZ4L._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0FW595WML",
+      "brand": "BBIBBI",
+      "price": "$14.99",
+      "currency": "USD",
+      "reviewCount": 94,
+      "rating": 4.4,
+      "mainBsr": 2532,
+      "subBsr": 36,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 36
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2025-11-19",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0FZ9WPMRN",
+      "variantCount": 468,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 35,
+      "asin": "B0GDFZRY74",
+      "title": "Zeagoo Satin Blouses for Women Silk Button Down Short Sleeve Shirts | Business casual Tops, soft silky office work clothes",
+      "image": "https://m.media-amazon.com/images/I/71Oa5CpG7aL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0GDFZRY74",
+      "brand": "Zeagoo",
+      "price": "$12.74",
+      "currency": "USD",
+      "reviewCount": 870,
+      "rating": 4.3,
+      "mainBsr": 2514,
+      "subBsr": 35,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 35
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2026-02-15",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0GDFRV7XD",
+      "variantCount": 85,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 36,
+      "asin": "B0F8Q39CS5",
+      "title": "Zeagoo Button Down Shirt Women Long Sleeve Blouses Casual Tops Work Outfits | Stain Shield Dress Shirts，Wrinkle Free Collared Shirts，Business Casual Work Outfits，Floral Blouse，Fall Outfits",
+      "image": "https://m.media-amazon.com/images/I/71iLUaMhHjL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0F8Q39CS5",
+      "brand": "Zeagoo",
+      "price": "$14.99",
+      "currency": "USD",
+      "reviewCount": 2653,
+      "rating": 4.2,
+      "mainBsr": 2364,
+      "subBsr": 32,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 32
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2025-07-14",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0F8Q3JJDJ",
+      "variantCount": 124,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 37,
+      "asin": "B0G494YF5V",
+      "title": "Zeagoo Button Down Shirts for Women 3/4 Sleeve Tops V Neck Collared Blouses Business Casual Outfits",
+      "image": "https://m.media-amazon.com/images/I/81s+a1xHFXL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0G494YF5V",
+      "brand": "Zeagoo",
+      "price": "$14.99",
+      "currency": "USD",
+      "reviewCount": 1556,
+      "rating": 4.1,
+      "mainBsr": 2681,
+      "subBsr": 37,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 37
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2026-01-16",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0G493D23Q",
+      "variantCount": 150,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 38,
+      "asin": "B0FV8GY45L",
+      "title": "Zeagoo Women Button Down Shirts Oversized Long Sleeve Blouses with Pocket | Floral Printed Drop Shoulder Tops, Causal Work Daily Office Wear, 2026 Fall Fashion Outfits",
+      "image": "https://m.media-amazon.com/images/I/711FSfZQWUL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0FV8GY45L",
+      "brand": "Zeagoo",
+      "price": "$14.99",
+      "currency": "USD",
+      "reviewCount": 752,
+      "rating": 4.1,
+      "mainBsr": 2879,
+      "subBsr": 40,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 40
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2025-12-05",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0FV8JNFG5",
+      "variantCount": 92,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 39,
+      "asin": "B07QXQ78P7",
+      "title": "Beautife Button Down Shirts for Womens Short Sleeve Blouses Summer Tops | V Neck Collared Shirt,Casual Loose Tops With Pockets,Polka Dot,Leopard Printed,Striped,Work,Office,Vacation,Travel,Beach",
+      "image": "https://m.media-amazon.com/images/I/61agCGXvBUL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B07QXQ78P7",
+      "brand": "Beautife",
+      "price": "$9.99",
+      "currency": "USD",
+      "reviewCount": 13893,
+      "rating": 4.2,
+      "mainBsr": 2099,
+      "subBsr": 38,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 38
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2019-05-09",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0948VKZGK",
+      "variantCount": 202,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 40,
+      "asin": "B0FJDKKVGX",
+      "title": "Asiertiy Womens Buffalo Plaid Flannel Shirt Button Down Blouses Tops XS-4XL | Flannel Plaid Long Sleeve Shirt, Lightweight Blouse, Business Casual Outfits, 2026 Fashion Fall Western Shackets Jacket",
+      "image": "https://m.media-amazon.com/images/I/71PtfCw2NTL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0FJDKKVGX",
+      "brand": "Asiertiy",
+      "price": "$19.99",
+      "currency": "USD",
+      "reviewCount": 1398,
+      "rating": 4.2,
+      "mainBsr": 2843,
+      "subBsr": 39,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 39
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2025-09-19",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0CC4NCDJS",
+      "variantCount": 130,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 41,
+      "asin": "B0GLN7D6X5",
+      "title": "siliteelon Button Down Shirts for Women Stretch Long Sleeve Wrinkle Free Collared Fitted Business Casual Tops Work Blouse",
+      "image": "https://m.media-amazon.com/images/I/71T8aP0kMhL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0GLN7D6X5",
+      "brand": "siliteelon",
+      "price": "$22.99",
+      "currency": "USD",
+      "reviewCount": 210,
+      "rating": 4.3,
+      "mainBsr": 3047,
+      "subBsr": 41,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 41
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2026-04-06",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0GLNMD3ZH",
+      "variantCount": 74,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 42,
+      "asin": "B0H8SDBRK3",
+      "title": "Zeagoo Women's Button Down Shirts Long Sleeve Business Casual Blouses Tops | Button Up Shirt Women,Collared Shirts,Office Work Blouses for Women,V Neck Dressy Tops,Interview Professional Outfits",
+      "image": "https://m.media-amazon.com/images/I/61hpsQoZe4L._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0H8SDBRK3",
+      "brand": "Zeagoo",
+      "price": "$14.99",
+      "currency": "USD",
+      "reviewCount": 52,
+      "rating": 4.1,
+      "mainBsr": 3144,
+      "subBsr": 43,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 43
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2026-08-14",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0H8R7HB3N",
+      "variantCount": 105,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 43,
+      "asin": "B0FXGRB3B3",
+      "title": "Zeagoo Blouse for Women Dressy Long Sleeve Button Down Shirts V Neck Tops | business casual outfit,lightweight dressy casual blouse,spring fall fashion,solid or printed tops",
+      "image": "https://m.media-amazon.com/images/I/71wkDY71a0L._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0FXGRB3B3",
+      "brand": "Zeagoo",
+      "price": "$11.69",
+      "currency": "USD",
+      "reviewCount": 1703,
+      "rating": 4.2,
+      "mainBsr": 3091,
+      "subBsr": 42,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 42
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2025-11-09",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0FXGNZH2S",
+      "variantCount": 102,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 44,
+      "asin": "B0D48FBLN9",
+      "title": "IN'VOLAND Womens Plus Size Flannel Shirts Long Sleeve Button Down Plaid Top | Casual Flannel Shirts ,Lightweight Loose Blouse Tops ,Business Boyfriend Collared Office Outfits ,Fall Fashion Winter Clothes",
+      "image": "https://m.media-amazon.com/images/I/91MkaDj5+-L._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0D48FBLN9",
+      "brand": "IN'VOLAND",
+      "price": "$14.99",
+      "currency": "USD",
+      "reviewCount": 1818,
+      "rating": 4.4,
+      "mainBsr": 3353,
+      "subBsr": 46,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 46
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2024-07-03",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0D49578BW",
+      "variantCount": 108,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 45,
+      "asin": "B0G38PCCTB",
+      "title": "HOTOUCH Button Down Shirts for Women Long Sleeve Blouse Dressy Casual Tops | Business Work Tops with Pocket, Fall Fashion Clothes, V Neck Collared Tops, Everyday Casual, Daily Wear",
+      "image": "https://m.media-amazon.com/images/I/71xOB6WPAkL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0G38PCCTB",
+      "brand": "HOTOUCH",
+      "price": "$19.99",
+      "currency": "USD",
+      "reviewCount": 1649,
+      "rating": 4.2,
+      "mainBsr": 3193,
+      "subBsr": 44,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 44
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2025-12-29",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0G38MQWHB",
+      "variantCount": 133,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 46,
+      "asin": "B0FSRYJCL6",
+      "title": "Funlingo Women's Striped Button Down Shirts Long Sleeve Smocked Cuffed Ruffle Collar Blouses Spring Work Business Casual Tops",
+      "image": "https://m.media-amazon.com/images/I/81I3lVtjr2L._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0FSRYJCL6",
+      "brand": "Funlingo",
+      "price": "$17.99",
+      "currency": "USD",
+      "reviewCount": 538,
+      "rating": 4.1,
+      "mainBsr": 3454,
+      "subBsr": 48,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 48
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2025-11-25",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0FSS9GW1T",
+      "variantCount": 161,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 47,
+      "asin": "B0G2S5F8HC",
+      "title": "Zeagoo Satin Silk Blouses Short Sleeve Crewneck Top for Women Dressy Casual | Satin Blouse,Silk Tops for Women,Short Sleeve,Crew Neck,Relaxed Fit,Business Casual,Office Wear,Smooth,Summer Fall Outfit",
+      "image": "https://m.media-amazon.com/images/I/61WWKQOnxRL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0G2S5F8HC",
+      "brand": "Zeagoo",
+      "price": "$9.99",
+      "currency": "USD",
+      "reviewCount": 1087,
+      "rating": 4.2,
+      "mainBsr": 1959,
+      "subBsr": 47,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 47
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2026-01-02",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0G2S3Y9M3",
+      "variantCount": 107,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 48,
+      "asin": "B0F5PTP25B",
+      "title": "AKEFUN Button Down Shirts for Women Cotton Long Sleeve Casual Tops Blouse | Linen Style, Button up, V Neck, Light Weight, Collared, Solid, Gauze, Dressy Casual, Work, Office, Vacation, Travel, Beach",
+      "image": "https://m.media-amazon.com/images/I/51TIElZXGRL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0F5PTP25B",
+      "brand": "AKEFUN",
+      "price": "$16.99",
+      "currency": "USD",
+      "reviewCount": 668,
+      "rating": 4.0,
+      "mainBsr": 3335,
+      "subBsr": 45,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 45
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2025-06-08",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0F5PX36RD",
+      "variantCount": 40,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 49,
+      "asin": "B0D5Y1G796",
+      "title": "PRETTYGARDEN Women's Fall Trendy Long Sleeve Lace Tops | Dressy Casual Blouses, Sheer See Through, Button Down Shirts, Date Night, Vacation Travel, Spring Outfits, Fashion Clothing",
+      "image": "https://m.media-amazon.com/images/I/81FmQgpn+0L._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0D5Y1G796",
+      "brand": "PRETTYGARDEN",
+      "price": "$45.99",
+      "currency": "USD",
+      "reviewCount": 1296,
+      "rating": 3.9,
+      "mainBsr": 3456,
+      "subBsr": 49,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 49
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2024-08-14",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0D5XXMNFB",
+      "variantCount": 59,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 50,
+      "asin": "B0FXH3SFWK",
+      "title": "Zeagoo 3/4 Length Sleeve Womens Tops V Neck Pleated Boho Floral Blouses | Work casual shirts, tunic tops for leggings, summer fall clothes",
+      "image": "https://m.media-amazon.com/images/I/91FMHYdwQpL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0FXH3SFWK",
+      "brand": "Zeagoo",
+      "price": "$9.98",
+      "currency": "USD",
+      "reviewCount": 2670,
+      "rating": 4.3,
+      "mainBsr": 1543,
+      "subBsr": 51,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 51
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2025-11-09",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0FXH5KVC2",
+      "variantCount": 151,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 51,
+      "asin": "B0CRZ21ZQB",
+      "title": "Astylish Women Denim Shirts Button Down Blouse Tops | V Neck, Casual",
+      "image": "https://m.media-amazon.com/images/I/71Xj3Risu3L._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0CRZ21ZQB",
+      "brand": "Astylish",
+      "price": "$33.14",
+      "currency": "USD",
+      "reviewCount": 1555,
+      "rating": 4.0,
+      "mainBsr": 3513,
+      "subBsr": 50,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 50
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2024-03-01",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0DMFB4YQK",
+      "variantCount": 61,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 52,
+      "asin": "B0C4TH83ZP",
+      "title": "CUNLIN Womens Soft Satin Silk Leopard Button Down Shirts for Women Silky Long Sleeve Work Shirt Dress Blouses Tops",
+      "image": "https://m.media-amazon.com/images/I/7194Ak+q+ZL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0C4TH83ZP",
+      "brand": "CUNLIN",
+      "price": "$13.90",
+      "currency": "USD",
+      "reviewCount": 4590,
+      "rating": 4.4,
+      "mainBsr": 2645,
+      "subBsr": 52,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 52
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2023-05-25",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0BC7MKB77",
+      "variantCount": 282,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 53,
+      "asin": "B0GWPJN1W7",
+      "title": "Women Button Down Shirts Y2k Slim Fit Cap Short Sleeve Button Up Collared Cropped Blouse Cute Preppy Tops",
+      "image": "https://m.media-amazon.com/images/I/61-bb-Re1nL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0GWPJN1W7",
+      "brand": "NVRENJIA",
+      "price": "$14.98",
+      "currency": "USD",
+      "reviewCount": 85,
+      "rating": 3.9,
+      "mainBsr": 3811,
+      "subBsr": 54,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 54
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2026-05-29",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0GWPSGT3J",
+      "variantCount": 22,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 54,
+      "asin": "B0D4LMY28N",
+      "title": "Zeagoo Satin Blouses for Women Casual Long Sleeve Button Down Silk Shirts Dressy Business Work Tunic Top",
+      "image": "https://m.media-amazon.com/images/I/71YNMGQh+RL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0D4LMY28N",
+      "brand": "Zeagoo",
+      "price": "$14.99",
+      "currency": "USD",
+      "reviewCount": 1260,
+      "rating": 4.1,
+      "mainBsr": 3695,
+      "subBsr": 53,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 53
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2024-07-12",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0D4LT2RF5",
+      "variantCount": 102,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 55,
+      "asin": "B0DK1KGHXJ",
+      "title": "HOTOUCH Women Short Sleeve Button Down Shirts Business Work Blouse | Office Work Tops,Slim Fit Basic Shirts, Summer V Neck Outfits, Going Out Blouse",
+      "image": "https://m.media-amazon.com/images/I/51Udhmnxi-L._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0DK1KGHXJ",
+      "brand": "HOTOUCH",
+      "price": "$11.99",
+      "currency": "USD",
+      "reviewCount": 1173,
+      "rating": 4.3,
+      "mainBsr": 3716,
+      "subBsr": 58,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 58
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2024-12-19",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0DK1LVDNR",
+      "variantCount": 61,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 56,
+      "asin": "B0DBPP178C",
+      "title": "siliteelon Button Down Striped Shirts for Women Work Collared Dress Blouses | Old Money Business Casual Outfits, Blouses for Women Dressy Casual Formal, Long Sleeve Professional Office Tops with Pocket",
+      "image": "https://m.media-amazon.com/images/I/71bHDCc5qZL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0DBPP178C",
+      "brand": "siliteelon",
+      "price": "$24.99",
+      "currency": "USD",
+      "reviewCount": 2749,
+      "rating": 4.1,
+      "mainBsr": 3814,
+      "subBsr": 55,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 55
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2024-09-11",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0HHMV68JL",
+      "variantCount": 115,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 57,
+      "asin": "B0FYDP7K4B",
+      "title": "hearain Super Soft Striped Button Down Shirts for Women Dress Shirts Long Sleeve Casual Collared Work Shirt with Pocket",
+      "image": "https://m.media-amazon.com/images/I/91paLABE5gL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0FYDP7K4B",
+      "brand": "hearain",
+      "price": "$18.99",
+      "currency": "USD",
+      "reviewCount": 299,
+      "rating": 4.3,
+      "mainBsr": 4289,
+      "subBsr": 64,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 64
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2026-01-11",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0FYDL3RKW",
+      "variantCount": 240,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 58,
+      "asin": "B0CBMJ11VD",
+      "title": "COUXILY Soft Wrinkle-Free Button Down Stretch Shirts for Women, Breathable Moisture-Wicking Casual Work Dress Tops",
+      "image": "https://m.media-amazon.com/images/I/71sPNeapCTL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0CBMJ11VD",
+      "brand": "COUXILY",
+      "price": "$18.99",
+      "currency": "USD",
+      "reviewCount": 1245,
+      "rating": 4.3,
+      "mainBsr": 3992,
+      "subBsr": 59,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 59
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2023-10-28",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0CBMJQ88X",
+      "variantCount": 254,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 59,
+      "asin": "B0D95QKVTD",
+      "title": "Womens Button Down Shirts Cotton Dress Shirts Oxford Shirts Long Sleeve Work Blouses Collared Tops Tunics with Pocket",
+      "image": "https://m.media-amazon.com/images/I/61E-hqknEnL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0D95QKVTD",
+      "brand": "Mutitop",
+      "price": "$22.55",
+      "currency": "USD",
+      "reviewCount": 1928,
+      "rating": 4.2,
+      "mainBsr": 3857,
+      "subBsr": 57,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 57
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2024-08-22",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0DH4S87QZ",
+      "variantCount": 130,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 60,
+      "asin": "B0D4257C14",
+      "title": "JEKAOYI Women's Button Down Casual Shirts Cotton Short Sleeve Blouses | Lightweight, Collared Shirt, Linen Feel, Solid, Spring, Summer, Beach, Vacation Tops with Pockets",
+      "image": "https://m.media-amazon.com/images/I/61t-NmpaBEL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0D4257C14",
+      "brand": "JEKAOYI",
+      "price": "$14.99",
+      "currency": "USD",
+      "reviewCount": 1724,
+      "rating": 4.1,
+      "mainBsr": 3840,
+      "subBsr": 56,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 56
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2024-05-28",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0D42BLLYM",
+      "variantCount": 55,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 61,
+      "asin": "B0DQL9PJRD",
+      "title": "hearain Women's Button Down Shirts Long Sleeve Basic Classic Soft Shirt Collared Fashion Dressy Casual Blouses",
+      "image": "https://m.media-amazon.com/images/I/81n+XujFrpL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0DQL9PJRD",
+      "brand": "hearain",
+      "price": "$19.99",
+      "currency": "USD",
+      "reviewCount": 2210,
+      "rating": 4.4,
+      "mainBsr": 3037,
+      "subBsr": 62,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 62
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2024-12-24",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0C37DJGMX",
+      "variantCount": 340,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 62,
+      "asin": "B0FZL72NPS",
+      "title": "Oversized Button Down Shirts for Women Linen Shirt Long Sleeve Collared Blouses with Pocket Beach Vacation Outfit 2026",
+      "image": "https://m.media-amazon.com/images/I/71mzybXOsAL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0FZL72NPS",
+      "brand": "Aoudery",
+      "price": "$26.59",
+      "currency": "USD",
+      "reviewCount": 402,
+      "rating": 4.2,
+      "mainBsr": 4115,
+      "subBsr": 61,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 61
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2025-12-11",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0FZL1LMQQ",
+      "variantCount": 73,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 63,
+      "asin": "B0FYDR5FY3",
+      "title": "Zeagoo Button Down Shirts for Women 3/4 Sleeve Linen Cotton Top Work Blouse | Roll up short sleeve tops, Button up dress shirt, Lightweight loose blouse, Business casual outfits, Collared v neck clothes",
+      "image": "https://m.media-amazon.com/images/I/81onWQHrVVL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0FYDR5FY3",
+      "brand": "Zeagoo",
+      "price": "$26.99",
+      "currency": "USD",
+      "reviewCount": 2100,
+      "rating": 4.0,
+      "mainBsr": 4108,
+      "subBsr": 60,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 60
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2026-01-27",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0FYDQNX3X",
+      "variantCount": 99,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 64,
+      "asin": "B0DHS7K2G8",
+      "title": "Zeagoo Women's Button Down Shirts Short Sleeve Dress Shirts Business Tops | Basic Collared, Slim Fitted Work Blouses, Official Oxford Shirts, Summer Tops",
+      "image": "https://m.media-amazon.com/images/I/8137ZkEyoCL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0DHS7K2G8",
+      "brand": "Zeagoo",
+      "price": "$9.98",
+      "currency": "USD",
+      "reviewCount": 994,
+      "rating": 4.2,
+      "mainBsr": 4557,
+      "subBsr": 66,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 66
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2024-11-05",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0DJZZ9K34",
+      "variantCount": 78,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 65,
+      "asin": "B0DH2J49ZB",
+      "title": "Zeagoo Womens Button Down Shirts Long Sleeve Casual Cotton Gauze Tops | Casual Collared Blouses Loose Fit Beach Vacation Outfits",
+      "image": "https://m.media-amazon.com/images/I/71jp8QWyHDL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0DH2J49ZB",
+      "brand": "Zeagoo",
+      "price": "$17.99",
+      "currency": "USD",
+      "reviewCount": 4192,
+      "rating": 3.9,
+      "mainBsr": 4197,
+      "subBsr": 63,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 63
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2024-11-02",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0DKTBCDJJ",
+      "variantCount": 115,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 66,
+      "asin": "B0FJFSX1HM",
+      "title": "siliteelon Button Down Shirts for Women Oxford Shirt Cotton Dress Shirts Collared Long Sleeve Wrinkle Free Blouse Tops",
+      "image": "https://m.media-amazon.com/images/I/71DgIOUvpHL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0FJFSX1HM",
+      "brand": "siliteelon",
+      "price": "$18.04",
+      "currency": "USD",
+      "reviewCount": 1261,
+      "rating": 4.2,
+      "mainBsr": 4461,
+      "subBsr": 65,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 65
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2025-08-09",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0FHWSMZGF",
+      "variantCount": 103,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 67,
+      "asin": "B0FDGTZKXS",
+      "title": "Zeagoo Long Sleeve Shirts for Women Sheer Mesh Top Mock Neck Fitted Blouses | Double-lined undershirts, see-through trendy fall clothes for going out, party, club wear",
+      "image": "https://m.media-amazon.com/images/I/61dDtPoJ7ZL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0FDGTZKXS",
+      "brand": "Zeagoo",
+      "price": "$9.99",
+      "currency": "USD",
+      "reviewCount": 980,
+      "rating": 4.6,
+      "mainBsr": 4618,
+      "subBsr": 67,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 67
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2025-08-01",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0FDGXFR5D",
+      "variantCount": 84,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 68,
+      "asin": "B0FK4KHCKZ",
+      "title": "Zeagoo Womens Button Down Flannel Shirts Plaid Lightweight Top with Pockets | Long Sleeve,Business Casual Blouses,Cotton Blend,Loose Fit,Dressy Tops,Collared,Fall Fashion,Going Out,Teacher Outfits",
+      "image": "https://m.media-amazon.com/images/I/81W9vvWYYvL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0FK4KHCKZ",
+      "brand": "Zeagoo",
+      "price": "$21.99",
+      "currency": "USD",
+      "reviewCount": 693,
+      "rating": 4.4,
+      "mainBsr": 4406,
+      "subBsr": 70,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 70
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2025-09-03",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0FK4JRSG4",
+      "variantCount": 84,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 69,
+      "asin": "B0H25T8Y58",
+      "title": "Zeagoo Womens Waffle Knit Shacket Button Down Long Sleeve Tops with Pocket | Collared Shirts for Women,Business Casual,Lightweight Breathable Soft Waffle Fabric,Trendy Layer for Early Autumn,Loose Fit",
+      "image": "https://m.media-amazon.com/images/I/71fZBdwVHRL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0H25T8Y58",
+      "brand": "Zeagoo",
+      "price": "$28.99",
+      "currency": "USD",
+      "reviewCount": 157,
+      "rating": 4.2,
+      "mainBsr": 4629,
+      "subBsr": 69,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 69
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2026-06-29",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0H261JZY2",
+      "variantCount": 56,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 70,
+      "asin": "B0H4FNPLN6",
+      "title": "Zeagoo Womens Satin Shirt Silk Button Down Blouses Long Sleeve Loose Tops | Business Casual Tops,Collared Blouses,Lightweight Tops,Going Out Top,Ladies Elegant Blouse,Dressy Party Tops,Fall Fashion",
+      "image": "https://m.media-amazon.com/images/I/71VMUHNNG2L._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0H4FNPLN6",
+      "brand": "Zeagoo",
+      "price": "$19.99",
+      "currency": "USD",
+      "reviewCount": 166,
+      "rating": 4.1,
+      "mainBsr": 4990,
+      "subBsr": 73,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 73
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2026-07-10",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0H4FFNFZJ",
+      "variantCount": 79,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 71,
+      "asin": "B0D3FHM4PT",
+      "title": "HOTOUCH Women Button Down Shirts 3/4 Sleeve Slim Fit Business Dress Shirt | Basic Classic V Neck Button Up Work Blouse Tops",
+      "image": "https://m.media-amazon.com/images/I/713fY0TUE7L._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0D3FHM4PT",
+      "brand": "HOTOUCH",
+      "price": "$11.96",
+      "currency": "USD",
+      "reviewCount": 1824,
+      "rating": 4.3,
+      "mainBsr": 4937,
+      "subBsr": 71,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 71
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2024-06-18",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0D6YZPRJ6",
+      "variantCount": 90,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 72,
+      "asin": "B0G2SDY9YS",
+      "title": "Womens Cotton Linen Textured Shirt Long Sleeve Button Down Collared Blouses Dressy Casual Gauze Tops with Pocket Breathable",
+      "image": "https://m.media-amazon.com/images/I/71QgV0gldDL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0G2SDY9YS",
+      "brand": "BBIBBI",
+      "price": "$22.99",
+      "currency": "USD",
+      "reviewCount": 360,
+      "rating": 4.0,
+      "mainBsr": 4971,
+      "subBsr": 72,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 72
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2026-01-18",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0G2S4LMN2",
+      "variantCount": 263,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 73,
+      "asin": "B0CJXQMRGY",
+      "title": "Zeagoo Women Linen Button Down Shirt Rolled Cuffed Short Sleeve Blouse Ladies Summer Casual V Neck Beach Cotton Tops",
+      "image": "https://m.media-amazon.com/images/I/71rXM0qXAdL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0CJXQMRGY",
+      "brand": "Zeagoo",
+      "price": "$9.99",
+      "currency": "USD",
+      "reviewCount": 3477,
+      "rating": 4.0,
+      "mainBsr": 5091,
+      "subBsr": 74,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 74
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2023-11-15",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0D4VRRRHT",
+      "variantCount": 76,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 74,
+      "asin": "B09XMXJK7W",
+      "title": "Tankaneo Womens Button Down Cropped Shirts Long Sleeve Crop Tops Blouses | Casual, Solid, Lapel Blouse Shirt, Chest Pocket,White Button Down Shirt,Collared Shirts,Fall Clothes",
+      "image": "https://m.media-amazon.com/images/I/71J0iDJVHmL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B09XMXJK7W",
+      "brand": "Tankaneo",
+      "price": "$17.99",
+      "currency": "USD",
+      "reviewCount": 1449,
+      "rating": 4.0,
+      "mainBsr": 5131,
+      "subBsr": 75,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 75
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2022-06-22",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B09XMWN8H5",
+      "variantCount": 113,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 75,
+      "asin": "B0DHZLJB92",
+      "title": "Zeagoo Button Down Shirts for Women Dressy Printed Long Sleeve Blouse | business casual outfit classic v neck collared blouse spring fall fashion work office clothes solid printed button shirts",
+      "image": "https://m.media-amazon.com/images/I/81jOt+mIYXL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0DHZLJB92",
+      "brand": "Zeagoo",
+      "price": "$14.99",
+      "currency": "USD",
+      "reviewCount": 5737,
+      "rating": 4.2,
+      "mainBsr": 4678,
+      "subBsr": 68,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 68
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2024-11-07",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0DHZLLVFL",
+      "variantCount": 133,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 76,
+      "asin": "B0H25T6HK7",
+      "title": "Zeagoo Flannel Shirt Women Plaid Button Down Shackets Long Sleeve Fall Tops | Cotton Brushed Flannel Shirts Lightweight Loose Fit Blouse Business Casual Office Outfits 2026 Fashion Summer Western Clothes",
+      "image": "https://m.media-amazon.com/images/I/91sL84w0NhL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0H25T6HK7",
+      "brand": "Zeagoo",
+      "price": "$19.99",
+      "currency": "USD",
+      "reviewCount": 215,
+      "rating": 4.3,
+      "mainBsr": 5223,
+      "subBsr": 76,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 76
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2026-06-26",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0H6G62P12",
+      "variantCount": 75,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 77,
+      "asin": "B0D5HGQKZG",
+      "title": "Button Down Shirts for Women Stain Shield Dress Shirt Wrinkle Free Classic Fit Long Sleeve Casual Business Work Blouse",
+      "image": "https://m.media-amazon.com/images/I/513SWGbBLmL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0D5HGQKZG",
+      "brand": "Gleeivy",
+      "price": "$14.99",
+      "currency": "USD",
+      "reviewCount": 2282,
+      "rating": 4.5,
+      "mainBsr": 5375,
+      "subBsr": 78,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 78
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2024-06-12",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0D5L77BDT",
+      "variantCount": 170,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 78,
+      "asin": "B08ZC59MRQ",
+      "title": "Astylish Womens V Neck Roll up Sleeve Button Down Blouses Tops | Shirts",
+      "image": "https://m.media-amazon.com/images/I/71y6a8pkm-L._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B08ZC59MRQ",
+      "brand": "Astylish",
+      "price": "$29.98",
+      "currency": "USD",
+      "reviewCount": 14643,
+      "rating": 3.8,
+      "mainBsr": 4281,
+      "subBsr": 77,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 77
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2021-03-20",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B09V5LNQSC",
+      "variantCount": 135,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 79,
+      "asin": "B0FYNYSLN5",
+      "title": "LOMON Linen Shirts for Women Puff Sleeve Button Down Blouse | Soft Cotton Linen Fabric Featuring Sweet Puff Sleeves, Ruffled Cuffs, Chest Pocket, and Collared Summer Casual Tops",
+      "image": "https://m.media-amazon.com/images/I/81vIo8X7lQL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0FYNYSLN5",
+      "brand": "LOMON",
+      "price": "$22.49",
+      "currency": "USD",
+      "reviewCount": 343,
+      "rating": 4.1,
+      "mainBsr": 5710,
+      "subBsr": 83,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 83
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2026-01-12",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0FYNQH38G",
+      "variantCount": 83,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 80,
+      "asin": "B0FRN4HWMX",
+      "title": "Zeagoo Womens Cotton Button Down Shirts Long Sleeve Collared Blouse S-3XL | 100% Cotton, V Neck Tops, Soft Breathable, Perfect for Office, Vacation, or Everyday Casual, Easy Match with Jeans, Trousers",
+      "image": "https://m.media-amazon.com/images/I/81XZ+VMwlcL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0FRN4HWMX",
+      "brand": "Zeagoo",
+      "price": "$19.99",
+      "currency": "USD",
+      "reviewCount": 1568,
+      "rating": 4.1,
+      "mainBsr": 5530,
+      "subBsr": 79,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 79
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2025-11-24",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0FRN5YSPV",
+      "variantCount": 104,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 81,
+      "asin": "B0D97V37YB",
+      "title": "UOOZEE Womens Button Down Shirt Casual 3/4 Sleeve Loose Fit Collared Work Blouse Tops",
+      "image": "https://m.media-amazon.com/images/I/51grorhcLWL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0D97V37YB",
+      "brand": "UOOZEE",
+      "price": "$33.99",
+      "currency": "USD",
+      "reviewCount": 344,
+      "rating": 4.0,
+      "mainBsr": 5981,
+      "subBsr": 88,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 88
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2024-11-06",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0CFZSLWFS",
+      "variantCount": 53,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 82,
+      "asin": "B0BMFVPL2K",
+      "title": "Oyamiki Womens Casual Cuffed Long Sleeve Boyfriend Button Down Plaid Flannel Shirt Tops",
+      "image": "https://m.media-amazon.com/images/I/81E2PPlVztL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0BMFVPL2K",
+      "brand": "Oyamiki",
+      "price": "$26.99",
+      "currency": "USD",
+      "reviewCount": 4499,
+      "rating": 4.3,
+      "mainBsr": 5868,
+      "subBsr": 86,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 86
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2023-02-20",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B076CWLBGF",
+      "variantCount": 201,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 83,
+      "asin": "B0BDRYLF54",
+      "title": "Dokotoo Womens Waffle Knit Shacket Jacket Casual Button Down Shirts Tops | Long Sleeve,Loose Fit,Boyfriend Style,Collared V Neck,Fall Cardiga,Outwear with Pockets",
+      "image": "https://m.media-amazon.com/images/I/81tuOVzOSRL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0BDRYLF54",
+      "brand": "Dokotoo",
+      "price": "$22.88",
+      "currency": "USD",
+      "reviewCount": 3614,
+      "rating": 4.2,
+      "mainBsr": 1062,
+      "subBsr": 84,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 84
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2022-10-05",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0BDS1D59Z",
+      "variantCount": 65,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 84,
+      "asin": "B07C5QW9CM",
+      "title": "Zeagoo Womens Plaid Flannel Shirt Long Sleeve Top Casual Button Down Blouse | Flannel Plaid Shirt,Cotton Fabric,Loose Fit Blouse,Business Casual Outfits,2026 Fashion Fall Western Shacket Jacket",
+      "image": "https://m.media-amazon.com/images/I/91t1vkjUBLL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B07C5QW9CM",
+      "brand": "Zeagoo",
+      "price": "$18.99",
+      "currency": "USD",
+      "reviewCount": 3705,
+      "rating": 4.1,
+      "mainBsr": 5649,
+      "subBsr": 80,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 80
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2018-04-14",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0G2SH2NP2",
+      "variantCount": 79,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 85,
+      "asin": "B0F1GD2GKB",
+      "title": "CHYRII Womens Summer Tops Dressy Casual Blouse Top Ruffled Short Sleeve Button Down Striped Shirt",
+      "image": "https://m.media-amazon.com/images/I/715swhh6RhL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0F1GD2GKB",
+      "brand": "CHYRII",
+      "price": "$19.99",
+      "currency": "USD",
+      "reviewCount": 790,
+      "rating": 4.0,
+      "mainBsr": 5877,
+      "subBsr": 85,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 85
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2025-04-03",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0F1GCX4JQ",
+      "variantCount": 74,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 86,
+      "asin": "B0GFDCCNLS",
+      "title": "Zeagoo Womens Satin Blouse Sleeveless Silk Tank Tops Button Down Shirts | Dressy casual shirts, Business work outfits 2026, Ladies fashion clothes for spring summer fall, Lightweight loose blouse",
+      "image": "https://m.media-amazon.com/images/I/71kLQsm0ZvL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0GFDCCNLS",
+      "brand": "Zeagoo",
+      "price": "$14.99",
+      "currency": "USD",
+      "reviewCount": 647,
+      "rating": 4.3,
+      "mainBsr": 5594,
+      "subBsr": 81,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 81
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2026-02-11",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0GFCRRDKP",
+      "variantCount": 101,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 87,
+      "asin": "B0GXHZ2S5N",
+      "title": "Zeagoo Womens Button Down Shirt Long Sleeve Work Blouse | Business Clothing, Dressy Casual Shirts, Floral Blouse, Solid Color Office Wear",
+      "image": "https://m.media-amazon.com/images/I/71nVaqCSBGL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0GXHZ2S5N",
+      "brand": "Zeagoo",
+      "price": "$11.99",
+      "currency": "USD",
+      "reviewCount": 132,
+      "rating": 4.0,
+      "mainBsr": 6056,
+      "subBsr": 90,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 90
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2026-07-10",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0GXHX2DSD",
+      "variantCount": 74,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 88,
+      "asin": "B0DDG4TR6F",
+      "title": "PRETTYGARDEN Womens Floral Blouses Dressy Casual Long Sleeve Fall Tops 2026 | V Neck, Button Down Shirts, Boho Tops, Chiffon Work Blouses, Business Casual Clothes, Vacation Teacher Outfits",
+      "image": "https://m.media-amazon.com/images/I/81uUptCXIkL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0DDG4TR6F",
+      "brand": "PRETTYGARDEN",
+      "price": "$19.99",
+      "currency": "USD",
+      "reviewCount": 1349,
+      "rating": 4.4,
+      "mainBsr": 5814,
+      "subBsr": 82,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 82
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2024-09-25",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0DDG3RRF5",
+      "variantCount": 151,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 89,
+      "asin": "B0DCYRSJZK",
+      "title": "BBIBBI Wrinkle-Resistant Silky Women Printed Button Down Shirt Long Sleeve | Fitted Size XS-3XL, Lightweight, Durable Stitching, Breathable & Non-see-through, No Shrinking, Business & Casual Wear",
+      "image": "https://m.media-amazon.com/images/I/81ruAckhG8L._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0DCYRSJZK",
+      "brand": "BBIBBI",
+      "price": "$18.99",
+      "currency": "USD",
+      "reviewCount": 2618,
+      "rating": 4.3,
+      "mainBsr": 5675,
+      "subBsr": 89,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 89
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2024-09-23",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0CFQZCWZ1",
+      "variantCount": 169,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 90,
+      "asin": "B0DT3M9SVN",
+      "title": "Zenlonr Womens Summer Tops 2026 Casual V Neck Ruffle Cap Sleeve Blouse Shirts Solid Color Tunic Tops",
+      "image": "https://m.media-amazon.com/images/I/71s4D8JUvpL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0DT3M9SVN",
+      "brand": "Zenlonr",
+      "price": "$16.99",
+      "currency": "USD",
+      "reviewCount": 1152,
+      "rating": 4.2,
+      "mainBsr": 3492,
+      "subBsr": 87,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 87
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2025-03-21",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0CTGRJVD9",
+      "variantCount": 108,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 91,
+      "asin": "B0G1YG6NG3",
+      "title": "Zeagoo Tops for Women Textured Blouses Cap Short Sleeve V Neck Work Tshirt | Business causal tops, button up shirt, basic clothing, summer dress shirt, interview outfits",
+      "image": "https://m.media-amazon.com/images/I/71bsZCfmKHL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0G1YG6NG3",
+      "brand": "Zeagoo",
+      "price": "$12.33",
+      "currency": "USD",
+      "reviewCount": 511,
+      "rating": 4.3,
+      "mainBsr": 6380,
+      "subBsr": 93,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 93
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2025-12-23",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0G1YGC3MM",
+      "variantCount": 76,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 92,
+      "asin": "B0DC3WTF24",
+      "title": "Cicy Bell Womens Striped Button Down Shirts Long Sleeve Collared Blouses | Oversized Casual,Boyfriend Style,Dress Shirt,Office Work Top,Trendy Classic",
+      "image": "https://m.media-amazon.com/images/I/71iXwp9pEcL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0DC3WTF24",
+      "brand": "Cicy Bell",
+      "price": "$24.98",
+      "currency": "USD",
+      "reviewCount": 546,
+      "rating": 4.1,
+      "mainBsr": 6057,
+      "subBsr": 91,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 91
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2024-09-02",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0DC3P3X5M",
+      "variantCount": 45,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 93,
+      "asin": "B08BJ2FM79",
+      "title": "Women's Denim Shirt Roll Up 3/4 Sleeve Tie Front Knot Chambray Crop Top | Denim Tops For Women Button Down Cropped Length Jean Shirt For Women Western Tops Cowgirl Outfits",
+      "image": "https://m.media-amazon.com/images/I/61fZ8bhOxpL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B08BJ2FM79",
+      "brand": "AMEBELLE",
+      "price": "$28.98",
+      "currency": "USD",
+      "reviewCount": 4238,
+      "rating": 4.1,
+      "mainBsr": 6398,
+      "subBsr": 94,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 94
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2020-07-19",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B09D98DMX2",
+      "variantCount": 47,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 94,
+      "asin": "B0D6YKCNYD",
+      "title": "siliteelon Women's Stain Shield Dress Shirts Wrinkle Free Long Sleeve Shirts Solid Work Business Button Down Shirts",
+      "image": "https://m.media-amazon.com/images/I/71jFYlyDwQL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0D6YKCNYD",
+      "brand": "siliteelon",
+      "price": "$16.99",
+      "currency": "USD",
+      "reviewCount": 2624,
+      "rating": 4.3,
+      "mainBsr": 6154,
+      "subBsr": 92,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 92
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2024-07-17",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0D6YNLWVQ",
+      "variantCount": 162,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 95,
+      "asin": "B0FD2FWFR3",
+      "title": "PRETTYGARDEN Women's Button Down Shirts Boho Mesh Floral Going Out Tops | Sheer Long Sleeve, Collared V Neck Blouses, Spring Fall Y2K Clothes, Ruched Fitted, Trendy Date Night Holiday Party Outfits",
+      "image": "https://m.media-amazon.com/images/I/91ywSkbyx9L._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0FD2FWFR3",
+      "brand": "PRETTYGARDEN",
+      "price": "$28.99",
+      "currency": "USD",
+      "reviewCount": 910,
+      "rating": 4.4,
+      "mainBsr": 6671,
+      "subBsr": 95,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 95
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2025-08-12",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0FD2N7HW4",
+      "variantCount": 74,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 96,
+      "asin": "B0H49KYQR6",
+      "title": "Zeagoo Button Down Shirts for Women Long Sleeve Tops Striped Solid Blouses | Collared V Neck Shirts Button Up Shirt Dressy Casual Blouses Cute Summer Fall Fashion Clothes Office Work Tops Spring Outfits",
+      "image": "https://m.media-amazon.com/images/I/71dudvPO+mL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0H49KYQR6",
+      "brand": "Zeagoo",
+      "price": "$12.99",
+      "currency": "USD",
+      "reviewCount": 352,
+      "rating": 4.0,
+      "mainBsr": 6818,
+      "subBsr": 97,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 97
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2026-07-02",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0GYNZH5BV",
+      "variantCount": 85,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 97,
+      "asin": "B0G2LHG8Q5",
+      "title": "Dokotoo Womens Tops Boho Button Down V Neck Peplum Babydoll Blouses Shirts | Summer Fall Outfits, Short Sleeve, Floral Print, Tie Front, Loose Fit, Casual Daily, Beach Vacation Clothes, Fashion Clothing",
+      "image": "https://m.media-amazon.com/images/I/71KsVU24vOL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0G2LHG8Q5",
+      "brand": "Dokotoo",
+      "price": "$16.96",
+      "currency": "USD",
+      "reviewCount": 1350,
+      "rating": 4.0,
+      "mainBsr": 5700,
+      "subBsr": 96,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 96
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2026-01-09",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0G2LDJH9T",
+      "variantCount": 74,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 98,
+      "asin": "B09LHJ8NSM",
+      "title": "Womens Long Sleeve Plaid Flannel Shirt Collared Boyfriend Button Down Shirt | Oversized,Soft, Rolled Up Boyfriend Shackets",
+      "image": "https://m.media-amazon.com/images/I/71lN5h87YWL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B09LHJ8NSM",
+      "brand": "Febriajuce",
+      "price": "$19.99",
+      "currency": "USD",
+      "reviewCount": 1769,
+      "rating": 3.9,
+      "mainBsr": 6935,
+      "subBsr": 98,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 98
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2021-11-22",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0G3PFM7XX",
+      "variantCount": 51,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 99,
+      "asin": "B0C77BL7S5",
+      "title": "HOTOUCH Lace Tops for Women Sheer Long Sleeve Blouses Dressy Casual Shirt | Lantern Sleeve Shirts with Camisole 2 PCS Set,Womens Tops and Blouses Dressy Casual,Mock Neck/Ruffle Neck,Sheer Lace Tops",
+      "image": "https://m.media-amazon.com/images/I/81VX1BIaESL._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0C77BL7S5",
+      "brand": "HOTOUCH",
+      "price": "$17.99",
+      "currency": "USD",
+      "reviewCount": 1143,
+      "rating": 4.4,
+      "mainBsr": 7524,
+      "subBsr": 104,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 104
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2023-06-06",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0CJ28CYNP",
+      "variantCount": 64,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    },
+    {
+      "rank": 100,
+      "asin": "B0CTFLL28G",
+      "title": "Womens Button Down Shirts Casual Cotton Short Sleeve Blouses Summer Tops | Breathable Cotton, Short Sleeve Collared Blouse, Linen Style, Loose Fit, Chest Pocket, Business Casual, Spring Summer Wear",
+      "image": "https://m.media-amazon.com/images/I/51fzmCxwn+L._AC_SL1000_.jpg",
+      "url": "https://www.amazon.com/dp/B0CTFLL28G",
+      "brand": "IPMQ",
+      "price": "$12.74",
+      "currency": "USD",
+      "reviewCount": 1792,
+      "rating": 4.2,
+      "mainBsr": 7315,
+      "subBsr": 99,
+      "mainCategory": "Clothing, Shoes & Jewelry",
+      "subCategory": "Women's Button-Down Shirts",
+      "subRanks": [
+        {
+          "category": "Women's Button-Down Shirts",
+          "rank": 99
+        }
+      ],
+      "promotions": [],
+      "detailSource": "Ecomtool MCP 商品详情",
+      "detailStatus": "complete",
+      "detailAttempts": 1,
+      "listingDate": "2024-03-21",
+      "imageSource": "Ecomtool MCP 商品详情；同一图片 ID 的高清版本",
+      "priceSource": "Ecomtool MCP 商品详情",
+      "sourceDate": "2026-09-17",
+      "promotion": "暂无促销",
+      "promotionStatus": "none",
+      "history": {
+        "firstSeen": "2026-09-17",
+        "appearances": 1,
+        "streak": 1
+      },
+      "parentAsin": "B0CTFL5P83",
+      "variantCount": 41,
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验"
+    }
+  ]
+}

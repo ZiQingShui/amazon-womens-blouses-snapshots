@@ -232,19 +232,21 @@ def validate(items: list[dict], detail_source: str | None = None) -> dict:
     }
 
 
-def category_data_root(public_root: Path, node: str = DEFAULT_NODE) -> Path:
+def category_data_root(public_root: Path, node: str = DEFAULT_NODE, ranking: str = "new-releases") -> Path:
+    if ranking == "best-sellers":
+        return public_root / "data" / "best-sellers" / node
     if node == DEFAULT_NODE:
         return public_root / "data"
     return public_root / "data" / "categories" / node
 
 
-def archive_path(public_root: Path, date: str, node: str = DEFAULT_NODE) -> Path:
+def archive_path(public_root: Path, date: str, node: str = DEFAULT_NODE, ranking: str = "new-releases") -> Path:
     year, month, _ = date.split("-")
-    return category_data_root(public_root, node) / "daily" / year / month / f"{date}.json"
+    return category_data_root(public_root, node, ranking) / "daily" / year / month / f"{date}.json"
 
 
-def read_existing_snapshots(public_root: Path, before_date: str, node: str = DEFAULT_NODE) -> list[dict]:
-    daily_root = category_data_root(public_root, node) / "daily"
+def read_existing_snapshots(public_root: Path, before_date: str, node: str = DEFAULT_NODE, ranking: str = "new-releases") -> list[dict]:
+    daily_root = category_data_root(public_root, node, ranking) / "daily"
     snapshots = []
     if not daily_root.exists():
         return snapshots
@@ -305,16 +307,17 @@ def atomic_json(path: Path, payload: object) -> None:
     temp.replace(path)
 
 
-def build_manifest(public_root: Path, node: str = DEFAULT_NODE) -> dict:
+def build_manifest(public_root: Path, node: str = DEFAULT_NODE, ranking: str = "new-releases") -> dict:
     """从每日存档现算 manifest（不写盘）。"""
     entries = []
-    data_root = category_data_root(public_root, node)
+    data_root = category_data_root(public_root, node, ranking)
     for path in sorted((data_root / "daily").glob("*/*/*.json")):
         payload = json.loads(path.read_text(encoding="utf-8"))
         # 不读取快照里存的 quality：校验口径一旦变化，存档里的旧值就会
         # 与事实脱节（2026-09-13 那期因此长期虚报 100%）。这里每次从
         # items 现算，manifest 永远反映当前口径。
-        quality = validate(payload.get("items", []))
+        detail_source = (payload.get("sources") or {}).get("productDetails")
+        quality = validate(payload.get("items", []), detail_source)
         entries.append({
             "date": payload["snapshotDate"],
             "capturedAt": payload["capturedAt"],
@@ -335,17 +338,17 @@ def build_manifest(public_root: Path, node: str = DEFAULT_NODE) -> dict:
     }
 
 
-def rebuild_manifest(public_root: Path, node: str = DEFAULT_NODE) -> dict:
-    manifest = build_manifest(public_root, node)
-    atomic_json(category_data_root(public_root, node) / "manifest.json", manifest)
+def rebuild_manifest(public_root: Path, node: str = DEFAULT_NODE, ranking: str = "new-releases") -> dict:
+    manifest = build_manifest(public_root, node, ranking)
+    if ranking == "best-sellers":
+        manifest["ranking"] = "Best Sellers"
+    atomic_json(category_data_root(public_root, node, ranking) / "manifest.json", manifest)
     return manifest
 
 
-def publish(input_path: Path, snapshot_date: str, captured_at: str, detail_source: str, node: str = DEFAULT_NODE, replace_current_day: bool = False, ranking_source: str = "official", ranking_source_captured_at: str | None = None, ranking_source_sha256: str | None = None) -> dict:
-    if ranking_source not in {"official", "user-upload"}:
-        raise SystemExit("榜单来源只允许 official 或 user-upload")
-    if ranking_source == "user-upload" and (not ranking_source_captured_at or not ranking_source_sha256):
-        raise SystemExit("用户上传榜单必须记录文件采集时间和 SHA-256")
+def publish(input_path: Path, snapshot_date: str, captured_at: str, detail_source: str, node: str = DEFAULT_NODE, replace_current_day: bool = False, ranking: str = "new-releases") -> dict:
+    if ranking not in {"new-releases", "best-sellers"}:
+        raise SystemExit("榜单类型只允许 new-releases 或 best-sellers")
     categories = load_categories()
     if node not in categories:
         remote_categories = load_remote_categories()
@@ -355,7 +358,7 @@ def publish(input_path: Path, snapshot_date: str, captured_at: str, detail_sourc
     if node not in categories:
         raise SystemExit(f"未配置的类目节点：{node}")
     category = categories[node]
-    data_roots = [category_data_root(public_root, node) for public_root in PUBLIC_ROOTS]
+    data_roots = [category_data_root(public_root, node, ranking) for public_root in PUBLIC_ROOTS]
     try:
         raw_items = read_input(input_path)
         items = sorted((clean_item(row, snapshot_date) for row in raw_items), key=lambda row: row["rank"])
@@ -391,9 +394,9 @@ def publish(input_path: Path, snapshot_date: str, captured_at: str, detail_sourc
         raise SystemExit(json.dumps(failure, ensure_ascii=False))
 
     existing_archives = [
-        archive_path(public_root, snapshot_date, node)
+        archive_path(public_root, snapshot_date, node, ranking)
         for public_root in PUBLIC_ROOTS
-        if archive_path(public_root, snapshot_date, node).exists()
+        if archive_path(public_root, snapshot_date, node, ranking).exists()
     ]
     today_beijing = datetime.now().astimezone().strftime("%Y-%m-%d")
     if replace_current_day and snapshot_date != today_beijing:
@@ -409,23 +412,24 @@ def publish(input_path: Path, snapshot_date: str, captured_at: str, detail_sourc
             atomic_json(data_root / "status.json", failure)
         raise SystemExit(json.dumps(failure, ensure_ascii=False))
 
-    earlier = read_existing_snapshots(PUBLIC_ROOTS[0], snapshot_date, node)
+    earlier = read_existing_snapshots(PUBLIC_ROOTS[0], snapshot_date, node, ranking)
     add_history(items, earlier, snapshot_date)
+    ranking_label = "Amazon 官方热销榜" if ranking == "best-sellers" else "Amazon 官方新品榜"
     snapshot = {
         "schemaVersion": 1,
         "snapshotDate": snapshot_date,
         "capturedAt": captured_at,
         "category": category,
-        "sources": {"ranking": "用户上传榜单导出" if ranking_source == "user-upload" else "Amazon 官方新品榜", "rankingSourceType": ranking_source, "rankingCapturedAt": ranking_source_captured_at, "rankingFileSha256": ranking_source_sha256, "productDetails": detail_source},
+        "sources": {"ranking": ranking_label, "rankingSourceType": "official", "productDetails": detail_source},
         "quality": quality,
         "items": items,
     }
     for public_root in PUBLIC_ROOTS:
-        data_root = category_data_root(public_root, node)
-        destination = archive_path(public_root, snapshot_date, node)
+        data_root = category_data_root(public_root, node, ranking)
+        destination = archive_path(public_root, snapshot_date, node, ranking)
         atomic_json(destination, snapshot)
         atomic_json(data_root / "latest.json", snapshot)
-        manifest = rebuild_manifest(public_root, node)
+        manifest = rebuild_manifest(public_root, node, ranking)
         atomic_json(data_root / "status.json", {
             "status": "ok",
             "updatedAt": captured_at,
@@ -443,14 +447,12 @@ def main() -> None:
     parser.add_argument("--captured-at", default=None)
     parser.add_argument("--node", default=DEFAULT_NODE)
     parser.add_argument("--detail-source", default="Ecomtool MCP + Amazon 商品详情页")
-    parser.add_argument("--ranking-source", choices=["official", "user-upload"], default="official")
-    parser.add_argument("--ranking-source-captured-at", default=None)
-    parser.add_argument("--ranking-source-sha256", default=None)
+    parser.add_argument("--ranking", choices=["new-releases", "best-sellers"], default="new-releases")
     parser.add_argument("--replace-current-day", action="store_true", help="仅允许替换今天的快照，用于手动修复或刷新")
     args = parser.parse_args()
     datetime.strptime(args.date, "%Y-%m-%d")
     captured_at = args.captured_at or f"{args.date}T08:30:00+08:00"
-    result = publish(args.input.resolve(), args.date, captured_at, args.detail_source, args.node, args.replace_current_day, args.ranking_source, args.ranking_source_captured_at, args.ranking_source_sha256)
+    result = publish(args.input.resolve(), args.date, captured_at, args.detail_source, args.node, args.replace_current_day, args.ranking)
     # Sites serves data embedded in the Worker bundle, so every successful
     # snapshot publication must refresh that bundle before deployment.
     from build_worker import main as build_worker_main

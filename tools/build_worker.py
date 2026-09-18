@@ -261,7 +261,6 @@ function captureShape(row) {
     id: row.id,
     categoryNode: row.category_node,
     ranking: row.ranking,
-    rankingSource: row.ranking_source || 'official',
     requestedDate: row.requested_date,
     status: row.status,
     requestedAt: row.requested_at,
@@ -290,7 +289,7 @@ async function createCaptureRequest(request, env, url) {
   const existing = await env.DB.prepare(selectSql).bind(categoryNode, ranking, requestedDate).first();
   if (existing) {
     if (['failed', 'completed'].includes(existing.status)) {
-      await env.DB.prepare("UPDATE capture_requests SET status = 'pending', ranking_source = 'official', requested_at = CURRENT_TIMESTAMP, started_at = NULL, completed_at = NULL, message = NULL, attempts = attempts + 1 WHERE id = ?").bind(existing.id).run();
+      await env.DB.prepare("UPDATE capture_requests SET status = 'pending', requested_at = CURRENT_TIMESTAMP, started_at = NULL, completed_at = NULL, message = NULL, attempts = attempts + 1 WHERE id = ?").bind(existing.id).run();
       const retried = await env.DB.prepare(selectSql).bind(categoryNode, ranking, requestedDate).first();
       return reply({request: captureShape(retried), reused: true}, 202);
     }
@@ -300,91 +299,6 @@ async function createCaptureRequest(request, env, url) {
   await env.DB.prepare("INSERT INTO capture_requests (id, category_node, ranking, requested_date) VALUES (?, ?, ?, ?)").bind(id, categoryNode, ranking, requestedDate).run();
   const created = await env.DB.prepare(selectSql).bind(categoryNode, ranking, requestedDate).first();
   return reply({request: captureShape(created), reused: false}, 202);
-}
-
-function exportedCell(value) {
-  return String(value || '').replace(/<[^>]*>/g, '').replace(/&(amp|lt|gt|quot|apos|#\d+|#x[0-9a-f]+);/gi, (whole, code) => {
-    const named = {amp: '&', lt: '<', gt: '>', quot: '"', apos: "'"};
-    if (named[code.toLowerCase()]) return named[code.toLowerCase()];
-    if (code.startsWith('#')) {
-      const point = code[1].toLowerCase() === 'x' ? parseInt(code.slice(2), 16) : parseInt(code.slice(1), 10);
-      return point > 0 && point <= 0x10ffff ? String.fromCodePoint(point) : whole;
-    }
-    return whole;
-  }).trim();
-}
-
-function exportedCells(tr) {
-  return [...tr.matchAll(/<td\b[^>]*>([\s\S]*?)<\/td>/gi)].map(match => exportedCell(match[1]));
-}
-
-function parseRankingExport(content, expectedNode) {
-  if (!/^\s*<html\b/i.test(content) || !/id=["']result_table["']/i.test(content)) throw new Error('目前仅支持该榜单导出的网页表格 .xls 文件');
-  const heading = content.match(/<thead\b[^>]*>\s*<tr\b[^>]*>([\s\S]*?)<\/tr>/i);
-  const headers = heading ? exportedCells(heading[1]) : [];
-  if (headers.join('|') !== 'ASIN|图片ID|标题|价格|评论数|评分|类目|节点|排名|抓取时间') throw new Error('文件字段与榜单导出格式不符');
-  const rows = [];
-  for (const match of content.matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)) {
-    const cells = exportedCells(match[1]);
-    if (!cells.length || cells[0] === 'ASIN') continue;
-    if (cells.length !== 10) throw new Error('存在字段不完整的商品行');
-    const [asin, imageId, title, price, reviews, rating, category, node, rankText, capturedAt] = cells;
-    const rank = Number(rankText);
-    if (!/^[A-Z0-9]{10}$/.test(asin) || !Number.isInteger(rank) || rank < 1 || rank > 100) throw new Error('ASIN 或新品名次无效');
-    if (node !== expectedNode) throw new Error(`文件中的类目节点 ${node} 与当前看板 ${expectedNode} 不一致`);
-    if (!/^\d{4}-\d{1,2}-\d{1,2} \d{2}:\d{2}:\d{2}$/.test(capturedAt)) throw new Error('文件缺少可核验的采集时间');
-    rows.push({rank, asin, imageId, title: title.slice(0, 500), price, reviews, rating, category, categoryNode: node, capturedAt});
-  }
-  const ranks = new Set(rows.map(row => row.rank)), asins = new Set(rows.map(row => row.asin));
-  const missingRanks = Array.from({length: 100}, (_, i) => i + 1).filter(rank => !ranks.has(rank));
-  if (rows.length !== 100 || asins.size !== 100 || missingRanks.length) throw new Error(`文件必须有 100 个不重复商品、名次 1–100 完整；目前 ${rows.length} 行，缺失名次：${missingRanks.join(', ') || '无'}`);
-  const sourceCapturedAt = rows[0].capturedAt;
-  if (rows.some(row => row.capturedAt !== sourceCapturedAt)) throw new Error('文件中存在不一致的榜单采集时间');
-  const [year, month, day] = sourceCapturedAt.split(' ')[0].split('-').map(Number);
-  const snapshotDate = `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
-  if (new Date(`${snapshotDate}T00:00:00Z`).toISOString().slice(0, 10) !== snapshotDate) throw new Error('文件中的采集日期无效');
-  return {rows: rows.sort((a, b) => a.rank - b.rank), snapshotDate, sourceCapturedAt};
-}
-
-async function rankingUploads(request, env, url) {
-  if (request.method !== 'POST') return new Response('Method Not Allowed', {status: 405});
-  if (!sameOrigin(request, url)) return reply({error: '请求来源无效'}, 403);
-  if (!env.DB) return reply({error: '上传服务暂时不可用'}, 503);
-  if (Number(request.headers.get('content-length') || 0) > 1100000) return reply({error: '文件不能超过 1 MB'}, 413);
-  let form;
-  try { form = await request.formData(); } catch { return reply({error: '上传内容无效'}, 400); }
-  const file = form.get('file'), categoryNode = String(form.get('categoryNode') || '').trim(), ranking = String(form.get('ranking') || '');
-  if (!(file instanceof File) || file.size < 100 || file.size > 1000000) return reply({error: '请选择不超过 1 MB 的榜单文件'}, 400);
-  if (!/\.xls$/i.test(file.name)) return reply({error: '请选择榜单导出的 .xls 文件'}, 400);
-  if (!/^\d{6,14}$/.test(categoryNode) || ranking !== 'new-releases') return reply({error: '当前只支持已添加类目的新品榜'}, 400);
-  const allCategories = await registry(env);
-  if (!allCategories.categories.some(item => String(item.node) === categoryNode)) return reply({error: '该类目尚未添加到看板'}, 404);
-  const buffer = await file.arrayBuffer();
-  let parsed;
-  try { parsed = parseRankingExport(new TextDecoder('utf-8', {fatal: true}).decode(buffer), categoryNode); }
-  catch (error) { return reply({error: String(error.message || error)}, 400); }
-  const sourceSha256 = [...new Uint8Array(await crypto.subtle.digest('SHA-256', buffer))].map(byte => byte.toString(16).padStart(2, '0')).join('');
-  const selectSql = 'SELECT * FROM capture_requests WHERE category_node = ? AND ranking = ? AND requested_date = ? LIMIT 1';
-  const existing = await env.DB.prepare(selectSql).bind(categoryNode, ranking, parsed.snapshotDate).first();
-  if (existing && ['pending', 'running'].includes(existing.status)) return reply({error: '该日期已有正在处理的任务，请先等待结果'}, 409);
-  const id = existing?.id || crypto.randomUUID();
-  const statements = [];
-  if (existing) statements.push(env.DB.prepare("UPDATE capture_requests SET status = 'pending', ranking_source = 'upload', requested_at = CURRENT_TIMESTAMP, started_at = NULL, completed_at = NULL, message = '榜单文件已校验，等待 Ecomtool 补齐商品详情', attempts = attempts + 1 WHERE id = ?").bind(id));
-  else statements.push(env.DB.prepare("INSERT INTO capture_requests (id, category_node, ranking, requested_date, ranking_source, message) VALUES (?, ?, ?, ?, 'upload', '榜单文件已校验，等待 Ecomtool 补齐商品详情')").bind(id, categoryNode, ranking, parsed.snapshotDate));
-  statements.push(env.DB.prepare('INSERT INTO ranking_uploads (request_id, category_node, ranking, snapshot_date, source_filename, source_sha256, source_captured_at, rows_json) VALUES (?, ?, ?, ?, ?, ?, ?, ?) ON CONFLICT(request_id) DO UPDATE SET source_filename = excluded.source_filename, source_sha256 = excluded.source_sha256, source_captured_at = excluded.source_captured_at, rows_json = excluded.rows_json, uploaded_at = CURRENT_TIMESTAMP').bind(id, categoryNode, ranking, parsed.snapshotDate, file.name.slice(0, 180), sourceSha256, parsed.sourceCapturedAt, JSON.stringify(parsed.rows)));
-  try { await env.DB.batch(statements); }
-  catch { return reply({error: '保存榜单失败，请稍后重试'}, 500); }
-  const saved = await env.DB.prepare('SELECT * FROM capture_requests WHERE id = ?').bind(id).first();
-  return reply({request: captureShape(saved), upload: {count: parsed.rows.length, sourceCapturedAt: parsed.sourceCapturedAt, snapshotDate: parsed.snapshotDate, sourceSha256}}, 202);
-}
-
-async function rankingUploadByRequest(request, env, id) {
-  if (request.method !== 'GET') return new Response('Method Not Allowed', {status: 405});
-  if (!workerAuthorized(request, env)) return reply({error: '本机处理器认证失败'}, 401);
-  if (!env.DB) return reply({error: '上传服务暂时不可用'}, 503);
-  const row = await env.DB.prepare('SELECT * FROM ranking_uploads WHERE request_id = ? LIMIT 1').bind(id).first();
-  if (!row) return reply({error: '上传榜单不存在'}, 404);
-  return reply({requestId: id, categoryNode: row.category_node, ranking: row.ranking, snapshotDate: row.snapshot_date, sourceFilename: row.source_filename, sourceSha256: row.source_sha256, sourceCapturedAt: row.source_captured_at, rows: JSON.parse(row.rows_json)});
 }
 
 async function captureRequests(request, env, url) {
@@ -449,9 +363,6 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
     if (url.pathname === "/api/capture-requests") return captureRequests(request, env, url);
-    if (url.pathname === "/api/ranking-uploads") return rankingUploads(request, env, url);
-    const rankingUploadMatch = url.pathname.match(/^\/api\/ranking-uploads\/([0-9a-f-]{36})$/i);
-    if (rankingUploadMatch) return rankingUploadByRequest(request, env, rankingUploadMatch[1]);
     if (url.pathname === "/api/capture-worker") return captureWorker(request, env);
     const captureRequestMatch = url.pathname.match(/^\/api\/capture-requests\/([0-9a-f-]{36})$/i);
     if (captureRequestMatch) return captureRequestById(request, env, url, captureRequestMatch[1]);

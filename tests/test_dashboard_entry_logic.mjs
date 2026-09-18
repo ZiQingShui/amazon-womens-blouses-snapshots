@@ -9,7 +9,9 @@ const script = html.match(/<script>([\s\S]*?)<\/script>/)?.[1];
 assert.ok(script, 'dashboard script exists');
 new vm.Script(script);
 
-const selected = ['movementOf', 'comparison', 'diffFor']
+// pk 是父体匹配键函数（同款合并用），movementOf / diffFor / comparison 都依赖它，
+// 抽取执行时必须一并带上，否则会 ReferenceError。
+const selected = ['pk', 'movementOf', 'comparison', 'diffFor']
   .map(name => script.split('\n').find(line => line.startsWith(`function ${name}(`)))
   .join('\n');
 const current = {
@@ -22,7 +24,8 @@ const current = {
   ],
 };
 const previous = { snapshotDate: '2026-09-12', items: [{ asin: 'SAME', rank: 11 }, { asin: 'EXIT', rank: 45 }] };
-const context = vm.createContext({ current, previous, esc: value => String(value) });
+// parentView=false 表示按子体（Amazon 原榜）匹配，与这批没有 parentAsin 的测试数据一致。
+const context = vm.createContext({ current, previous, parentView: false, esc: value => String(value) });
 vm.runInContext(`${selected}\nthis.testApi = { movementOf, comparison, diffFor };`, context);
 const { movementOf, comparison, diffFor } = context.testApi;
 const oldMap = new Map(previous.items.map(item => [item.asin, item]));
