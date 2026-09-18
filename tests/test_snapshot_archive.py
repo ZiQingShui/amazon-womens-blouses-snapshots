@@ -319,7 +319,12 @@ class SnapshotArchiveTests(unittest.TestCase):
         self.assertIn(".filter-state[hidden]{display:none}", html)
         self.assertIn('class="fs-label">已选<', html)
         self.assertIn('$("filterState").hidden=!active.length', html)
-        self.assertIn('$("clearAllFilters").addEventListener("click",()=>$("resetFilters").click())', html)
+        self.assertIn('$("clearAllFilters").addEventListener("click",resetAllFilters)', html)
+        self.assertIn("function resetAllFilters(){", html)
+        # 标题行那个「清空条件」与「全部清空」功能重复，已删除，只保留后者。
+        self.assertNotIn("resetFilters", html)
+        self.assertNotIn("清空条件", html)
+        self.assertNotIn(".reset{", html)
         # 位置：在筛选控件之前（面板顶部），而不是旧的面板末尾
         self.assertLess(html.index('id="filterState"'), html.index('class="filter-grid primary"'))
         self.assertNotIn('<div class="active-filters" id="activeFilters" aria-live="polite"></div></section>', html)
