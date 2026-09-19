@@ -1,9 +1,35 @@
 {
   "schemaVersion": 1,
   "categoryNode": "2368383011",
-  "updatedAt": "2026-09-18T08:39:45+08:00",
-  "latest": "2026-09-18",
+  "updatedAt": "2026-09-19T08:52:00+08:00",
+  "latest": "2026-09-19",
   "snapshots": [
+    {
+      "date": "2026-09-19",
+      "capturedAt": "2026-09-19T08:52:00+08:00",
+      "file": "data/categories/2368383011/daily/2026/09/2026-09-19.json",
+      "count": 100,
+      "publishable": true,
+      "coverageFailures": {},
+      "provenance": {
+        "fallbackRows": 0,
+        "reusedRows": 0,
+        "degraded": false,
+        "sources": {
+          "Ecomtool MCP 商品详情": 100
+        }
+      },
+      "fieldCoverage": {
+        "title": 100,
+        "image": 100,
+        "brand": 100,
+        "price": 100,
+        "mainBsr": 100,
+        "subBsr": 100,
+        "listingDate": 82,
+        "promotion": 100
+      }
+    },
     {
       "date": "2026-09-18",
       "capturedAt": "2026-09-18T08:39:45+08:00",
