@@ -39,7 +39,7 @@
       "promotion": 100
     },
     "detailChecked": 0,
-    "detailSourceValid": null,
+    "detailSourceValid": true,
     "coverageFailures": {},
     "provenance": {
       "fallbackRows": 0,
@@ -71,7 +71,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0GWR3M54M",
+      "variantCount": 101
     },
     {
       "asin": "B0H396Y246",
@@ -93,7 +95,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H39FCLG9",
+      "variantCount": 126
     },
     {
       "asin": "B0H512GRQM",
@@ -115,7 +119,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H514Q9X8",
+      "variantCount": 61
     },
     {
       "asin": "B0H8S36FF1",
@@ -137,7 +143,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H8R7HB3N",
+      "variantCount": 105
     },
     {
       "asin": "B0GZVXVC46",
@@ -159,7 +167,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0GZVYHT3P",
+      "variantCount": 79
     },
     {
       "asin": "B0H4FHFMLV",
@@ -181,7 +191,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H4FFNFZJ",
+      "variantCount": 79
     },
     {
       "asin": "B0H3X61D28",
@@ -203,7 +215,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HDJKRB4W",
+      "variantCount": 61
     },
     {
       "asin": "B0H6JGZHSY",
@@ -225,7 +239,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H6JW5HQH",
+      "variantCount": 81
     },
     {
       "asin": "B0GWLT4W1Z",
@@ -247,7 +263,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0GWLVL7WL",
+      "variantCount": 36
     },
     {
       "asin": "B0H5WM7N5Q",
@@ -269,7 +287,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HBBZ2JJT",
+      "variantCount": 71
     },
     {
       "asin": "B0H6BM5K9L",
@@ -291,7 +311,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H6B5RV4M",
+      "variantCount": 58
     },
     {
       "asin": "B0GZ3TC35M",
@@ -313,7 +335,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0GZ3X7TJ7",
+      "variantCount": 74
     },
     {
       "asin": "B0GZNS331N",
@@ -335,7 +359,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HFVKC73J",
+      "variantCount": 62
     },
     {
       "asin": "B0H1GKD82H",
@@ -357,7 +383,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H1GRH75S",
+      "variantCount": 41
     },
     {
       "asin": "B0H3PP1KV2",
@@ -379,7 +407,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H3PR8H5Z",
+      "variantCount": 60
     },
     {
       "asin": "B0H33TFTHV",
@@ -401,7 +431,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H6QGCRR6",
+      "variantCount": 73
     },
     {
       "asin": "B0H3NWQBYK",
@@ -423,7 +455,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H3PCYZBD",
+      "variantCount": 71
     },
     {
       "asin": "B0HGFV762Y",
@@ -445,7 +479,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HGFV6YSZ",
+      "variantCount": 126
     },
     {
       "asin": "B0H4175NJM",
@@ -467,7 +503,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HCCBVY44",
+      "variantCount": 61
     },
     {
       "asin": "B0H5KHK1QD",
@@ -489,7 +527,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H5KD44LY",
+      "variantCount": 75
     },
     {
       "asin": "B0H73LF75D",
@@ -511,7 +551,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H73NVRWW",
+      "variantCount": 41
     },
     {
       "asin": "B0H3DW3YYF",
@@ -533,7 +575,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H3DZ23CD",
+      "variantCount": 48
     },
     {
       "asin": "B0H32RPW5K",
@@ -555,7 +599,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HG9JZQJ3",
+      "variantCount": 72
     },
     {
       "asin": "B0H416H9VK",
@@ -577,7 +623,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HFFJ3TCD",
+      "variantCount": 75
     },
     {
       "asin": "B0HHRX1CMG",
@@ -599,7 +647,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HHRLJFG2",
+      "variantCount": 66
     },
     {
       "asin": "B0H25WPBKK",
@@ -621,7 +671,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H8YP3L2Q",
+      "variantCount": 61
     },
     {
       "asin": "B0H4G51C8Z",
@@ -643,7 +695,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HDC4693P",
+      "variantCount": 60
     },
     {
       "asin": "B0H5QT2SKJ",
@@ -665,7 +719,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H5QZFNHM",
+      "variantCount": 55
     },
     {
       "asin": "B0H4R9JJR2",
@@ -687,7 +743,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H4RFBQYJ",
+      "variantCount": 41
     },
     {
       "asin": "B0H2PZPMC3",
@@ -709,7 +767,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H2PVKZ8L",
+      "variantCount": 44
     },
     {
       "asin": "B0HFCLFDMQ",
@@ -731,7 +791,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HFCCLK8B",
+      "variantCount": 7
     },
     {
       "asin": "B0H4QWSKKY",
@@ -753,7 +815,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H4QMFP63",
+      "variantCount": 98
     },
     {
       "asin": "B0H38Q1761",
@@ -775,7 +839,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H38XCTB4",
+      "variantCount": 37
     },
     {
       "asin": "B0H711VLPF",
@@ -797,7 +863,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H712MWSZ",
+      "variantCount": 51
     },
     {
       "asin": "B0HFHRNP22",
@@ -819,7 +887,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0GX123RRZ",
+      "variantCount": 70
     },
     {
       "asin": "B0H4F5GKSS",
@@ -841,7 +911,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H4FG6J4G",
+      "variantCount": 60
     },
     {
       "asin": "B0H79C13DL",
@@ -863,7 +935,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H78ZL5ZH",
+      "variantCount": 55
     },
     {
       "asin": "B0H6L2NRR1",
@@ -885,7 +959,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0GKSN5GPB",
+      "variantCount": 100
     },
     {
       "asin": "B0HF7XBHDF",
@@ -907,7 +983,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HF7YP54P",
+      "variantCount": 21
     },
     {
       "asin": "B0H7H29VZ3",
@@ -929,7 +1007,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H7H669NL",
+      "variantCount": 32
     },
     {
       "asin": "B0H4MCV69S",
@@ -951,7 +1031,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HH9M1PVD",
+      "variantCount": 85
     },
     {
       "asin": "B0H5QZW3PJ",
@@ -973,7 +1055,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HF8DXDFY",
+      "variantCount": 97
     },
     {
       "asin": "B0H6SH34DJ",
@@ -995,7 +1079,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HJQYJQZP",
+      "variantCount": 33
     },
     {
       "asin": "B0H4GZ6VRK",
@@ -1017,7 +1103,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H98PH8CQ",
+      "variantCount": 37
     },
     {
       "asin": "B0H7HZB74L",
@@ -1039,7 +1127,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HK4TWJML",
+      "variantCount": 85
     },
     {
       "asin": "B0HBJXJPW8",
@@ -1061,7 +1151,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HBK46YRC",
+      "variantCount": 67
     },
     {
       "asin": "B0GZK32HS2",
@@ -1083,7 +1175,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0GZJXDVC6",
+      "variantCount": 49
     },
     {
       "asin": "B0H2YRZ6MD",
@@ -1105,7 +1199,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H2YQNSZ3",
+      "variantCount": 31
     },
     {
       "asin": "B0H3N8F1S2",
@@ -1127,7 +1223,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0GYLGCX39",
+      "variantCount": 31
     },
     {
       "asin": "B0H6HWLNCQ",
@@ -1149,7 +1247,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H6J7TGJQ",
+      "variantCount": 25
     },
     {
       "asin": "B0H1R5VNLX",
@@ -1171,7 +1271,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H1RN624R",
+      "variantCount": 30
     },
     {
       "asin": "B0H4QVJVP3",
@@ -1193,7 +1295,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HGR61T6R",
+      "variantCount": 41
     },
     {
       "asin": "B0H4G732XC",
@@ -1215,7 +1319,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H4G1K6QK",
+      "variantCount": 70
     },
     {
       "asin": "B0HBXBH3MQ",
@@ -1237,7 +1343,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HCNMJRW4",
+      "variantCount": 104
     },
     {
       "asin": "B0HBQ7YYKQ",
@@ -1259,7 +1367,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HBQFY4WG",
+      "variantCount": 21
     },
     {
       "asin": "B0H64LS4ZM",
@@ -1281,7 +1391,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HDVSJGDV",
+      "variantCount": 57
     },
     {
       "asin": "B0HDC5DXN4",
@@ -1303,7 +1415,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HDCCJC3D",
+      "variantCount": 21
     },
     {
       "asin": "B0GWZ8HKBK",
@@ -1325,7 +1439,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0GWYTZDC7",
+      "variantCount": 41
     },
     {
       "asin": "B0H6DSDB1G",
@@ -1347,7 +1463,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H6DJ1BYC",
+      "variantCount": 32
     },
     {
       "asin": "B0H7C61GMG",
@@ -1369,7 +1487,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H7BYCFL3",
+      "variantCount": 25
     },
     {
       "asin": "B0HCCCZH85",
@@ -1391,7 +1511,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H1CBNMMJ",
+      "variantCount": 61
     },
     {
       "asin": "B0H36D81YR",
@@ -1413,7 +1535,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H3699L5L",
+      "variantCount": 31
     },
     {
       "asin": "B0H4GL7XLX",
@@ -1435,7 +1559,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H4GYZJKK",
+      "variantCount": 31
     },
     {
       "asin": "B0H6PN8L9Y",
@@ -1457,7 +1583,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H6PVP9RY",
+      "variantCount": 60
     },
     {
       "asin": "B0GX6ZTV9L",
@@ -1479,7 +1607,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0GX6PZJW1",
+      "variantCount": 41
     },
     {
       "asin": "B0H36KVW6V",
@@ -1501,7 +1631,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H36RSVD9",
+      "variantCount": 51
     },
     {
       "asin": "B0HH9XP643",
@@ -1523,7 +1655,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HH9RVCFY",
+      "variantCount": 16
     },
     {
       "asin": "B0HBBX5C5W",
@@ -1545,7 +1679,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HJRM6XJ3",
+      "variantCount": 36
     },
     {
       "asin": "B0H95H3XFV",
@@ -1567,7 +1703,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H95DB45F",
+      "variantCount": 38
     },
     {
       "asin": "B0H5M9HY82",
@@ -1589,7 +1727,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H5LZ31MR",
+      "variantCount": 26
     },
     {
       "asin": "B0HF87BSV5",
@@ -1611,7 +1751,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HF86753X",
+      "variantCount": 56
     },
     {
       "asin": "B0H4DYW5D1",
@@ -1633,7 +1775,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H4FB3HLW",
+      "variantCount": 66
     },
     {
       "asin": "B0HDQ4VT1D",
@@ -1655,7 +1799,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HDPZW3XD",
+      "variantCount": 95
     },
     {
       "asin": "B0H2Z22YBT",
@@ -1677,7 +1823,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H2Z3YLRC",
+      "variantCount": 49
     },
     {
       "asin": "B0H5VR9L2M",
@@ -1699,7 +1847,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H5VRCP4F",
+      "variantCount": 51
     },
     {
       "asin": "B0H71CTHSL",
@@ -1721,7 +1871,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H71HNXZ9",
+      "variantCount": 19
     },
     {
       "asin": "B0H9SK76Q4",
@@ -1743,7 +1895,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H9S2ZWLD",
+      "variantCount": 31
     },
     {
       "asin": "B0H3PJPMV7",
@@ -1765,7 +1919,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H3PHWQB1",
+      "variantCount": 41
     },
     {
       "asin": "B0H5KJG7W4",
@@ -1787,7 +1943,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H5KSQ9WT",
+      "variantCount": 36
     },
     {
       "asin": "B0H36WC6CH",
@@ -1809,7 +1967,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H36RNR5G",
+      "variantCount": 61
     },
     {
       "asin": "B0H4ZQR88Q",
@@ -1831,7 +1991,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H4ZTCLWV",
+      "variantCount": 30
     },
     {
       "asin": "B0H7LW4D11",
@@ -1853,7 +2015,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H7LQPR1Y",
+      "variantCount": 43
     },
     {
       "asin": "B0H2Y7K2ZF",
@@ -1875,7 +2039,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H2YF37CW",
+      "variantCount": 47
     },
     {
       "asin": "B0H4GTNWNN",
@@ -1897,7 +2063,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HGR1PLWC",
+      "variantCount": 73
     },
     {
       "asin": "B0H7598YPQ",
@@ -1919,7 +2087,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H757JLFW",
+      "variantCount": 45
     },
     {
       "asin": "B0H57XM7M4",
@@ -1941,7 +2111,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HGFY7RSD",
+      "variantCount": 36
     },
     {
       "asin": "B0H5B93ZVY",
@@ -1963,7 +2135,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H5BM2R3L",
+      "variantCount": 20
     },
     {
       "asin": "B0H5C65M4Z",
@@ -1985,7 +2159,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H5C2DT25",
+      "variantCount": 45
     },
     {
       "asin": "B0H69JZPKJ",
@@ -2007,7 +2183,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HCYGZYST",
+      "variantCount": 24
     },
     {
       "asin": "B0H9M9RCBZ",
@@ -2029,7 +2207,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H9M1PZ1V",
+      "variantCount": 41
     },
     {
       "asin": "B0H3TX73WD",
@@ -2051,7 +2231,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HG8MQ3DR",
+      "variantCount": 49
     },
     {
       "asin": "B0HDHW6H15",
@@ -2073,7 +2255,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HDHTXCKZ",
+      "variantCount": 72
     },
     {
       "asin": "B0HD7NFY7D",
@@ -2095,7 +2279,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HD7FJ2LL",
+      "variantCount": 5
     },
     {
       "asin": "B0H3V6MKSZ",
@@ -2117,7 +2303,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H3VFPCJW",
+      "variantCount": 48
     },
     {
       "asin": "B0H74T27YV",
@@ -2139,7 +2327,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H74T6XNT",
+      "variantCount": 35
     },
     {
       "asin": "B0H38HXQVL",
@@ -2161,7 +2351,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H38MBSCY",
+      "variantCount": 26
     },
     {
       "asin": "B0H5BS5YJ7",
@@ -2183,7 +2375,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0FXWXFHDY",
+      "variantCount": 86
     },
     {
       "asin": "B0H2YMWGL2",
@@ -2205,7 +2399,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HFWWNQL5",
+      "variantCount": 56
     },
     {
       "asin": "B0HBB9NPZY",
@@ -2227,7 +2423,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HB9Z6XQQ",
+      "variantCount": 47
     },
     {
       "asin": "B0GTVJ2L1C",
@@ -2249,7 +2447,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0GTTWLNZW",
+      "variantCount": 41
     }
   ]
 }

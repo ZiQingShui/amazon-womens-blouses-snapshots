@@ -46,11 +46,11 @@
       "price": 0,
       "mainBsr": 0,
       "subBsr": 0,
-      "listingDate": 27,
+      "listingDate": 95,
       "promotion": 0
     },
     "detailChecked": 0,
-    "detailSourceValid": null,
+    "detailSourceValid": false,
     "coverageFailures": {
       "brand": {
         "actual": 36,
@@ -106,7 +106,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0GWR3M54M",
+      "variantCount": 101
     },
     {
       "rank": 2,
@@ -135,7 +137,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H8R7HB3N",
+      "variantCount": 105
     },
     {
       "rank": 3,
@@ -148,14 +152,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-08-17",
       "mainCategory": "Clothing, Shoes & Jewelry",
       "mainBsr": null,
       "subCategory": "Women's Button-Down Shirts",
       "subBsr": null,
       "subRanks": [],
       "detailSource": "SellerSprite browser export of Amazon Hot New Releases",
-      "listingDateSource": "Unavailable",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 1,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -164,7 +168,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H6B5RV4M",
+      "variantCount": 58
     },
     {
       "rank": 4,
@@ -193,7 +199,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0GZVYHT3P",
+      "variantCount": 79
     },
     {
       "rank": 5,
@@ -206,14 +214,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-08-06",
       "mainCategory": "Clothing, Shoes & Jewelry",
       "mainBsr": null,
       "subCategory": "Women's Button-Down Shirts",
       "subBsr": null,
       "subRanks": [],
       "detailSource": "SellerSprite browser export of Amazon Hot New Releases",
-      "listingDateSource": "Unavailable",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 1,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -222,7 +230,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H39FCLG9",
+      "variantCount": 126
     },
     {
       "rank": 6,
@@ -251,7 +261,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0GZ3X7TJ7",
+      "variantCount": 74
     },
     {
       "rank": 7,
@@ -280,7 +292,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HFVKC73J",
+      "variantCount": 62
     },
     {
       "rank": 8,
@@ -293,14 +307,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-08-27",
       "mainCategory": "Clothing, Shoes & Jewelry",
       "mainBsr": null,
       "subCategory": "Women's Button-Down Shirts",
       "subBsr": null,
       "subRanks": [],
       "detailSource": "SellerSprite browser export of Amazon Hot New Releases",
-      "listingDateSource": "Unavailable",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 1,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -309,7 +323,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H712MWSZ",
+      "variantCount": 51
     },
     {
       "rank": 9,
@@ -322,14 +338,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-08-03",
       "mainCategory": "Clothing, Shoes & Jewelry",
       "mainBsr": null,
       "subCategory": "Women's Button-Down Shirts",
       "subBsr": null,
       "subRanks": [],
       "detailSource": "SellerSprite browser export of Amazon Hot New Releases",
-      "listingDateSource": "Unavailable",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 1,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -338,7 +354,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HF7NZ6VN",
+      "variantCount": 56
     },
     {
       "rank": 10,
@@ -351,14 +369,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-09-05",
       "mainCategory": "Clothing, Shoes & Jewelry",
       "mainBsr": null,
       "subCategory": "Women's Button-Down Shirts",
       "subBsr": null,
       "subRanks": [],
       "detailSource": "SellerSprite browser export of Amazon Hot New Releases",
-      "listingDateSource": "Unavailable",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 1,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -367,7 +385,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H73NVRWW",
+      "variantCount": 41
     },
     {
       "rank": 11,
@@ -396,7 +416,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HHRLJFG2",
+      "variantCount": 66
     },
     {
       "rank": 12,
@@ -409,14 +431,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-07-14",
       "mainCategory": "Clothing, Shoes & Jewelry",
       "mainBsr": null,
       "subCategory": "Women's Button-Down Shirts",
       "subBsr": null,
       "subRanks": [],
       "detailSource": "SellerSprite browser export of Amazon Hot New Releases",
-      "listingDateSource": "Unavailable",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 1,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -425,7 +447,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H3DZ23CD",
+      "variantCount": 48
     },
     {
       "rank": 13,
@@ -438,14 +462,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-08-19",
       "mainCategory": "Clothing, Shoes & Jewelry",
       "mainBsr": null,
       "subCategory": "Women's Button-Down Shirts",
       "subBsr": null,
       "subRanks": [],
       "detailSource": "SellerSprite browser export of Amazon Hot New Releases",
-      "listingDateSource": "Unavailable",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 1,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -454,7 +478,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H7H669NL",
+      "variantCount": 34
     },
     {
       "rank": 14,
@@ -483,7 +509,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H3PCYZBD",
+      "variantCount": 71
     },
     {
       "rank": 15,
@@ -512,7 +540,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H5QZFNHM",
+      "variantCount": 57
     },
     {
       "rank": 16,
@@ -525,14 +555,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-07-15",
       "mainCategory": "Clothing, Shoes & Jewelry",
       "mainBsr": null,
       "subCategory": "Women's Button-Down Shirts",
       "subBsr": null,
       "subRanks": [],
       "detailSource": "SellerSprite browser export of Amazon Hot New Releases",
-      "listingDateSource": "Unavailable",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 1,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -541,7 +571,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HF8DXDFY",
+      "variantCount": 97
     },
     {
       "rank": 17,
@@ -570,7 +602,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H2PVKZ8L",
+      "variantCount": 44
     },
     {
       "rank": 18,
@@ -599,7 +633,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H38XCTB4",
+      "variantCount": 37
     },
     {
       "rank": 19,
@@ -612,14 +648,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-08-08",
       "mainCategory": "Clothing, Shoes & Jewelry",
       "mainBsr": null,
       "subCategory": "Women's Button-Down Shirts",
       "subBsr": null,
       "subRanks": [],
       "detailSource": "SellerSprite browser export of Amazon Hot New Releases",
-      "listingDateSource": "Unavailable",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 1,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -628,7 +664,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HCV6NRBL",
+      "variantCount": 21
     },
     {
       "rank": 20,
@@ -657,7 +695,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HBQFY4WG",
+      "variantCount": 21
     },
     {
       "rank": 21,
@@ -686,7 +726,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HGFV6YSZ",
+      "variantCount": 126
     },
     {
       "rank": 22,
@@ -715,7 +757,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H36RSVD9",
+      "variantCount": 51
     },
     {
       "rank": 23,
@@ -744,7 +788,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H8T3MPD8",
+      "variantCount": 48
     },
     {
       "rank": 24,
@@ -773,7 +819,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H4FG6J4G",
+      "variantCount": 60
     },
     {
       "rank": 25,
@@ -786,14 +834,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-09-03",
       "mainCategory": "Clothing, Shoes & Jewelry",
       "mainBsr": null,
       "subCategory": "Women's Button-Down Shirts",
       "subBsr": null,
       "subRanks": [],
       "detailSource": "SellerSprite browser export of Amazon Hot New Releases",
-      "listingDateSource": "Unavailable",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 1,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -802,7 +850,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H3PHWQB1",
+      "variantCount": 41
     },
     {
       "rank": 26,
@@ -815,14 +865,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-08-24",
       "mainCategory": "Clothing, Shoes & Jewelry",
       "mainBsr": null,
       "subCategory": "Women's Button-Down Shirts",
       "subBsr": null,
       "subRanks": [],
       "detailSource": "SellerSprite browser export of Amazon Hot New Releases",
-      "listingDateSource": "Unavailable",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 1,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -831,7 +881,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H95DB45F",
+      "variantCount": 38
     },
     {
       "rank": 27,
@@ -844,14 +896,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-08-28",
       "mainCategory": "Clothing, Shoes & Jewelry",
       "mainBsr": null,
       "subCategory": "Women's Button-Down Shirts",
       "subBsr": null,
       "subRanks": [],
       "detailSource": "SellerSprite browser export of Amazon Hot New Releases",
-      "listingDateSource": "Unavailable",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 1,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -860,7 +912,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H75P5QHL",
+      "variantCount": 80
     },
     {
       "rank": 28,
@@ -889,7 +943,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H5C2DT25",
+      "variantCount": 45
     },
     {
       "rank": 29,
@@ -902,14 +958,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-08-01",
       "mainCategory": "Clothing, Shoes & Jewelry",
       "mainBsr": null,
       "subCategory": "Women's Button-Down Shirts",
       "subBsr": null,
       "subRanks": [],
       "detailSource": "SellerSprite browser export of Amazon Hot New Releases",
-      "listingDateSource": "Unavailable",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 1,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -918,7 +974,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H4M64MSN",
+      "variantCount": 46
     },
     {
       "rank": 30,
@@ -947,7 +1005,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0GYLGCX39",
+      "variantCount": 31
     },
     {
       "rank": 31,
@@ -960,14 +1020,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-07-26",
       "mainCategory": "Clothing, Shoes & Jewelry",
       "mainBsr": null,
       "subCategory": "Women's Button-Down Shirts",
       "subBsr": null,
       "subRanks": [],
       "detailSource": "SellerSprite browser export of Amazon Hot New Releases",
-      "listingDateSource": "Unavailable",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 1,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -976,7 +1036,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H6J7TGJQ",
+      "variantCount": 25
     },
     {
       "rank": 32,
@@ -989,14 +1051,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-08-18",
       "mainCategory": "Clothing, Shoes & Jewelry",
       "mainBsr": null,
       "subCategory": "Women's Button-Down Shirts",
       "subBsr": null,
       "subRanks": [],
       "detailSource": "SellerSprite browser export of Amazon Hot New Releases",
-      "listingDateSource": "Unavailable",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 1,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -1005,7 +1067,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0GYDKQ9SK",
+      "variantCount": 41
     },
     {
       "rank": 33,
@@ -1018,14 +1082,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-09-03",
       "mainCategory": "Clothing, Shoes & Jewelry",
       "mainBsr": null,
       "subCategory": "Women's Button-Down Shirts",
       "subBsr": null,
       "subRanks": [],
       "detailSource": "SellerSprite browser export of Amazon Hot New Releases",
-      "listingDateSource": "Unavailable",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 1,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -1034,7 +1098,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0GZJZBGXN",
+      "variantCount": 31
     },
     {
       "rank": 34,
@@ -1063,7 +1129,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H8PDX79K",
+      "variantCount": 51
     },
     {
       "rank": 35,
@@ -1092,7 +1160,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H4G1K6QK",
+      "variantCount": 70
     },
     {
       "rank": 36,
@@ -1105,14 +1175,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-08-09",
       "mainCategory": "Clothing, Shoes & Jewelry",
       "mainBsr": null,
       "subCategory": "Women's Button-Down Shirts",
       "subBsr": null,
       "subRanks": [],
       "detailSource": "SellerSprite browser export of Amazon Hot New Releases",
-      "listingDateSource": "Unavailable",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 1,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -1121,7 +1191,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0GWYTZDC7",
+      "variantCount": 41
     },
     {
       "rank": 37,
@@ -1134,14 +1206,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-08-17",
       "mainCategory": "Clothing, Shoes & Jewelry",
       "mainBsr": null,
       "subCategory": "Women's Button-Down Shirts",
       "subBsr": null,
       "subRanks": [],
       "detailSource": "SellerSprite browser export of Amazon Hot New Releases",
-      "listingDateSource": "Unavailable",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 1,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -1150,7 +1222,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0DKBWV3JT",
+      "variantCount": 39
     },
     {
       "rank": 38,
@@ -1163,14 +1237,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-08-17",
       "mainCategory": "Clothing, Shoes & Jewelry",
       "mainBsr": null,
       "subCategory": "Women's Button-Down Shirts",
       "subBsr": null,
       "subRanks": [],
       "detailSource": "SellerSprite browser export of Amazon Hot New Releases",
-      "listingDateSource": "Unavailable",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 1,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -1179,7 +1253,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H5BM2R3L",
+      "variantCount": 18
     },
     {
       "rank": 39,
@@ -1192,14 +1268,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-08-12",
       "mainCategory": "Clothing, Shoes & Jewelry",
       "mainBsr": null,
       "subCategory": "Women's Button-Down Shirts",
       "subBsr": null,
       "subRanks": [],
       "detailSource": "SellerSprite browser export of Amazon Hot New Releases",
-      "listingDateSource": "Unavailable",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 1,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -1208,7 +1284,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H5VRCP4F",
+      "variantCount": 51
     },
     {
       "rank": 40,
@@ -1237,7 +1315,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H5KSQ9WT",
+      "variantCount": 36
     },
     {
       "rank": 41,
@@ -1250,14 +1330,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-08-29",
       "mainCategory": "Clothing, Shoes & Jewelry",
       "mainBsr": null,
       "subCategory": "Women's Button-Down Shirts",
       "subBsr": null,
       "subRanks": [],
       "detailSource": "SellerSprite browser export of Amazon Hot New Releases",
-      "listingDateSource": "Unavailable",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 1,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -1266,7 +1346,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H5W4XSGQ",
+      "variantCount": 41
     },
     {
       "rank": 42,
@@ -1279,14 +1361,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-07-23",
       "mainCategory": "Clothing, Shoes & Jewelry",
       "mainBsr": null,
       "subCategory": "Women's Button-Down Shirts",
       "subBsr": null,
       "subRanks": [],
       "detailSource": "SellerSprite browser export of Amazon Hot New Releases",
-      "listingDateSource": "Unavailable",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 1,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -1295,7 +1377,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H3699L5L",
+      "variantCount": 31
     },
     {
       "rank": 43,
@@ -1308,14 +1392,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-08-08",
       "mainCategory": "Clothing, Shoes & Jewelry",
       "mainBsr": null,
       "subCategory": "Women's Button-Down Shirts",
       "subBsr": null,
       "subRanks": [],
       "detailSource": "SellerSprite browser export of Amazon Hot New Releases",
-      "listingDateSource": "Unavailable",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 1,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -1324,7 +1408,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H6PVP9RY",
+      "variantCount": 60
     },
     {
       "rank": 44,
@@ -1337,14 +1423,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-08-07",
       "mainCategory": "Clothing, Shoes & Jewelry",
       "mainBsr": null,
       "subCategory": "Women's Button-Down Shirts",
       "subBsr": null,
       "subRanks": [],
       "detailSource": "SellerSprite browser export of Amazon Hot New Releases",
-      "listingDateSource": "Unavailable",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 1,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -1353,7 +1439,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0GYS68S9S",
+      "variantCount": 41
     },
     {
       "rank": 45,
@@ -1366,14 +1454,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-08-27",
       "mainCategory": "Clothing, Shoes & Jewelry",
       "mainBsr": null,
       "subCategory": "Women's Button-Down Shirts",
       "subBsr": null,
       "subRanks": [],
       "detailSource": "SellerSprite browser export of Amazon Hot New Releases",
-      "listingDateSource": "Unavailable",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 1,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -1382,7 +1470,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HCNQJ2NQ",
+      "variantCount": 201
     },
     {
       "rank": 46,
@@ -1395,14 +1485,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-07-14",
       "mainCategory": "Clothing, Shoes & Jewelry",
       "mainBsr": null,
       "subCategory": "Women's Button-Down Shirts",
       "subBsr": null,
       "subRanks": [],
       "detailSource": "SellerSprite browser export of Amazon Hot New Releases",
-      "listingDateSource": "Unavailable",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 1,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -1411,7 +1501,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0GXVQ6N53",
+      "variantCount": 40
     },
     {
       "rank": 47,
@@ -1440,7 +1532,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H32864YJ",
+      "variantCount": 41
     },
     {
       "rank": 48,
@@ -1453,14 +1547,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-08-17",
       "mainCategory": "Clothing, Shoes & Jewelry",
       "mainBsr": null,
       "subCategory": "Women's Button-Down Shirts",
       "subBsr": null,
       "subRanks": [],
       "detailSource": "SellerSprite browser export of Amazon Hot New Releases",
-      "listingDateSource": "Unavailable",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 1,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -1469,7 +1563,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HGB5T6V5",
+      "variantCount": 17
     },
     {
       "rank": 49,
@@ -1482,14 +1578,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-07-13",
       "mainCategory": "Clothing, Shoes & Jewelry",
       "mainBsr": null,
       "subCategory": "Women's Button-Down Shirts",
       "subBsr": null,
       "subRanks": [],
       "detailSource": "SellerSprite browser export of Amazon Hot New Releases",
-      "listingDateSource": "Unavailable",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 1,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -1498,7 +1594,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0GWJ4M4HW",
+      "variantCount": 40
     },
     {
       "rank": 50,
@@ -1527,7 +1625,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HGR61T6R",
+      "variantCount": 41
     },
     {
       "rank": 51,
@@ -1556,7 +1656,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HDCCJC3D",
+      "variantCount": 21
     },
     {
       "rank": 52,
@@ -1569,14 +1671,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-08-10",
       "mainCategory": "Clothing, Shoes & Jewelry",
       "mainBsr": null,
       "subCategory": "Women's Button-Down Shirts",
       "subBsr": null,
       "subRanks": [],
       "detailSource": "SellerSprite browser export of Amazon Hot New Releases",
-      "listingDateSource": "Unavailable",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 1,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -1585,7 +1687,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HC7CTRS4",
+      "variantCount": 84
     },
     {
       "rank": 53,
@@ -1614,7 +1718,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HCYGZYST",
+      "variantCount": 24
     },
     {
       "rank": 54,
@@ -1627,14 +1733,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-08-05",
       "mainCategory": "Clothing, Shoes & Jewelry",
       "mainBsr": null,
       "subCategory": "Women's Button-Down Shirts",
       "subBsr": null,
       "subRanks": [],
       "detailSource": "SellerSprite browser export of Amazon Hot New Releases",
-      "listingDateSource": "Unavailable",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 1,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -1643,7 +1749,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H36395GF",
+      "variantCount": 21
     },
     {
       "rank": 55,
@@ -1656,14 +1764,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-08-13",
       "mainCategory": "Clothing, Shoes & Jewelry",
       "mainBsr": null,
       "subCategory": "Women's Button-Down Shirts",
       "subBsr": null,
       "subRanks": [],
       "detailSource": "SellerSprite browser export of Amazon Hot New Releases",
-      "listingDateSource": "Unavailable",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 1,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -1672,7 +1780,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H8JCXXC7",
+      "variantCount": 29
     },
     {
       "rank": 56,
@@ -1685,14 +1795,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-08-28",
       "mainCategory": "Clothing, Shoes & Jewelry",
       "mainBsr": null,
       "subCategory": "Women's Button-Down Shirts",
       "subBsr": null,
       "subRanks": [],
       "detailSource": "SellerSprite browser export of Amazon Hot New Releases",
-      "listingDateSource": "Unavailable",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 1,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -1701,7 +1811,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HGF9C2RV",
+      "variantCount": 56
     },
     {
       "rank": 57,
@@ -1714,14 +1826,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-07-24",
       "mainCategory": "Clothing, Shoes & Jewelry",
       "mainBsr": null,
       "subCategory": "Women's Button-Down Shirts",
       "subBsr": null,
       "subRanks": [],
       "detailSource": "SellerSprite browser export of Amazon Hot New Releases",
-      "listingDateSource": "Unavailable",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 1,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -1730,7 +1842,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H4VRJKRP",
+      "variantCount": 51
     },
     {
       "rank": 58,
@@ -1759,7 +1873,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HF7YP54P",
+      "variantCount": 21
     },
     {
       "rank": 59,
@@ -1772,14 +1888,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-08-30",
       "mainCategory": "Clothing, Shoes & Jewelry",
       "mainBsr": null,
       "subCategory": "Women's Button-Down Shirts",
       "subBsr": null,
       "subRanks": [],
       "detailSource": "SellerSprite browser export of Amazon Hot New Releases",
-      "listingDateSource": "Unavailable",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 1,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -1788,7 +1904,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H8PXXJ71",
+      "variantCount": 19
     },
     {
       "rank": 60,
@@ -1801,14 +1919,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-07-15",
       "mainCategory": "Clothing, Shoes & Jewelry",
       "mainBsr": null,
       "subCategory": "Women's Button-Down Shirts",
       "subBsr": null,
       "subRanks": [],
       "detailSource": "SellerSprite browser export of Amazon Hot New Releases",
-      "listingDateSource": "Unavailable",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 1,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -1817,7 +1935,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H23VTV7P",
+      "variantCount": 30
     },
     {
       "rank": 61,
@@ -1830,14 +1950,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-07-21",
       "mainCategory": "Clothing, Shoes & Jewelry",
       "mainBsr": null,
       "subCategory": "Women's Button-Down Shirts",
       "subBsr": null,
       "subRanks": [],
       "detailSource": "SellerSprite browser export of Amazon Hot New Releases",
-      "listingDateSource": "Unavailable",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 1,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -1846,7 +1966,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0FXWXFHDY",
+      "variantCount": 86
     },
     {
       "rank": 62,
@@ -1859,14 +1981,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-08-06",
       "mainCategory": "Clothing, Shoes & Jewelry",
       "mainBsr": null,
       "subCategory": "Women's Button-Down Shirts",
       "subBsr": null,
       "subRanks": [],
       "detailSource": "SellerSprite browser export of Amazon Hot New Releases",
-      "listingDateSource": "Unavailable",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 1,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -1875,7 +1997,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H5196DW4",
+      "variantCount": 40
     },
     {
       "rank": 63,
@@ -1888,14 +2012,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-08-28",
       "mainCategory": "Clothing, Shoes & Jewelry",
       "mainBsr": null,
       "subCategory": "Women's Button-Down Shirts",
       "subBsr": null,
       "subRanks": [],
       "detailSource": "SellerSprite browser export of Amazon Hot New Releases",
-      "listingDateSource": "Unavailable",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 1,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -1904,7 +2028,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H8YXQR7Q",
+      "variantCount": 13
     },
     {
       "rank": 64,
@@ -1917,14 +2043,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-07-27",
       "mainCategory": "Clothing, Shoes & Jewelry",
       "mainBsr": null,
       "subCategory": "Women's Button-Down Shirts",
       "subBsr": null,
       "subRanks": [],
       "detailSource": "SellerSprite browser export of Amazon Hot New Releases",
-      "listingDateSource": "Unavailable",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 1,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -1933,7 +2059,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0GXKKGXQ1",
+      "variantCount": 36
     },
     {
       "rank": 65,
@@ -1962,7 +2090,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HJRM6XJ3",
+      "variantCount": 36
     },
     {
       "rank": 66,
@@ -1975,14 +2105,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-08-05",
       "mainCategory": "Clothing, Shoes & Jewelry",
       "mainBsr": null,
       "subCategory": "Women's Button-Down Shirts",
       "subBsr": null,
       "subRanks": [],
       "detailSource": "SellerSprite browser export of Amazon Hot New Releases",
-      "listingDateSource": "Unavailable",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 1,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -1991,7 +2121,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H3JTHXHB",
+      "variantCount": 31
     },
     {
       "rank": 67,
@@ -2020,7 +2152,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H757JLFW",
+      "variantCount": 45
     },
     {
       "rank": 68,
@@ -2049,7 +2183,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H6PQGJ6M",
+      "variantCount": 36
     },
     {
       "rank": 69,
@@ -2062,14 +2198,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-07-13",
       "mainCategory": "Clothing, Shoes & Jewelry",
       "mainBsr": null,
       "subCategory": "Women's Button-Down Shirts",
       "subBsr": null,
       "subRanks": [],
       "detailSource": "SellerSprite browser export of Amazon Hot New Releases",
-      "listingDateSource": "Unavailable",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 1,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -2078,7 +2214,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H7QT29J4",
+      "variantCount": 26
     },
     {
       "rank": 70,
@@ -2091,14 +2229,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-07-18",
       "mainCategory": "Clothing, Shoes & Jewelry",
       "mainBsr": null,
       "subCategory": "Women's Button-Down Shirts",
       "subBsr": null,
       "subRanks": [],
       "detailSource": "SellerSprite browser export of Amazon Hot New Releases",
-      "listingDateSource": "Unavailable",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 1,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -2107,7 +2245,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0DB2Q1L8D",
+      "variantCount": 147
     },
     {
       "rank": 71,
@@ -2120,14 +2260,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-08-09",
       "mainCategory": "Clothing, Shoes & Jewelry",
       "mainBsr": null,
       "subCategory": "Women's Button-Down Shirts",
       "subBsr": null,
       "subRanks": [],
       "detailSource": "SellerSprite browser export of Amazon Hot New Releases",
-      "listingDateSource": "Unavailable",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 1,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -2136,7 +2276,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0GTTWLNZW",
+      "variantCount": 41
     },
     {
       "rank": 72,
@@ -2149,14 +2291,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-08-11",
       "mainCategory": "Clothing, Shoes & Jewelry",
       "mainBsr": null,
       "subCategory": "Women's Button-Down Shirts",
       "subBsr": null,
       "subRanks": [],
       "detailSource": "SellerSprite browser export of Amazon Hot New Releases",
-      "listingDateSource": "Unavailable",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 1,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -2165,7 +2307,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H74T6XNT",
+      "variantCount": 35
     },
     {
       "rank": 73,
@@ -2178,14 +2322,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-07-16",
       "mainCategory": "Clothing, Shoes & Jewelry",
       "mainBsr": null,
       "subCategory": "Women's Button-Down Shirts",
       "subBsr": null,
       "subRanks": [],
       "detailSource": "SellerSprite browser export of Amazon Hot New Releases",
-      "listingDateSource": "Unavailable",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 1,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -2194,7 +2338,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H757689F",
+      "variantCount": 17
     },
     {
       "rank": 74,
@@ -2207,14 +2353,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-08-19",
       "mainCategory": "Clothing, Shoes & Jewelry",
       "mainBsr": null,
       "subCategory": "Women's Button-Down Shirts",
       "subBsr": null,
       "subRanks": [],
       "detailSource": "SellerSprite browser export of Amazon Hot New Releases",
-      "listingDateSource": "Unavailable",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 1,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -2223,7 +2369,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H87MXN6S",
+      "variantCount": 16
     },
     {
       "rank": 75,
@@ -2236,14 +2384,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-08-04",
       "mainCategory": "Clothing, Shoes & Jewelry",
       "mainBsr": null,
       "subCategory": "Women's Button-Down Shirts",
       "subBsr": null,
       "subRanks": [],
       "detailSource": "SellerSprite browser export of Amazon Hot New Releases",
-      "listingDateSource": "Unavailable",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 1,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -2252,7 +2400,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H6MXXHMW",
+      "variantCount": 61
     },
     {
       "rank": 76,
@@ -2265,14 +2415,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-07-20",
       "mainCategory": "Clothing, Shoes & Jewelry",
       "mainBsr": null,
       "subCategory": "Women's Button-Down Shirts",
       "subBsr": null,
       "subRanks": [],
       "detailSource": "SellerSprite browser export of Amazon Hot New Releases",
-      "listingDateSource": "Unavailable",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 1,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -2281,7 +2431,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H7LQPR1Y",
+      "variantCount": 43
     },
     {
       "rank": 77,
@@ -2294,14 +2446,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-07-16",
       "mainCategory": "Clothing, Shoes & Jewelry",
       "mainBsr": null,
       "subCategory": "Women's Button-Down Shirts",
       "subBsr": null,
       "subRanks": [],
       "detailSource": "SellerSprite browser export of Amazon Hot New Releases",
-      "listingDateSource": "Unavailable",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 1,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -2310,7 +2462,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H4QQ8ZQ9",
+      "variantCount": 36
     },
     {
       "rank": 78,
@@ -2323,14 +2477,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-07-18",
       "mainCategory": "Clothing, Shoes & Jewelry",
       "mainBsr": null,
       "subCategory": "Women's Button-Down Shirts",
       "subBsr": null,
       "subRanks": [],
       "detailSource": "SellerSprite browser export of Amazon Hot New Releases",
-      "listingDateSource": "Unavailable",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 1,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -2339,7 +2493,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0GY836472",
+      "variantCount": 26
     },
     {
       "rank": 79,
@@ -2368,7 +2524,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H5BFJHW7",
+      "variantCount": 42
     },
     {
       "rank": 80,
@@ -2381,14 +2539,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-08-11",
       "mainCategory": "Clothing, Shoes & Jewelry",
       "mainBsr": null,
       "subCategory": "Women's Button-Down Shirts",
       "subBsr": null,
       "subRanks": [],
       "detailSource": "SellerSprite browser export of Amazon Hot New Releases",
-      "listingDateSource": "Unavailable",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 1,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -2397,7 +2555,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HCV1VNL7",
+      "variantCount": 25
     },
     {
       "rank": 81,
@@ -2410,14 +2570,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-08-31",
       "mainCategory": "Clothing, Shoes & Jewelry",
       "mainBsr": null,
       "subCategory": "Women's Button-Down Shirts",
       "subBsr": null,
       "subRanks": [],
       "detailSource": "SellerSprite browser export of Amazon Hot New Releases",
-      "listingDateSource": "Unavailable",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 1,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -2426,7 +2586,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HGY1YN2M",
+      "variantCount": 36
     },
     {
       "rank": 82,
@@ -2439,14 +2601,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-07-21",
       "mainCategory": "Clothing, Shoes & Jewelry",
       "mainBsr": null,
       "subCategory": "Women's Button-Down Shirts",
       "subBsr": null,
       "subRanks": [],
       "detailSource": "SellerSprite browser export of Amazon Hot New Releases",
-      "listingDateSource": "Unavailable",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 1,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -2455,7 +2617,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H6MTSKSK",
+      "variantCount": 17
     },
     {
       "rank": 83,
@@ -2468,14 +2632,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-08-07",
       "mainCategory": "Clothing, Shoes & Jewelry",
       "mainBsr": null,
       "subCategory": "Women's Button-Down Shirts",
       "subBsr": null,
       "subRanks": [],
       "detailSource": "SellerSprite browser export of Amazon Hot New Releases",
-      "listingDateSource": "Unavailable",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 1,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -2484,7 +2648,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H44W1ZKD",
+      "variantCount": 40
     },
     {
       "rank": 84,
@@ -2497,14 +2663,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-06-19",
       "mainCategory": "Clothing, Shoes & Jewelry",
       "mainBsr": null,
       "subCategory": "Women's Button-Down Shirts",
       "subBsr": null,
       "subRanks": [],
       "detailSource": "SellerSprite browser export of Amazon Hot New Releases",
-      "listingDateSource": "Unavailable",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 1,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -2513,7 +2679,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H5JR5XJ5",
+      "variantCount": 36
     },
     {
       "rank": 85,
@@ -2526,14 +2694,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-08-22",
       "mainCategory": "Clothing, Shoes & Jewelry",
       "mainBsr": null,
       "subCategory": "Women's Button-Down Shirts",
       "subBsr": null,
       "subRanks": [],
       "detailSource": "SellerSprite browser export of Amazon Hot New Releases",
-      "listingDateSource": "Unavailable",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 1,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -2542,7 +2710,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HFNJ2KTV",
+      "variantCount": 56
     },
     {
       "rank": 86,
@@ -2555,14 +2725,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-06-27",
       "mainCategory": "Clothing, Shoes & Jewelry",
       "mainBsr": null,
       "subCategory": "Women's Button-Down Shirts",
       "subBsr": null,
       "subRanks": [],
       "detailSource": "SellerSprite browser export of Amazon Hot New Releases",
-      "listingDateSource": "Unavailable",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 1,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -2571,7 +2741,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HC3RFV9R",
+      "variantCount": 158
     },
     {
       "rank": 87,
@@ -2600,7 +2772,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H5J38GCN",
+      "variantCount": 16
     },
     {
       "rank": 88,
@@ -2613,14 +2787,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-08-28",
       "mainCategory": "Clothing, Shoes & Jewelry",
       "mainBsr": null,
       "subCategory": "Women's Button-Down Shirts",
       "subBsr": null,
       "subRanks": [],
       "detailSource": "SellerSprite browser export of Amazon Hot New Releases",
-      "listingDateSource": "Unavailable",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 1,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -2629,7 +2803,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H4ZTCLWV",
+      "variantCount": 30
     },
     {
       "rank": 89,
@@ -2642,14 +2818,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-07-27",
       "mainCategory": "Clothing, Shoes & Jewelry",
       "mainBsr": null,
       "subCategory": "Women's Button-Down Shirts",
       "subBsr": null,
       "subRanks": [],
       "detailSource": "SellerSprite browser export of Amazon Hot New Releases",
-      "listingDateSource": "Unavailable",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 1,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -2658,7 +2834,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H997Q9RF",
+      "variantCount": 31
     },
     {
       "rank": 90,
@@ -2687,7 +2865,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HH9RVCFY",
+      "variantCount": 16
     },
     {
       "rank": 91,
@@ -2700,14 +2880,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-08-25",
       "mainCategory": "Clothing, Shoes & Jewelry",
       "mainBsr": null,
       "subCategory": "Women's Button-Down Shirts",
       "subBsr": null,
       "subRanks": [],
       "detailSource": "SellerSprite browser export of Amazon Hot New Releases",
-      "listingDateSource": "Unavailable",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 1,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -2716,7 +2896,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HF86753X",
+      "variantCount": 56
     },
     {
       "rank": 92,
@@ -2729,14 +2911,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-06-11",
       "mainCategory": "Clothing, Shoes & Jewelry",
       "mainBsr": null,
       "subCategory": "Women's Button-Down Shirts",
       "subBsr": null,
       "subRanks": [],
       "detailSource": "SellerSprite browser export of Amazon Hot New Releases",
-      "listingDateSource": "Unavailable",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 1,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -2745,7 +2927,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HGMFQ12X",
+      "variantCount": 27
     },
     {
       "rank": 93,
@@ -2758,14 +2942,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-08-07",
       "mainCategory": "Clothing, Shoes & Jewelry",
       "mainBsr": null,
       "subCategory": "Women's Button-Down Shirts",
       "subBsr": null,
       "subRanks": [],
       "detailSource": "SellerSprite browser export of Amazon Hot New Releases",
-      "listingDateSource": "Unavailable",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 1,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -2774,7 +2958,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H8WV5W69",
+      "variantCount": 17
     },
     {
       "rank": 94,
@@ -2787,14 +2973,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-08-27",
       "mainCategory": "Clothing, Shoes & Jewelry",
       "mainBsr": null,
       "subCategory": "Women's Button-Down Shirts",
       "subBsr": null,
       "subRanks": [],
       "detailSource": "SellerSprite browser export of Amazon Hot New Releases",
-      "listingDateSource": "Unavailable",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 1,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -2803,7 +2989,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H8YQ5531",
+      "variantCount": 61
     },
     {
       "rank": 95,
@@ -2816,14 +3004,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-07-20",
       "mainCategory": "Clothing, Shoes & Jewelry",
       "mainBsr": null,
       "subCategory": "Women's Button-Down Shirts",
       "subBsr": null,
       "subRanks": [],
       "detailSource": "SellerSprite browser export of Amazon Hot New Releases",
-      "listingDateSource": "Unavailable",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 1,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -2832,7 +3020,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H6FWR177",
+      "variantCount": 26
     },
     {
       "rank": 96,
@@ -2845,14 +3035,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-08-23",
       "mainCategory": "Clothing, Shoes & Jewelry",
       "mainBsr": null,
       "subCategory": "Women's Button-Down Shirts",
       "subBsr": null,
       "subRanks": [],
       "detailSource": "SellerSprite browser export of Amazon Hot New Releases",
-      "listingDateSource": "Unavailable",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 1,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -2861,7 +3051,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HFNYK18L",
+      "variantCount": 246
     },
     {
       "rank": 97,
@@ -2890,7 +3082,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HHF74K92",
+      "variantCount": 25
     },
     {
       "rank": 98,
@@ -2903,14 +3097,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-08-07",
       "mainCategory": "Clothing, Shoes & Jewelry",
       "mainBsr": null,
       "subCategory": "Women's Button-Down Shirts",
       "subBsr": null,
       "subRanks": [],
       "detailSource": "SellerSprite browser export of Amazon Hot New Releases",
-      "listingDateSource": "Unavailable",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 1,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -2919,7 +3113,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H25YGV21",
+      "variantCount": 36
     },
     {
       "rank": 99,
@@ -2932,14 +3128,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-08-13",
       "mainCategory": "Clothing, Shoes & Jewelry",
       "mainBsr": null,
       "subCategory": "Women's Button-Down Shirts",
       "subBsr": null,
       "subRanks": [],
       "detailSource": "SellerSprite browser export of Amazon Hot New Releases",
-      "listingDateSource": "Unavailable",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 1,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -2948,7 +3144,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HDZS5FJG",
+      "variantCount": 11
     },
     {
       "rank": 100,
@@ -2961,14 +3159,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-08-26",
       "mainCategory": "Clothing, Shoes & Jewelry",
       "mainBsr": null,
       "subCategory": "Women's Button-Down Shirts",
       "subBsr": null,
       "subRanks": [],
       "detailSource": "SellerSprite browser export of Amazon Hot New Releases",
-      "listingDateSource": "Unavailable",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 1,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -2977,7 +3175,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H6HQ4QT9",
+      "variantCount": 15
     }
   ]
 }

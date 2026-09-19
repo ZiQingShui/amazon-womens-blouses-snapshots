@@ -48,11 +48,11 @@
       "price": 94,
       "mainBsr": 100,
       "subBsr": 98,
-      "listingDate": 90,
+      "listingDate": 91,
       "promotion": 100
     },
     "detailChecked": 100,
-    "detailSourceValid": null,
+    "detailSourceValid": true,
     "coverageFailures": {
       "price": {
         "actual": 94,
@@ -106,7 +106,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 6,
         "streak": 6
-      }
+      },
+      "parentAsin": "B0GWR3M54M",
+      "variantCount": 101
     },
     {
       "rank": 2,
@@ -145,7 +147,9 @@
         "firstSeen": "2026-09-15",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H39FCLG9",
+      "variantCount": 126
     },
     {
       "rank": 3,
@@ -184,7 +188,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 6,
         "streak": 6
-      }
+      },
+      "parentAsin": "B0H8R7HB3N",
+      "variantCount": 105
     },
     {
       "rank": 4,
@@ -225,7 +231,9 @@
         "firstSeen": "2026-09-15",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H6B5RV4M",
+      "variantCount": 58
     },
     {
       "rank": 5,
@@ -264,7 +272,9 @@
         "firstSeen": "2026-09-12",
         "appearances": 4,
         "streak": 4
-      }
+      },
+      "parentAsin": "B0GZVYHT3P",
+      "variantCount": 79
     },
     {
       "rank": 6,
@@ -303,7 +313,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 6,
         "streak": 6
-      }
+      },
+      "parentAsin": "B0HDJKRB4W",
+      "variantCount": 61
     },
     {
       "rank": 7,
@@ -342,7 +354,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 4,
         "streak": 2
-      }
+      },
+      "parentAsin": "B0HBBZ2JJT",
+      "variantCount": 71
     },
     {
       "rank": 8,
@@ -381,7 +395,9 @@
         "firstSeen": "2026-09-15",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H6JW5HQH",
+      "variantCount": 81
     },
     {
       "rank": 9,
@@ -420,7 +436,9 @@
         "firstSeen": "2026-09-15",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H6QGCRR6",
+      "variantCount": 73
     },
     {
       "rank": 10,
@@ -436,7 +454,7 @@
       "priceSource": "Ecomtool MCP 商品详情",
       "promotions": [],
       "promotionStatus": "none",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-08-27",
       "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "mainCategory": "Clothing, Shoes & Jewelry#178 in Women's Button-Down Shirts",
       "mainBsr": 13928,
@@ -459,7 +477,9 @@
         "firstSeen": "2026-09-15",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H712MWSZ",
+      "variantCount": 51
     },
     {
       "rank": 11,
@@ -498,7 +518,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 3,
         "streak": 2
-      }
+      },
+      "parentAsin": "B0H3PR8H5Z",
+      "variantCount": 60
     },
     {
       "rank": 12,
@@ -537,7 +559,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 3,
         "streak": 2
-      }
+      },
+      "parentAsin": "B0HDC4693P",
+      "variantCount": 60
     },
     {
       "rank": 13,
@@ -578,7 +602,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 4,
         "streak": 2
-      }
+      },
+      "parentAsin": "B0HFFJ3TCD",
+      "variantCount": 75
     },
     {
       "rank": 14,
@@ -617,7 +643,9 @@
         "firstSeen": "2026-09-13",
         "appearances": 3,
         "streak": 3
-      }
+      },
+      "parentAsin": "B0H78ZL5ZH",
+      "variantCount": 55
     },
     {
       "rank": 15,
@@ -658,7 +686,9 @@
         "firstSeen": "2026-09-13",
         "appearances": 3,
         "streak": 3
-      }
+      },
+      "parentAsin": "B0H5KD44LY",
+      "variantCount": 71
     },
     {
       "rank": 16,
@@ -697,7 +727,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 6,
         "streak": 6
-      }
+      },
+      "parentAsin": "B0HG9JZQJ3",
+      "variantCount": 72
     },
     {
       "rank": 17,
@@ -736,7 +768,9 @@
         "firstSeen": "2026-09-15",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H5QZFNHM",
+      "variantCount": 57
     },
     {
       "rank": 18,
@@ -775,7 +809,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 2,
         "streak": 2
-      }
+      },
+      "parentAsin": "B0H7H669NL",
+      "variantCount": 34
     },
     {
       "rank": 19,
@@ -816,7 +852,9 @@
         "firstSeen": "2026-09-15",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H73NVRWW",
+      "variantCount": 41
     },
     {
       "rank": 20,
@@ -857,7 +895,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 2,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H4QMFP63",
+      "variantCount": 98
     },
     {
       "rank": 21,
@@ -896,7 +936,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 6,
         "streak": 6
-      }
+      },
+      "parentAsin": "B0H4RFBQYJ",
+      "variantCount": 41
     },
     {
       "rank": 22,
@@ -935,7 +977,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 5,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H8YP3L2Q",
+      "variantCount": 61
     },
     {
       "rank": 23,
@@ -974,7 +1018,9 @@
         "firstSeen": "2026-09-15",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H3PCYZBD",
+      "variantCount": 71
     },
     {
       "rank": 24,
@@ -1013,7 +1059,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 5,
         "streak": 2
-      }
+      },
+      "parentAsin": "B0H38XCTB4",
+      "variantCount": 37
     },
     {
       "rank": 25,
@@ -1052,7 +1100,9 @@
         "firstSeen": "2026-09-15",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H3DZ23CD",
+      "variantCount": 48
     },
     {
       "rank": 26,
@@ -1093,7 +1143,9 @@
         "firstSeen": "2026-09-11",
         "appearances": 5,
         "streak": 5
-      }
+      },
+      "parentAsin": "B0HCV6NRBL",
+      "variantCount": 21
     },
     {
       "rank": 27,
@@ -1132,7 +1184,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 6,
         "streak": 6
-      }
+      },
+      "parentAsin": "B0HHRLJFG2",
+      "variantCount": 66
     },
     {
       "rank": 28,
@@ -1171,7 +1225,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 3,
         "streak": 2
-      }
+      },
+      "parentAsin": "B0HBQFY4WG",
+      "variantCount": 21
     },
     {
       "rank": 29,
@@ -1210,7 +1266,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 2,
         "streak": 2
-      }
+      },
+      "parentAsin": "B0HF8DXDFY",
+      "variantCount": 97
     },
     {
       "rank": 30,
@@ -1249,7 +1307,9 @@
         "firstSeen": "2026-09-15",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HCCBVY44",
+      "variantCount": 61
     },
     {
       "rank": 31,
@@ -1290,7 +1350,9 @@
         "firstSeen": "2026-09-15",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H95DB45F",
+      "variantCount": 39
     },
     {
       "rank": 32,
@@ -1329,7 +1391,9 @@
         "firstSeen": "2026-09-12",
         "appearances": 4,
         "streak": 4
-      }
+      },
+      "parentAsin": "B0HBQMRN9V",
+      "variantCount": 28
     },
     {
       "rank": 33,
@@ -1368,7 +1432,9 @@
         "firstSeen": "2026-09-12",
         "appearances": 4,
         "streak": 4
-      }
+      },
+      "parentAsin": "B0H5C4KJHD",
+      "variantCount": 61
     },
     {
       "rank": 34,
@@ -1407,7 +1473,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 4,
         "streak": 2
-      }
+      },
+      "parentAsin": "B0H36RSVD9",
+      "variantCount": 51
     },
     {
       "rank": 35,
@@ -1448,7 +1516,9 @@
         "firstSeen": "2026-09-13",
         "appearances": 2,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H6M8VYM9",
+      "variantCount": 31
     },
     {
       "rank": 36,
@@ -1489,7 +1559,9 @@
         "firstSeen": "2026-09-13",
         "appearances": 3,
         "streak": 3
-      }
+      },
+      "parentAsin": "B0GZJXDVC6",
+      "variantCount": 49
     },
     {
       "rank": 37,
@@ -1530,7 +1602,9 @@
         "firstSeen": "2026-09-12",
         "appearances": 3,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H1RN624R",
+      "variantCount": 30
     },
     {
       "rank": 38,
@@ -1569,7 +1643,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 3,
         "streak": 2
-      }
+      },
+      "parentAsin": "B0H2PVKZ8L",
+      "variantCount": 44
     },
     {
       "rank": 39,
@@ -1608,7 +1684,9 @@
         "firstSeen": "2026-09-11",
         "appearances": 3,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H8T3MPD8",
+      "variantCount": 48
     },
     {
       "rank": 40,
@@ -1649,7 +1727,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 4,
         "streak": 3
-      }
+      },
+      "parentAsin": "B0H4FB3HLW",
+      "variantCount": 66
     },
     {
       "rank": 41,
@@ -1688,7 +1768,9 @@
         "firstSeen": "2026-09-15",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H36RNR5G",
+      "variantCount": 61
     },
     {
       "rank": 42,
@@ -1729,7 +1811,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 2,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0GX6PZJW1",
+      "variantCount": 41
     },
     {
       "rank": 43,
@@ -1768,7 +1852,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 5,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H3PHWQB1",
+      "variantCount": 41
     },
     {
       "rank": 44,
@@ -1807,7 +1893,9 @@
         "firstSeen": "2026-09-15",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H4FG6J4G",
+      "variantCount": 60
     },
     {
       "rank": 45,
@@ -1846,7 +1934,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 4,
         "streak": 2
-      }
+      },
+      "parentAsin": "B0HBK46YRC",
+      "variantCount": 67
     },
     {
       "rank": 46,
@@ -1885,7 +1975,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 4,
         "streak": 3
-      }
+      },
+      "parentAsin": "B0HGFV6YSZ",
+      "variantCount": 126
     },
     {
       "rank": 47,
@@ -1924,7 +2016,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 2,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H2YQNSZ3",
+      "variantCount": 31
     },
     {
       "rank": 48,
@@ -1963,7 +2057,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 6,
         "streak": 6
-      }
+      },
+      "parentAsin": "B0H7BYCFL3",
+      "variantCount": 25
     },
     {
       "rank": 49,
@@ -2002,7 +2098,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 4,
         "streak": 3
-      }
+      },
+      "parentAsin": "B0H3VFPCJW",
+      "variantCount": 48
     },
     {
       "rank": 50,
@@ -2041,7 +2139,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 5,
         "streak": 2
-      }
+      },
+      "parentAsin": "B0HK4TWJML",
+      "variantCount": 85
     },
     {
       "rank": 51,
@@ -2080,7 +2180,9 @@
         "firstSeen": "2026-09-15",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H75P5QHL",
+      "variantCount": 80
     },
     {
       "rank": 52,
@@ -2119,7 +2221,9 @@
         "firstSeen": "2026-09-11",
         "appearances": 3,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H2YF37CW",
+      "variantCount": 47
     },
     {
       "rank": 53,
@@ -2159,7 +2263,9 @@
         "appearances": 1,
         "streak": 1
       },
-      "priceNote": "商品详情价格 0 非有效报价；原始榜单不可核对"
+      "priceNote": "商品详情价格 0 非有效报价；原始榜单不可核对",
+      "parentAsin": "B0H71HNXZ9",
+      "variantCount": 21
     },
     {
       "rank": 54,
@@ -2198,7 +2304,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 3,
         "streak": 2
-      }
+      },
+      "parentAsin": "B0HDHTXCKZ",
+      "variantCount": 72
     },
     {
       "rank": 55,
@@ -2239,7 +2347,9 @@
         "firstSeen": "2026-09-11",
         "appearances": 5,
         "streak": 5
-      }
+      },
+      "parentAsin": "B0H6P85FL1",
+      "variantCount": 26
     },
     {
       "rank": 56,
@@ -2278,7 +2388,9 @@
         "firstSeen": "2026-09-12",
         "appearances": 2,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HJQYJQZP",
+      "variantCount": 33
     },
     {
       "rank": 57,
@@ -2317,7 +2429,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 6,
         "streak": 6
-      }
+      },
+      "parentAsin": "B0H1CBNMMJ",
+      "variantCount": 61
     },
     {
       "rank": 58,
@@ -2359,7 +2473,9 @@
         "firstSeen": "2026-09-15",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HH9M1PVD",
+      "variantCount": 85
     },
     {
       "rank": 59,
@@ -2398,7 +2514,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 6,
         "streak": 6
-      }
+      },
+      "parentAsin": "B0H5C2DT25",
+      "variantCount": 45
     },
     {
       "rank": 60,
@@ -2437,7 +2555,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 6,
         "streak": 6
-      }
+      },
+      "parentAsin": "B0H38MBSCY",
+      "variantCount": 26
     },
     {
       "rank": 61,
@@ -2476,7 +2596,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 6,
         "streak": 6
-      }
+      },
+      "parentAsin": "B0H9M1PZ1V",
+      "variantCount": 41
     },
     {
       "rank": 62,
@@ -2515,7 +2637,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 2,
         "streak": 2
-      }
+      },
+      "parentAsin": "B0H4M64MSN",
+      "variantCount": 46
     },
     {
       "rank": 63,
@@ -2555,7 +2679,9 @@
         "appearances": 2,
         "streak": 1
       },
-      "priceNote": "商品详情价格 0 非有效报价；原始榜单不可核对"
+      "priceNote": "商品详情价格 0 非有效报价；原始榜单不可核对",
+      "parentAsin": "B0HD7FJ2LL",
+      "variantCount": 5
     },
     {
       "rank": 64,
@@ -2596,7 +2722,9 @@
         "firstSeen": "2026-09-11",
         "appearances": 3,
         "streak": 2
-      }
+      },
+      "parentAsin": "B0H9RSD782",
+      "variantCount": 54
     },
     {
       "rank": 65,
@@ -2635,7 +2763,9 @@
         "firstSeen": "2026-09-12",
         "appearances": 4,
         "streak": 4
-      }
+      },
+      "parentAsin": "B0H4G1K6QK",
+      "variantCount": 70
     },
     {
       "rank": 66,
@@ -2674,7 +2804,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 4,
         "streak": 3
-      }
+      },
+      "parentAsin": "B0H5KSQ9WT",
+      "variantCount": 36
     },
     {
       "rank": 67,
@@ -2714,7 +2846,9 @@
         "appearances": 1,
         "streak": 1
       },
-      "priceNote": "商品详情价格 0 非有效报价；原始榜单不可核对"
+      "priceNote": "商品详情价格 0 非有效报价；原始榜单不可核对",
+      "parentAsin": "B0H8PXXJ71",
+      "variantCount": 18
     },
     {
       "rank": 68,
@@ -2754,7 +2888,9 @@
         "appearances": 1,
         "streak": 1
       },
-      "priceNote": "商品详情价格 0 非有效报价；原始榜单不可核对"
+      "priceNote": "商品详情价格 0 非有效报价；原始榜单不可核对",
+      "parentAsin": "B0HCYGZYST",
+      "variantCount": 24
     },
     {
       "rank": 69,
@@ -2795,7 +2931,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 2,
         "streak": 2
-      }
+      },
+      "parentAsin": "B0GYDKQ9SK",
+      "variantCount": 41
     },
     {
       "rank": 70,
@@ -2834,7 +2972,9 @@
         "firstSeen": "2026-09-15",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HFVPC86M",
+      "variantCount": 36
     },
     {
       "rank": 71,
@@ -2875,7 +3015,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 2,
         "streak": 2
-      }
+      },
+      "parentAsin": "B0GZJZBGXN",
+      "variantCount": 31
     },
     {
       "rank": 72,
@@ -2916,7 +3058,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 2,
         "streak": 2
-      }
+      },
+      "parentAsin": "B0H6PVP9RY",
+      "variantCount": 60
     },
     {
       "rank": 73,
@@ -2956,7 +3100,9 @@
         "appearances": 3,
         "streak": 3
       },
-      "priceNote": "商品详情价格 0 非有效报价；原始榜单不可核对"
+      "priceNote": "商品详情价格 0 非有效报价；原始榜单不可核对",
+      "parentAsin": "B0H8PDX79K",
+      "variantCount": 51
     },
     {
       "rank": 74,
@@ -2997,7 +3143,9 @@
         "firstSeen": "2026-09-15",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H1R55H9N",
+      "variantCount": 21
     },
     {
       "rank": 75,
@@ -3036,7 +3184,9 @@
         "firstSeen": "2026-09-15",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HGF9C2RV",
+      "variantCount": 56
     },
     {
       "rank": 76,
@@ -3075,7 +3225,9 @@
         "firstSeen": "2026-09-15",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H7HG7LRH",
+      "variantCount": 26
     },
     {
       "rank": 77,
@@ -3114,7 +3266,9 @@
         "firstSeen": "2026-09-13",
         "appearances": 3,
         "streak": 3
-      }
+      },
+      "parentAsin": "B0HCNMJRW4",
+      "variantCount": 104
     },
     {
       "rank": 78,
@@ -3155,7 +3309,9 @@
         "firstSeen": "2026-09-15",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0GYLGCX39",
+      "variantCount": 31
     },
     {
       "rank": 79,
@@ -3196,7 +3352,9 @@
         "firstSeen": "2026-09-15",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H32864YJ",
+      "variantCount": 41
     },
     {
       "rank": 80,
@@ -3237,7 +3395,9 @@
         "firstSeen": "2026-09-12",
         "appearances": 3,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H9S2ZWLD",
+      "variantCount": 31
     },
     {
       "rank": 81,
@@ -3276,7 +3436,9 @@
         "firstSeen": "2026-09-15",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HGB5T6V5",
+      "variantCount": 17
     },
     {
       "rank": 82,
@@ -3315,7 +3477,9 @@
         "firstSeen": "2026-09-14",
         "appearances": 2,
         "streak": 2
-      }
+      },
+      "parentAsin": "B0GYS68S9S",
+      "variantCount": 41
     },
     {
       "rank": 83,
@@ -3354,7 +3518,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 3,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H5VRCP4F",
+      "variantCount": 51
     },
     {
       "rank": 84,
@@ -3393,7 +3559,9 @@
         "firstSeen": "2026-09-11",
         "appearances": 2,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H6J7TGJQ",
+      "variantCount": 25
     },
     {
       "rank": 85,
@@ -3432,7 +3600,9 @@
         "firstSeen": "2026-09-15",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HJ1MVB73",
+      "variantCount": 111
     },
     {
       "rank": 86,
@@ -3473,7 +3643,9 @@
         "firstSeen": "2026-09-15",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0GXVQ6N53",
+      "variantCount": 41
     },
     {
       "rank": 87,
@@ -3512,7 +3684,9 @@
         "firstSeen": "2026-09-15",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HJ16K3HZ",
+      "variantCount": 24
     },
     {
       "rank": 88,
@@ -3551,7 +3725,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 5,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HDCCJC3D",
+      "variantCount": 21
     },
     {
       "rank": 89,
@@ -3590,7 +3766,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 6,
         "streak": 6
-      }
+      },
+      "parentAsin": "B0HDPZW3XD",
+      "variantCount": 95
     },
     {
       "rank": 90,
@@ -3631,7 +3809,9 @@
         "firstSeen": "2026-09-15",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HGR1PLWC",
+      "variantCount": 73
     },
     {
       "rank": 91,
@@ -3671,7 +3851,9 @@
         "appearances": 2,
         "streak": 2
       },
-      "priceNote": "商品详情价格 0 非有效报价；原始榜单不可核对"
+      "priceNote": "商品详情价格 0 非有效报价；原始榜单不可核对",
+      "parentAsin": "B0H5W4XSGQ",
+      "variantCount": 41
     },
     {
       "rank": 92,
@@ -3712,7 +3894,9 @@
         "firstSeen": "2026-09-15",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0GWJ4M4HW",
+      "variantCount": 40
     },
     {
       "rank": 93,
@@ -3753,7 +3937,9 @@
         "firstSeen": "2026-09-15",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HBQPY7RD",
+      "variantCount": 17
     },
     {
       "rank": 94,
@@ -3792,7 +3978,9 @@
         "firstSeen": "2026-09-15",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HGY1YN2M",
+      "variantCount": 36
     },
     {
       "rank": 95,
@@ -3831,7 +4019,9 @@
         "firstSeen": "2026-09-12",
         "appearances": 2,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H757689F",
+      "variantCount": 17
     },
     {
       "rank": 96,
@@ -3870,7 +4060,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 4,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0GWYTZDC7",
+      "variantCount": 41
     },
     {
       "rank": 97,
@@ -3909,7 +4101,9 @@
         "firstSeen": "2026-09-12",
         "appearances": 2,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HGR61T6R",
+      "variantCount": 41
     },
     {
       "rank": 98,
@@ -3948,7 +4142,9 @@
         "firstSeen": "2026-09-15",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0DB2Q1L8D",
+      "variantCount": 147
     },
     {
       "rank": 99,
@@ -3987,7 +4183,9 @@
         "firstSeen": "2026-09-15",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H4QQ8ZQ9",
+      "variantCount": 36
     },
     {
       "rank": 100,
@@ -4026,7 +4224,9 @@
         "firstSeen": "2026-09-15",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H5196DW4",
+      "variantCount": 40
     }
   ]
 }

@@ -45,11 +45,11 @@
       "price": 96,
       "mainBsr": 100,
       "subBsr": 100,
-      "listingDate": 88,
+      "listingDate": 93,
       "promotion": 100
     },
     "detailChecked": 100,
-    "detailSourceValid": null,
+    "detailSourceValid": true,
     "coverageFailures": {},
     "provenance": {
       "fallbackRows": 0,
@@ -98,7 +98,9 @@
       "currency": "USD",
       "listPrice": "未显示/无法获取",
       "finalPrice": "$22.49",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0GWR3M54M",
+      "variantCount": 101
     },
     {
       "rank": 2,
@@ -135,7 +137,9 @@
       "currency": "USD",
       "listPrice": "$16.99",
       "finalPrice": "$14.99",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0H39FCLG9",
+      "variantCount": 126
     },
     {
       "rank": 3,
@@ -172,7 +176,9 @@
       "currency": "USD",
       "listPrice": "$22.99",
       "finalPrice": "$14.99",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0H8R7HB3N",
+      "variantCount": 105
     },
     {
       "rank": 4,
@@ -211,7 +217,9 @@
       "currency": "USD",
       "listPrice": "$39.99",
       "finalPrice": "$24.99",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0H6B5RV4M",
+      "variantCount": 58
     },
     {
       "rank": 5,
@@ -248,7 +256,9 @@
       "currency": "USD",
       "listPrice": "未显示/无法获取",
       "finalPrice": "$22.99",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0GZVYHT3P",
+      "variantCount": 79
     },
     {
       "rank": 6,
@@ -285,7 +295,9 @@
       "currency": "USD",
       "listPrice": "$19.99",
       "finalPrice": "$13.99",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0HF7NZ6VN",
+      "variantCount": 56
     },
     {
       "rank": 7,
@@ -322,7 +334,9 @@
       "currency": "USD",
       "listPrice": "$23.99",
       "finalPrice": "$9.99",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0HDJKRB4W",
+      "variantCount": 61
     },
     {
       "rank": 8,
@@ -359,7 +373,9 @@
       "currency": "USD",
       "listPrice": "$19.99",
       "finalPrice": "$12.99",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0HBBZ2JJT",
+      "variantCount": 71
     },
     {
       "rank": 9,
@@ -398,7 +414,9 @@
       "currency": "USD",
       "listPrice": "$17.99",
       "finalPrice": "$14.98",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0GZ3X7TJ7",
+      "variantCount": 74
     },
     {
       "rank": 10,
@@ -435,7 +453,9 @@
       "currency": "USD",
       "listPrice": "$19.99",
       "finalPrice": "$14.99",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0H6JW5HQH",
+      "variantCount": 81
     },
     {
       "rank": 11,
@@ -474,7 +494,9 @@
       "currency": "USD",
       "listPrice": "$24.99",
       "finalPrice": "$12.74",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0GWLVL7WL",
+      "variantCount": 36
     },
     {
       "rank": 12,
@@ -511,7 +533,9 @@
       "currency": "USD",
       "listPrice": "未显示/无法获取",
       "finalPrice": "$25.98",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0HFVKC73J",
+      "variantCount": 62
     },
     {
       "rank": 13,
@@ -526,7 +550,7 @@
         "Coupon 8%"
       ],
       "promotionStatus": "detected",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-08-27",
       "mainCategory": "Clothing, Shoes & Jewelry",
       "mainBsr": 12845,
       "subCategory": "Women's Button-Down Shirts",
@@ -538,7 +562,7 @@
         }
       ],
       "detailSource": "Ecomtool MCP：Amazon 前台商品信息 + 市场分析",
-      "listingDateSource": "Ecomtool 市场分析",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "complete",
       "detailAttempts": 1,
       "sourceDate": "2026-09-14",
@@ -550,7 +574,9 @@
       "currency": "USD",
       "listPrice": "$24.99",
       "finalPrice": "$18.39",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0H712MWSZ",
+      "variantCount": 51
     },
     {
       "rank": 14,
@@ -587,7 +613,9 @@
       "currency": "USD",
       "listPrice": "$23.99",
       "finalPrice": "$12.99",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0HDC4693P",
+      "variantCount": 60
     },
     {
       "rank": 15,
@@ -626,7 +654,9 @@
       "currency": "USD",
       "listPrice": "$29.99",
       "finalPrice": "$17.98",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0HFFJ3TCD",
+      "variantCount": 75
     },
     {
       "rank": 16,
@@ -663,7 +693,9 @@
       "currency": "USD",
       "listPrice": "$24.99",
       "finalPrice": "$9.99",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0H3PR8H5Z",
+      "variantCount": 60
     },
     {
       "rank": 17,
@@ -700,7 +732,9 @@
       "currency": "USD",
       "listPrice": "$24.99",
       "finalPrice": "$12.99",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0HG9JZQJ3",
+      "variantCount": 72
     },
     {
       "rank": 18,
@@ -737,7 +771,9 @@
       "currency": "USD",
       "listPrice": "$19.99",
       "finalPrice": "$9.99",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0H6QGCRR6",
+      "variantCount": 73
     },
     {
       "rank": 19,
@@ -753,7 +789,7 @@
         "促销 20%"
       ],
       "promotionStatus": "detected",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-09-05",
       "mainCategory": "Clothing, Shoes & Jewelry",
       "mainBsr": 19190,
       "subCategory": "Women's Button-Down Shirts",
@@ -765,7 +801,7 @@
         }
       ],
       "detailSource": "Ecomtool MCP：Amazon 前台商品信息 + 市场分析",
-      "listingDateSource": "Ecomtool 市场分析",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "complete",
       "detailAttempts": 1,
       "sourceDate": "2026-09-14",
@@ -777,7 +813,9 @@
       "currency": "USD",
       "listPrice": "$34.99",
       "finalPrice": "$16.99",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0H73NVRWW",
+      "variantCount": 41
     },
     {
       "rank": 20,
@@ -814,7 +852,9 @@
       "currency": "USD",
       "listPrice": "$29.99",
       "finalPrice": "$19.99",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0H78ZL5ZH",
+      "variantCount": 55
     },
     {
       "rank": 21,
@@ -854,7 +894,9 @@
       "currency": "USD",
       "listPrice": "未显示/无法获取",
       "finalPrice": "$22.22",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0H5KD44LY",
+      "variantCount": 71
     },
     {
       "rank": 22,
@@ -891,7 +933,9 @@
       "currency": "USD",
       "listPrice": "未显示/无法获取",
       "finalPrice": "$6.97",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0HHRLJFG2",
+      "variantCount": 66
     },
     {
       "rank": 23,
@@ -928,7 +972,9 @@
       "currency": "USD",
       "listPrice": "未显示/无法获取",
       "finalPrice": "$24.99",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0H3DZ23CD",
+      "variantCount": 48
     },
     {
       "rank": 24,
@@ -965,7 +1011,9 @@
       "currency": "USD",
       "listPrice": "$49.99",
       "finalPrice": "$39.99",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0H7H669NL",
+      "variantCount": 34
     },
     {
       "rank": 25,
@@ -1004,7 +1052,9 @@
       "currency": "USD",
       "listPrice": "未显示/无法获取",
       "finalPrice": "$9.99",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0H3PCYZBD",
+      "variantCount": 71
     },
     {
       "rank": 26,
@@ -1041,7 +1091,9 @@
       "currency": "USD",
       "listPrice": "$19.99",
       "finalPrice": "$13.99",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0H5QZFNHM",
+      "variantCount": 57
     },
     {
       "rank": 27,
@@ -1078,7 +1130,9 @@
       "currency": "USD",
       "listPrice": "$29.99",
       "finalPrice": "$19.99",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0H4RFBQYJ",
+      "variantCount": 41
     },
     {
       "rank": 28,
@@ -1115,7 +1169,9 @@
       "currency": "USD",
       "listPrice": "$29.99",
       "finalPrice": "$17.99",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0H5C4KJHD",
+      "variantCount": 61
     },
     {
       "rank": 29,
@@ -1152,7 +1208,9 @@
       "currency": "USD",
       "listPrice": "$19.99",
       "finalPrice": "$11.99",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0H8YP3L2Q",
+      "variantCount": 61
     },
     {
       "rank": 30,
@@ -1191,7 +1249,9 @@
       "currency": "USD",
       "listPrice": "$19.99",
       "finalPrice": "$17.99",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0H4QMFP63",
+      "variantCount": 98
     },
     {
       "rank": 31,
@@ -1228,7 +1288,9 @@
       "currency": "USD",
       "listPrice": "$32.99",
       "finalPrice": "$19.99",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0HF8DXDFY",
+      "variantCount": 97
     },
     {
       "rank": 32,
@@ -1265,7 +1327,9 @@
       "currency": "USD",
       "listPrice": "未显示/无法获取",
       "finalPrice": "$16.99",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0HBQMRN9V",
+      "variantCount": 28
     },
     {
       "rank": 33,
@@ -1302,7 +1366,9 @@
       "currency": "USD",
       "listPrice": "$29.99",
       "finalPrice": "$23.99",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0H2PVKZ8L",
+      "variantCount": 44
     },
     {
       "rank": 34,
@@ -1341,7 +1407,9 @@
       "currency": "USD",
       "listPrice": "$30.99",
       "finalPrice": "$26.09",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0H38XCTB4",
+      "variantCount": 37
     },
     {
       "rank": 35,
@@ -1378,7 +1446,9 @@
       "currency": "USD",
       "listPrice": "$19.99",
       "finalPrice": "$9.99",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0HCCBVY44",
+      "variantCount": 61
     },
     {
       "rank": 36,
@@ -1417,7 +1487,9 @@
       "currency": "USD",
       "listPrice": "$6.98",
       "finalPrice": "$2.93",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0HCV6NRBL",
+      "variantCount": 21
     },
     {
       "rank": 37,
@@ -1430,14 +1502,14 @@
       "promotion": "暂无促销",
       "promotions": [],
       "promotionStatus": "none",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-08-06",
       "mainCategory": "Clothing, Shoes & Jewelry",
       "mainBsr": 33238,
       "subCategory": "Women's Blouses & Button-Down Shirts",
       "subBsr": 1636,
       "subRanks": [],
       "detailSource": "Ecomtool MCP：Amazon 前台商品信息 + 市场分析",
-      "listingDateSource": "Ecomtool 市场分析",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "complete",
       "detailAttempts": 1,
       "sourceDate": "2026-09-14",
@@ -1449,7 +1521,9 @@
       "currency": "USD",
       "listPrice": "未显示/无法获取",
       "finalPrice": "$24.99",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0H2XY6HXX",
+      "variantCount": 1
     },
     {
       "rank": 38,
@@ -1486,7 +1560,9 @@
       "currency": "USD",
       "listPrice": "未显示/无法获取",
       "finalPrice": "$17.98",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0HBQFY4WG",
+      "variantCount": 21
     },
     {
       "rank": 39,
@@ -1523,7 +1599,9 @@
       "currency": "USD",
       "listPrice": "$29.99",
       "finalPrice": "$17.99",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0H3VFPCJW",
+      "variantCount": 48
     },
     {
       "rank": 40,
@@ -1560,7 +1638,9 @@
       "currency": "USD",
       "listPrice": "未显示/无法获取",
       "finalPrice": "$6.97",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0HGFV6YSZ",
+      "variantCount": 126
     },
     {
       "rank": 41,
@@ -1599,7 +1679,9 @@
       "currency": "USD",
       "listPrice": "$24.99",
       "finalPrice": "$11.99",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0GZJXDVC6",
+      "variantCount": 49
     },
     {
       "rank": 42,
@@ -1636,7 +1718,9 @@
       "currency": "USD",
       "listPrice": "未显示/无法获取",
       "finalPrice": "$14.98",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0HBK46YRC",
+      "variantCount": 67
     },
     {
       "rank": 43,
@@ -1675,7 +1759,9 @@
       "currency": "USD",
       "listPrice": "$24.99",
       "finalPrice": "$17.99",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0H36RSVD9",
+      "variantCount": 51
     },
     {
       "rank": 44,
@@ -1714,7 +1800,9 @@
       "currency": "USD",
       "listPrice": "$24.99",
       "finalPrice": "$9.98",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0H1RN624R",
+      "variantCount": 32
     },
     {
       "rank": 45,
@@ -1753,7 +1841,9 @@
       "currency": "USD",
       "listPrice": "$19.99",
       "finalPrice": "$14.98",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0GZVRCWZ5",
+      "variantCount": 49
     },
     {
       "rank": 46,
@@ -1790,7 +1880,9 @@
       "currency": "USD",
       "listPrice": "未显示/无法获取",
       "finalPrice": "$19.99",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0H8T3MPD8",
+      "variantCount": 48
     },
     {
       "rank": 47,
@@ -1829,7 +1921,9 @@
       "currency": "USD",
       "listPrice": "$35.99",
       "finalPrice": "$14.99",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0GX6PZJW1",
+      "variantCount": 41
     },
     {
       "rank": 48,
@@ -1868,7 +1962,9 @@
       "currency": "USD",
       "listPrice": "$29.99",
       "finalPrice": "$14.24",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0H2YQNSZ3",
+      "variantCount": 31
     },
     {
       "rank": 49,
@@ -1905,7 +2001,9 @@
       "currency": "USD",
       "listPrice": "$29.99",
       "finalPrice": "$14.99",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0H4FG6J4G",
+      "variantCount": 60
     },
     {
       "rank": 50,
@@ -1944,7 +2042,9 @@
       "currency": "USD",
       "listPrice": "$26.99",
       "finalPrice": "$19.99",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0H3PHWQB1",
+      "variantCount": 41
     },
     {
       "rank": 51,
@@ -1983,7 +2083,9 @@
       "currency": "USD",
       "listPrice": "$29.98",
       "finalPrice": "$14.98",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0H6P85FL1",
+      "variantCount": 26
     },
     {
       "rank": 52,
@@ -2022,7 +2124,9 @@
       "currency": "USD",
       "listPrice": "$29.99",
       "finalPrice": "$17.48",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0H95DB45F",
+      "variantCount": 38
     },
     {
       "rank": 53,
@@ -2061,7 +2165,9 @@
       "currency": "USD",
       "listPrice": "$19.99",
       "finalPrice": "$8.49",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0H75P5QHL",
+      "variantCount": 80
     },
     {
       "rank": 54,
@@ -2098,7 +2204,9 @@
       "currency": "USD",
       "listPrice": "未显示/无法获取",
       "finalPrice": "$8.99",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0HK4TWJML",
+      "variantCount": 85
     },
     {
       "rank": 55,
@@ -2137,7 +2245,9 @@
       "currency": "USD",
       "listPrice": "$49.99",
       "finalPrice": "$22.99",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0H6M8VYM9",
+      "variantCount": 31
     },
     {
       "rank": 56,
@@ -2174,7 +2284,9 @@
       "currency": "USD",
       "listPrice": "$29.99",
       "finalPrice": "$16.99",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0HJQYJQZP",
+      "variantCount": 33
     },
     {
       "rank": 57,
@@ -2211,7 +2323,9 @@
       "currency": "USD",
       "listPrice": "未显示/无法获取",
       "finalPrice": "$12.99",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0H5C2DT25",
+      "variantCount": 45
     },
     {
       "rank": 58,
@@ -2248,7 +2362,9 @@
       "currency": "USD",
       "listPrice": "$28.99",
       "finalPrice": "$26.99",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0H71HNXZ9",
+      "variantCount": 18
     },
     {
       "rank": 59,
@@ -2285,7 +2401,9 @@
       "currency": "USD",
       "listPrice": "未显示/无法获取",
       "finalPrice": "$19.99",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0H7BYCFL3",
+      "variantCount": 25
     },
     {
       "rank": 60,
@@ -2324,7 +2442,9 @@
       "currency": "USD",
       "listPrice": "$29.99",
       "finalPrice": "$17.98",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0H4FB3HLW",
+      "variantCount": 66
     },
     {
       "rank": 61,
@@ -2361,7 +2481,9 @@
       "currency": "USD",
       "listPrice": "$29.99",
       "finalPrice": "$22.99",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0H4M64MSN",
+      "variantCount": 46
     },
     {
       "rank": 62,
@@ -2401,7 +2523,9 @@
       "currency": "USD",
       "listPrice": "$45.99",
       "finalPrice": "$21.24",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0GYLGCX39",
+      "variantCount": 31
     },
     {
       "rank": 63,
@@ -2440,7 +2564,9 @@
       "currency": "USD",
       "listPrice": "$29.99",
       "finalPrice": "$14.98",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0HH9M1PVD",
+      "variantCount": 85
     },
     {
       "rank": 64,
@@ -2477,7 +2603,9 @@
       "currency": "USD",
       "listPrice": "未显示/无法获取",
       "finalPrice": "$19.99",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0H1CBNMMJ",
+      "variantCount": 61
     },
     {
       "rank": 65,
@@ -2516,7 +2644,9 @@
       "currency": "USD",
       "listPrice": "$49.99",
       "finalPrice": "$33.29",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0H6J7TGJQ",
+      "variantCount": 25
     },
     {
       "rank": 66,
@@ -2553,7 +2683,9 @@
       "currency": "USD",
       "listPrice": "$19.99",
       "finalPrice": "$9.99",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0H36RNR5G",
+      "variantCount": 61
     },
     {
       "rank": 67,
@@ -2593,7 +2725,9 @@
       "currency": "USD",
       "listPrice": "$39.99",
       "finalPrice": "$19.94",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0GYDKQ9SK",
+      "variantCount": 41
     },
     {
       "rank": 68,
@@ -2633,7 +2767,9 @@
       "currency": "USD",
       "listPrice": "未显示/无法获取",
       "finalPrice": "$20.39",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0GZJZBGXN",
+      "variantCount": 31
     },
     {
       "rank": 69,
@@ -2670,7 +2806,9 @@
       "currency": "USD",
       "listPrice": "$19.99",
       "finalPrice": "$7.99",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0GX123RRZ",
+      "variantCount": 70
     },
     {
       "rank": 70,
@@ -2709,7 +2847,9 @@
       "currency": "USD",
       "listPrice": "$38.99",
       "finalPrice": "$23.79",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0HGR1PLWC",
+      "variantCount": 73
     },
     {
       "rank": 71,
@@ -2746,7 +2886,9 @@
       "currency": "USD",
       "listPrice": "未显示/无法获取",
       "finalPrice": "$14.99",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0HDHTXCKZ",
+      "variantCount": 72
     },
     {
       "rank": 72,
@@ -2784,7 +2926,9 @@
       "listPrice": "未显示/无法获取",
       "finalPrice": "未显示/无法获取",
       "detailCapturedAt": "2026-09-14T17:21:48+08:00",
-      "detailError": "Amazon 前台价格返回 0，按未显示/无法获取处理"
+      "detailError": "Amazon 前台价格返回 0，按未显示/无法获取处理",
+      "parentAsin": "B0H8PDX79K",
+      "variantCount": 51
     },
     {
       "rank": 73,
@@ -2821,7 +2965,9 @@
       "currency": "USD",
       "listPrice": "$24.99",
       "finalPrice": "$17.99",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0H4G1K6QK",
+      "variantCount": 70
     },
     {
       "rank": 74,
@@ -2860,7 +3006,9 @@
       "currency": "USD",
       "listPrice": "$23.99",
       "finalPrice": "$9.99",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0H9RSD782",
+      "variantCount": 54
     },
     {
       "rank": 75,
@@ -2897,7 +3045,9 @@
       "currency": "USD",
       "listPrice": "未显示/无法获取",
       "finalPrice": "$12.99",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0H5BPWM3M",
+      "variantCount": 36
     },
     {
       "rank": 76,
@@ -2937,7 +3087,9 @@
       "currency": "USD",
       "listPrice": "$49.99",
       "finalPrice": "$23.41",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0H5LZ31MR",
+      "variantCount": 26
     },
     {
       "rank": 77,
@@ -2977,7 +3129,9 @@
       "currency": "USD",
       "listPrice": "$39.99",
       "finalPrice": "$12.59",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0GWYTZDC7",
+      "variantCount": 41
     },
     {
       "rank": 78,
@@ -3014,7 +3168,9 @@
       "currency": "USD",
       "listPrice": "未显示/无法获取",
       "finalPrice": "$24.99",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0DKBWV3JT",
+      "variantCount": 39
     },
     {
       "rank": 79,
@@ -3051,7 +3207,9 @@
       "currency": "USD",
       "listPrice": "未显示/无法获取",
       "finalPrice": "$26.99",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0H5BM2R3L",
+      "variantCount": 18
     },
     {
       "rank": 80,
@@ -3090,7 +3248,9 @@
       "currency": "USD",
       "listPrice": "$34.99",
       "finalPrice": "$19.99",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0H38MBSCY",
+      "variantCount": 26
     },
     {
       "rank": 81,
@@ -3127,7 +3287,9 @@
       "currency": "USD",
       "listPrice": "$29.99",
       "finalPrice": "$19.99",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0H5VRCP4F",
+      "variantCount": 51
     },
     {
       "rank": 82,
@@ -3164,7 +3326,9 @@
       "currency": "USD",
       "listPrice": "未显示/无法获取",
       "finalPrice": "$23.99",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0H5KSQ9WT",
+      "variantCount": 36
     },
     {
       "rank": 83,
@@ -3203,7 +3367,9 @@
       "currency": "USD",
       "listPrice": "$19.99",
       "finalPrice": "$13.59",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0HFVPC86M",
+      "variantCount": 36
     },
     {
       "rank": 84,
@@ -3240,7 +3406,9 @@
       "currency": "USD",
       "listPrice": "未显示/无法获取",
       "finalPrice": "$5.97",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0HDPZW3XD",
+      "variantCount": 95
     },
     {
       "rank": 85,
@@ -3253,7 +3421,7 @@
       "promotion": "暂无促销",
       "promotions": [],
       "promotionStatus": "none",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-09-09",
       "mainCategory": "Clothing, Shoes & Jewelry",
       "mainBsr": 73658,
       "subCategory": "Women's Blouses & Button-Down Shirts",
@@ -3265,7 +3433,7 @@
         }
       ],
       "detailSource": "Ecomtool MCP：Amazon 前台商品信息 + 市场分析",
-      "listingDateSource": "Ecomtool 市场分析",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "partial",
       "detailAttempts": 1,
       "sourceDate": "2026-09-14",
@@ -3278,7 +3446,9 @@
       "listPrice": "未显示/无法获取",
       "finalPrice": "未显示/无法获取",
       "detailCapturedAt": "2026-09-14T17:21:48+08:00",
-      "detailError": "Amazon 前台价格返回 0，按未显示/无法获取处理"
+      "detailError": "Amazon 前台价格返回 0，按未显示/无法获取处理",
+      "parentAsin": "B0HCVMDKD3",
+      "variantCount": 5
     },
     {
       "rank": 86,
@@ -3315,7 +3485,9 @@
       "currency": "USD",
       "listPrice": "$34.99",
       "finalPrice": "$21.99",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0H5W4XSGQ",
+      "variantCount": 41
     },
     {
       "rank": 87,
@@ -3353,7 +3525,9 @@
       "listPrice": "未显示/无法获取",
       "finalPrice": "未显示/无法获取",
       "detailCapturedAt": "2026-09-14T17:21:48+08:00",
-      "detailError": "Amazon 前台价格返回 0，按未显示/无法获取处理"
+      "detailError": "Amazon 前台价格返回 0，按未显示/无法获取处理",
+      "parentAsin": "B0H9XL15HP",
+      "variantCount": 31
     },
     {
       "rank": 88,
@@ -3393,7 +3567,9 @@
       "currency": "USD",
       "listPrice": "$22.49",
       "finalPrice": "$14.39",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0H3699L5L",
+      "variantCount": 31
     },
     {
       "rank": 89,
@@ -3430,7 +3606,9 @@
       "currency": "USD",
       "listPrice": "未显示/无法获取",
       "finalPrice": "$19.97",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0HCNMJRW4",
+      "variantCount": 104
     },
     {
       "rank": 90,
@@ -3467,7 +3645,9 @@
       "currency": "USD",
       "listPrice": "未显示/无法获取",
       "finalPrice": "$21.99",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0H6PVP9RY",
+      "variantCount": 60
     },
     {
       "rank": 91,
@@ -3504,7 +3684,9 @@
       "currency": "USD",
       "listPrice": "未显示/无法获取",
       "finalPrice": "$26.99",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0H9S2ZWLD",
+      "variantCount": 31
     },
     {
       "rank": 92,
@@ -3543,7 +3725,9 @@
       "currency": "USD",
       "listPrice": "未显示/无法获取",
       "finalPrice": "$25.49",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0GYS68S9S",
+      "variantCount": 41
     },
     {
       "rank": 93,
@@ -3559,7 +3743,7 @@
         "促销 8%"
       ],
       "promotionStatus": "detected",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-08-27",
       "mainCategory": "Clothing, Shoes & Jewelry",
       "mainBsr": 77549,
       "subCategory": "Women's Button-Down Shirts",
@@ -3571,7 +3755,7 @@
         }
       ],
       "detailSource": "Ecomtool MCP：Amazon 前台商品信息 + 市场分析",
-      "listingDateSource": "Ecomtool 市场分析",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "complete",
       "detailAttempts": 1,
       "sourceDate": "2026-09-14",
@@ -3583,7 +3767,9 @@
       "currency": "USD",
       "listPrice": "未显示/无法获取",
       "finalPrice": "$8.59",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0HCNQJ2NQ",
+      "variantCount": 201
     },
     {
       "rank": 94,
@@ -3623,7 +3809,9 @@
       "currency": "USD",
       "listPrice": "$36.99",
       "finalPrice": "$15.29",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0GXVQ6N53",
+      "variantCount": 40
     },
     {
       "rank": 95,
@@ -3663,7 +3851,9 @@
       "currency": "USD",
       "listPrice": "未显示/无法获取",
       "finalPrice": "$15.74",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0H32864YJ",
+      "variantCount": 41
     },
     {
       "rank": 96,
@@ -3702,7 +3892,9 @@
       "currency": "USD",
       "listPrice": "$12.99",
       "finalPrice": "$17.61",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0H9M1PZ1V",
+      "variantCount": 41
     },
     {
       "rank": 97,
@@ -3739,7 +3931,9 @@
       "currency": "USD",
       "listPrice": "$32.98",
       "finalPrice": "$19.98",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0HFWWNQL5",
+      "variantCount": 56
     },
     {
       "rank": 98,
@@ -3778,7 +3972,9 @@
       "currency": "USD",
       "listPrice": "$29.99",
       "finalPrice": "$21.31",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0H6JH16JJ",
+      "variantCount": 61
     },
     {
       "rank": 99,
@@ -3815,7 +4011,9 @@
       "currency": "USD",
       "listPrice": "未显示/无法获取",
       "finalPrice": "$32.99",
-      "detailCapturedAt": "2026-09-14T17:21:48+08:00"
+      "detailCapturedAt": "2026-09-14T17:21:48+08:00",
+      "parentAsin": "B0H8S99MJQ",
+      "variantCount": 23
     },
     {
       "rank": 100,
@@ -3853,7 +4051,9 @@
       "listPrice": "未显示/无法获取",
       "finalPrice": "未显示/无法获取",
       "detailCapturedAt": "2026-09-14T17:21:48+08:00",
-      "detailError": "Amazon 前台价格返回 0，按未显示/无法获取处理"
+      "detailError": "Amazon 前台价格返回 0，按未显示/无法获取处理",
+      "parentAsin": "B0HD7FJ2LL",
+      "variantCount": 5
     }
   ]
 }

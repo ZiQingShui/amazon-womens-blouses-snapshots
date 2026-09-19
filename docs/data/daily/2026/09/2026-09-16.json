@@ -50,11 +50,11 @@
       "price": 97,
       "mainBsr": 100,
       "subBsr": 99,
-      "listingDate": 88,
+      "listingDate": 90,
       "promotion": 100
     },
     "detailChecked": 100,
-    "detailSourceValid": null,
+    "detailSourceValid": true,
     "coverageFailures": {},
     "provenance": {
       "fallbackRows": 0,
@@ -107,7 +107,9 @@
       "reviewCount": 552,
       "rating": 4.3,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0GWR3M54M",
+      "variantCount": 101
     },
     {
       "rank": 2,
@@ -151,7 +153,9 @@
       "rating": 4.7,
       "feedbackSource": "用户上传榜单导出",
       "feedbackCapturedAt": "2026-9-16 09:44:51",
-      "priceNote": "商品详情价格 0 非有效报价；原始榜单标记不可售"
+      "priceNote": "商品详情价格 0 非有效报价；原始榜单标记不可售",
+      "parentAsin": "B0H6B5RV4M",
+      "variantCount": 58
     },
     {
       "rank": 3,
@@ -194,7 +198,9 @@
       "reviewCount": 656,
       "rating": 4.2,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0H39FCLG9",
+      "variantCount": 126
     },
     {
       "rank": 4,
@@ -237,7 +243,9 @@
       "reviewCount": 46,
       "rating": 4.1,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0H8R7HB3N",
+      "variantCount": 105
     },
     {
       "rank": 5,
@@ -280,7 +288,9 @@
       "reviewCount": 98,
       "rating": 4.2,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0GZVYHT3P",
+      "variantCount": 79
     },
     {
       "rank": 6,
@@ -323,7 +333,9 @@
       "reviewCount": 139,
       "rating": 4.2,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0HBBZ2JJT",
+      "variantCount": 71
     },
     {
       "rank": 7,
@@ -366,7 +378,9 @@
       "reviewCount": 48,
       "rating": 4.4,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0H6JW5HQH",
+      "variantCount": 81
     },
     {
       "rank": 8,
@@ -409,7 +423,9 @@
       "reviewCount": 46,
       "rating": 4.2,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0HDJKRB4W",
+      "variantCount": 61
     },
     {
       "rank": 9,
@@ -452,7 +468,9 @@
       "reviewCount": 25,
       "rating": 4.6,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0H712MWSZ",
+      "variantCount": 51
     },
     {
       "rank": 10,
@@ -497,7 +515,9 @@
       "reviewCount": 56,
       "rating": 4.2,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0HFFJ3TCD",
+      "variantCount": 75
     },
     {
       "rank": 11,
@@ -542,7 +562,9 @@
       "reviewCount": 20,
       "rating": 4.4,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0H95DB45F",
+      "variantCount": 39
     },
     {
       "rank": 12,
@@ -585,7 +607,9 @@
       "reviewCount": 183,
       "rating": 4.2,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0H6QGCRR6",
+      "variantCount": 73
     },
     {
       "rank": 13,
@@ -628,7 +652,9 @@
       "reviewCount": 36,
       "rating": 4.4,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0H4RFBQYJ",
+      "variantCount": 41
     },
     {
       "rank": 14,
@@ -671,7 +697,9 @@
       "reviewCount": 21,
       "rating": 4.5,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0H7H669NL",
+      "variantCount": 34
     },
     {
       "rank": 15,
@@ -714,7 +742,9 @@
       "reviewCount": 53,
       "rating": 4.2,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0H3PR8H5Z",
+      "variantCount": 60
     },
     {
       "rank": 16,
@@ -757,7 +787,9 @@
       "reviewCount": 40,
       "rating": 4.4,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0HDC4693P",
+      "variantCount": 60
     },
     {
       "rank": 17,
@@ -802,7 +834,9 @@
       "reviewCount": 56,
       "rating": 4.5,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0H5KD44LY",
+      "variantCount": 71
     },
     {
       "rank": 18,
@@ -847,7 +881,9 @@
       "reviewCount": 22,
       "rating": 4.6,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0H78ZL5ZH",
+      "variantCount": 55
     },
     {
       "rank": 19,
@@ -890,7 +926,9 @@
       "reviewCount": 54,
       "rating": 4.5,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0HG9JZQJ3",
+      "variantCount": 72
     },
     {
       "rank": 20,
@@ -935,7 +973,9 @@
       "reviewCount": 2,
       "rating": 5.0,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0HCV6NRBL",
+      "variantCount": 21
     },
     {
       "rank": 21,
@@ -978,7 +1018,9 @@
       "reviewCount": 50,
       "rating": 4.4,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0H8YP3L2Q",
+      "variantCount": 61
     },
     {
       "rank": 22,
@@ -1023,7 +1065,9 @@
       "reviewCount": 73,
       "rating": 4.2,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0H4QMFP63",
+      "variantCount": 98
     },
     {
       "rank": 23,
@@ -1066,7 +1110,9 @@
       "reviewCount": 10,
       "rating": 4.5,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0H6JH16JJ",
+      "variantCount": 61
     },
     {
       "rank": 24,
@@ -1109,7 +1155,9 @@
       "reviewCount": 24,
       "rating": 4.6,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0H3PCYZBD",
+      "variantCount": 71
     },
     {
       "rank": 25,
@@ -1152,7 +1200,9 @@
       "reviewCount": 35,
       "rating": 4.1,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0H5QZFNHM",
+      "variantCount": 57
     },
     {
       "rank": 26,
@@ -1195,7 +1245,9 @@
       "reviewCount": 34,
       "rating": 4.3,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0H38XCTB4",
+      "variantCount": 37
     },
     {
       "rank": 27,
@@ -1240,7 +1292,9 @@
       "reviewCount": 19,
       "rating": 4.2,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0H73NVRWW",
+      "variantCount": 41
     },
     {
       "rank": 28,
@@ -1283,7 +1337,9 @@
       "reviewCount": 2,
       "rating": 5.0,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0HHRLJFG2",
+      "variantCount": 66
     },
     {
       "rank": 29,
@@ -1326,7 +1382,9 @@
       "reviewCount": 32,
       "rating": 4.0,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0H3DZ23CD",
+      "variantCount": 48
     },
     {
       "rank": 30,
@@ -1369,7 +1427,9 @@
       "reviewCount": 4,
       "rating": 4.2,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0HBQMRN9V",
+      "variantCount": 28
     },
     {
       "rank": 31,
@@ -1414,7 +1474,9 @@
       "reviewCount": 19,
       "rating": 4.3,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0GZJXDVC6",
+      "variantCount": 49
     },
     {
       "rank": 32,
@@ -1457,7 +1519,9 @@
       "reviewCount": 47,
       "rating": 4.3,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0HCCBVY44",
+      "variantCount": 61
     },
     {
       "rank": 33,
@@ -1502,7 +1566,9 @@
       "reviewCount": 30,
       "rating": 4.6,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0H4FB3HLW",
+      "variantCount": 66
     },
     {
       "rank": 34,
@@ -1545,7 +1611,9 @@
       "reviewCount": 41,
       "rating": 3.9,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0H36RSVD9",
+      "variantCount": 51
     },
     {
       "rank": 35,
@@ -1588,7 +1656,9 @@
       "reviewCount": 27,
       "rating": 4.2,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0HF8DXDFY",
+      "variantCount": 97
     },
     {
       "rank": 36,
@@ -1631,7 +1701,9 @@
       "reviewCount": 22,
       "rating": 4.8,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0H8T3MPD8",
+      "variantCount": 48
     },
     {
       "rank": 37,
@@ -1674,7 +1746,9 @@
       "reviewCount": 26,
       "rating": 4.7,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0H5C4KJHD",
+      "variantCount": 61
     },
     {
       "rank": 38,
@@ -1717,7 +1791,9 @@
       "reviewCount": 38,
       "rating": 4.4,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0H2PVKZ8L",
+      "variantCount": 44
     },
     {
       "rank": 39,
@@ -1762,7 +1838,9 @@
       "reviewCount": 38,
       "rating": 4.3,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0H1RN624R",
+      "variantCount": 32
     },
     {
       "rank": 40,
@@ -1807,7 +1885,9 @@
       "reviewCount": 30,
       "rating": 4.6,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0GX6PZJW1",
+      "variantCount": 41
     },
     {
       "rank": 41,
@@ -1850,7 +1930,9 @@
       "reviewCount": 3,
       "rating": 5.0,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0HGFV6YSZ",
+      "variantCount": 126
     },
     {
       "rank": 42,
@@ -1896,7 +1978,9 @@
       "reviewCount": 22,
       "rating": 4.5,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0H6M8VYM9",
+      "variantCount": 31
     },
     {
       "rank": 43,
@@ -1941,7 +2025,9 @@
       "reviewCount": 25,
       "rating": 4.6,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0H6P85FL1",
+      "variantCount": 26
     },
     {
       "rank": 44,
@@ -1984,7 +2070,9 @@
       "reviewCount": 21,
       "rating": 4.2,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0H75P5QHL",
+      "variantCount": 80
     },
     {
       "rank": 45,
@@ -2027,7 +2115,9 @@
       "reviewCount": 0,
       "rating": 0.0,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0HK4TWJML",
+      "variantCount": 85
     },
     {
       "rank": 46,
@@ -2072,7 +2162,9 @@
       "reviewCount": 20,
       "rating": 4.2,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0HGR1PLWC",
+      "variantCount": 73
     },
     {
       "rank": 47,
@@ -2115,7 +2207,9 @@
       "reviewCount": 43,
       "rating": 4.1,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0H4FG6J4G",
+      "variantCount": 60
     },
     {
       "rank": 48,
@@ -2158,7 +2252,9 @@
       "reviewCount": 43,
       "rating": 4.0,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0H36RNR5G",
+      "variantCount": 61
     },
     {
       "rank": 49,
@@ -2201,7 +2297,9 @@
       "reviewCount": 24,
       "rating": 4.5,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0H79H5TRL",
+      "variantCount": 51
     },
     {
       "rank": 50,
@@ -2244,7 +2342,9 @@
       "reviewCount": 5,
       "rating": 4.1,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0H9M1PZ1V",
+      "variantCount": 41
     },
     {
       "rank": 51,
@@ -2287,7 +2387,9 @@
       "reviewCount": 29,
       "rating": 4.2,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0H7BYCFL3",
+      "variantCount": 25
     },
     {
       "rank": 52,
@@ -2330,7 +2432,9 @@
       "reviewCount": 2,
       "rating": 5.0,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0HGF9C2RV",
+      "variantCount": 56
     },
     {
       "rank": 53,
@@ -2373,7 +2477,9 @@
       "reviewCount": 0,
       "rating": 0.0,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0HBQFY4WG",
+      "variantCount": 21
     },
     {
       "rank": 54,
@@ -2416,7 +2522,9 @@
       "reviewCount": 15,
       "rating": 4.7,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0H3PHWQB1",
+      "variantCount": 41
     },
     {
       "rank": 55,
@@ -2459,7 +2567,9 @@
       "reviewCount": 18,
       "rating": 4.2,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0H7HG7LRH",
+      "variantCount": 26
     },
     {
       "rank": 56,
@@ -2502,7 +2612,9 @@
       "reviewCount": 39,
       "rating": 4.4,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0HDHTXCKZ",
+      "variantCount": 72
     },
     {
       "rank": 57,
@@ -2545,7 +2657,9 @@
       "reviewCount": 286,
       "rating": 4.2,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0DKBWV3JT",
+      "variantCount": 39
     },
     {
       "rank": 58,
@@ -2590,7 +2704,9 @@
       "reviewCount": 47,
       "rating": 4.3,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0H38MQRGQ",
+      "variantCount": 55
     },
     {
       "rank": 59,
@@ -2633,7 +2749,9 @@
       "reviewCount": 26,
       "rating": 4.2,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0HFVPC86M",
+      "variantCount": 36
     },
     {
       "rank": 60,
@@ -2678,7 +2796,9 @@
       "reviewCount": 20,
       "rating": 4.1,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0GZJZBGXN",
+      "variantCount": 31
     },
     {
       "rank": 61,
@@ -2721,7 +2841,9 @@
       "reviewCount": 19,
       "rating": 4.7,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0H71HNXZ9",
+      "variantCount": 18
     },
     {
       "rank": 62,
@@ -2764,7 +2886,9 @@
       "reviewCount": 101,
       "rating": 4.3,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0H1CBNMMJ",
+      "variantCount": 61
     },
     {
       "rank": 63,
@@ -2782,7 +2906,7 @@
         "Deal"
       ],
       "promotionStatus": "detected",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-09-04",
       "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "mainCategory": "Clothing, Shoes & Jewelry#762 in Women's Blouses & Button-Down Shirts",
       "mainBsr": 57586,
@@ -2809,7 +2933,9 @@
       "reviewCount": 19,
       "rating": 4.6,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0H9XL15HP",
+      "variantCount": 29
     },
     {
       "rank": 64,
@@ -2854,7 +2980,9 @@
       "reviewCount": 29,
       "rating": 4.1,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0H74T6XNT",
+      "variantCount": 35
     },
     {
       "rank": 65,
@@ -2897,7 +3025,9 @@
       "reviewCount": 29,
       "rating": 4.2,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0H38MBSCY",
+      "variantCount": 26
     },
     {
       "rank": 66,
@@ -2942,7 +3072,9 @@
       "reviewCount": 18,
       "rating": 4.8,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0H9RSD782",
+      "variantCount": 54
     },
     {
       "rank": 67,
@@ -2985,7 +3117,9 @@
       "reviewCount": 187,
       "rating": 2.3,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0HCNMJRW4",
+      "variantCount": 104
     },
     {
       "rank": 68,
@@ -3030,7 +3164,9 @@
       "reviewCount": 38,
       "rating": 4.0,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0GWJ4M4HW",
+      "variantCount": 40
     },
     {
       "rank": 69,
@@ -3073,7 +3209,9 @@
       "reviewCount": 162,
       "rating": 4.3,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0FV89M35N",
+      "variantCount": 108
     },
     {
       "rank": 70,
@@ -3116,7 +3254,9 @@
       "reviewCount": 24,
       "rating": 4.2,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0HJQYJQZP",
+      "variantCount": 33
     },
     {
       "rank": 71,
@@ -3159,7 +3299,9 @@
       "reviewCount": 4,
       "rating": 5.0,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0HGY1YN2M",
+      "variantCount": 36
     },
     {
       "rank": 72,
@@ -3204,7 +3346,9 @@
       "reviewCount": 2,
       "rating": 5.0,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0HCNQJ2NQ",
+      "variantCount": 201
     },
     {
       "rank": 73,
@@ -3247,7 +3391,9 @@
       "reviewCount": 29,
       "rating": 4.4,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0HH9G7L34",
+      "variantCount": 36
     },
     {
       "rank": 74,
@@ -3290,7 +3436,9 @@
       "reviewCount": 18,
       "rating": 4.6,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0H5C2DT25",
+      "variantCount": 45
     },
     {
       "rank": 75,
@@ -3333,7 +3481,9 @@
       "reviewCount": 30,
       "rating": 4.0,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0H4M64MSN",
+      "variantCount": 46
     },
     {
       "rank": 76,
@@ -3376,7 +3526,9 @@
       "reviewCount": 31,
       "rating": 4.0,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0GYS68S9S",
+      "variantCount": 41
     },
     {
       "rank": 77,
@@ -3419,7 +3571,9 @@
       "reviewCount": 33,
       "rating": 4.1,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0H3VFPCJW",
+      "variantCount": 48
     },
     {
       "rank": 78,
@@ -3462,7 +3616,9 @@
       "reviewCount": 62,
       "rating": 4.4,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0H6PVP9RY",
+      "variantCount": 60
     },
     {
       "rank": 79,
@@ -3506,7 +3662,9 @@
       "rating": 5.0,
       "feedbackSource": "用户上传榜单导出",
       "feedbackCapturedAt": "2026-9-16 09:44:51",
-      "priceNote": "商品详情价格 0 非有效报价；采用原始榜单价"
+      "priceNote": "商品详情价格 0 非有效报价；采用原始榜单价",
+      "parentAsin": "B0H8PDX79K",
+      "variantCount": 51
     },
     {
       "rank": 80,
@@ -3522,7 +3680,7 @@
       "priceSource": "Ecomtool MCP 商品详情",
       "promotions": [],
       "promotionStatus": "none",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-09-08",
       "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "mainCategory": "Clothing, Shoes & Jewelry#874 in Women's Blouses & Button-Down Shirts",
       "mainBsr": 31075,
@@ -3549,7 +3707,9 @@
       "reviewCount": 45,
       "rating": 3.9,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0HDPMKVJ4",
+      "variantCount": 52
     },
     {
       "rank": 81,
@@ -3592,7 +3752,9 @@
       "reviewCount": 25,
       "rating": 4.1,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0H1R55H9N",
+      "variantCount": 21
     },
     {
       "rank": 82,
@@ -3635,7 +3797,9 @@
       "reviewCount": 39,
       "rating": 4.1,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0H4G1K6QK",
+      "variantCount": 70
     },
     {
       "rank": 83,
@@ -3680,7 +3844,9 @@
       "reviewCount": 12,
       "rating": 4.5,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0H32864YJ",
+      "variantCount": 41
     },
     {
       "rank": 84,
@@ -3724,7 +3890,9 @@
       "rating": 4.3,
       "feedbackSource": "用户上传榜单导出",
       "feedbackCapturedAt": "2026-9-16 09:44:51",
-      "priceNote": "商品详情价格 0 非有效报价；原始榜单标记不可售"
+      "priceNote": "商品详情价格 0 非有效报价；原始榜单标记不可售",
+      "parentAsin": "B0H8PXXJ71",
+      "variantCount": 18
     },
     {
       "rank": 85,
@@ -3769,7 +3937,9 @@
       "reviewCount": 41,
       "rating": 4.3,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0HH9M1PVD",
+      "variantCount": 85
     },
     {
       "rank": 86,
@@ -3812,7 +3982,9 @@
       "reviewCount": 24,
       "rating": 4.7,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0H2YQNSZ3",
+      "variantCount": 31
     },
     {
       "rank": 87,
@@ -3855,7 +4027,9 @@
       "reviewCount": 30,
       "rating": 4.2,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0H4QQ8ZQ9",
+      "variantCount": 36
     },
     {
       "rank": 88,
@@ -3898,7 +4072,9 @@
       "reviewCount": 214,
       "rating": 4.1,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0GKSN5GPB",
+      "variantCount": 100
     },
     {
       "rank": 89,
@@ -3941,7 +4117,9 @@
       "reviewCount": 27,
       "rating": 4.2,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0H6J7TGJQ",
+      "variantCount": 25
     },
     {
       "rank": 90,
@@ -3984,7 +4162,9 @@
       "reviewCount": 9,
       "rating": 4.2,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0H2YF37CW",
+      "variantCount": 47
     },
     {
       "rank": 91,
@@ -4027,7 +4207,9 @@
       "reviewCount": 37,
       "rating": 4.3,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0HFWWNQL5",
+      "variantCount": 25
     },
     {
       "rank": 92,
@@ -4072,7 +4254,9 @@
       "reviewCount": 25,
       "rating": 4.6,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0GYDKQ9SK",
+      "variantCount": 41
     },
     {
       "rank": 93,
@@ -4115,7 +4299,9 @@
       "reviewCount": 3,
       "rating": 4.7,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0HJ1MVB73",
+      "variantCount": 111
     },
     {
       "rank": 94,
@@ -4158,7 +4344,9 @@
       "reviewCount": 2,
       "rating": 4.5,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0HBK46YRC",
+      "variantCount": 67
     },
     {
       "rank": 95,
@@ -4201,7 +4389,9 @@
       "reviewCount": 28,
       "rating": 4.1,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0HGR61T6R",
+      "variantCount": 41
     },
     {
       "rank": 96,
@@ -4245,7 +4435,9 @@
       "rating": 4.7,
       "feedbackSource": "用户上传榜单导出",
       "feedbackCapturedAt": "2026-9-16 09:44:51",
-      "priceNote": "商品详情价格 0 非有效报价；原始榜单标记不可售"
+      "priceNote": "商品详情价格 0 非有效报价；原始榜单标记不可售",
+      "parentAsin": "B0HCYGZYST",
+      "variantCount": 24
     },
     {
       "rank": 97,
@@ -4288,7 +4480,9 @@
       "reviewCount": 1,
       "rating": 5.0,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0H8YXQR7Q",
+      "variantCount": 13
     },
     {
       "rank": 98,
@@ -4331,7 +4525,9 @@
       "reviewCount": 7,
       "rating": 4.2,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0H87MXN6S",
+      "variantCount": 16
     },
     {
       "rank": 99,
@@ -4374,7 +4570,9 @@
       "reviewCount": 32,
       "rating": 3.9,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0H5196DW4",
+      "variantCount": 40
     },
     {
       "rank": 100,
@@ -4420,7 +4618,9 @@
       "reviewCount": 15,
       "rating": 5.0,
       "feedbackSource": "用户上传榜单导出",
-      "feedbackCapturedAt": "2026-9-16 09:44:51"
+      "feedbackCapturedAt": "2026-9-16 09:44:51",
+      "parentAsin": "B0GYLGCX39",
+      "variantCount": 31
     }
   ]
 }

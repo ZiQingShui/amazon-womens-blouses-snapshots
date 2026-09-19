@@ -550,13 +550,26 @@ class SnapshotArchiveTests(unittest.TestCase):
     def test_archived_placeholder_coverage_is_truthful(self):
         """占位文字（「未显示/无法获取」）不能算作有效字段。
 
-        样本固定用 2026-09-13 那一期：它含 16 条 listingDate 占位、24 条
-        promotion 未知，覆盖率必须如实反映，而不是像旧版那样记成 100。
-        这里刻意不读 latest.json —— latest 会随新快照滚动，旧的断言会因此失效。
+        样本固定用 2026-09-13 那一期。这里刻意不读 latest.json —— latest
+        会随新快照滚动，旧的断言会因此失效。
+
+        listingDate 的覆盖率**按占位条数动态推导**，不写死数字：历史补录会
+        持续把占位换成真实值（2026-09-20 补录后由 84 变为 97），写死就会
+        在每次补录后误报。核心要守住的是「占位不计入有效」，不是某个数字。
         """
-        snapshot = self.read_json("docs", "data/daily/2026/09/2026-09-13.json")
-        quality = publish_snapshot.validate(snapshot["items"])
-        self.assertEqual(quality["fieldCoverage"]["listingDate"], 84)
+        items = self.read_json("docs", "data/daily/2026/09/2026-09-13.json")["items"]
+        quality = publish_snapshot.validate(items)
+
+        placeholders = sum(
+            1 for x in items
+            if x.get("listingDate") in ("未显示/无法获取", "", None)
+        )
+        expected = len(items) - placeholders
+        self.assertEqual(quality["fieldCoverage"]["listingDate"], expected)
+        # 这一期确实存在占位，否则上面的断言就失去意义（恒为 100 也会通过）
+        self.assertGreater(placeholders, 0)
+
+        # promotion / mainBsr 不随父体补录变化，保留硬编码作为回归锚点
         self.assertEqual(quality["fieldCoverage"]["promotion"], 76)
         self.assertEqual(quality["fieldCoverage"]["mainBsr"], 74)
 

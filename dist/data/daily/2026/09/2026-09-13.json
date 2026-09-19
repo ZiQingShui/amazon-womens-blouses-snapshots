@@ -35,11 +35,11 @@
       "price": 98,
       "mainBsr": 74,
       "subBsr": 74,
-      "listingDate": 84,
+      "listingDate": 97,
       "promotion": 76
     },
     "detailChecked": 0,
-    "detailSourceValid": null,
+    "detailSourceValid": true,
     "coverageFailures": {
       "mainBsr": {
         "actual": 74,
@@ -94,7 +94,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 4,
         "streak": 4
-      }
+      },
+      "parentAsin": "B0GWR3M54M",
+      "variantCount": 101
     },
     {
       "rank": 2,
@@ -128,7 +130,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 4,
         "streak": 4
-      }
+      },
+      "parentAsin": "B0H39FCLG9",
+      "variantCount": 126
     },
     {
       "rank": 3,
@@ -162,7 +166,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 4,
         "streak": 4
-      }
+      },
+      "parentAsin": "B0H8R7HB3N",
+      "variantCount": 105
     },
     {
       "rank": 4,
@@ -196,7 +202,9 @@
         "firstSeen": "2026-09-12",
         "appearances": 2,
         "streak": 2
-      }
+      },
+      "parentAsin": "B0GZVYHT3P",
+      "variantCount": 79
     },
     {
       "rank": 5,
@@ -230,7 +238,9 @@
         "firstSeen": "2026-09-13",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HF7NZ6VN",
+      "variantCount": 56
     },
     {
       "rank": 6,
@@ -264,7 +274,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 2,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H6B5RV4M",
+      "variantCount": 58
     },
     {
       "rank": 7,
@@ -298,7 +310,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 4,
         "streak": 4
-      }
+      },
+      "parentAsin": "B0HDJKRB4W",
+      "variantCount": 61
     },
     {
       "rank": 8,
@@ -332,7 +346,9 @@
         "firstSeen": "2026-09-11",
         "appearances": 2,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HBBZ2JJT",
+      "variantCount": 71
     },
     {
       "rank": 9,
@@ -366,7 +382,9 @@
         "firstSeen": "2026-09-13",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H6JW5HQH",
+      "variantCount": 81
     },
     {
       "rank": 10,
@@ -400,7 +418,9 @@
         "firstSeen": "2026-09-13",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0GZ3X7TJ7",
+      "variantCount": 74
     },
     {
       "rank": 11,
@@ -434,7 +454,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 4,
         "streak": 4
-      }
+      },
+      "parentAsin": "B0GWLVL7WL",
+      "variantCount": 36
     },
     {
       "rank": 12,
@@ -468,7 +490,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 4,
         "streak": 4
-      }
+      },
+      "parentAsin": "B0HFVKC73J",
+      "variantCount": 62
     },
     {
       "rank": 13,
@@ -502,7 +526,9 @@
         "firstSeen": "2026-09-12",
         "appearances": 2,
         "streak": 2
-      }
+      },
+      "parentAsin": "B0HDC4693P",
+      "variantCount": 60
     },
     {
       "rank": 14,
@@ -536,7 +562,9 @@
         "firstSeen": "2026-09-13",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H712MWSZ",
+      "variantCount": 51
     },
     {
       "rank": 15,
@@ -572,7 +600,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 4,
         "streak": 4
-      }
+      },
+      "parentAsin": "B0HHRLJFG2",
+      "variantCount": 66
     },
     {
       "rank": 16,
@@ -606,7 +636,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 4,
         "streak": 4
-      }
+      },
+      "parentAsin": "B0H6QGCRR6",
+      "variantCount": 73
     },
     {
       "rank": 17,
@@ -640,7 +672,9 @@
         "firstSeen": "2026-09-11",
         "appearances": 2,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H3PR8H5Z",
+      "variantCount": 60
     },
     {
       "rank": 18,
@@ -674,7 +708,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 4,
         "streak": 4
-      }
+      },
+      "parentAsin": "B0HG9JZQJ3",
+      "variantCount": 72
     },
     {
       "rank": 19,
@@ -708,7 +744,9 @@
         "firstSeen": "2026-09-13",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HFFJ3TCD",
+      "variantCount": 75
     },
     {
       "rank": 20,
@@ -742,7 +780,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 2,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H3DZ23CD",
+      "variantCount": 48
     },
     {
       "rank": 21,
@@ -776,7 +816,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 3,
         "streak": 2
-      }
+      },
+      "parentAsin": "B0H7H669NL",
+      "variantCount": 32
     },
     {
       "rank": 22,
@@ -810,7 +852,9 @@
         "firstSeen": "2026-09-13",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H78ZL5ZH",
+      "variantCount": 55
     },
     {
       "rank": 23,
@@ -846,7 +890,9 @@
         "firstSeen": "2026-09-12",
         "appearances": 2,
         "streak": 2
-      }
+      },
+      "parentAsin": "B0H3PCYZBD",
+      "variantCount": 71
     },
     {
       "rank": 24,
@@ -880,7 +926,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 4,
         "streak": 4
-      }
+      },
+      "parentAsin": "B0H4RFBQYJ",
+      "variantCount": 41
     },
     {
       "rank": 25,
@@ -916,7 +964,9 @@
         "firstSeen": "2026-09-13",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H5KD44LY",
+      "variantCount": 71
     },
     {
       "rank": 26,
@@ -950,7 +1000,9 @@
         "firstSeen": "2026-09-13",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HF8DXDFY",
+      "variantCount": 97
     },
     {
       "rank": 27,
@@ -984,7 +1036,9 @@
         "firstSeen": "2026-09-13",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H5QZFNHM",
+      "variantCount": 57
     },
     {
       "rank": 28,
@@ -1018,7 +1072,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 2,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H3VFPCJW",
+      "variantCount": 48
     },
     {
       "rank": 29,
@@ -1052,7 +1108,9 @@
         "firstSeen": "2026-09-11",
         "appearances": 3,
         "streak": 3
-      }
+      },
+      "parentAsin": "B0HCCBVY44",
+      "variantCount": 61
     },
     {
       "rank": 30,
@@ -1086,7 +1144,9 @@
         "firstSeen": "2026-09-13",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H4QMFP63",
+      "variantCount": 98
     },
     {
       "rank": 31,
@@ -1120,7 +1180,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 3,
         "streak": 2
-      }
+      },
+      "parentAsin": "B0HFCCLK8B",
+      "variantCount": 7
     },
     {
       "rank": 32,
@@ -1154,7 +1216,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 4,
         "streak": 4
-      }
+      },
+      "parentAsin": "B0H8YP3L2Q",
+      "variantCount": 61
     },
     {
       "rank": 33,
@@ -1188,7 +1252,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 2,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HGFV6YSZ",
+      "variantCount": 126
     },
     {
       "rank": 34,
@@ -1201,14 +1267,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-09-05",
       "mainCategory": null,
       "mainBsr": null,
       "subCategory": null,
       "subBsr": null,
       "subRanks": [],
       "detailSource": "近三日历史快照（仅复用标题、品牌、上架日）",
-      "listingDateSource": "历史快照稳定字段",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 3,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -1223,7 +1289,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 4,
         "streak": 4
-      }
+      },
+      "parentAsin": "B0H73NVRWW",
+      "variantCount": 41
     },
     {
       "rank": 35,
@@ -1236,14 +1304,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-07-08",
       "mainCategory": null,
       "mainBsr": null,
       "subCategory": null,
       "subBsr": null,
       "subRanks": [],
       "detailSource": "近三日历史快照（仅复用标题、品牌、上架日）",
-      "listingDateSource": "历史快照稳定字段",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 3,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -1258,7 +1326,9 @@
         "firstSeen": "2026-09-12",
         "appearances": 2,
         "streak": 2
-      }
+      },
+      "parentAsin": "B0H2PVKZ8L",
+      "variantCount": 44
     },
     {
       "rank": 36,
@@ -1294,7 +1364,9 @@
         "firstSeen": "2026-09-13",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0GZVRCWZ5",
+      "variantCount": 49
     },
     {
       "rank": 37,
@@ -1330,7 +1402,9 @@
         "firstSeen": "2026-09-13",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0GZJXDVC6",
+      "variantCount": 49
     },
     {
       "rank": 38,
@@ -1365,7 +1439,9 @@
         "firstSeen": "2026-09-12",
         "appearances": 2,
         "streak": 2
-      }
+      },
+      "parentAsin": "B0HBQMRN9V",
+      "variantCount": 28
     },
     {
       "rank": 39,
@@ -1378,14 +1454,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-08-06",
       "mainCategory": null,
       "mainBsr": null,
       "subCategory": null,
       "subBsr": null,
       "subRanks": [],
       "detailSource": "近三日历史快照（仅复用标题、品牌、上架日）",
-      "listingDateSource": "历史快照稳定字段",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 3,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -1400,7 +1476,9 @@
         "firstSeen": "2026-09-11",
         "appearances": 2,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H2YF37CW",
+      "variantCount": 47
     },
     {
       "rank": 40,
@@ -1436,7 +1514,9 @@
         "firstSeen": "2026-09-13",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0GYLGCX39",
+      "variantCount": 31
     },
     {
       "rank": 41,
@@ -1472,7 +1552,9 @@
         "firstSeen": "2026-09-13",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H38XCTB4",
+      "variantCount": 37
     },
     {
       "rank": 42,
@@ -1485,14 +1567,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-06-26",
       "mainCategory": null,
       "mainBsr": null,
       "subCategory": null,
       "subBsr": null,
       "subRanks": [],
       "detailSource": "近三日历史快照（仅复用标题、品牌、上架日）",
-      "listingDateSource": "历史快照稳定字段",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 3,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -1507,7 +1589,9 @@
         "firstSeen": "2026-09-12",
         "appearances": 2,
         "streak": 2
-      }
+      },
+      "parentAsin": "B0H36RSVD9",
+      "variantCount": 51
     },
     {
       "rank": 43,
@@ -1541,7 +1625,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 4,
         "streak": 4
-      }
+      },
+      "parentAsin": "B0H3PHWQB1",
+      "variantCount": 41
     },
     {
       "rank": 44,
@@ -1554,14 +1640,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-08-13",
       "mainCategory": null,
       "mainBsr": null,
       "subCategory": null,
       "subBsr": null,
       "subRanks": [],
       "detailSource": "近三日历史快照（仅复用标题、品牌、上架日）",
-      "listingDateSource": "历史快照稳定字段",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 3,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -1576,7 +1662,9 @@
         "firstSeen": "2026-09-12",
         "appearances": 2,
         "streak": 2
-      }
+      },
+      "parentAsin": "B0H5C4KJHD",
+      "variantCount": 61
     },
     {
       "rank": 45,
@@ -1589,14 +1677,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-08-18",
       "mainCategory": null,
       "mainBsr": null,
       "subCategory": null,
       "subBsr": null,
       "subRanks": [],
       "detailSource": "近三日历史快照（仅复用标题、品牌、上架日）",
-      "listingDateSource": "历史快照稳定字段",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 3,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -1611,7 +1699,9 @@
         "firstSeen": "2026-09-11",
         "appearances": 3,
         "streak": 3
-      }
+      },
+      "parentAsin": "B0GX6PZJW1",
+      "variantCount": 41
     },
     {
       "rank": 46,
@@ -1624,14 +1714,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-08-24",
       "mainCategory": null,
       "mainBsr": null,
       "subCategory": null,
       "subBsr": null,
       "subRanks": [],
       "detailSource": "近三日历史快照（仅复用标题、品牌、上架日）",
-      "listingDateSource": "历史快照稳定字段",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 3,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -1646,7 +1736,9 @@
         "firstSeen": "2026-09-12",
         "appearances": 2,
         "streak": 2
-      }
+      },
+      "parentAsin": "B0H95DB45F",
+      "variantCount": 38
     },
     {
       "rank": 47,
@@ -1682,7 +1774,9 @@
         "firstSeen": "2026-09-13",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H4FG6J4G",
+      "variantCount": 60
     },
     {
       "rank": 48,
@@ -1695,14 +1789,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-08-02",
       "mainCategory": null,
       "mainBsr": null,
       "subCategory": null,
       "subBsr": null,
       "subRanks": [],
       "detailSource": "近三日历史快照（仅复用标题、品牌、上架日）",
-      "listingDateSource": "历史快照稳定字段",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 3,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -1717,7 +1811,9 @@
         "firstSeen": "2026-09-11",
         "appearances": 3,
         "streak": 3
-      }
+      },
+      "parentAsin": "B0H6P85FL1",
+      "variantCount": 26
     },
     {
       "rank": 49,
@@ -1730,14 +1826,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-08-08",
       "mainCategory": null,
       "mainBsr": null,
       "subCategory": null,
       "subBsr": null,
       "subRanks": [],
       "detailSource": "近三日历史快照（仅复用标题、品牌、上架日）",
-      "listingDateSource": "历史快照稳定字段",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 3,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -1752,7 +1848,9 @@
         "firstSeen": "2026-09-11",
         "appearances": 3,
         "streak": 3
-      }
+      },
+      "parentAsin": "B0HCV6NRBL",
+      "variantCount": 21
     },
     {
       "rank": 50,
@@ -1765,14 +1863,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-07-06",
       "mainCategory": null,
       "mainBsr": null,
       "subCategory": null,
       "subBsr": null,
       "subRanks": [],
       "detailSource": "近三日历史快照（仅复用标题、品牌、上架日）",
-      "listingDateSource": "历史快照稳定字段",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 3,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -1787,7 +1885,9 @@
         "firstSeen": "2026-09-12",
         "appearances": 2,
         "streak": 2
-      }
+      },
+      "parentAsin": "B0GX123RRZ",
+      "variantCount": 70
     },
     {
       "rank": 51,
@@ -1821,7 +1921,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 4,
         "streak": 4
-      }
+      },
+      "parentAsin": "B0H5C2DT25",
+      "variantCount": 45
     },
     {
       "rank": 52,
@@ -1857,7 +1959,9 @@
         "firstSeen": "2026-09-13",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H75P5QHL",
+      "variantCount": 80
     },
     {
       "rank": 53,
@@ -1892,7 +1996,9 @@
         "firstSeen": "2026-09-13",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HD7FJ2LL",
+      "variantCount": 5
     },
     {
       "rank": 54,
@@ -1928,7 +2034,9 @@
         "firstSeen": "2026-09-13",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H8T3MPD8",
+      "variantCount": 48
     },
     {
       "rank": 55,
@@ -1962,7 +2070,9 @@
         "firstSeen": "2026-09-11",
         "appearances": 3,
         "streak": 3
-      }
+      },
+      "parentAsin": "B0H71HNXZ9",
+      "variantCount": 21
     },
     {
       "rank": 56,
@@ -1998,7 +2108,9 @@
         "firstSeen": "2026-09-13",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HBQFY4WG",
+      "variantCount": 21
     },
     {
       "rank": 57,
@@ -2032,7 +2144,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 2,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HJQYJQZP",
+      "variantCount": 33
     },
     {
       "rank": 58,
@@ -2066,7 +2180,9 @@
         "firstSeen": "2026-09-13",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HK4TWJML",
+      "variantCount": 85
     },
     {
       "rank": 59,
@@ -2100,7 +2216,9 @@
         "firstSeen": "2026-09-11",
         "appearances": 3,
         "streak": 3
-      }
+      },
+      "parentAsin": "B0H2YQNSZ3",
+      "variantCount": 31
     },
     {
       "rank": 60,
@@ -2134,7 +2252,9 @@
         "firstSeen": "2026-09-13",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H36RNR5G",
+      "variantCount": 61
     },
     {
       "rank": 61,
@@ -2168,7 +2288,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 4,
         "streak": 4
-      }
+      },
+      "parentAsin": "B0H7BYCFL3",
+      "variantCount": 25
     },
     {
       "rank": 62,
@@ -2202,7 +2324,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 4,
         "streak": 4
-      }
+      },
+      "parentAsin": "B0H1CBNMMJ",
+      "variantCount": 61
     },
     {
       "rank": 63,
@@ -2236,7 +2360,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 3,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0GWYTZDC7",
+      "variantCount": 41
     },
     {
       "rank": 64,
@@ -2273,7 +2399,9 @@
         "firstSeen": "2026-09-13",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H6M8VYM9",
+      "variantCount": 31
     },
     {
       "rank": 65,
@@ -2307,7 +2435,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 4,
         "streak": 4
-      }
+      },
+      "parentAsin": "B0H98PH8CQ",
+      "variantCount": 37
     },
     {
       "rank": 66,
@@ -2341,7 +2471,9 @@
         "firstSeen": "2026-09-13",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HH9M1PVD",
+      "variantCount": 85
     },
     {
       "rank": 67,
@@ -2375,7 +2507,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 4,
         "streak": 4
-      }
+      },
+      "parentAsin": "B0HGR1PLWC",
+      "variantCount": 73
     },
     {
       "rank": 68,
@@ -2409,7 +2543,9 @@
         "firstSeen": "2026-09-13",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HFWWNQL5",
+      "variantCount": 56
     },
     {
       "rank": 69,
@@ -2443,7 +2579,9 @@
         "firstSeen": "2026-09-12",
         "appearances": 2,
         "streak": 2
-      }
+      },
+      "parentAsin": "B0H1RN624R",
+      "variantCount": 30
     },
     {
       "rank": 70,
@@ -2479,7 +2617,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 3,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H5LZ31MR",
+      "variantCount": 26
     },
     {
       "rank": 71,
@@ -2513,7 +2653,9 @@
         "firstSeen": "2026-09-13",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HCNMJRW4",
+      "variantCount": 104
     },
     {
       "rank": 72,
@@ -2549,7 +2691,9 @@
         "firstSeen": "2026-09-12",
         "appearances": 2,
         "streak": 2
-      }
+      },
+      "parentAsin": "B0GYDKQ9SK",
+      "variantCount": 41
     },
     {
       "rank": 73,
@@ -2583,7 +2727,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 4,
         "streak": 4
-      }
+      },
+      "parentAsin": "B0H38MBSCY",
+      "variantCount": 26
     },
     {
       "rank": 74,
@@ -2617,7 +2763,9 @@
         "firstSeen": "2026-09-12",
         "appearances": 2,
         "streak": 2
-      }
+      },
+      "parentAsin": "B0H6J7TGJQ",
+      "variantCount": 25
     },
     {
       "rank": 75,
@@ -2653,7 +2801,9 @@
         "firstSeen": "2026-09-13",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HBK46YRC",
+      "variantCount": 67
     },
     {
       "rank": 76,
@@ -2687,7 +2837,9 @@
         "firstSeen": "2026-09-12",
         "appearances": 2,
         "streak": 2
-      }
+      },
+      "parentAsin": "B0H9RSD782",
+      "variantCount": 54
     },
     {
       "rank": 77,
@@ -2721,7 +2873,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 2,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H4FB3HLW",
+      "variantCount": 66
     },
     {
       "rank": 78,
@@ -2755,7 +2909,9 @@
         "firstSeen": "2026-09-12",
         "appearances": 2,
         "streak": 2
-      }
+      },
+      "parentAsin": "B0H4G1K6QK",
+      "variantCount": 70
     },
     {
       "rank": 79,
@@ -2789,7 +2945,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 4,
         "streak": 4
-      }
+      },
+      "parentAsin": "B0H9M1PZ1V",
+      "variantCount": 41
     },
     {
       "rank": 80,
@@ -2822,7 +2980,9 @@
         "firstSeen": "2026-09-13",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H8PDX79K",
+      "variantCount": 51
     },
     {
       "rank": 81,
@@ -2856,7 +3016,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 4,
         "streak": 4
-      }
+      },
+      "parentAsin": "B0HJRM6XJ3",
+      "variantCount": 36
     },
     {
       "rank": 82,
@@ -2892,7 +3054,9 @@
         "firstSeen": "2026-09-13",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H9XL15HP",
+      "variantCount": 25
     },
     {
       "rank": 83,
@@ -2928,7 +3092,9 @@
         "firstSeen": "2026-09-13",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H6PVP9RY",
+      "variantCount": 60
     },
     {
       "rank": 84,
@@ -2962,7 +3128,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 2,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H5KSQ9WT",
+      "variantCount": 36
     },
     {
       "rank": 85,
@@ -2975,14 +3143,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-08-11",
       "mainCategory": null,
       "mainBsr": null,
       "subCategory": null,
       "subBsr": null,
       "subRanks": [],
       "detailSource": "近三日历史快照（仅复用标题、品牌、上架日）",
-      "listingDateSource": "历史快照稳定字段",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 3,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -2997,7 +3165,9 @@
         "firstSeen": "2026-09-12",
         "appearances": 2,
         "streak": 2
-      }
+      },
+      "parentAsin": "B0H74T6XNT",
+      "variantCount": 35
     },
     {
       "rank": 86,
@@ -3031,7 +3201,9 @@
         "firstSeen": "2026-09-13",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H8S99MJQ",
+      "variantCount": 23
     },
     {
       "rank": 87,
@@ -3067,7 +3239,9 @@
         "firstSeen": "2026-09-13",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H5196DW4",
+      "variantCount": 40
     },
     {
       "rank": 88,
@@ -3101,7 +3275,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 4,
         "streak": 4
-      }
+      },
+      "parentAsin": "B0HDCCJC3D",
+      "variantCount": 21
     },
     {
       "rank": 89,
@@ -3114,14 +3290,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-08-05",
       "mainCategory": null,
       "mainBsr": null,
       "subCategory": null,
       "subBsr": null,
       "subRanks": [],
       "detailSource": "近三日历史快照（仅复用标题、品牌、上架日）",
-      "listingDateSource": "历史快照稳定字段",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 3,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -3136,7 +3312,9 @@
         "firstSeen": "2026-09-12",
         "appearances": 2,
         "streak": 2
-      }
+      },
+      "parentAsin": "B0H9S2ZWLD",
+      "variantCount": 31
     },
     {
       "rank": 90,
@@ -3170,7 +3348,9 @@
         "firstSeen": "2026-09-13",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H6DJ1BYC",
+      "variantCount": 32
     },
     {
       "rank": 91,
@@ -3206,7 +3386,9 @@
         "firstSeen": "2026-09-13",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H8PXXJ71",
+      "variantCount": 16
     },
     {
       "rank": 92,
@@ -3242,7 +3424,9 @@
         "firstSeen": "2026-09-13",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H35BYYK5",
+      "variantCount": 41
     },
     {
       "rank": 93,
@@ -3279,7 +3463,9 @@
         "firstSeen": "2026-09-13",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HGFY7RSD",
+      "variantCount": 36
     },
     {
       "rank": 94,
@@ -3313,7 +3499,9 @@
         "firstSeen": "2026-09-13",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H5BPWM3M",
+      "variantCount": 36
     },
     {
       "rank": 95,
@@ -3326,14 +3514,14 @@
       "promotion": "未显示/无法获取",
       "promotions": [],
       "promotionStatus": "unknown",
-      "listingDate": "未显示/无法获取",
+      "listingDate": "2026-07-13",
       "mainCategory": null,
       "mainBsr": null,
       "subCategory": null,
       "subBsr": null,
       "subRanks": [],
       "detailSource": "近三日历史快照（仅复用标题、品牌、上架日）",
-      "listingDateSource": "历史快照稳定字段",
+      "listingDateSource": "Ecomtool MCP 市场调研上架日期；非 Amazon Date First Available 核验",
       "detailStatus": "fallback_after_mcp_failure",
       "detailAttempts": 3,
       "detailError": "MCP tool call requires approval, but approval policy is never",
@@ -3348,7 +3536,9 @@
         "firstSeen": "2026-09-12",
         "appearances": 2,
         "streak": 2
-      }
+      },
+      "parentAsin": "B0GWJ4M4HW",
+      "variantCount": 40
     },
     {
       "rank": 96,
@@ -3382,7 +3572,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 4,
         "streak": 4
-      }
+      },
+      "parentAsin": "B0HF7YP54P",
+      "variantCount": 21
     },
     {
       "rank": 97,
@@ -3416,7 +3608,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 3,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HGR61T6R",
+      "variantCount": 41
     },
     {
       "rank": 98,
@@ -3450,7 +3644,9 @@
         "firstSeen": "2026-09-13",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0H7HG7LRH",
+      "variantCount": 26
     },
     {
       "rank": 99,
@@ -3484,7 +3680,9 @@
         "firstSeen": "2026-09-10",
         "appearances": 4,
         "streak": 4
-      }
+      },
+      "parentAsin": "B0HDPZW3XD",
+      "variantCount": 95
     },
     {
       "rank": 100,
@@ -3521,7 +3719,9 @@
         "firstSeen": "2026-09-13",
         "appearances": 1,
         "streak": 1
-      }
+      },
+      "parentAsin": "B0HFVPC86M",
+      "variantCount": 36
     }
   ]
 }
