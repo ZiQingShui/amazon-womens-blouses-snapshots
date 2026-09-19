@@ -1,482 +1,86 @@
 {
-  "schemaVersion": 1,
-  "categoryNode": "2368365011",
-  "updatedAt": "2026-09-19T08:52:00+08:00",
-  "latest": "2026-09-19",
-  "snapshots": [
-    {
-      "date": "2026-09-19",
-      "capturedAt": "2026-09-19T08:52:00+08:00",
-      "file": "data/daily/2026/09/2026-09-19.json",
-      "count": 100,
-      "publishable": true,
-      "coverageFailures": {},
-      "provenance": {
-        "fallbackRows": 0,
-        "reusedRows": 0,
-        "degraded": false,
-        "sources": {
-          "Ecomtool MCP 商品详情": 100
-        }
-      },
-      "fieldCoverage": {
-        "title": 100,
-        "image": 100,
-        "brand": 100,
-        "price": 100,
-        "mainBsr": 100,
-        "subBsr": 100,
-        "listingDate": 84,
-        "promotion": 100
-      }
-    },
-    {
-      "date": "2026-09-18",
-      "capturedAt": "2026-09-18T08:39:45+08:00",
-      "file": "data/daily/2026/09/2026-09-18.json",
-      "count": 100,
-      "publishable": true,
-      "coverageFailures": {},
-      "provenance": {
-        "fallbackRows": 0,
-        "reusedRows": 0,
-        "degraded": false,
-        "sources": {
-          "Ecomtool MCP 商品详情": 100
-        }
-      },
-      "fieldCoverage": {
-        "title": 100,
-        "image": 100,
-        "brand": 100,
-        "price": 100,
-        "mainBsr": 100,
-        "subBsr": 100,
-        "listingDate": 93,
-        "promotion": 100
-      }
-    },
-    {
-      "date": "2026-09-17",
-      "capturedAt": "2026-09-17T11:12:51+08:00",
-      "file": "data/daily/2026/09/2026-09-17.json",
-      "count": 100,
-      "publishable": true,
-      "coverageFailures": {},
-      "provenance": {
-        "fallbackRows": 0,
-        "reusedRows": 0,
-        "degraded": false,
-        "sources": {
-          "Ecomtool MCP 商品详情": 100
-        }
-      },
-      "fieldCoverage": {
-        "title": 100,
-        "image": 100,
-        "brand": 100,
-        "price": 100,
-        "mainBsr": 100,
-        "subBsr": 100,
-        "listingDate": 90,
-        "promotion": 100
-      }
-    },
-    {
-      "date": "2026-09-16",
-      "capturedAt": "2026-09-16T10:02:12+08:00",
-      "file": "data/daily/2026/09/2026-09-16.json",
-      "count": 100,
-      "publishable": true,
-      "coverageFailures": {},
-      "provenance": {
-        "fallbackRows": 0,
-        "reusedRows": 0,
-        "degraded": false,
-        "sources": {
-          "Ecomtool MCP 商品详情 + 市场调研": 100
-        }
-      },
-      "fieldCoverage": {
-        "title": 100,
-        "image": 100,
-        "brand": 100,
-        "price": 97,
-        "mainBsr": 100,
-        "subBsr": 99,
-        "listingDate": 90,
-        "promotion": 100
-      }
-    },
-    {
-      "date": "2026-09-15",
-      "capturedAt": "2026-09-15T17:02:22+08:00",
-      "file": "data/daily/2026/09/2026-09-15.json",
-      "count": 100,
-      "publishable": false,
-      "coverageFailures": {
-        "price": {
-          "actual": 94,
-          "required": 95
-        }
-      },
-      "provenance": {
-        "fallbackRows": 0,
-        "reusedRows": 0,
-        "degraded": false,
-        "sources": {
-          "Ecomtool MCP 商品详情 + 市场调研": 100
-        }
-      },
-      "fieldCoverage": {
-        "title": 100,
-        "image": 100,
-        "brand": 100,
-        "price": 94,
-        "mainBsr": 100,
-        "subBsr": 98,
-        "listingDate": 91,
-        "promotion": 100
-      }
-    },
-    {
-      "date": "2026-09-14",
-      "capturedAt": "2026-09-14T08:33:00+08:00",
-      "file": "data/daily/2026/09/2026-09-14.json",
-      "count": 100,
-      "publishable": true,
-      "coverageFailures": {},
-      "provenance": {
-        "fallbackRows": 0,
-        "reusedRows": 0,
-        "degraded": false,
-        "sources": {
-          "Ecomtool MCP：Amazon 前台商品信息 + 市场分析": 100
-        }
-      },
-      "fieldCoverage": {
-        "title": 100,
-        "image": 100,
-        "brand": 100,
-        "price": 96,
-        "mainBsr": 100,
-        "subBsr": 100,
-        "listingDate": 93,
-        "promotion": 100
-      }
-    },
-    {
-      "date": "2026-09-13",
-      "capturedAt": "2026-09-13T08:30:00+08:00",
-      "file": "data/daily/2026/09/2026-09-13.json",
-      "count": 100,
-      "publishable": false,
-      "coverageFailures": {
-        "mainBsr": {
-          "actual": 74,
-          "required": 90
-        },
-        "subBsr": {
-          "actual": 74,
-          "required": 90
-        }
-      },
-      "provenance": {
-        "fallbackRows": 100,
-        "reusedRows": 24,
-        "degraded": true,
-        "sources": {
-          "Ecomtool browser extension": 60,
-          "近三日历史快照（仅复用标题、品牌、上架日）": 24,
-          "Amazon product detail page": 16
-        }
-      },
-      "fieldCoverage": {
-        "title": 100,
-        "image": 100,
-        "brand": 99,
-        "price": 98,
-        "mainBsr": 74,
-        "subBsr": 74,
-        "listingDate": 97,
-        "promotion": 76
-      }
-    },
-    {
-      "date": "2026-09-12",
-      "capturedAt": "2026-09-12T08:30:00+08:00",
-      "file": "data/daily/2026/09/2026-09-12.json",
-      "count": 100,
-      "publishable": false,
-      "coverageFailures": {},
-      "provenance": {
-        "fallbackRows": 0,
-        "reusedRows": 0,
-        "degraded": false,
-        "sources": {
-          "https://www.amazon.com/dp/B0GWZRJ64P": 1,
-          "https://www.amazon.com/dp/B0H396Y246": 1,
-          "https://www.amazon.com/dp/B0H8S36FF1": 1,
-          "https://www.amazon.com/dp/B0GZVRSZZC": 1,
-          "https://www.amazon.com/dp/B0H3X61D28": 1,
-          "https://www.amazon.com/dp/B0H6JJTC9P": 1,
-          "https://www.amazon.com/dp/B0H6B68CYD": 1,
-          "https://www.amazon.com/dp/B0GWLT4W1Z": 1,
-          "https://www.amazon.com/dp/B0H5WM7N5Q": 1,
-          "https://www.amazon.com/dp/B0H4G4TWMV": 1,
-          "https://www.amazon.com/dp/B0GZNS331N": 1,
-          "https://www.amazon.com/dp/B0GZ3YLWWS": 1,
-          "https://www.amazon.com/dp/B0H32RPW5K": 1,
-          "https://www.amazon.com/dp/B0H3PHXTKH": 1,
-          "https://www.amazon.com/dp/B0H71326JT": 1,
-          "https://www.amazon.com/dp/B0H33TFTHV": 1,
-          "https://www.amazon.com/dp/B0H79C13DL": 1,
-          "https://www.amazon.com/dp/B0HHRX1CMG": 1,
-          "https://www.amazon.com/dp/B0H3DMYNST": 1,
-          "https://www.amazon.com/dp/B0H73LF75D": 1,
-          "https://www.amazon.com/dp/B0H5K9N1K5": 1,
-          "https://www.amazon.com/dp/B0HGFS9NDZ": 1,
-          "https://www.amazon.com/dp/B0H3NSW2PV": 1,
-          "https://www.amazon.com/dp/B0H41CDGS6": 1,
-          "https://www.amazon.com/dp/B0H5QT2SKJ": 1,
-          "https://www.amazon.com/dp/B0H4R9JJR2": 1,
-          "https://www.amazon.com/dp/B0H25WPBKK": 1,
-          "https://www.amazon.com/dp/B0H7H29VZ3": 1,
-          "https://www.amazon.com/dp/B0HFCLFDMQ": 1,
-          "https://www.amazon.com/dp/B0GYKW2H93": 1,
-          "https://www.amazon.com/dp/B0H2Q1N7T6": 1,
-          "https://www.amazon.com/dp/B0H4QR6FT3": 1,
-          "https://www.amazon.com/dp/B0H3ZW1HVM": 1,
-          "https://www.amazon.com/dp/B0H38Q1761": 1,
-          "https://www.amazon.com/dp/B0H5QZW3PJ": 1,
-          "https://www.amazon.com/dp/B0HD7HGHJF": 1,
-          "https://www.amazon.com/dp/B0GZK32HS2": 1,
-          "https://www.amazon.com/dp/B0H59XBPZL": 1,
-          "https://www.amazon.com/dp/B0H3PJPMV7": 1,
-          "https://www.amazon.com/dp/B0GWZ5SSPG": 1,
-          "https://www.amazon.com/dp/B0H36PZKM4": 1,
-          "https://www.amazon.com/dp/B0GX6VDXFP": 1,
-          "https://www.amazon.com/dp/B0GWYTF1XW": 1,
-          "https://www.amazon.com/dp/B0H4F2HRYM": 1,
-          "https://www.amazon.com/dp/B0H4GZ6VRK": 1,
-          "https://www.amazon.com/dp/B0H6SCG63G": 1,
-          "https://www.amazon.com/dp/B0H9RP4MWD": 1,
-          "https://www.amazon.com/dp/B0H95B4XH2": 1,
-          "https://www.amazon.com/dp/B0H4MCV69S": 1,
-          "https://www.amazon.com/dp/B0H2YM2BM4": 1,
-          "https://www.amazon.com/dp/B0H5C65M4Z": 1,
-          "https://www.amazon.com/dp/B0H71BYQG2": 1,
-          "https://www.amazon.com/dp/B0H75D8VM1": 1,
-          "https://www.amazon.com/dp/B0H4G2DWFQ": 1,
-          "https://www.amazon.com/dp/B0H9M9RCBZ": 1,
-          "https://www.amazon.com/dp/B0H36YJLY2": 1,
-          "https://www.amazon.com/dp/B0HBQG3B9P": 1,
-          "https://www.amazon.com/dp/B0H7HZB74L": 1,
-          "https://www.amazon.com/dp/B0H4GTNWNN": 1,
-          "https://www.amazon.com/dp/B0H1RM9L1S": 1,
-          "https://www.amazon.com/dp/B0HCCCZH85": 1,
-          "https://www.amazon.com/dp/B0H6HYPCBL": 1,
-          "https://www.amazon.com/dp/B0GYDKFQX3": 1,
-          "https://www.amazon.com/dp/B0H7HWJHP3": 1,
-          "https://www.amazon.com/dp/B0HF7XBHDF": 1,
-          "https://www.amazon.com/dp/B0H4F6TH4B": 1,
-          "https://www.amazon.com/dp/B0H38HXQVL": 1,
-          "https://www.amazon.com/dp/B0HBXBH3MQ": 1,
-          "https://www.amazon.com/dp/B0H6P56L79": 1,
-          "https://www.amazon.com/dp/B0H4PFKTF2": 1,
-          "https://www.amazon.com/dp/B0H5B5Y4T7": 1,
-          "https://www.amazon.com/dp/B0H8THZYHZ": 1,
-          "https://www.amazon.com/dp/B0HCVDNVF2": 1,
-          "https://www.amazon.com/dp/B0H2Y7LLP7": 1,
-          "https://www.amazon.com/dp/B0H11QPG8Z": 1,
-          "https://www.amazon.com/dp/B0H7C61GMG": 1,
-          "https://www.amazon.com/dp/B0HBBX5C5W": 1,
-          "https://www.amazon.com/dp/B0H6F5PH1B": 1,
-          "https://www.amazon.com/dp/B0H4QZR8HB": 1,
-          "https://www.amazon.com/dp/B0H57W61X8": 1,
-          "https://www.amazon.com/dp/B0H9SL7R7W": 1,
-          "https://www.amazon.com/dp/B0GWJ241TT": 1,
-          "https://www.amazon.com/dp/B0H5LSFM4L": 1,
-          "https://www.amazon.com/dp/B0H9XQXM28": 1,
-          "https://www.amazon.com/dp/B0H2YMWGL2": 1,
-          "https://www.amazon.com/dp/B0GXVR34Z6": 1,
-          "https://www.amazon.com/dp/B0GTV2W85D": 1,
-          "https://www.amazon.com/dp/B0H5J3HRPH": 1,
-          "https://www.amazon.com/dp/B0H5KHPVJ8": 1,
-          "https://www.amazon.com/dp/B0H5B93TGV": 1,
-          "https://www.amazon.com/dp/B0H8YT955J": 1,
-          "https://www.amazon.com/dp/B0H6P56X2W": 1,
-          "https://www.amazon.com/dp/B0H7H4VBBC": 1,
-          "https://www.amazon.com/dp/B0H6M9S9QC": 1,
-          "https://www.amazon.com/dp/B0HBB775Y7": 1,
-          "https://www.amazon.com/dp/B0H74N2FRN": 1,
-          "https://www.amazon.com/dp/B0HDC5DXN4": 1,
-          "https://www.amazon.com/dp/B0H8SBQ81C": 1,
-          "https://www.amazon.com/dp/B0HDQ4VT1D": 1,
-          "https://www.amazon.com/dp/B0H7574CHF": 1
-        }
-      },
-      "fieldCoverage": {
-        "title": 100,
-        "image": 100,
-        "brand": 99,
-        "price": 99,
-        "mainBsr": 99,
-        "subBsr": 99,
-        "listingDate": 34,
-        "promotion": 100
-      }
-    },
-    {
-      "date": "2026-09-11",
-      "capturedAt": "2026-09-11T08:30:00+08:00",
-      "file": "data/daily/2026/09/2026-09-11.json",
-      "count": 100,
-      "publishable": false,
-      "coverageFailures": {},
-      "provenance": {
-        "fallbackRows": 0,
-        "reusedRows": 0,
-        "degraded": false,
-        "sources": {
-          "https://www.amazon.com/dp/B0GWZRJ64P": 1,
-          "https://www.amazon.com/dp/B0H396Y246": 1,
-          "https://www.amazon.com/dp/B0H51CHNMC": 1,
-          "https://www.amazon.com/dp/B0H8S36FF1": 1,
-          "https://www.amazon.com/dp/B0GZW7YSX5": 1,
-          "https://www.amazon.com/dp/B0H4FMPW68": 1,
-          "https://www.amazon.com/dp/B0H6JGZHSY": 1,
-          "https://www.amazon.com/dp/B0H6B68CYD": 1,
-          "https://www.amazon.com/dp/B0H3X61D28": 1,
-          "https://www.amazon.com/dp/B0H1GKD82H": 1,
-          "https://www.amazon.com/dp/B0GWLT4W1Z": 1,
-          "https://www.amazon.com/dp/B0H5WK5H25": 1,
-          "https://www.amazon.com/dp/B0GZ3TC35M": 1,
-          "https://www.amazon.com/dp/B0GZNS331N": 1,
-          "https://www.amazon.com/dp/B0H3PMRYPC": 1,
-          "https://www.amazon.com/dp/B0H32RPW5K": 1,
-          "https://www.amazon.com/dp/B0H73LF75D": 1,
-          "https://www.amazon.com/dp/B0HHRX1CMG": 1,
-          "https://www.amazon.com/dp/B0H3DMYNST": 1,
-          "https://www.amazon.com/dp/B0H33TFTHV": 1,
-          "https://www.amazon.com/dp/B0H79C13DL": 1,
-          "https://www.amazon.com/dp/B0H711VLPF": 1,
-          "https://www.amazon.com/dp/B0H3NWQBYK": 1,
-          "https://www.amazon.com/dp/B0H5K9N1K5": 1,
-          "https://www.amazon.com/dp/B0H25WPBKK": 1,
-          "https://www.amazon.com/dp/B0H416H9VK": 1,
-          "https://www.amazon.com/dp/B0HGFS9NDZ": 1,
-          "https://www.amazon.com/dp/B0H3ZW1HVM": 1,
-          "https://www.amazon.com/dp/B0H4FWN8MR": 1,
-          "https://www.amazon.com/dp/B0H4R9JJR2": 1,
-          "https://www.amazon.com/dp/B0H5QT2SKJ": 1,
-          "https://www.amazon.com/dp/B0H2Q5KG5P": 1,
-          "https://www.amazon.com/dp/B0H7H95Q3W": 1,
-          "https://www.amazon.com/dp/B0H4QR6FT3": 1,
-          "https://www.amazon.com/dp/B0H3N1LVC3": 1,
-          "https://www.amazon.com/dp/B0HD763FSJ": 1,
-          "https://www.amazon.com/dp/B0H3PJPMV7": 1,
-          "https://www.amazon.com/dp/B0H9RLLYJ3": 1,
-          "https://www.amazon.com/dp/B0H38Q1761": 1,
-          "https://www.amazon.com/dp/B0H4GZ6VRK": 1,
-          "https://www.amazon.com/dp/B0GZK32HS2": 1,
-          "https://www.amazon.com/dp/B0HFHRNP22": 1,
-          "https://www.amazon.com/dp/B0H3N8F1S2": 1,
-          "https://www.amazon.com/dp/B0H6SBQJXF": 1,
-          "https://www.amazon.com/dp/B0H5QRM285": 1,
-          "https://www.amazon.com/dp/B0H4DX7W56": 1,
-          "https://www.amazon.com/dp/B0HF7XBHDF": 1,
-          "https://www.amazon.com/dp/B0H4D2XWWV": 1,
-          "https://www.amazon.com/dp/B0H2YM2BM4": 1,
-          "https://www.amazon.com/dp/B0H7HZB74L": 1,
-          "https://www.amazon.com/dp/B0H36KVW6V": 1,
-          "https://www.amazon.com/dp/B0H59Y25WG": 1,
-          "https://www.amazon.com/dp/B0H1R5VNLX": 1,
-          "https://www.amazon.com/dp/B0H6HZ667J": 1,
-          "https://www.amazon.com/dp/B0H36WC6CH": 1,
-          "https://www.amazon.com/dp/B0H4G47FVM": 1,
-          "https://www.amazon.com/dp/B0H4F2NYKD": 1,
-          "https://www.amazon.com/dp/B0GWZ8HKBK": 1,
-          "https://www.amazon.com/dp/B0HBXBH3MQ": 1,
-          "https://www.amazon.com/dp/B0H71BYQG2": 1,
-          "https://www.amazon.com/dp/B0HCCCZH85": 1,
-          "https://www.amazon.com/dp/B0H7C61GMG": 1,
-          "https://www.amazon.com/dp/B0H6DSDB1G": 1,
-          "https://www.amazon.com/dp/B0H9586C4V": 1,
-          "https://www.amazon.com/dp/B0HF87BSV5": 1,
-          "https://www.amazon.com/dp/B0GX6VDXFP": 1,
-          "https://www.amazon.com/dp/B0H3KVV4RV": 1,
-          "https://www.amazon.com/dp/B0H9M9RCBZ": 1,
-          "https://www.amazon.com/dp/B0H9SL5F2G": 1,
-          "https://www.amazon.com/dp/B0H4QVJVP3": 1,
-          "https://www.amazon.com/dp/B0H5KMV33T": 1,
-          "https://www.amazon.com/dp/B0HDC5DXN4": 1,
-          "https://www.amazon.com/dp/B0H6P56L79": 1,
-          "https://www.amazon.com/dp/B0H57W61X8": 1,
-          "https://www.amazon.com/dp/B0H6PQQ4SV": 1,
-          "https://www.amazon.com/dp/B0H5C65M4Z": 1,
-          "https://www.amazon.com/dp/B0HBBX5C5W": 1,
-          "https://www.amazon.com/dp/B0H2YC4VB9": 1,
-          "https://www.amazon.com/dp/B0H5B93TGV": 1,
-          "https://www.amazon.com/dp/B0H5M9HY82": 1,
-          "https://www.amazon.com/dp/B0H8SGWSLH": 1,
-          "https://www.amazon.com/dp/B0H5VR9L2M": 1,
-          "https://www.amazon.com/dp/B0GWJ3M8P3": 1,
-          "https://www.amazon.com/dp/B0HDQ4VT1D": 1,
-          "https://www.amazon.com/dp/B0H59VWBYD": 1,
-          "https://www.amazon.com/dp/B0H57HW9HY": 1,
-          "https://www.amazon.com/dp/B0HBJXJPW8": 1,
-          "https://www.amazon.com/dp/B0H5BS5YJ7": 1,
-          "https://www.amazon.com/dp/B0H4GL7XLX": 1,
-          "https://www.amazon.com/dp/B0H64LS4ZM": 1,
-          "https://www.amazon.com/dp/B0H7M1M6BB": 1,
-          "https://www.amazon.com/dp/B0HCVDNVF2": 1,
-          "https://www.amazon.com/dp/B0H8THZYHZ": 1,
-          "https://www.amazon.com/dp/B0H36428QC": 1,
-          "https://www.amazon.com/dp/B0H4GTNWNN": 1,
-          "https://www.amazon.com/dp/B0H38HXQVL": 1,
-          "https://www.amazon.com/dp/B0H74WT81D": 1,
-          "https://www.amazon.com/dp/B0H75D8VM1": 1,
-          "https://www.amazon.com/dp/B0H3TX73WD": 1,
-          "https://www.amazon.com/dp/B0GYDMVBLF": 1
-        }
-      },
-      "fieldCoverage": {
-        "title": 100,
-        "image": 100,
-        "brand": 99,
-        "price": 99,
-        "mainBsr": 99,
-        "subBsr": 98,
-        "listingDate": 49,
-        "promotion": 100
-      }
-    },
-    {
-      "date": "2026-09-10",
-      "capturedAt": "2026-09-10T16:20:00+08:00",
-      "file": "data/daily/2026/09/2026-09-10.json",
-      "count": 100,
-      "publishable": false,
-      "coverageFailures": {},
-      "provenance": {
-        "fallbackRows": 0,
-        "reusedRows": 0,
-        "degraded": false,
-        "sources": {
-          "未标注": 100
-        }
-      },
-      "fieldCoverage": {
-        "title": 100,
-        "image": 100,
-        "brand": 100,
-        "price": 100,
-        "mainBsr": 100,
-        "subBsr": 100,
-        "listingDate": 92,
-        "promotion": 100
-      }
+ "schemaVersion": 1,
+ "categoryNode": "2368365011",
+ "updatedAt": "2026-09-19T08:52:00+08:00",
+ "latest": "2026-09-19",
+ "snapshots": [
+  {
+   "date": "2026-09-19",
+   "capturedAt": "2026-09-19T08:52:00+08:00",
+   "file": "data/daily/2026/09/2026-09-19.json",
+   "count": 100,
+   "publishable": true,
+   "coverageFailures": {},
+   "provenance": {
+    "fallbackRows": 0,
+    "reusedRows": 0,
+    "degraded": false,
+    "sources": {
+     "Ecomtool MCP 商品详情": 100
     }
-  ]
+   },
+   "fieldCoverage": {
+    "title": 100,
+    "image": 100,
+    "brand": 100,
+    "price": 100,
+    "mainBsr": 100,
+    "subBsr": 100,
+    "listingDate": 84,
+    "promotion": 100
+   }
+  },
+  {
+   "date": "2026-09-18",
+   "capturedAt": "2026-09-18T08:39:45+08:00",
+   "file": "data/daily/2026/09/2026-09-18.json",
+   "count": 100,
+   "publishable": true,
+   "coverageFailures": {},
+   "provenance": {
+    "fallbackRows": 0,
+    "reusedRows": 0,
+    "degraded": false,
+    "sources": {
+     "Ecomtool MCP 商品详情": 100
+    }
+   },
+   "fieldCoverage": {
+    "title": 100,
+    "image": 100,
+    "brand": 100,
+    "price": 100,
+    "mainBsr": 100,
+    "subBsr": 100,
+    "listingDate": 93,
+    "promotion": 100
+   }
+  },
+  {
+   "date": "2026-09-17",
+   "capturedAt": "2026-09-17T11:12:51+08:00",
+   "file": "data/daily/2026/09/2026-09-17.json",
+   "count": 100,
+   "publishable": true,
+   "coverageFailures": {},
+   "provenance": {
+    "fallbackRows": 0,
+    "reusedRows": 0,
+    "degraded": false,
+    "sources": {
+     "Ecomtool MCP 商品详情": 100
+    }
+   },
+   "fieldCoverage": {
+    "title": 100,
+    "image": 100,
+    "brand": 100,
+    "price": 100,
+    "mainBsr": 100,
+    "subBsr": 100,
+    "listingDate": 90,
+    "promotion": 100
+   }
+  }
+ ]
 }

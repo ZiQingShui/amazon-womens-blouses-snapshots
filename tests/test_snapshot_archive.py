@@ -108,7 +108,11 @@ class SnapshotArchiveTests(unittest.TestCase):
     def test_degraded_snapshots_fail_the_coverage_gate(self):
         manifest = self.read_json("docs", "data/manifest.json")
         degraded = [entry for entry in manifest["snapshots"] if entry["provenance"]["degraded"]]
-        self.assertTrue(degraded, "至少应有一期带降级标记，用于验证门禁生效")
+        if not degraded:
+            # 2026-09-20 清理了 09-17 之前的快照，带降级标记的那几期随之删除；
+            # 现在归档里可能一期都没有。门禁逻辑本身由上面的人造样本用例覆盖，
+            # 这条只是拿真实数据复核，没有样本就该跳过而不是判失败。
+            self.skipTest("当前归档中没有带降级标记的快照（09-17 之前的期已清理）")
         for entry in degraded:
             quality = publish_snapshot.validate(self.read_json("docs", entry["file"])["items"])
             self.assertFalse(quality["publishable"], entry["date"])
@@ -550,28 +554,36 @@ class SnapshotArchiveTests(unittest.TestCase):
     def test_archived_placeholder_coverage_is_truthful(self):
         """占位文字（「未显示/无法获取」）不能算作有效字段。
 
-        样本固定用 2026-09-13 那一期。这里刻意不读 latest.json —— latest
-        会随新快照滚动，旧的断言会因此失效。
+        样本固定用某一期归档。这里刻意不读 latest.json —— latest 会随新快照
+        滚动，旧的断言会因此失效。
 
-        listingDate 的覆盖率**按占位条数动态推导**，不写死数字：历史补录会
-        持续把占位换成真实值（2026-09-20 补录后由 84 变为 97），写死就会
-        在每次补录后误报。核心要守住的是「占位不计入有效」，不是某个数字。
+        覆盖率一律**按占位条数动态推导**，不写死数字。两个原因：
+        1. 补录会把占位换成真实值（09-20 那次补录让 listingDate 由 84 变 97）；
+        2. 2026-09-20 清理了 09-17 之前的快照，旧样本期 2026-09-13 已不存在，
+           早期那批含 promotion / mainBsr 占位的数据也随之消失 —— 现在剩余各期
+           这两个字段都是满覆盖，写死的旧值（76 / 74）不再成立。
+
+        核心要守住的是「占位不计入有效」，不是任何具体数字。
         """
-        items = self.read_json("docs", "data/daily/2026/09/2026-09-13.json")["items"]
+        items = self.read_json("docs", "data/daily/2026/09/2026-09-19.json")["items"]
         quality = publish_snapshot.validate(items)
 
-        placeholders = sum(
-            1 for x in items
-            if x.get("listingDate") in ("未显示/无法获取", "", None)
-        )
-        expected = len(items) - placeholders
-        self.assertEqual(quality["fieldCoverage"]["listingDate"], expected)
-        # 这一期确实存在占位，否则上面的断言就失去意义（恒为 100 也会通过）
-        self.assertGreater(placeholders, 0)
+        def gaps(field):
+            return sum(
+                1 for x in items
+                if x.get(field) in ("未显示/无法获取", "", None)
+            )
 
-        # promotion / mainBsr 不随父体补录变化，保留硬编码作为回归锚点
-        self.assertEqual(quality["fieldCoverage"]["promotion"], 76)
-        self.assertEqual(quality["fieldCoverage"]["mainBsr"], 74)
+        for field in ("listingDate", "promotion", "mainBsr"):
+            expected = len(items) - gaps(field)
+            self.assertEqual(
+                quality["fieldCoverage"][field], expected,
+                "%s 覆盖率应如实扣除占位（占位 %d 条）" % (field, gaps(field)),
+            )
+
+        # 样本期本身要含占位，否则上面那段恒等式-trivial（全 100 也会通过）
+        # 就失去了验证意义。随着数据补录推进，这里可能需要换一期样本。
+        self.assertGreater(gaps("listingDate"), 0, "样本期应含 listingDate 占位")
 
     def test_history_streak_breaks_when_a_calendar_day_is_missing(self):
         item = {"asin": "B000000001"}

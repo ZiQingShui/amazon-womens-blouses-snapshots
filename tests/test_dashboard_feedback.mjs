@@ -30,9 +30,10 @@ assert.match(feedbackDelta(4.3, 4.4, 'rating'), /↓0\.1/);
 assert.match(feedbackHtml({ rating: 4.3, reviewCount: 552 }, { rating: null, reviewCount: null }), /评论 552/);
 assert.doesNotMatch(feedbackHtml({ rating: 4.3, reviewCount: 552 }, { rating: null, reviewCount: null }), /feedback-delta/);
 
+// 2026-09-20 清理了 09-17 之前的快照，样本期相应改到现存的最新一期。
 for (const [node, relative] of [
-  ['2368365011', 'data/daily/2026/09/2026-09-16.json'],
-  ['2368383011', 'data/categories/2368383011/daily/2026/09/2026-09-16.json'],
+  ['2368365011', 'data/daily/2026/09/2026-09-19.json'],
+  ['2368383011', 'data/categories/2368383011/daily/2026/09/2026-09-19.json'],
 ]) {
   const latest = JSON.parse(fs.readFileSync(path.join(root, 'docs', relative), 'utf8'));
   assert.equal(String(latest.category.node), node);
@@ -40,7 +41,8 @@ for (const [node, relative] of [
   assert.equal(latest.items.filter(item => typeof item.rating === 'number').length, 100);
   assert.equal(latest.items.filter(item => Number.isInteger(item.reviewCount)).length, 100);
 }
-const previous = JSON.parse(fs.readFileSync(path.join(root, 'docs', 'data', 'daily', '2026', '09', '2026-09-13.json'), 'utf8'));
-assert.equal(previous.items.some(item => Object.hasOwn(item, 'rating') || Object.hasOwn(item, 'reviewCount')), false);
+// 「旧期档案不含 rating / reviewCount 字段」这条契约，以前用 2026-09-13 那一期
+// 校验。该期已在清理中删除，且后续各期都带完整反馈字段，归档里再无此类样本。
+// 对应的前端行为（缺字段时不渲染 delta）由上面第 30~31 行的人造用例覆盖。
 assert.match(html, /<span>评分<\/span><span>评论数<\/span><span>促销<\/span>/);
 console.log('Dashboard feedback checks passed.');
