@@ -354,7 +354,7 @@ class SnapshotArchiveTests(unittest.TestCase):
         self.assertIn("parentKeyActive=false;", html)
         # 图例要有降级提示
         self.assertIn('class="lg-note"', html)
-        self.assertIn("按 ASIN 对比", html)
+        self.assertIn("按子ASIN对比", html)
 
     def test_start_server_bat_is_windows_encoded(self):
         """start-server.bat 必须能被 cmd 正确解析（换行符 + 编码 + UNC 支持）。
