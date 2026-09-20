@@ -4,7 +4,7 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
-from tools import add_category, build_worker, publish_snapshot
+from tools import add_category, build_enriched, build_worker, publish_snapshot
 
 
 ROOT = Path(__file__).parents[1]
@@ -638,6 +638,48 @@ class SnapshotArchiveTests(unittest.TestCase):
                     (root / "data" / "categories" / "1234567890" / "manifest.json").read_text(encoding="utf-8")
                 )
                 self.assertEqual(manifest["snapshots"], [])
+
+
+class PromotionParsingTests(unittest.TestCase):
+    """促销字段的取值优先级：ASIN 监控数据 > 商品详情。
+
+    背景：`amazon_get_product_info` 的 `Coupon` 列自 2026-09-18 起服务端恒返回 0
+    （原始 HTML 里那一列就是 0，同表「促销折扣」列却正常），改用
+    `tools/fetch_asin_tracking.py` 抓的 ASIN 监控数据（Coupon / Promotion折扣 / 是否Deal）供数。
+    监控侧 coupon 是**百分比**（"10%"），详情侧是**美元**（"2.50"），两套写法不能混。
+    """
+
+    def _item(self, detail, tracking):
+        row = {"asin": "B0TEST0001", "rank": 7, "imageId": "", "title": "t", "reviews": 3, "rating": 4.5}
+        return build_enriched.build_item(row, detail, "2026-09-20", tracking)
+
+    def test_tracking_wins_over_detail(self):
+        item = self._item({"Coupon": "0", "促销折扣": "0"},
+                          {"coupon": "10%", "promoDiscount": "30%", "deal": True})
+        self.assertEqual(item["promotions"], ["Coupon 10%", "30% off", "Deal"])
+        self.assertEqual(item["promotionStatus"], "detected")
+        self.assertEqual(item["promotionSource"], "Ecomtool MCP ASIN 监控")
+        self.assertTrue(item["deal"])
+
+    def test_coupon_keeps_its_own_unit(self):
+        self.assertEqual(self._item({}, {"coupon": "8%"})["promotions"], ["Coupon 8%"])
+        self.assertEqual(self._item({"Coupon": "2.50"}, None)["promotions"], ["Coupon $2.50"])
+
+    def test_deal_alone_counts_as_promotion(self):
+        item = self._item({}, {"coupon": "0", "promoDiscount": "0", "deal": True})
+        self.assertEqual(item["promotions"], ["Deal"])
+        self.assertEqual(item["promotionStatus"], "detected")
+
+    def test_falls_back_to_detail_without_tracking(self):
+        item = self._item({"Coupon": "0", "促销折扣": "20%"}, None)
+        self.assertEqual(item["promotions"], ["20% off"])
+        self.assertNotIn("deal", item)
+        self.assertIn("商品详情", item["promotionSource"])
+
+    def test_no_promotion_is_none_not_unknown(self):
+        item = self._item({}, {"coupon": "0", "promoDiscount": "0", "deal": False})
+        self.assertEqual(item["promotion"], "暂无促销")
+        self.assertEqual(item["promotionStatus"], "none")
 
 
 if __name__ == "__main__":
