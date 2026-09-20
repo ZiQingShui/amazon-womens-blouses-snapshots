@@ -87,6 +87,8 @@
       "promotions": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -127,6 +129,8 @@
       "promotions": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -167,6 +171,8 @@
       "promotions": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -207,6 +213,8 @@
       "promotions": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -247,6 +255,8 @@
       "promotions": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -284,9 +294,13 @@
           "rank": 110
         }
       ],
-      "promotions": [],
-      "promotion": "暂无促销",
-      "promotionStatus": "none",
+      "promotions": [
+        "Deal"
+      ],
+      "promotion": "Deal",
+      "promotionStatus": "detected",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": true,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -327,6 +341,8 @@
       "promotions": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -364,9 +380,13 @@
           "rank": 162
         }
       ],
-      "promotions": [],
-      "promotion": "暂无促销",
-      "promotionStatus": "none",
+      "promotions": [
+        "Deal"
+      ],
+      "promotion": "Deal",
+      "promotionStatus": "detected",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": true,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -404,9 +424,13 @@
           "rank": 128
         }
       ],
-      "promotions": [],
-      "promotion": "暂无促销",
-      "promotionStatus": "none",
+      "promotions": [
+        "Coupon 8%"
+      ],
+      "promotion": "Coupon 8%",
+      "promotionStatus": "detected",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -446,6 +470,8 @@
       "promotions": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -483,9 +509,13 @@
           "rank": 206
         }
       ],
-      "promotions": [],
-      "promotion": "暂无促销",
-      "promotionStatus": "none",
+      "promotions": [
+        "Coupon 10%"
+      ],
+      "promotion": "Coupon 10%",
+      "promotionStatus": "detected",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -526,6 +556,8 @@
       "promotions": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -563,9 +595,13 @@
           "rank": 239
         }
       ],
-      "promotions": [],
-      "promotion": "暂无促销",
-      "promotionStatus": "none",
+      "promotions": [
+        "Deal"
+      ],
+      "promotion": "Deal",
+      "promotionStatus": "detected",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": true,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -605,6 +641,8 @@
       "promotions": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -645,6 +683,7 @@
       "promotions": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
+      "promotionSource": "Ecomtool MCP 商品详情（无监控数据）",
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -681,9 +720,13 @@
           "rank": 194
         }
       ],
-      "promotions": [],
-      "promotion": "暂无促销",
-      "promotionStatus": "none",
+      "promotions": [
+        "Coupon 10%"
+      ],
+      "promotion": "Coupon 10%",
+      "promotionStatus": "detected",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -721,9 +764,13 @@
           "rank": 209
         }
       ],
-      "promotions": [],
-      "promotion": "暂无促销",
-      "promotionStatus": "none",
+      "promotions": [
+        "Coupon 35%"
+      ],
+      "promotion": "Coupon 35%",
+      "promotionStatus": "detected",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -762,10 +809,13 @@
         }
       ],
       "promotions": [
+        "Coupon 5%",
         "10% off"
       ],
-      "promotion": "10% off",
+      "promotion": "Coupon 5% + 10% off",
       "promotionStatus": "detected",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -803,9 +853,13 @@
           "rank": 217
         }
       ],
-      "promotions": [],
-      "promotion": "暂无促销",
-      "promotionStatus": "none",
+      "promotions": [
+        "Deal"
+      ],
+      "promotion": "Deal",
+      "promotionStatus": "detected",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": true,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -846,6 +900,8 @@
       "promotions": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -883,9 +939,13 @@
           "rank": 218
         }
       ],
-      "promotions": [],
-      "promotion": "暂无促销",
-      "promotionStatus": "none",
+      "promotions": [
+        "Coupon 10%"
+      ],
+      "promotion": "Coupon 10%",
+      "promotionStatus": "detected",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -926,6 +986,8 @@
       "promotions": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -966,6 +1028,8 @@
       "promotions": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -1002,9 +1066,13 @@
           "rank": 323
         }
       ],
-      "promotions": [],
-      "promotion": "暂无促销",
-      "promotionStatus": "none",
+      "promotions": [
+        "Deal"
+      ],
+      "promotion": "Deal",
+      "promotionStatus": "detected",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": true,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -1047,6 +1115,8 @@
       ],
       "promotion": "50% off",
       "promotionStatus": "detected",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -1084,9 +1154,13 @@
           "rank": 341
         }
       ],
-      "promotions": [],
-      "promotion": "暂无促销",
-      "promotionStatus": "none",
+      "promotions": [
+        "Deal"
+      ],
+      "promotion": "Deal",
+      "promotionStatus": "detected",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": true,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -1127,6 +1201,8 @@
       "promotions": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -1164,9 +1240,13 @@
           "rank": 349
         }
       ],
-      "promotions": [],
-      "promotion": "暂无促销",
-      "promotionStatus": "none",
+      "promotions": [
+        "Deal"
+      ],
+      "promotion": "Deal",
+      "promotionStatus": "detected",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": true,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -1204,9 +1284,13 @@
           "rank": 369
         }
       ],
-      "promotions": [],
-      "promotion": "暂无促销",
-      "promotionStatus": "none",
+      "promotions": [
+        "Deal"
+      ],
+      "promotion": "Deal",
+      "promotionStatus": "detected",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": true,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -1244,9 +1328,13 @@
           "rank": 384
         }
       ],
-      "promotions": [],
-      "promotion": "暂无促销",
-      "promotionStatus": "none",
+      "promotions": [
+        "Deal"
+      ],
+      "promotion": "Deal",
+      "promotionStatus": "detected",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": true,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -1287,6 +1375,8 @@
       "promotions": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -1327,6 +1417,8 @@
       "promotions": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -1364,9 +1456,13 @@
           "rank": 403
         }
       ],
-      "promotions": [],
-      "promotion": "暂无促销",
-      "promotionStatus": "none",
+      "promotions": [
+        "Deal"
+      ],
+      "promotion": "Deal",
+      "promotionStatus": "detected",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": true,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -1407,6 +1503,7 @@
       "promotions": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
+      "promotionSource": "Ecomtool MCP 商品详情（无监控数据）",
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -1444,9 +1541,13 @@
           "rank": 423
         }
       ],
-      "promotions": [],
-      "promotion": "暂无促销",
-      "promotionStatus": "none",
+      "promotions": [
+        "Deal"
+      ],
+      "promotion": "Deal",
+      "promotionStatus": "detected",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": true,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -1484,9 +1585,13 @@
           "rank": 298
         }
       ],
-      "promotions": [],
-      "promotion": "暂无促销",
-      "promotionStatus": "none",
+      "promotions": [
+        "Coupon 15%"
+      ],
+      "promotion": "Coupon 15%",
+      "promotionStatus": "detected",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -1527,6 +1632,8 @@
       "promotions": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -1567,6 +1674,8 @@
       "promotions": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -1604,9 +1713,13 @@
           "rank": 305
         }
       ],
-      "promotions": [],
-      "promotion": "暂无促销",
-      "promotionStatus": "none",
+      "promotions": [
+        "Coupon 25%"
+      ],
+      "promotion": "Coupon 25%",
+      "promotionStatus": "detected",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -1645,10 +1758,13 @@
         }
       ],
       "promotions": [
+        "Coupon 20%",
         "20% off"
       ],
-      "promotion": "20% off",
+      "promotion": "Coupon 20% + 20% off",
       "promotionStatus": "detected",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -1686,10 +1802,13 @@
         }
       ],
       "promotions": [
+        "Coupon 15%",
         "30% off"
       ],
-      "promotion": "30% off",
+      "promotion": "Coupon 15% + 30% off",
       "promotionStatus": "detected",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -1729,6 +1848,8 @@
       "promotions": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -1769,6 +1890,8 @@
       "promotions": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -1806,9 +1929,13 @@
           "rank": 355
         }
       ],
-      "promotions": [],
-      "promotion": "暂无促销",
-      "promotionStatus": "none",
+      "promotions": [
+        "Coupon 20%"
+      ],
+      "promotion": "Coupon 20%",
+      "promotionStatus": "detected",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -1846,9 +1973,13 @@
           "rank": 535
         }
       ],
-      "promotions": [],
-      "promotion": "暂无促销",
-      "promotionStatus": "none",
+      "promotions": [
+        "Deal"
+      ],
+      "promotion": "Deal",
+      "promotionStatus": "detected",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": true,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -1886,9 +2017,13 @@
           "rank": 374
         }
       ],
-      "promotions": [],
-      "promotion": "暂无促销",
-      "promotionStatus": "none",
+      "promotions": [
+        "Coupon 10%"
+      ],
+      "promotion": "Coupon 10%",
+      "promotionStatus": "detected",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -1926,9 +2061,13 @@
           "rank": 555
         }
       ],
-      "promotions": [],
-      "promotion": "暂无促销",
-      "promotionStatus": "none",
+      "promotions": [
+        "Deal"
+      ],
+      "promotion": "Deal",
+      "promotionStatus": "detected",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": true,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -1969,6 +2108,8 @@
       "promotions": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -2009,6 +2150,8 @@
       "promotions": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -2047,10 +2190,13 @@
         }
       ],
       "promotions": [
+        "Coupon 10%",
         "20% off"
       ],
-      "promotion": "20% off",
+      "promotion": "Coupon 10% + 20% off",
       "promotionStatus": "detected",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -2089,10 +2235,13 @@
         }
       ],
       "promotions": [
+        "Coupon 20%",
         "20% off"
       ],
-      "promotion": "20% off",
+      "promotion": "Coupon 20% + 20% off",
       "promotionStatus": "detected",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -2130,9 +2279,13 @@
           "rank": 403
         }
       ],
-      "promotions": [],
-      "promotion": "暂无促销",
-      "promotionStatus": "none",
+      "promotions": [
+        "Coupon 35%"
+      ],
+      "promotion": "Coupon 35%",
+      "promotionStatus": "detected",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -2173,6 +2326,8 @@
       "promotions": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -2210,9 +2365,13 @@
           "rank": 603
         }
       ],
-      "promotions": [],
-      "promotion": "暂无促销",
-      "promotionStatus": "none",
+      "promotions": [
+        "Deal"
+      ],
+      "promotion": "Deal",
+      "promotionStatus": "detected",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": true,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -2250,9 +2409,13 @@
           "rank": 412
         }
       ],
-      "promotions": [],
-      "promotion": "暂无促销",
-      "promotionStatus": "none",
+      "promotions": [
+        "Deal"
+      ],
+      "promotion": "Deal",
+      "promotionStatus": "detected",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": true,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -2293,6 +2456,8 @@
       "promotions": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -2330,9 +2495,13 @@
           "rank": 612
         }
       ],
-      "promotions": [],
-      "promotion": "暂无促销",
-      "promotionStatus": "none",
+      "promotions": [
+        "Coupon 10%"
+      ],
+      "promotion": "Coupon 10%",
+      "promotionStatus": "detected",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -2370,9 +2539,13 @@
           "rank": 420
         }
       ],
-      "promotions": [],
-      "promotion": "暂无促销",
-      "promotionStatus": "none",
+      "promotions": [
+        "Coupon 10%"
+      ],
+      "promotion": "Coupon 10%",
+      "promotionStatus": "detected",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -2413,6 +2586,7 @@
       "promotions": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
+      "promotionSource": "Ecomtool MCP 商品详情（无监控数据）",
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -2450,9 +2624,13 @@
           "rank": 637
         }
       ],
-      "promotions": [],
-      "promotion": "暂无促销",
-      "promotionStatus": "none",
+      "promotions": [
+        "Deal"
+      ],
+      "promotion": "Deal",
+      "promotionStatus": "detected",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": true,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -2490,9 +2668,13 @@
           "rank": 444
         }
       ],
-      "promotions": [],
-      "promotion": "暂无促销",
-      "promotionStatus": "none",
+      "promotions": [
+        "Deal"
+      ],
+      "promotion": "Deal",
+      "promotionStatus": "detected",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": true,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -2531,10 +2713,13 @@
         }
       ],
       "promotions": [
+        "Coupon 15%",
         "15% off"
       ],
-      "promotion": "15% off",
+      "promotion": "Coupon 15% + 15% off",
       "promotionStatus": "detected",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -2573,10 +2758,13 @@
         }
       ],
       "promotions": [
+        "Coupon 15%",
         "20% off"
       ],
-      "promotion": "20% off",
+      "promotion": "Coupon 15% + 20% off",
       "promotionStatus": "detected",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -2617,6 +2805,8 @@
       "promotions": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -2654,9 +2844,13 @@
           "rank": 701
         }
       ],
-      "promotions": [],
-      "promotion": "暂无促销",
-      "promotionStatus": "none",
+      "promotions": [
+        "Coupon 10%"
+      ],
+      "promotion": "Coupon 10%",
+      "promotionStatus": "detected",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -2696,6 +2890,8 @@
       "promotions": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -2736,6 +2932,8 @@
       "promotions": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -2772,9 +2970,13 @@
           "rank": 707
         }
       ],
-      "promotions": [],
-      "promotion": "暂无促销",
-      "promotionStatus": "none",
+      "promotions": [
+        "Deal"
+      ],
+      "promotion": "Deal",
+      "promotionStatus": "detected",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": true,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -2814,6 +3016,8 @@
       "promotions": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -2853,6 +3057,8 @@
       "promotions": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -2893,6 +3099,8 @@
       "promotions": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -2933,6 +3141,8 @@
       "promotions": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -2973,6 +3183,8 @@
       "promotions": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -3013,6 +3225,8 @@
       "promotions": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -3050,9 +3264,13 @@
           "rank": 505
         }
       ],
-      "promotions": [],
-      "promotion": "暂无促销",
-      "promotionStatus": "none",
+      "promotions": [
+        "Coupon 35%"
+      ],
+      "promotion": "Coupon 35%",
+      "promotionStatus": "detected",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -3093,6 +3311,8 @@
       "promotions": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -3131,10 +3351,13 @@
         }
       ],
       "promotions": [
+        "Coupon 20%",
         "20% off"
       ],
-      "promotion": "20% off",
+      "promotion": "Coupon 20% + 20% off",
       "promotionStatus": "detected",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -3171,9 +3394,13 @@
           "rank": 750
         }
       ],
-      "promotions": [],
-      "promotion": "暂无促销",
-      "promotionStatus": "none",
+      "promotions": [
+        "Deal"
+      ],
+      "promotion": "Deal",
+      "promotionStatus": "detected",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": true,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -3211,9 +3438,13 @@
           "rank": 752
         }
       ],
-      "promotions": [],
-      "promotion": "暂无促销",
-      "promotionStatus": "none",
+      "promotions": [
+        "Coupon 10%"
+      ],
+      "promotion": "Coupon 10%",
+      "promotionStatus": "detected",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -3251,9 +3482,13 @@
           "rank": 758
         }
       ],
-      "promotions": [],
-      "promotion": "暂无促销",
-      "promotionStatus": "none",
+      "promotions": [
+        "Coupon 20%"
+      ],
+      "promotion": "Coupon 20%",
+      "promotionStatus": "detected",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -3292,10 +3527,13 @@
         }
       ],
       "promotions": [
+        "Coupon 20%",
         "20% off"
       ],
-      "promotion": "20% off",
+      "promotion": "Coupon 20% + 20% off",
       "promotionStatus": "detected",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -3334,10 +3572,13 @@
         }
       ],
       "promotions": [
+        "Coupon 5%",
         "30% off"
       ],
-      "promotion": "30% off",
+      "promotion": "Coupon 5% + 30% off",
       "promotionStatus": "detected",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -3378,6 +3619,7 @@
       "promotions": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
+      "promotionSource": "Ecomtool MCP 商品详情（无监控数据）",
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -3417,6 +3659,8 @@
       "promotions": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -3457,6 +3701,8 @@
       "promotions": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -3497,6 +3743,8 @@
       "promotions": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -3537,6 +3785,8 @@
       "promotions": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -3576,6 +3826,8 @@
       "promotions": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -3616,6 +3868,8 @@
       "promotions": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -3656,6 +3910,8 @@
       "promotions": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -3696,6 +3952,8 @@
       "promotions": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -3736,6 +3994,8 @@
       "promotions": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -3774,10 +4034,13 @@
         }
       ],
       "promotions": [
+        "Coupon 10%",
         "30% off"
       ],
-      "promotion": "30% off",
+      "promotion": "Coupon 10% + 30% off",
       "promotionStatus": "detected",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -3817,6 +4080,8 @@
       "promotions": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -3857,6 +4122,8 @@
       "promotions": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -3897,6 +4164,8 @@
       "promotions": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -3937,6 +4206,8 @@
       "promotions": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -3974,9 +4245,13 @@
           "rank": 607
         }
       ],
-      "promotions": [],
-      "promotion": "暂无促销",
-      "promotionStatus": "none",
+      "promotions": [
+        "Coupon 35%"
+      ],
+      "promotion": "Coupon 35%",
+      "promotionStatus": "detected",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -4017,6 +4292,8 @@
       "promotions": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,
@@ -4054,9 +4331,13 @@
           "rank": 609
         }
       ],
-      "promotions": [],
-      "promotion": "暂无促销",
-      "promotionStatus": "none",
+      "promotions": [
+        "Deal"
+      ],
+      "promotion": "Deal",
+      "promotionStatus": "detected",
+      "promotionSource": "Ecomtool MCP ASIN 监控",
+      "deal": true,
       "detailSource": "Ecomtool MCP 商品详情",
       "detailStatus": "complete",
       "detailAttempts": 1,

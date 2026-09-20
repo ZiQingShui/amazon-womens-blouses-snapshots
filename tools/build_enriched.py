@@ -71,9 +71,28 @@ def parse_price(value: str) -> str:
         return value
 
 
-def parse_promotions(detail: dict) -> list[str]:
-    """从 Coupon 和促销折扣解析促销列表。"""
+def parse_promotions(detail: dict, tracking: dict | None = None) -> list[str]:
+    """解析促销标签列表。
+
+    **优先用 ASIN 监控数据**（`tools/fetch_asin_tracking.py` 抓的
+    Coupon / Promotion折扣 / 是否Deal）——它拿得到 coupon；
+    product_info 的 Coupon 列自 2026-09-18 起服务端恒返回 0，只在没有监控数据时兜底。
+    """
     promos = []
+    if tracking:
+        coupon = str(tracking.get("coupon") or "").strip()
+        if coupon and coupon != "0":
+            # 监控侧是百分比（"10%"），product_info 侧是美元（"2.50"）
+            promos.append(f"Coupon {coupon}" if "%" in coupon else f"Coupon ${coupon}")
+        discount = str(tracking.get("promoDiscount") or "").strip()
+        if discount and discount != "0":
+            promos.append(f"{discount} off")
+        if tracking.get("deal"):
+            promos.append("Deal")
+        if promos:
+            return promos
+
+    # 兜底：商品详情（Coupon 那一列不可靠，折扣仍可用）
     coupon = str(detail.get("Coupon", "")).strip()
     discount = str(detail.get("促销折扣", "")).strip()
     if coupon and coupon != "0":
@@ -83,7 +102,7 @@ def parse_promotions(detail: dict) -> list[str]:
     return promos
 
 
-def build_item(rank_row: dict, detail: dict, snapshot_date: str) -> dict:
+def build_item(rank_row: dict, detail: dict, snapshot_date: str, tracking: dict | None = None) -> dict:
     asin = rank_row["asin"]
     image_id = rank_row.get("imageId", "")
     main_bsr, sub_bsr, main_cat, sub_cat = parse_bsr(detail.get("销量排名信息", ""))
@@ -116,15 +135,21 @@ def build_item(rank_row: dict, detail: dict, snapshot_date: str) -> dict:
         item["subCategory"] = sub_cat
         item["subRanks"] = [{"category": sub_cat, "rank": sub_bsr}]
 
-    promotions = parse_promotions(detail)
+    promotions = parse_promotions(detail, tracking)
     item["promotions"] = promotions
     if promotions:
         item["promotion"] = " + ".join(promotions)
         item["promotionStatus"] = "detected"
     else:
-        # Ecomtool 明确返回 Coupon=0 且无折扣 → 确认无促销，而非未知
+        # 监控/详情都明确返回「无 coupon、无折扣」→ 确认无促销，而非未知
         item["promotion"] = "暂无促销"
         item["promotionStatus"] = "none"
+    if tracking is not None:
+        # 记录促销数据来源，便于回查（监控侧还有 Deal 维度）
+        item["promotionSource"] = "Ecomtool MCP ASIN 监控"
+        item["deal"] = bool(tracking.get("deal"))
+    else:
+        item["promotionSource"] = "Ecomtool MCP 商品详情（无监控数据）"
 
     # 详情采集标记
     item["detailSource"] = "Ecomtool MCP 商品详情"
@@ -160,6 +185,8 @@ def _to_float(value):
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--date", required=True, help="快照日期，如 2026-09-18")
+    parser.add_argument("--tracking", type=Path, default=None,
+                        help="ASIN 监控促销数据；默认自动读 work/asin-tracking-{date}.json")
     args = parser.parse_args()
     snapshot_date = args.date
     parsed_path = WORK / f"ecomtool-{snapshot_date}-parsed.json"
@@ -170,6 +197,13 @@ def main() -> None:
         raise SystemExit(f"缺少详情文件：{details_path}")
     parsed = json.loads(parsed_path.read_text(encoding="utf-8"))
     details = json.loads(details_path.read_text(encoding="utf-8"))
+
+    tracking_path = args.tracking or (WORK / f"asin-tracking-{snapshot_date}.json")
+    tracking: dict = {}
+    if tracking_path.exists():
+        tracking = json.loads(tracking_path.read_text(encoding="utf-8"))
+    print(f"促销数据源：{tracking_path.name}（{len(tracking)} 个 ASIN）" if tracking
+          else f"促销数据源：无 {tracking_path.name}，回退商品详情（Coupon 列不可靠）")
 
     produced = []
 
@@ -183,7 +217,7 @@ def main() -> None:
                 if detail is None:
                     missing_detail.append(asin)
                     continue
-                items.append(build_item(row, detail, snapshot_date))
+                items.append(build_item(row, detail, snapshot_date, tracking.get(asin)))
 
             items.sort(key=lambda x: x["rank"])
             out_path = WORK / f"enriched-{ranking}-{node}.json"
