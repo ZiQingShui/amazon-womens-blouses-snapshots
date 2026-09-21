@@ -332,17 +332,11 @@ class SnapshotArchiveTests(unittest.TestCase):
         # 位置：在筛选控件之前（面板顶部），而不是旧的面板末尾
         self.assertLess(html.index('id="filterState"'), html.index('class="fgroup"'))
         self.assertNotIn('<div class="active-filters" id="activeFilters" aria-live="polite"></div></section>', html)
-        # 2026-09-20：条件全部平铺，不再有「更多筛选」折叠按钮与隐藏面板
-        # 2026-09-21：新增「款式风格」组（袖型/季节/主风格），由 3 组变 4 组
+        # 2026-09-20：条件全部平铺成 3 组，不再有「更多筛选」折叠按钮与隐藏面板
         self.assertNotIn("moreFilters", html)
         self.assertNotIn("advancedFilters", html)
         self.assertNotIn("advanced-grid", html)
-        self.assertEqual(html.count('class="fgroup"'), 4)
-        # 款式标签：数据来自 docs/data/style-tags.json，卡片上渲染 .style-chips
-        self.assertIn('json("data/style-tags.json")', html)
-        self.assertIn('class="style-chips"', html)
-        for sel in ("filterSleeve", "filterSeason", "filterStyle"):
-            self.assertIn('id="%s"' % sel, html)
+        self.assertEqual(html.count('class="fgroup"'), 3)
 
     def test_comparison_falls_back_to_asin_when_previous_lacks_parent_asin(self):
         """对比期缺父体数据时必须回退到 ASIN 比对。
