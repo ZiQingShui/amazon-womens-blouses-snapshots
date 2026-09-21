@@ -71,6 +71,8 @@ EDITS = [
      '.sty-btn.pri{background:#175cd3;border-color:#175cd3;color:#fff}'
      '.sty-export{margin-left:7px;padding:2px 9px;border:1px solid #d5e0ed;border-radius:7px;background:#fff;'
      'font:inherit;font-size:10.5px;font-weight:750;color:#175cd3;letter-spacing:0;cursor:pointer}'
+     '.sty-export.danger{margin-left:5px;color:#b42318;border-color:#f1c0bb}'
+     '.sty-export:hover{background:#f5f9ff}'
      '.sty-toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#1d2939;color:#fff;'
      'padding:9px 17px;border-radius:9px;font-size:13px;font-weight:650;z-index:300;opacity:0;'
      'transition:opacity .2s;pointer-events:none}'
@@ -100,8 +102,9 @@ EDITS = [
      'function loadLocalStyleTags(){LOCAL_KEY="styleTagsManual_"+(STYLE_DOC_DATE||"");'
      'try{localTags=JSON.parse(localStorage.getItem(LOCAL_KEY)||"{}")}catch(e){localTags={}}}\n'
      'function saveLocalStyleTags(){try{localStorage.setItem(LOCAL_KEY,JSON.stringify(localTags))}catch(e){}'
-     'const b=document.getElementById("styExport");if(b){const n=Object.keys(localTags).length;'
-     'b.hidden=!n;b.textContent="导出我的修改"+(n?` (${n})`:"")}}\n'
+     'const n=Object.keys(localTags).length;'
+     'const b=document.getElementById("styExport");if(b){b.hidden=!n;b.textContent="导出我的修改"+(n?` (${n})`:"")}'
+     'const c=document.getElementById("styClear");if(c)c.hidden=!n}\n'
      'function tagOf(p){const key=p.parentAsin||p.asin,base=STYLE_TAGS[key]||STYLE_TAGS[p.asin]||null,'
      'm=localTags[key];if(!m)return base;return Object.assign({},base||{},{sleeve:m.sleeve||"",'
      'season:m.season||[],stylePrimary:m.style||"",source:"manual"})}\n'
@@ -159,7 +162,11 @@ EDITS = [
     # 导出按钮：绑定 + 初始化显示（改过几项就显示出来）
     ("导出按钮绑定",
      '$("fastRisers").addEventListener("clic',
-     '$("styExport").addEventListener("click",exportLocalStyleTags);saveLocalStyleTags();\n'
+     '$("styExport").addEventListener("click",exportLocalStyleTags);'
+     '$("styClear").addEventListener("click",()=>{const n=Object.keys(localTags).length;'
+     'if(!n)return;if(!confirm(`清除本机这 ${n} 项改动？\n改完如果还没导出过，清除后就找不回来了。`))return;'
+     'localTags={};saveLocalStyleTags();if(current)render();styFlash("已清除本机改动，现在显示的是标签库里的值")});'
+     'saveLocalStyleTags();\n'
      '$("fastRisers").addEventListener("clic'),
 
     ("全局变量 STYLE_TAGS",
@@ -213,6 +220,7 @@ EDITS = [
 NEW_GROUP = (
     '<div class="fgroup"><div class="fgroup-title">款式风格'
     '<button class="sty-export" id="styExport" type="button" hidden>导出我的修改</button>'
+    '<button class="sty-export danger" id="styClear" type="button" hidden>清除本机改动</button>'
     '</div><div class="filter-grid fg-4">'
     '<label class="field compact"><span>袖型</span><select id="filterSleeve" aria-label="袖型">'
     '<option value="">全部袖型</option></select></label>'
