@@ -332,11 +332,24 @@ class SnapshotArchiveTests(unittest.TestCase):
         # 位置：在筛选控件之前（面板顶部），而不是旧的面板末尾
         self.assertLess(html.index('id="filterState"'), html.index('class="fgroup"'))
         self.assertNotIn('<div class="active-filters" id="activeFilters" aria-live="polite"></div></section>', html)
-        # 2026-09-20：条件全部平铺成 3 组，不再有「更多筛选」折叠按钮与隐藏面板
+        # 2026-09-20：条件全部平铺，不再有「更多筛选」折叠按钮与隐藏面板
+        # 2026-09-21：款式标签（袖型/季节/主风格）合并进正式版 → 3 组变 4 组
         self.assertNotIn("moreFilters", html)
         self.assertNotIn("advancedFilters", html)
         self.assertNotIn("advanced-grid", html)
-        self.assertEqual(html.count('class="fgroup"'), 3)
+        self.assertEqual(html.count('class="fgroup"'), 4)
+
+    def test_style_tag_capability_is_wired_into_dashboard(self):
+        """款式标签已合并进正式版：标签库、卡片 chip、三个下拉、就地编辑、自定义项。"""
+        html = (ROOT / "docs/index.html").read_text(encoding="utf-8")
+        self.assertIn('json("data/style-tags.json")', html)       # 加载标签库
+        self.assertIn('style-chips', html)                         # 卡片上的标签行（模板里带变量后缀）
+        for sel in ("filterSleeve", "filterSeason", "filterStyle"):
+            self.assertIn('id="%s"' % sel, html)                   # 第 4 组的三个下拉
+        self.assertIn("openStyleEditor", html)                     # 点标签就地编辑
+        self.assertIn("styleTagsCustomOptions", html)              # 自定义选项
+        self.assertIn("editOptions", html)                         # 只列 建议+自定义
+        self.assertIn("styleOk=!!(styleTag&&styleTag.confirmed)", html)  # 筛选只算已确认
 
     def test_comparison_falls_back_to_asin_when_previous_lacks_parent_asin(self):
         """对比期缺父体数据时必须回退到 ASIN 比对。
