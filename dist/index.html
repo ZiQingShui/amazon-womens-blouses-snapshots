@@ -48,8 +48,11 @@ header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.95);border-
 .sty-head{display:flex;gap:11px;align-items:flex-start;margin-bottom:13px}
 .sty-head img{width:64px;height:64px;object-fit:contain;background:#f7f9fc;border-radius:9px;flex:0 0 64px}
 .sty-head .t{font-size:12.5px;line-height:1.5;color:#475467}
-.sty-note{margin:0 0 13px;font-size:11.5px;color:#667085;background:#f7f9fc;border-radius:8px;
-  padding:7px 10px;line-height:1.55}
+.sty-chip.custom{position:relative}
+.sty-del{position:absolute;top:-7px;right:-7px;width:17px;height:17px;border-radius:50%;
+  background:#fff;border:1px solid #f1c0bb;color:#b42318;font-size:13px;line-height:1;
+  display:none;align-items:center;justify-content:center;cursor:pointer}
+.sty-chip.custom:hover .sty-del{display:flex}
 .sty-row{margin-bottom:13px}
 .sty-row b{display:block;font-size:12px;margin-bottom:6px;color:#1d2939;font-weight:800}
 .sty-row em{font-style:normal;font-size:11px;color:#98a2b3;font-weight:600;margin-left:5px}
@@ -331,9 +334,6 @@ function openStyleEditor(parent, asin) {
   const bodyHtml = () => '<div class="sty-head"><img src="' + (p.image ? safeImageUrl(p.image) : "") + '" alt="">'
     + '<div><b style="font-size:13px">' + esc((p.title || asin).slice(0, 90)) + '</b>'
     + '<div class="t">' + esc(asin) + (p.brand ? " · " + esc(p.brand) : "") + '</div></div></div>'
-    + '<div class="sty-note">机器只给<b>建议</b>、不替你决定：<b>选中的才算数</b>，没选的维度当作未标注。'
-    + '想用别的值就点「＋ 自定义」，加过的会留下来，下次还能选。'
-    + '筛选与计数<b>只统计你确认过的商品</b>，机器建议不参与。</div>'
     + rows.map(function (r) {
       const dim = r[0], label = r[1], multi = r[2], sg = suggText(dim);
       return '<div class="sty-row"><b>' + label + '<em>' + (multi ? "可多选" : "单选") + '</em>' +
@@ -342,8 +342,10 @@ function openStyleEditor(parent, asin) {
         + editOptions(dim, draft, sugg).map(function (v) {
           const on = multi ? draft[dim].indexOf(v) >= 0 : draft[dim] === v;
           const isS = !on && !!sg && (multi ? (sugg[dim] || []).indexOf(v) >= 0 : sugg[dim] === v);
+          const isC = (customOptions[dim] || []).indexOf(v) >= 0;
           return '<button type="button" class="sty-chip' + (on ? " on" : "") + (isS ? " sugg" : "")
-            + '" data-v="' + esc(v) + '">' + esc(v) + '</button>';
+            + (isC ? " custom" : "") + '" data-v="' + esc(v) + '">' + esc(v)
+            + (isC ? '<span class="sty-del" title="从我的选项里删掉">×</span>' : '') + '</button>';
         }).join("")
         + '<button type="button" class="sty-chip add" data-add="1">＋ 自定义</button>'
         + '</div></div>';
@@ -364,6 +366,15 @@ function openStyleEditor(parent, asin) {
 
   mask.addEventListener("click", event => {
     if (event.target === mask) { close(); return; }
+    const delBtn = event.target.closest(".sty-del");
+    if (delBtn) {
+      const c0 = delBtn.closest(".sty-chip"), d0 = c0.parentNode.dataset.dim, v0 = c0.dataset.v;
+      customOptions[d0] = (customOptions[d0] || []).filter(function (x) { return x !== v0; });
+      saveCustomOptions();
+      if (d0 === "season") draft.season = draft.season.filter(function (x) { return x !== v0; });
+      else if (draft[d0] === v0) draft[d0] = "";
+      paint(); return;
+    }
     const chip = event.target.closest(".sty-chip");
     if (chip) {
       const dim = chip.parentNode.dataset.dim;
