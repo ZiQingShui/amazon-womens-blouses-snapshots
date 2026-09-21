@@ -32,10 +32,14 @@ function editOptions(dim, draft, sugg) {
    本机改过之后也要重跑（saveLocalStyleTags 里会调）。 */
 function syncStyleOptions() {
   const seen = { sleeve: new Set(), season: new Set(), style: new Set() };
+  /* 注意字段名不一致：标签库里是 stylePrimary，本机手改(localTags)里是 style —— 两个都要认，
+     否则自定义的风格值不会出现在筛选下拉里（2026-09-21 踩过） */
   const take = t => {
     if (t.sleeve) seen.sleeve.add(t.sleeve);
     (t.season || []).forEach(x => x && seen.season.add(x));
-    if (t.stylePrimary) seen.style.add(t.stylePrimary);
+    const s = t.stylePrimary || t.style;
+    if (typeof s === "string") { if (s) seen.style.add(s); }
+    else if (Array.isArray(s)) s.forEach(x => x && seen.style.add(x));
     if (Array.isArray(t.style)) t.style.forEach(x => x && seen.style.add(x));
   };
   Object.values(STYLE_TAGS).forEach(take);
