@@ -86,6 +86,7 @@
         }
       ],
       "promotions": [],
+      "promoTypes": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -128,6 +129,7 @@
         }
       ],
       "promotions": [],
+      "promoTypes": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -170,6 +172,7 @@
         }
       ],
       "promotions": [],
+      "promoTypes": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -212,6 +215,7 @@
         }
       ],
       "promotions": [],
+      "promoTypes": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -255,6 +259,9 @@
       ],
       "promotions": [
         "Coupon 10%"
+      ],
+      "promoTypes": [
+        "coupon"
       ],
       "promotion": "Coupon 10%",
       "promotionStatus": "detected",
@@ -300,6 +307,9 @@
       "promotions": [
         "Coupon 8%"
       ],
+      "promoTypes": [
+        "coupon"
+      ],
       "promotion": "Coupon 8%",
       "promotionStatus": "detected",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -341,6 +351,7 @@
         }
       ],
       "promotions": [],
+      "promoTypes": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -383,6 +394,7 @@
         }
       ],
       "promotions": [],
+      "promoTypes": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
       "promotionSource": "Ecomtool MCP 商品详情（无监控数据）",
@@ -424,6 +436,9 @@
       ],
       "promotions": [
         "Coupon 10%"
+      ],
+      "promoTypes": [
+        "coupon"
       ],
       "promotion": "Coupon 10%",
       "promotionStatus": "detected",
@@ -469,6 +484,9 @@
       "promotions": [
         "Coupon 35%"
       ],
+      "promoTypes": [
+        "coupon"
+      ],
       "promotion": "Coupon 35%",
       "promotionStatus": "detected",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -512,6 +530,9 @@
       ],
       "promotions": [
         "Deal"
+      ],
+      "promoTypes": [
+        "deal"
       ],
       "promotion": "Deal",
       "promotionStatus": "detected",
@@ -557,6 +578,9 @@
       "promotions": [
         "Coupon 10%"
       ],
+      "promoTypes": [
+        "coupon"
+      ],
       "promotion": "Coupon 10%",
       "promotionStatus": "detected",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -599,9 +623,14 @@
         }
       ],
       "promotions": [
-        "50% off"
+        "50% off",
+        "30天最低价"
       ],
-      "promotion": "50% off",
+      "promoTypes": [
+        "discount",
+        "lowest30"
+      ],
+      "promotion": "50% off + 30天最低价",
       "promotionStatus": "detected",
       "promotionSource": "Ecomtool MCP ASIN 监控",
       "deal": false,
@@ -643,6 +672,7 @@
         }
       ],
       "promotions": [],
+      "promoTypes": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -684,9 +714,14 @@
           "rank": 270
         }
       ],
-      "promotions": [],
-      "promotion": "暂无促销",
-      "promotionStatus": "none",
+      "promotions": [
+        "30天最低价"
+      ],
+      "promoTypes": [
+        "lowest30"
+      ],
+      "promotion": "30天最低价",
+      "promotionStatus": "detected",
       "promotionSource": "Ecomtool MCP ASIN 监控",
       "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
@@ -727,6 +762,7 @@
         }
       ],
       "promotions": [],
+      "promoTypes": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
       "promotionSource": "Ecomtool MCP 商品详情（无监控数据）",
@@ -770,6 +806,9 @@
       "promotions": [
         "Coupon 15%"
       ],
+      "promoTypes": [
+        "coupon"
+      ],
       "promotion": "Coupon 15%",
       "promotionStatus": "detected",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -812,6 +851,7 @@
         }
       ],
       "promotions": [],
+      "promoTypes": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -854,6 +894,7 @@
         }
       ],
       "promotions": [],
+      "promoTypes": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -898,6 +939,9 @@
       "promotions": [
         "Coupon 25%"
       ],
+      "promoTypes": [
+        "coupon"
+      ],
       "promotion": "Coupon 25%",
       "promotionStatus": "detected",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -940,6 +984,7 @@
         }
       ],
       "promotions": [],
+      "promoTypes": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -982,6 +1027,7 @@
         }
       ],
       "promotions": [],
+      "promoTypes": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -1025,6 +1071,9 @@
       ],
       "promotions": [
         "Coupon 20%"
+      ],
+      "promoTypes": [
+        "coupon"
       ],
       "promotion": "Coupon 20%",
       "promotionStatus": "detected",
@@ -1070,6 +1119,9 @@
       "promotions": [
         "Coupon 10%"
       ],
+      "promoTypes": [
+        "coupon"
+      ],
       "promotion": "Coupon 10%",
       "promotionStatus": "detected",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -1112,6 +1164,7 @@
         }
       ],
       "promotions": [],
+      "promoTypes": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -1155,9 +1208,15 @@
       ],
       "promotions": [
         "Coupon 20%",
-        "20% off"
+        "20% off",
+        "30天最低价"
       ],
-      "promotion": "Coupon 20% + 20% off",
+      "promoTypes": [
+        "coupon",
+        "discount",
+        "lowest30"
+      ],
+      "promotion": "Coupon 20% + 20% off + 30天最低价",
       "promotionStatus": "detected",
       "promotionSource": "Ecomtool MCP ASIN 监控",
       "deal": false,
@@ -1201,6 +1260,9 @@
       "promotions": [
         "Coupon 35%"
       ],
+      "promoTypes": [
+        "coupon"
+      ],
       "promotion": "Coupon 35%",
       "promotionStatus": "detected",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -1243,6 +1305,7 @@
         }
       ],
       "promotions": [],
+      "promoTypes": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -1287,6 +1350,9 @@
       "promotions": [
         "Deal"
       ],
+      "promoTypes": [
+        "deal"
+      ],
       "promotion": "Deal",
       "promotionStatus": "detected",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -1329,6 +1395,7 @@
         }
       ],
       "promotions": [],
+      "promoTypes": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -1373,6 +1440,9 @@
       "promotions": [
         "Coupon 10%"
       ],
+      "promoTypes": [
+        "coupon"
+      ],
       "promotion": "Coupon 10%",
       "promotionStatus": "detected",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -1415,6 +1485,7 @@
         }
       ],
       "promotions": [],
+      "promoTypes": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
       "promotionSource": "Ecomtool MCP 商品详情（无监控数据）",
@@ -1457,6 +1528,9 @@
       ],
       "promotions": [
         "Deal"
+      ],
+      "promoTypes": [
+        "deal"
       ],
       "promotion": "Deal",
       "promotionStatus": "detected",
@@ -1503,6 +1577,10 @@
         "Coupon 15%",
         "20% off"
       ],
+      "promoTypes": [
+        "coupon",
+        "discount"
+      ],
       "promotion": "Coupon 15% + 20% off",
       "promotionStatus": "detected",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -1545,6 +1623,7 @@
         }
       ],
       "promotions": [],
+      "promoTypes": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -1587,6 +1666,7 @@
         }
       ],
       "promotions": [],
+      "promoTypes": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -1629,6 +1709,7 @@
         }
       ],
       "promotions": [],
+      "promoTypes": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -1671,6 +1752,7 @@
         }
       ],
       "promotions": [],
+      "promoTypes": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -1715,6 +1797,9 @@
       "promotions": [
         "Coupon 35%"
       ],
+      "promoTypes": [
+        "coupon"
+      ],
       "promotion": "Coupon 35%",
       "promotionStatus": "detected",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -1757,6 +1842,7 @@
         }
       ],
       "promotions": [],
+      "promoTypes": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -1802,6 +1888,10 @@
         "Coupon 20%",
         "20% off"
       ],
+      "promoTypes": [
+        "coupon",
+        "discount"
+      ],
       "promotion": "Coupon 20% + 20% off",
       "promotionStatus": "detected",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -1845,6 +1935,10 @@
       "promotions": [
         "Coupon 20%",
         "20% off"
+      ],
+      "promoTypes": [
+        "coupon",
+        "discount"
       ],
       "promotion": "Coupon 20% + 20% off",
       "promotionStatus": "detected",
@@ -1891,6 +1985,10 @@
         "Coupon 5%",
         "30% off"
       ],
+      "promoTypes": [
+        "coupon",
+        "discount"
+      ],
       "promotion": "Coupon 5% + 30% off",
       "promotionStatus": "detected",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -1933,6 +2031,7 @@
         }
       ],
       "promotions": [],
+      "promoTypes": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -1974,9 +2073,14 @@
           "rank": 545
         }
       ],
-      "promotions": [],
-      "promotion": "暂无促销",
-      "promotionStatus": "none",
+      "promotions": [
+        "30天最低价"
+      ],
+      "promoTypes": [
+        "lowest30"
+      ],
+      "promotion": "30天最低价",
+      "promotionStatus": "detected",
       "promotionSource": "Ecomtool MCP ASIN 监控",
       "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
@@ -2017,6 +2121,7 @@
         }
       ],
       "promotions": [],
+      "promoTypes": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -2058,6 +2163,7 @@
         }
       ],
       "promotions": [],
+      "promoTypes": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -2100,6 +2206,7 @@
         }
       ],
       "promotions": [],
+      "promoTypes": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -2142,6 +2249,7 @@
         }
       ],
       "promotions": [],
+      "promoTypes": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -2184,6 +2292,7 @@
         }
       ],
       "promotions": [],
+      "promoTypes": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -2229,6 +2338,10 @@
         "Coupon 10%",
         "30% off"
       ],
+      "promoTypes": [
+        "coupon",
+        "discount"
+      ],
       "promotion": "Coupon 10% + 30% off",
       "promotionStatus": "detected",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -2270,6 +2383,7 @@
         }
       ],
       "promotions": [],
+      "promoTypes": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -2312,6 +2426,7 @@
         }
       ],
       "promotions": [],
+      "promoTypes": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -2354,6 +2469,7 @@
         }
       ],
       "promotions": [],
+      "promoTypes": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -2398,6 +2514,9 @@
       "promotions": [
         "Coupon 35%"
       ],
+      "promoTypes": [
+        "coupon"
+      ],
       "promotion": "Coupon 35%",
       "promotionStatus": "detected",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -2440,6 +2559,7 @@
         }
       ],
       "promotions": [],
+      "promoTypes": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -2483,6 +2603,9 @@
       ],
       "promotions": [
         "Deal"
+      ],
+      "promoTypes": [
+        "deal"
       ],
       "promotion": "Deal",
       "promotionStatus": "detected",
@@ -2528,6 +2651,9 @@
       "promotions": [
         "8% off"
       ],
+      "promoTypes": [
+        "discount"
+      ],
       "promotion": "8% off",
       "promotionStatus": "detected",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -2570,6 +2696,7 @@
         }
       ],
       "promotions": [],
+      "promoTypes": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -2612,6 +2739,7 @@
         }
       ],
       "promotions": [],
+      "promoTypes": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -2654,6 +2782,7 @@
         }
       ],
       "promotions": [],
+      "promoTypes": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -2696,6 +2825,7 @@
         }
       ],
       "promotions": [],
+      "promoTypes": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -2738,6 +2868,7 @@
         }
       ],
       "promotions": [],
+      "promoTypes": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -2780,6 +2911,7 @@
         }
       ],
       "promotions": [],
+      "promoTypes": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -2823,6 +2955,9 @@
       "promotions": [
         "50% off"
       ],
+      "promoTypes": [
+        "discount"
+      ],
       "promotion": "50% off",
       "promotionStatus": "detected",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -2864,6 +2999,7 @@
         }
       ],
       "promotions": [],
+      "promoTypes": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -2908,6 +3044,9 @@
       "promotions": [
         "Coupon $7"
       ],
+      "promoTypes": [
+        "coupon"
+      ],
       "promotion": "Coupon $7",
       "promotionStatus": "detected",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -2949,6 +3088,7 @@
         }
       ],
       "promotions": [],
+      "promoTypes": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
       "promotionSource": "Ecomtool MCP 商品详情（无监控数据）",
@@ -2990,6 +3130,7 @@
         }
       ],
       "promotions": [],
+      "promoTypes": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -3033,6 +3174,9 @@
       "promotions": [
         "Coupon 10%"
       ],
+      "promoTypes": [
+        "coupon"
+      ],
       "promotion": "Coupon 10%",
       "promotionStatus": "detected",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -3075,6 +3219,7 @@
         }
       ],
       "promotions": [],
+      "promoTypes": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -3117,6 +3262,7 @@
         }
       ],
       "promotions": [],
+      "promoTypes": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -3159,6 +3305,7 @@
         }
       ],
       "promotions": [],
+      "promoTypes": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -3204,6 +3351,10 @@
         "Coupon 10%",
         "20% off"
       ],
+      "promoTypes": [
+        "coupon",
+        "discount"
+      ],
       "promotion": "Coupon 10% + 20% off",
       "promotionStatus": "detected",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -3248,6 +3399,9 @@
       "promotions": [
         "Coupon 15%"
       ],
+      "promoTypes": [
+        "coupon"
+      ],
       "promotion": "Coupon 15%",
       "promotionStatus": "detected",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -3290,6 +3444,7 @@
         }
       ],
       "promotions": [],
+      "promoTypes": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -3332,9 +3487,14 @@
         }
       ],
       "promotions": [
-        "50% off"
+        "50% off",
+        "30天最低价"
       ],
-      "promotion": "50% off",
+      "promoTypes": [
+        "discount",
+        "lowest30"
+      ],
+      "promotion": "50% off + 30天最低价",
       "promotionStatus": "detected",
       "promotionSource": "Ecomtool MCP ASIN 监控",
       "deal": false,
@@ -3375,6 +3535,7 @@
         }
       ],
       "promotions": [],
+      "promoTypes": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -3417,6 +3578,7 @@
         }
       ],
       "promotions": [],
+      "promoTypes": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -3459,6 +3621,7 @@
         }
       ],
       "promotions": [],
+      "promoTypes": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -3501,6 +3664,9 @@
       ],
       "promotions": [
         "Coupon 5%"
+      ],
+      "promoTypes": [
+        "coupon"
       ],
       "promotion": "Coupon 5%",
       "promotionStatus": "detected",
@@ -3546,6 +3712,9 @@
       "promotions": [
         "Deal"
       ],
+      "promoTypes": [
+        "deal"
+      ],
       "promotion": "Deal",
       "promotionStatus": "detected",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -3588,6 +3757,7 @@
         }
       ],
       "promotions": [],
+      "promoTypes": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -3630,6 +3800,7 @@
         }
       ],
       "promotions": [],
+      "promoTypes": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -3671,9 +3842,14 @@
           "rank": 802
         }
       ],
-      "promotions": [],
-      "promotion": "暂无促销",
-      "promotionStatus": "none",
+      "promotions": [
+        "30天最低价"
+      ],
+      "promoTypes": [
+        "lowest30"
+      ],
+      "promotion": "30天最低价",
+      "promotionStatus": "detected",
       "promotionSource": "Ecomtool MCP ASIN 监控",
       "deal": false,
       "detailSource": "Ecomtool MCP 商品详情",
@@ -3713,6 +3889,7 @@
         }
       ],
       "promotions": [],
+      "promoTypes": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -3755,6 +3932,7 @@
         }
       ],
       "promotions": [],
+      "promoTypes": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -3798,6 +3976,9 @@
       ],
       "promotions": [
         "Coupon 10%"
+      ],
+      "promoTypes": [
+        "coupon"
       ],
       "promotion": "Coupon 10%",
       "promotionStatus": "detected",
@@ -3843,6 +4024,9 @@
       "promotions": [
         "Coupon 5%"
       ],
+      "promoTypes": [
+        "coupon"
+      ],
       "promotion": "Coupon 5%",
       "promotionStatus": "detected",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -3885,6 +4069,7 @@
         }
       ],
       "promotions": [],
+      "promoTypes": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -3927,6 +4112,7 @@
         }
       ],
       "promotions": [],
+      "promoTypes": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -3969,6 +4155,7 @@
         }
       ],
       "promotions": [],
+      "promoTypes": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -4013,6 +4200,9 @@
       "promotions": [
         "Coupon 10%"
       ],
+      "promoTypes": [
+        "coupon"
+      ],
       "promotion": "Coupon 10%",
       "promotionStatus": "detected",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -4054,6 +4244,7 @@
         }
       ],
       "promotions": [],
+      "promoTypes": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -4099,6 +4290,10 @@
         "Coupon 15%",
         "25% off"
       ],
+      "promoTypes": [
+        "coupon",
+        "discount"
+      ],
       "promotion": "Coupon 15% + 25% off",
       "promotionStatus": "detected",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -4140,6 +4335,7 @@
         }
       ],
       "promotions": [],
+      "promoTypes": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -4184,6 +4380,9 @@
       "promotions": [
         "Coupon 10%"
       ],
+      "promoTypes": [
+        "coupon"
+      ],
       "promotion": "Coupon 10%",
       "promotionStatus": "detected",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -4226,6 +4425,7 @@
         }
       ],
       "promotions": [],
+      "promoTypes": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -4268,6 +4468,7 @@
         }
       ],
       "promotions": [],
+      "promoTypes": [],
       "promotion": "暂无促销",
       "promotionStatus": "none",
       "promotionSource": "Ecomtool MCP ASIN 监控",
@@ -4312,6 +4513,10 @@
       "promotions": [
         "Coupon 5%",
         "5% off"
+      ],
+      "promoTypes": [
+        "coupon",
+        "discount"
       ],
       "promotion": "Coupon 5% + 5% off",
       "promotionStatus": "detected",

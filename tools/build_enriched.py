@@ -20,6 +20,7 @@ from pathlib import Path
 ROOT = Path(__file__).parents[1]
 WORK = ROOT / "work"
 
+LOWEST_BADGE = "lowest price in 30 days"   # 详情「最低价标识」的原文
 IMAGE_BASE = "https://m.media-amazon.com/images/I/"
 PRODUCT_BASE = "https://www.amazon.com/dp/"
 
@@ -74,32 +75,63 @@ def parse_price(value: str) -> str:
 def parse_promotions(detail: dict, tracking: dict | None = None) -> list[str]:
     """解析促销标签列表。
 
-    **优先用 ASIN 监控数据**（`tools/fetch_asin_tracking.py` 抓的
-    Coupon / Promotion折扣 / 是否Deal）——它拿得到 coupon；
-    product_info 的 Coupon 列自 2026-09-18 起服务端恒返回 0，只在没有监控数据时兜底。
+    数据来源两套，**优先 ASIN 监控**（`tools/fetch_asin_tracking.py`，它拿得到 coupon）：
+      · 监控侧：Coupon（百分比）/ Promotion折扣 / 是否Deal
+      · 详情侧：Coupon（服务端恒 0）/ 促销折扣 / 是否活动 / 最低价标识
+    详情独有的两项（Deal 兜底、30 天最低价）总是叠加，因为它们不在监控的 38 列里。
     """
     promos = []
+    deal = False
+
     if tracking:
         coupon = str(tracking.get("coupon") or "").strip()
         if coupon and coupon != "0":
-            # 监控侧是百分比（"10%"），product_info 侧是美元（"2.50"）
+            # 监控侧是百分比（"10%"），详情侧是美元（"2.50"）—— 写法不能混
             promos.append(f"Coupon {coupon}" if "%" in coupon else f"Coupon ${coupon}")
         discount = str(tracking.get("promoDiscount") or "").strip()
         if discount and discount != "0":
             promos.append(f"{discount} off")
-        if tracking.get("deal"):
-            promos.append("Deal")
-        if promos:
-            return promos
+        deal = bool(tracking.get("deal"))
 
-    # 兜底：商品详情（Coupon 那一列不可靠，折扣仍可用）
-    coupon = str(detail.get("Coupon", "")).strip()
-    discount = str(detail.get("促销折扣", "")).strip()
-    if coupon and coupon != "0":
-        promos.append(f"Coupon ${coupon}")
-    if discount and discount != "0":
-        promos.append(f"{discount} off")
+    if not promos:
+        # 兜底：商品详情（它的 Coupon 列不可靠，折扣仍可用）
+        coupon = str(detail.get("Coupon", "")).strip()
+        discount = str(detail.get("促销折扣", "")).strip()
+        if coupon and coupon != "0":
+            promos.append(f"Coupon ${coupon}")
+        if discount and discount != "0":
+            promos.append(f"{discount} off")
+
+    # Deal：监控侧没有时，用详情的「是否活动」（两边抓取时点不同，取并集）
+    if not deal and str(detail.get("是否活动", "")).strip().lower() in ("deal", "ld", "bd"):
+        deal = True
+    if deal:
+        promos.append("Deal")
+
+    # 30 天最低价：只有商品详情有
+    if LOWEST_BADGE in str(detail.get("最低价标识", "")).strip().lower():
+        promos.append("30天最低价")
+
     return promos
+
+
+def promo_types(labels: list[str]) -> list[str]:
+    """把标签映射成可筛选的类型键（前端 filterPromo 的 type: 值用）。"""
+    out: list[str] = []
+    for label in labels:
+        if label.startswith("Coupon"):
+            kind = "coupon"
+        elif label.endswith("off"):
+            kind = "discount"
+        elif label == "Deal":
+            kind = "deal"
+        elif label == "30天最低价":
+            kind = "lowest30"
+        else:
+            continue
+        if kind not in out:
+            out.append(kind)
+    return out
 
 
 def build_item(rank_row: dict, detail: dict, snapshot_date: str, tracking: dict | None = None) -> dict:
@@ -137,6 +169,7 @@ def build_item(rank_row: dict, detail: dict, snapshot_date: str, tracking: dict 
 
     promotions = parse_promotions(detail, tracking)
     item["promotions"] = promotions
+    item["promoTypes"] = promo_types(promotions)
     if promotions:
         item["promotion"] = " + ".join(promotions)
         item["promotionStatus"] = "detected"

@@ -330,8 +330,13 @@ class SnapshotArchiveTests(unittest.TestCase):
         self.assertNotIn("清空条件", html)
         self.assertNotIn(".reset{", html)
         # 位置：在筛选控件之前（面板顶部），而不是旧的面板末尾
-        self.assertLess(html.index('id="filterState"'), html.index('class="filter-grid primary"'))
+        self.assertLess(html.index('id="filterState"'), html.index('class="fgroup"'))
         self.assertNotIn('<div class="active-filters" id="activeFilters" aria-live="polite"></div></section>', html)
+        # 2026-09-20：条件全部平铺成 3 组，不再有「更多筛选」折叠按钮与隐藏面板
+        self.assertNotIn("moreFilters", html)
+        self.assertNotIn("advancedFilters", html)
+        self.assertNotIn("advanced-grid", html)
+        self.assertEqual(html.count('class="fgroup"'), 3)
 
     def test_comparison_falls_back_to_asin_when_previous_lacks_parent_asin(self):
         """对比期缺父体数据时必须回退到 ASIN 比对。
@@ -680,6 +685,27 @@ class PromotionParsingTests(unittest.TestCase):
         item = self._item({}, {"coupon": "0", "promoDiscount": "0", "deal": False})
         self.assertEqual(item["promotion"], "暂无促销")
         self.assertEqual(item["promotionStatus"], "none")
+
+
+    def test_lowest_price_badge_becomes_its_own_type(self):
+        """「最低价标识」= Lowest price in 30 days 要成为独立类型（详情独有的字段）。"""
+        item = self._item({"最低价标识": "Lowest price in 30 days"}, {"coupon": "0", "deal": False})
+        self.assertEqual(item["promotions"], ["30天最低价"])
+        self.assertEqual(item["promoTypes"], ["lowest30"])
+
+    def test_detail_deal_used_when_tracking_says_none(self):
+        """监控侧说没 Deal、详情侧「是否活动」= Deal 时，取并集（两边抓取时点不同）。"""
+        item = self._item({"是否活动": "Deal"}, {"coupon": "0", "deal": False})
+        self.assertEqual(item["promotions"], ["Deal"])
+        self.assertEqual(item["promoTypes"], ["deal"])
+
+    def test_promo_types_cover_all_four_and_keep_order(self):
+        """四种类型都要能识别，顺序与标签一致、且不重复。"""
+        item = self._item({"最低价标识": "Lowest price in 30 days", "是否活动": "Deal"},
+                          {"coupon": "10%", "promoDiscount": "20%", "deal": True})
+        self.assertEqual(item["promotions"], ["Coupon 10%", "20% off", "Deal", "30天最低价"])
+        self.assertEqual(item["promoTypes"], ["coupon", "discount", "deal", "lowest30"])
+        self.assertEqual(len(item["promoTypes"]), len(set(item["promoTypes"])))
 
 
 if __name__ == "__main__":
