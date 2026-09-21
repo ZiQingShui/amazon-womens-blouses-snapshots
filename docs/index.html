@@ -46,7 +46,7 @@ header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.95);border-
 .sty-box{background:#fff;border-radius:14px;width:100%;max-width:560px;max-height:88vh;overflow:auto;
   padding:15px 17px;box-shadow:0 22px 55px rgba(16,32,59,.3)}
 .sty-head{display:flex;gap:11px;align-items:flex-start;margin-bottom:13px}
-.sty-head img{width:64px;height:64px;object-fit:contain;background:#f7f9fc;border-radius:9px;flex:0 0 64px}
+.sty-head img{width:88px;height:88px;object-fit:contain;background:#f7f9fc;border-radius:9px;flex:0 0 88px}
 .sty-head .t{font-size:12.5px;line-height:1.5;color:#475467}
 .sty-chip.custom{position:relative}
 .sty-del{position:absolute;top:-7px;right:-7px;width:17px;height:17px;border-radius:50%;
@@ -68,8 +68,9 @@ header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.95);border-
 .sty-chip.sugg:hover{background:#e6f0ff;border-color:#175cd3}
 .sty-chip.add{border-style:dashed;color:#175cd3;background:#fff}
 .sty-chip.add:hover{background:#f5f9ff}
-.sty-foot{display:flex;gap:8px;justify-content:flex-end;margin-top:14px;padding-top:12px;
-  border-top:1px solid #eef1f6}
+.sty-foot{display:flex;gap:8px;justify-content:flex-end;align-items:center;margin-top:14px;
+  padding-top:12px;border-top:1px solid #eef1f6}
+.sty-count{margin-right:auto;font-size:11.5px;color:#98a2b3;font-weight:650}
 .sty-btn{padding:7px 13px;border:1px solid #d5e0ed;border-radius:9px;background:#fff;
   font:inherit;font-size:13px;font-weight:650;color:#344054;cursor:pointer}
 .sty-btn.pri{background:#175cd3;border-color:#175cd3;color:#fff}
@@ -330,6 +331,9 @@ function openStyleEditor(parent, asin) {
   mask.className = "sty-mask";
 
   const suggText = dim => dim === "season" ? (sugg.season || []).join("、") : (sugg[dim] || "");
+  const orderOf = () => [...document.querySelectorAll("#products .card")];
+  const idxNow = orderOf().findIndex(c => c.id === "product-" + asin);
+  const posText = idxNow >= 0 ? "第 " + (idxNow + 1) + " / " + orderOf().length + " 个" : "";
 
   const bodyHtml = () => '<div class="sty-head"><img src="' + (p.image ? safeImageUrl(p.image) : "") + '" alt="">'
     + '<div><b style="font-size:13px">' + esc((p.title || asin).slice(0, 90)) + '</b>'
@@ -351,14 +355,39 @@ function openStyleEditor(parent, asin) {
         + '</div></div>';
     }).join("")
     + '<div class="sty-foot">'
+    + '<span class="sty-count">' + posText + '</span>'
     + '<button type="button" class="sty-btn" data-act="clear">清空此项</button>'
     + '<button type="button" class="sty-btn" data-act="cancel">取消</button>'
-    + '<button type="button" class="sty-btn pri" data-act="save">保存</button>'
+    + '<button type="button" class="sty-btn" data-act="save">保存</button>'
+    + '<button type="button" class="sty-btn pri" data-act="next" title="没手动选的部分会用机器建议补上">保存并下一个 ↵</button>'
     + '</div>';
 
   mask.innerHTML = '<div class="sty-box" role="dialog" aria-label="修改款式标签">' + bodyHtml() + '</div>';
   document.body.appendChild(mask);
   const close = () => mask.remove();
+  const persist = () => {
+    localTags[parent] = { sleeve: draft.sleeve, season: draft.season.slice(), style: draft.style, ts: Date.now() };
+    saveLocalStyleTags();
+    if (current) render();
+  };
+  /* 连续判断：保存后直接打开下一张卡的弹窗，一路按回车过下去。
+     没手动选的维度用机器建议补上 —— 否则盲按回车会把商品存成"空标签"，卡片上标签消失。 */
+  const goNext = () => {
+    const filled = (draft.sleeve || draft.season.length || draft.style) ? true : false;
+    if (!draft.sleeve) draft.sleeve = sugg.sleeve || "";
+    if (!draft.season.length) draft.season = (sugg.season || []).slice();
+    if (!draft.style) draft.style = sugg.style || "";
+    persist();
+    if (!filled) styFlash("没选的部分用了机器建议");
+    const cards = orderOf();
+    const i = cards.findIndex(c => c.id === "product-" + asin);
+    const nextEl = i >= 0 ? cards[i + 1] : null;
+    close();
+    if (!nextEl) { styFlash("已是最后一个"); return; }
+    const nextAsin = nextEl.id.slice(8);
+    const row = ((current && current.items) || []).find(x => x.asin === nextAsin);
+    openStyleEditor((row && row.parentAsin) || nextAsin, nextAsin);
+  };
   const paint = () => {
     const box = mask.querySelector(".sty-box"), top = box.scrollTop;
     box.innerHTML = bodyHtml(); box.scrollTop = top;
@@ -405,13 +434,17 @@ function openStyleEditor(parent, asin) {
       if (current) render(); close();
       styFlash("已清空此项，卡片上不再显示它的标签");
     } else if (act === "save") {
-      localTags[parent] = { sleeve: draft.sleeve, season: draft.season.slice(), style: draft.style, ts: Date.now() };
-      saveLocalStyleTags(); if (current) render(); close();
+      persist(); close();
       styFlash("已保存 · 点「导出我的修改」落盘");
+    } else if (act === "next") {
+      goNext();
     }
   });
-  document.addEventListener("keydown", function esc(e) {
-    if (e.key === "Escape") { close(); document.removeEventListener("keydown", esc); }
+  document.addEventListener("keydown", function onKey(e) {
+    if (e.key === "Escape") { document.removeEventListener("keydown", onKey); close(); }
+    else if (e.key === "Enter") {
+      e.preventDefault(); document.removeEventListener("keydown", onKey); goNext();
+    }
   });
 }
 
