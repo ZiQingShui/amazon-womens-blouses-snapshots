@@ -1,0 +1,217 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+"""给商品打款式标签：风格 / 袖型 / 季节（第一版：关键词规则层）。
+
+用法：
+  python tools/tag_style.py --date 2026-09-21
+
+输出 work/style-tags-{date}.json，按**父体**存：
+  {parentAsin: {"asin", "brand", "title", "sleeve", "season": [], "style": [],
+                "source": "rule"|"ai"|"manual", "confidence": 0..1}}
+
+设计要点：
+· 打标按**父体**（款式是同款共享属性，与 parentAsin / listingDate 同类），
+  一次标注全家受益；标签库会累积，每天只需给新父体打标。
+· **季节与风格是多值**：标题普遍写成 "Clothing for Fall Spring"（一衣两季）、
+  "Dressy Casual Boho"（多风格混搭），所以是数组，筛选时用「包含」而非「等于」。
+· **袖型是单值**，但造型优先于长度：泡泡袖/喇叭袖比"长袖"更有辨识度，
+  所以 "Puff Long Sleeve" 归为「泡泡袖」而不是「长袖」。
+· 每个标签带 source 与 confidence，人工校核结果 source=manual 且优先级最高（不被规则覆盖）。
+
+⚠ 标签**不写进每日快照**（daily/*.json 是不可变归档），单独存表，前端映射上去。
+"""
+import argparse
+import collections
+import json
+import pathlib
+import re
+import sys
+
+ROOT = pathlib.Path(__file__).resolve().parent.parent
+WORK = ROOT / "work"
+
+# ── 标签体系（可调整；改这里等于改口径）────────────────────────────
+# 袖型：单值，按造型 > 长度 的优先级取第一个命中的
+SLEEVE = [
+    ("泡泡袖", [r"puff(?:ed)? sleeve", r"puff short sleeve"]),
+    ("喇叭袖", [r"bell sleeve", r"flutter sleeve", r"flare sleeve", r"trumpet sleeve"]),
+    ("无袖",   [r"sleeveless", r"tank top", r"strapless", r"tube top"]),
+    ("3/4袖",  [r"3/4 sleeve", r"three quarter sleeve", r"quarter sleeve", r"3/4 length sleeve"]),
+    ("短袖",   [r"short sleeve", r"short-sleeve", r"cap sleeve", r"half sleeve"]),
+    ("长袖",   [r"long sleeve", r"long-sleeve", r"long sleeve shirt"]),
+]
+
+# 季节：多值。标题不提季节时，用材质/款式词做弱推断（置信度低一点）
+SEASON = {
+    "春": [r"\bspring\b", r"spring fall", r"spring summer"],
+    "夏": [r"\bsummer\b", r"beach", r"resort wear"],
+    "秋": [r"\bfall\b", r"\bautumn\b", r"fall fashion", r"fall clothes"],
+    "冬": [r"\bwinter\b", r"christmas", r"holiday"],
+}
+# 弱推断：材质/关键词 → 季节（confidence 打折）
+SEASON_HINT = {
+    "秋": [r"flannel", r"plaid", r"shacket", r"corduroy", r"sweater", r"knit", r"fleece"],
+    "冬": [r"velvet", r"fleece", r"thermal", r"wool"],
+    "夏": [r"linen", r"chiffon", r"mesh", r"sheer", r"sleeveless", r"crop top"],
+    "春": [r"floral", r"pastel"],
+}
+
+# 风格：多值
+STYLE = {
+    "通勤":   [r"business casual", r"work outfit", r"work wear", r"office", r"business work",
+               r"work blouse", r"professional"],
+    "优雅":   [r"dressy", r"elegant", r"formal", r"silky", r"satin blouse", r"chic"],
+    "休闲":   [r"\bcasual\b", r"everyday", r"basic", r"loose fit", r"relaxed"],
+    "波西米亚": [r"boho", r"bohemian", r"peasant", r"embroidered", r"tassel"],
+    "度假":   [r"vacation", r"holiday", r"beach", r"resort", r"tropical", r"cruise"],
+    "复古":   [r"vintage", r"retro", r"y2k", r"70s", r"80s", r"90s"],
+    "西部":   [r"western", r"cowboy", r"cowgirl", r"country concert", r"rodeo"],
+    "时髦":   [r"trendy", r"fashion", r"2026", r"cute", r"stylish"],
+}
+
+
+def norm(s):
+    return (s or "").lower()
+
+
+def pick_sleeve(title):
+    t = norm(title)
+    for name, pats in SLEEVE:
+        if any(re.search(p, t) for p in pats):
+            return name, "rule", 0.9
+    return None, None, 0.0
+
+
+def pick_season(title, sleeve=None):
+    t = norm(title)
+    # ① 标题明说（最可信）
+    hits = [k for k, pats in SEASON.items() if any(re.search(p, t) for p in pats)]
+    if hits:
+        return sorted(set(hits)), "rule", 0.9
+    # ② 材质词推断
+    hints = {k for k, pats in SEASON_HINT.items() if any(re.search(p, t) for p in pats)}
+    # ③ 袖型联合推断：长度决定大体季节（法兰绒/羊毛等厚料再补冬）
+    if sleeve == "长袖":
+        hints |= {"秋", "春"}
+        if any(re.search(p, t) for p in [r"flannel", r"plaid", r"shacket", r"knit", r"sweater",
+                                         r"fleece", r"corduroy", r"velvet", r"wool", r"thermal"]):
+            hints |= {"冬"}
+    elif sleeve in ("短袖", "无袖"):
+        hints |= {"夏", "春"}
+    elif sleeve == "3/4袖":
+        hints |= {"春", "秋"}
+    if hints:
+        return sorted(hints), "rule(inferred)", 0.5
+    return [], None, 0.0
+
+
+def pick_style(title):
+    t = norm(title)
+    hits = [k for k, pats in STYLE.items() if any(re.search(p, t) for p in pats)]
+    return sorted(set(hits)), ("rule" if hits else None), (0.85 if hits else 0.0)
+
+
+STYLE_PRIORITY = ["波西米亚", "西部", "度假", "复古", "优雅", "通勤", "时髦", "休闲"]
+
+
+def primary_style(styles):
+    """主风格：按辨识度取优先级，都不命中则取第一个；没有就空串。"""
+    for k in STYLE_PRIORITY:
+        if k in (styles or []):
+            return k
+    return (styles or [""])[0]
+
+
+def load_manual(date, path=None):
+    """打标工作台导出的人工确认结果；存在即覆盖规则与 AI 的判断。"""
+    p = pathlib.Path(path) if path else WORK / ("style-tags-manual-%s.json" % date)
+    if not p.exists():
+        return {}
+    d = json.loads(p.read_text(encoding="utf-8"))
+    tags = d.get("tags", d) if isinstance(d, dict) else {}
+    return {k: v for k, v in tags.items() if isinstance(v, dict) and
+            ("sleeve" in v or "season" in v or "style" in v)}
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--date", required=True)
+    ap.add_argument("--out", help="默认 work/style-tags-{date}.json")
+    ap.add_argument("--manual", help="打标工作台导出的人工结果；默认自动找 work/style-tags-manual-{date}.json")
+    args = ap.parse_args()
+    manual = load_manual(args.date, args.manual)
+
+    parsed = json.loads((WORK / ("ecomtool-%s-parsed.json" % args.date)).read_text(encoding="utf-8"))
+    ma = json.loads((WORK / ("market-analysis-%s.json" % args.date)).read_text(encoding="utf-8"))
+
+    # 商品去重（同一 ASIN 可能同时在新品/热销榜）
+    items, seen = [], set()
+    for rk in ("new-releases", "bestsellers"):
+        for node, rows in parsed.get(rk, {}).get("by_node", {}).items():
+            for r in rows:
+                if r["asin"] in seen:
+                    continue
+                seen.add(r["asin"])
+                items.append(r)
+
+    tags, tally_sleeve, tally_season, tally_style = {}, collections.Counter(), collections.Counter(), collections.Counter()
+    unresolved = []
+    for r in items:
+        parent = (ma.get(r["asin"], {}) or {}).get("parentAsin") or r["asin"]
+        if parent in tags:
+            continue
+        sl, sl_src, sl_cf = pick_sleeve(r["title"])
+        se, se_src, se_cf = pick_season(r["title"], sl)
+        st, st_src, st_cf = pick_style(r["title"])
+        src = "rule" if (sl_src or se_src or st_src) else "unresolved"
+        conf = round(max(sl_cf, se_cf, st_cf), 2)
+        rec = {
+            "asin": r["asin"], "brand": r.get("category") and None or None,
+            "titleSample": r["title"][:170],
+            "sleeve": sl, "season": se, "style": st,
+            "source": src, "confidence": conf,
+        }
+        # 人工确认的结果优先级最高，且永久有效（重跑不会被机器判断打回）
+        m = manual.get(parent)
+        if m:
+            rec.update({
+                "sleeve": m.get("sleeve") or sl,
+                "season": m.get("season") or se,
+                "style": m.get("style") or st,
+                "source": "manual", "confidence": 1.0,
+            })
+        rec["stylePrimary"] = primary_style(rec["style"])
+        tags[parent] = rec
+        tally_sleeve[sl or "（未定）"] += 1
+        tally_season.update(se or ["（未定）"])
+        tally_style.update(st or ["（未定）"])
+        if not sl or not se or not st:
+            unresolved.append({"parent": parent, "asin": r["asin"], "title": r["title"][:170],
+                               "sleeve": sl, "season": se, "style": st})
+
+    out = pathlib.Path(args.out) if args.out else WORK / ("style-tags-%s.json" % args.date)
+    out.write_text(json.dumps(tags, ensure_ascii=False, indent=1), encoding="utf-8")
+
+    n = len(tags)
+    n_manual = sum(1 for r in tags.values() if r["source"] == "manual")
+    print("父体 %d 个，已打标（其中人工确认 %d 个）" % (n, n_manual))
+    print()
+    print("袖型:", dict(tally_sleeve.most_common()))
+    print("季节:", dict(tally_season.most_common()))
+    print("风格:", dict(tally_style.most_common()))
+    print()
+    print("完整度：袖型 %.1f%% · 季节 %.1f%% · 风格 %.1f%%" % (
+        100.0 * (n - tally_sleeve["（未定）"]) / n,
+        100.0 * (n - tally_season["（未定）"]) / n,
+        100.0 * (n - tally_style["（未定）"]) / n))
+    print("有任一维度未定的父体：%d 个" % len(unresolved))
+    if unresolved:
+        (WORK / ("_unresolved_style_%s.json" % args.date)).write_text(
+            json.dumps(unresolved, ensure_ascii=False, indent=1), encoding="utf-8")
+        print("  清单已写入 work/_unresolved_style_%s.json（交给 AI/人工补）" % args.date)
+    print("已写出", out)
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
