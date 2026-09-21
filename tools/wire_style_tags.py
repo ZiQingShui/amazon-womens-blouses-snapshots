@@ -42,8 +42,12 @@ EDITS = [
      '.sc-sleeve{background:#eef4ff;color:#175cd3}'
      '.sc-season{background:#e9f7f1;color:#087a55}'
      '.sc-style{background:#fdeaf4;color:#c11574}'
-     '.style-chips{cursor:pointer}'
+     '.style-chips{cursor:pointer;position:relative;padding:3px 7px;margin-left:-7px;margin-right:-3px;'
+     'border:1px dashed transparent;border-radius:8px;transition:border-color .15s,background .15s}'
+     '.style-chips:hover{border-color:#a8c3e8;background:#f5f9ff}'
      '.style-chips:hover .sc{filter:brightness(.94)}'
+     '.sty-hint{margin-left:4px;font-size:10.5px;font-weight:750;color:#9aa7ba;white-space:nowrap;transition:color .15s;display:inline-flex;align-items:center;gap:3px}'
+     '.style-chips:hover .sty-hint{color:#175cd3}'
      '.style-chips.edited .sc:last-child{box-shadow:0 0 0 2px #f5c98a}'
      # 就地编辑弹窗（append 到 body，避开卡片 hover transform 造成的层叠上下文）
      '.sty-mask{position:fixed;inset:0;z-index:200;background:rgba(16,32,59,.45);display:flex;'
@@ -201,7 +205,8 @@ EDITS = [
      ' data-parent="${esc(p.parentAsin||p.asin)}" data-asin="${esc(p.asin)}" title="点击修改款式标签">'
      '${styleTag.sleeve?`<span class="sc sc-sleeve">${esc(styleTag.sleeve)}</span>`:""}'
      '${(styleTag.season||[]).map(x=>`<span class="sc sc-season">${esc(x)}</span>`).join("")}'
-     '${styleTag.stylePrimary?`<span class="sc sc-style">${esc(styleTag.stylePrimary)}</span>`:""}</div>`:"";\n'
+     '${styleTag.stylePrimary?`<span class="sc sc-style">${esc(styleTag.stylePrimary)}</span>`:""}'
+     '<span class="sty-hint"><svg viewBox="0 0 16 16" width="10" height="10" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.3 2.4l2.3 2.3L5.2 13 2.6 13.4 3 10.8z"/></svg>修改</span></div>`:"";\n'
      'return `<article class="card"'),
 ]
 
