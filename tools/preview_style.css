@@ -1,0 +1,53 @@
+/* 预览版新增样式 —— 由 tools/wire_style_tags.py 注入到正式版 CSS 末尾 */
+/* 卡片上的款式标签行 */
+.style-chips{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px;cursor:pointer;position:relative;
+  padding:3px 7px;margin-left:-7px;margin-right:-3px;border:1px dashed transparent;border-radius:8px;
+  transition:border-color .15s,background .15s;align-items:center}
+.style-chips:hover{border-color:#a8c3e8;background:#f5f9ff}
+.style-chips:hover .sc{filter:brightness(.94)}
+.style-chips.edited .sc:last-child{box-shadow:0 0 0 2px #f5c98a}
+.sc{font-size:10.5px;font-weight:750;padding:2px 7px;border-radius:6px;line-height:1.5}
+.sc-sleeve{background:#eef4ff;color:#175cd3}
+.sc-season{background:#e9f7f1;color:#087a55}
+.sc-style{background:#fdeaf4;color:#c11574}
+/* 未确认的机器建议：虚线 + 淡显，明确"还不是结论" */
+.sc.machine{border:1px dashed currentColor;background:transparent;opacity:.62}
+/* 行尾的「✎ 修改」提示 */
+.sty-hint{margin-left:4px;font-size:10.5px;font-weight:750;color:#9aa7ba;white-space:nowrap;
+  transition:color .15s;display:inline-flex;align-items:center;gap:3px}
+.style-chips:hover .sty-hint{color:#175cd3}
+/* 筛选区第 4 组：主风格跨 2 格填满 4 列 */
+.filter-grid .field.wide{grid-column:span 2}
+.sty-export{margin-left:7px;padding:2px 9px;border:1px solid #d5e0ed;border-radius:7px;background:#fff;
+  font:inherit;font-size:10.5px;font-weight:750;color:#175cd3;letter-spacing:0;cursor:pointer}
+.sty-export.danger{margin-left:5px;color:#b42318;border-color:#f1c0bb}
+.sty-export:hover{background:#f5f9ff}
+/* 就地编辑弹窗（append 到 body，避开卡片 hover transform 造成的层叠上下文） */
+.sty-mask{position:fixed;inset:0;z-index:200;background:rgba(16,32,59,.45);display:flex;
+  align-items:center;justify-content:center;padding:18px}
+.sty-box{background:#fff;border-radius:14px;width:100%;max-width:560px;max-height:88vh;overflow:auto;
+  padding:15px 17px;box-shadow:0 22px 55px rgba(16,32,59,.3)}
+.sty-head{display:flex;gap:11px;align-items:flex-start;margin-bottom:13px}
+.sty-head img{width:64px;height:64px;object-fit:contain;background:#f7f9fc;border-radius:9px;flex:0 0 64px}
+.sty-head .t{font-size:12.5px;line-height:1.5;color:#475467}
+.sty-note{margin:0 0 13px;font-size:11.5px;color:#667085;background:#f7f9fc;border-radius:8px;
+  padding:7px 10px;line-height:1.55}
+.sty-row{margin-bottom:13px}
+.sty-row b{display:block;font-size:12px;margin-bottom:6px;color:#1d2939;font-weight:800}
+.sty-row em{font-style:normal;font-size:11px;color:#98a2b3;font-weight:600;margin-left:5px}
+.sty-sg{margin-left:6px;font-style:normal;font-size:11px;font-weight:600;color:#98a2b3}
+.sty-chips{display:flex;flex-wrap:wrap;gap:6px}
+.sty-chip{padding:6px 11px;border:1px solid #d5e0ed;border-radius:8px;background:#f9fbfd;
+  font-size:12.5px;font-weight:650;color:#344054;cursor:pointer}
+.sty-chip.on{background:#175cd3;border-color:#175cd3;color:#fff}
+.sty-chip.sugg{border-style:dashed;background:#fff;color:#98a2b3}
+.sty-chip.add{border-style:dashed;color:#175cd3;background:#fff}
+.sty-foot{display:flex;gap:8px;justify-content:flex-end;margin-top:14px;padding-top:12px;
+  border-top:1px solid #eef1f6}
+.sty-btn{padding:7px 13px;border:1px solid #d5e0ed;border-radius:9px;background:#fff;
+  font:inherit;font-size:13px;font-weight:650;color:#344054;cursor:pointer}
+.sty-btn.pri{background:#175cd3;border-color:#175cd3;color:#fff}
+.sty-toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#1d2939;color:#fff;
+  padding:9px 17px;border-radius:9px;font-size:13px;font-weight:650;z-index:300;opacity:0;
+  transition:opacity .2s;pointer-events:none}
+.sty-toast.show{opacity:1}
