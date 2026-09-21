@@ -17,23 +17,44 @@ function saveCustomOptions() {
 function presetOf(dim) {
   return dim === "sleeve" ? SLEEVE_ORDER : dim === "season" ? SEASON_ORDER : STYLE_ORDER;
 }
-/* 某个维度的全部可选项 = 预设 + 自定义 + 标签库里已出现的值 */
-function optionsFor(dim) {
-  const set = presetOf(dim).slice();
-  /* 注意：t.style 是多值数组，必须展开逐个 push —— 直接 push 数组会渲染成空按钮 */
-  const push = v => {
-    if (Array.isArray(v)) { v.forEach(push); return; }
-    if (v && set.indexOf(v) < 0) set.push(v);
-  };
-  (customOptions[dim] || []).forEach(push);
+
+/* 弹窗里显示哪些项：机器建议 + 我自定义过的 + 当前已选（预设列表不再出现） */
+function editOptions(dim, draft, sugg) {
+  const out = [];
+  const add = v => { if (v && out.indexOf(v) < 0) out.push(v); };
+  if (dim === "season") (sugg.season || []).forEach(add); else add(sugg[dim]);
+  (customOptions[dim] || []).forEach(add);
+  if (dim === "season") (draft.season || []).forEach(add); else add(draft[dim]);
+  return out;
+}
+
+/* 筛选下拉：只列「实际出现过的值 ∪ 我自定义的」，预设词按原顺序排前面。
+   本机改过之后也要重跑（saveLocalStyleTags 里会调）。 */
+function syncStyleOptions() {
+  const seen = { sleeve: new Set(), season: new Set(), style: new Set() };
   const take = t => {
-    if (dim === "sleeve") push(t.sleeve);
-    else if (dim === "season") push(t.season);
-    else { push(t.stylePrimary); push(t.style); }
+    if (t.sleeve) seen.sleeve.add(t.sleeve);
+    (t.season || []).forEach(x => x && seen.season.add(x));
+    if (t.stylePrimary) seen.style.add(t.stylePrimary);
+    if (Array.isArray(t.style)) t.style.forEach(x => x && seen.style.add(x));
   };
   Object.values(STYLE_TAGS).forEach(take);
   Object.values(localTags).forEach(take);
-  return set;
+  const orderBy = dim => {
+    const set = seen[dim];
+    const pref = presetOf(dim).filter(v => set.has(v));
+    return pref.concat([...set].filter(v => pref.indexOf(v) < 0).sort());
+  };
+  const fill = (id, list, allLabel) => {
+    const select = $(id), keep = select.value;
+    select.innerHTML = '<option value="">' + allLabel + '</option>'
+      + list.map(v => '<option value="' + esc(v) + '">' + esc(v) + '</option>').join("");
+    select.value = keep;
+    if (![...select.options].some(o => o.value === keep)) select.value = "";
+  };
+  fill("filterSleeve", orderBy("sleeve"), "全部袖型");
+  fill("filterSeason", orderBy("season"), "全部季节");
+  fill("filterStyle", orderBy("style"), "全部风格");
 }
 
 function loadLocalStyleTags() {
@@ -91,10 +112,10 @@ function openStyleEditor(parent, asin) {
     + '想用别的值就点「＋ 自定义」，加过的会留下来，下次还能选。</div>'
     + rows.map(function (r) {
       const dim = r[0], label = r[1], multi = r[2], sg = suggText(dim);
-      return '<div class="sty-row"><b>' + label + '<em>' + (multi ? "可多选" : "单选") + '</em>'
-        + (sg ? '<span class="sty-sg">建议：' + esc(sg) + '</span>' : "") + '</b>'
+      return '<div class="sty-row"><b>' + label + '<em>' + (multi ? "可多选" : "单选") + '</em>' +
+        (sg ? '<span class="sty-sg">建议：' + esc(sg) + '</span>' : '<span class="sty-sg">没有建议，自己选</span>') + '</b>'
         + '<div class="sty-chips" data-dim="' + dim + '">'
-        + optionsFor(dim).map(function (v) {
+        + editOptions(dim, draft, sugg).map(function (v) {
           const on = multi ? draft[dim].indexOf(v) >= 0 : draft[dim] === v;
           const isS = !on && !!sg && (multi ? (sugg[dim] || []).indexOf(v) >= 0 : sugg[dim] === v);
           return '<button type="button" class="sty-chip' + (on ? " on" : "") + (isS ? " sugg" : "")

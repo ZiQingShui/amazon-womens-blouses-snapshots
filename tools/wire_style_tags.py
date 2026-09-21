@@ -50,18 +50,6 @@ EDITS = [
      'const SLEEVE_ORDER=["长袖","短袖","3/4袖","泡泡袖","喇叭袖","无袖"],'
      'SEASON_ORDER=["春","夏","秋","冬"],'
      'STYLE_ORDER=["优雅","通勤","西部","度假","波西米亚","休闲","复古","时髦"];\n'
-     'function syncStyleOptions(){const seen={sleeve:new Set(),season:new Set(),style:new Set()};'
-     'const take=t=>{if(t.sleeve)seen.sleeve.add(t.sleeve);(t.season||[]).forEach(x=>seen.season.add(x));'
-     'if(t.stylePrimary||t.style)seen.style.add(t.stylePrimary||t.style)};'
-     'Object.values(STYLE_TAGS).forEach(take);Object.values(localTags).forEach(take);'
-     'const fill=(id,order,set,allLabel)=>{const select=$(id),keep=select.value;'
-     'select.innerHTML=`<option value="">${allLabel}</option>`+order.filter(v=>set.has(v))'
-     '.map(v=>`<option value="${v}">${v}</option>`).join("");select.value=keep;'
-     'if(!select.options.length||![...select.options].some(o=>o.value===keep))select.value=""};'
-     'const widen=(base,cust)=>[...base,...(cust||[]).filter(v=>!base.includes(v))];'
-     'fill("filterSleeve",widen(SLEEVE_ORDER,customOptions.sleeve),seen.sleeve,"全部袖型");'
-     'fill("filterSeason",widen(SEASON_ORDER,customOptions.season),seen.season,"全部季节");'
-     'fill("filterStyle",widen(STYLE_ORDER,customOptions.style),seen.style,"全部风格")}\n'
      '__PREVIEW_JS__\n'
      'function syncBrandOptions(){'),
 

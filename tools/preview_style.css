@@ -37,11 +37,16 @@
 .sty-row em{font-style:normal;font-size:11px;color:#98a2b3;font-weight:600;margin-left:5px}
 .sty-sg{margin-left:6px;font-style:normal;font-size:11px;font-weight:600;color:#98a2b3}
 .sty-chips{display:flex;flex-wrap:wrap;gap:6px}
-.sty-chip{padding:6px 11px;border:1px solid #d5e0ed;border-radius:8px;background:#f9fbfd;
-  font-size:12.5px;font-weight:650;color:#344054;cursor:pointer}
+.sty-chip{padding:9px 16px;border:1px solid #d5e0ed;border-radius:9px;background:#f9fbfd;
+  font-size:13.5px;font-weight:650;color:#344054;cursor:pointer;min-height:38px;
+  display:inline-flex;align-items:center;justify-content:center}
 .sty-chip.on{background:#175cd3;border-color:#175cd3;color:#fff}
-.sty-chip.sugg{border-style:dashed;background:#fff;color:#98a2b3}
+/* 机器建议：做成醒目的大按钮，方便直接点 */
+.sty-chip.sugg{background:#f2f7ff;border:1.5px dashed #7aabe8;color:#175cd3;
+  font-size:14.5px;font-weight:750;padding:11px 22px}
+.sty-chip.sugg:hover{background:#e6f0ff;border-color:#175cd3}
 .sty-chip.add{border-style:dashed;color:#175cd3;background:#fff}
+.sty-chip.add:hover{background:#f5f9ff}
 .sty-foot{display:flex;gap:8px;justify-content:flex-end;margin-top:14px;padding-top:12px;
   border-top:1px solid #eef1f6}
 .sty-btn{padding:7px 13px;border:1px solid #d5e0ed;border-radius:9px;background:#fff;

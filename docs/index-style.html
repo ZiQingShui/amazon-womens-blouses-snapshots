@@ -55,11 +55,16 @@ header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.95);border-
 .sty-row em{font-style:normal;font-size:11px;color:#98a2b3;font-weight:600;margin-left:5px}
 .sty-sg{margin-left:6px;font-style:normal;font-size:11px;font-weight:600;color:#98a2b3}
 .sty-chips{display:flex;flex-wrap:wrap;gap:6px}
-.sty-chip{padding:6px 11px;border:1px solid #d5e0ed;border-radius:8px;background:#f9fbfd;
-  font-size:12.5px;font-weight:650;color:#344054;cursor:pointer}
+.sty-chip{padding:9px 16px;border:1px solid #d5e0ed;border-radius:9px;background:#f9fbfd;
+  font-size:13.5px;font-weight:650;color:#344054;cursor:pointer;min-height:38px;
+  display:inline-flex;align-items:center;justify-content:center}
 .sty-chip.on{background:#175cd3;border-color:#175cd3;color:#fff}
-.sty-chip.sugg{border-style:dashed;background:#fff;color:#98a2b3}
+/* 机器建议：做成醒目的大按钮，方便直接点 */
+.sty-chip.sugg{background:#f2f7ff;border:1.5px dashed #7aabe8;color:#175cd3;
+  font-size:14.5px;font-weight:750;padding:11px 22px}
+.sty-chip.sugg:hover{background:#e6f0ff;border-color:#175cd3}
 .sty-chip.add{border-style:dashed;color:#175cd3;background:#fff}
+.sty-chip.add:hover{background:#f5f9ff}
 .sty-foot{display:flex;gap:8px;justify-content:flex-end;margin-top:14px;padding-top:12px;
   border-top:1px solid #eef1f6}
 .sty-btn{padding:7px 13px;border:1px solid #d5e0ed;border-radius:9px;background:#fff;
@@ -217,7 +222,6 @@ function refreshAllCustomSelects(){enhancedSelects.forEach((_,select)=>refreshCu
 function enhanceSelect(select,index){if(enhancedSelects.has(select))return;const wrapper=document.createElement("div"),button=document.createElement("button"),menu=document.createElement("div"),value=document.createElement("span"),labels={filterBrand:"品牌",filterPromo:"促销",filterMovement:"榜单变化",filterRank:"榜单范围",filterMainBsr:"大类 BSR",filterSubBsr:"小类 BSR",filterAge:"上架天数",filterMultiCategory:"类目覆盖",filterSleeve:"袖型",filterSeason:"季节",filterStyle:"主风格"};wrapper.className="smart-select";button.className="smart-trigger";button.type="button";button.setAttribute("role","combobox");button.setAttribute("aria-haspopup","listbox");button.setAttribute("aria-expanded","false");button.setAttribute("aria-label",labels[select.id]||"筛选条件");menu.className="smart-menu";menu.id=`smart-menu-${index}`;menu.setAttribute("role","listbox");menu.hidden=true;button.setAttribute("aria-controls",menu.id);value.className="smart-value";button.append(value);button.insertAdjacentHTML("beforeend",'<span class="smart-chevron" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 6.5 8 10l3.5-3.5"/></svg></span>');select.parentNode.insertBefore(wrapper,select);wrapper.append(select,button,menu);select.classList.add("enhanced-native");select.tabIndex=-1;select.setAttribute("aria-hidden","true");enhancedSelects.set(select,{wrapper,button,menu,value,label:labels[select.id]||"选项",query:""});const open=()=>{if(select.disabled)return;closeSmartSelects(select);button.setAttribute("aria-expanded","true");menu.hidden=false;requestAnimationFrame(()=>{const box=menu.querySelector(".smart-search input");if(box)box.focus();else menu.querySelector('[aria-selected="true"]')?.focus()})},close=()=>{button.setAttribute("aria-expanded","false");menu.hidden=true},choose=option=>{if(!option||!option.dataset)return;select.value=option.dataset.value;select.dispatchEvent(new Event("change",{bubbles:true}));close();button.focus()};Object.assign(enhancedSelects.get(select),{open,close,choose});button.addEventListener("click",()=>menu.hidden?open():close());button.addEventListener("keydown",event=>{if(["ArrowDown","Enter"," "].includes(event.key)){event.preventDefault();open()}else if(event.key==="Escape")close()});menu.addEventListener("click",event=>choose(event.target.closest(".smart-option")));menu.addEventListener("keydown",event=>{if(event.key==="Escape"){close();button.focus();return}const options=[...menu.querySelectorAll(".smart-option")].filter(el=>!el.hidden),at=options.indexOf(document.activeElement);if(event.key==="ArrowDown"||event.key==="ArrowUp"){event.preventDefault();if(at<0&&event.key==="ArrowUp"){menu.querySelector(".smart-search input")?.focus();return}options[(at+(event.key==="ArrowDown"?1:-1)+options.length)%options.length].focus()}else if(event.key==="Enter"||event.key===" "){event.preventDefault();if(document.activeElement.classList.contains("smart-option"))choose(document.activeElement)}});refreshCustomSelect(select)}
 function enhanceFilterSelects(){$("filterBrand").closest(".filters").querySelectorAll("select").forEach(enhanceSelect);document.addEventListener("click",event=>{if(!event.target.closest(".smart-select"))closeSmartSelects()})}
 const SLEEVE_ORDER=["长袖","短袖","3/4袖","泡泡袖","喇叭袖","无袖"],SEASON_ORDER=["春","夏","秋","冬"],STYLE_ORDER=["优雅","通勤","西部","度假","波西米亚","休闲","复古","时髦"];
-function syncStyleOptions(){const seen={sleeve:new Set(),season:new Set(),style:new Set()};const take=t=>{if(t.sleeve)seen.sleeve.add(t.sleeve);(t.season||[]).forEach(x=>seen.season.add(x));if(t.stylePrimary||t.style)seen.style.add(t.stylePrimary||t.style)};Object.values(STYLE_TAGS).forEach(take);Object.values(localTags).forEach(take);const fill=(id,order,set,allLabel)=>{const select=$(id),keep=select.value;select.innerHTML=`<option value="">${allLabel}</option>`+order.filter(v=>set.has(v)).map(v=>`<option value="${v}">${v}</option>`).join("");select.value=keep;if(!select.options.length||![...select.options].some(o=>o.value===keep))select.value=""};const widen=(base,cust)=>[...base,...(cust||[]).filter(v=>!base.includes(v))];fill("filterSleeve",widen(SLEEVE_ORDER,customOptions.sleeve),seen.sleeve,"全部袖型");fill("filterSeason",widen(SEASON_ORDER,customOptions.season),seen.season,"全部季节");fill("filterStyle",widen(STYLE_ORDER,customOptions.style),seen.style,"全部风格")}
 /* 预览版新增逻辑 —— 由 tools/wire_style_tags.py 注入到正式版主脚本顶层。
    设计：机器只给「建议」（虚线、不算数），标签值由用户选；每个维度都能加自定义项，
    自定义项存在本机并在导出时一并带走。与打标工作台共用同一套 key。 */
@@ -237,23 +241,44 @@ function saveCustomOptions() {
 function presetOf(dim) {
   return dim === "sleeve" ? SLEEVE_ORDER : dim === "season" ? SEASON_ORDER : STYLE_ORDER;
 }
-/* 某个维度的全部可选项 = 预设 + 自定义 + 标签库里已出现的值 */
-function optionsFor(dim) {
-  const set = presetOf(dim).slice();
-  /* 注意：t.style 是多值数组，必须展开逐个 push —— 直接 push 数组会渲染成空按钮 */
-  const push = v => {
-    if (Array.isArray(v)) { v.forEach(push); return; }
-    if (v && set.indexOf(v) < 0) set.push(v);
-  };
-  (customOptions[dim] || []).forEach(push);
+
+/* 弹窗里显示哪些项：机器建议 + 我自定义过的 + 当前已选（预设列表不再出现） */
+function editOptions(dim, draft, sugg) {
+  const out = [];
+  const add = v => { if (v && out.indexOf(v) < 0) out.push(v); };
+  if (dim === "season") (sugg.season || []).forEach(add); else add(sugg[dim]);
+  (customOptions[dim] || []).forEach(add);
+  if (dim === "season") (draft.season || []).forEach(add); else add(draft[dim]);
+  return out;
+}
+
+/* 筛选下拉：只列「实际出现过的值 ∪ 我自定义的」，预设词按原顺序排前面。
+   本机改过之后也要重跑（saveLocalStyleTags 里会调）。 */
+function syncStyleOptions() {
+  const seen = { sleeve: new Set(), season: new Set(), style: new Set() };
   const take = t => {
-    if (dim === "sleeve") push(t.sleeve);
-    else if (dim === "season") push(t.season);
-    else { push(t.stylePrimary); push(t.style); }
+    if (t.sleeve) seen.sleeve.add(t.sleeve);
+    (t.season || []).forEach(x => x && seen.season.add(x));
+    if (t.stylePrimary) seen.style.add(t.stylePrimary);
+    if (Array.isArray(t.style)) t.style.forEach(x => x && seen.style.add(x));
   };
   Object.values(STYLE_TAGS).forEach(take);
   Object.values(localTags).forEach(take);
-  return set;
+  const orderBy = dim => {
+    const set = seen[dim];
+    const pref = presetOf(dim).filter(v => set.has(v));
+    return pref.concat([...set].filter(v => pref.indexOf(v) < 0).sort());
+  };
+  const fill = (id, list, allLabel) => {
+    const select = $(id), keep = select.value;
+    select.innerHTML = '<option value="">' + allLabel + '</option>'
+      + list.map(v => '<option value="' + esc(v) + '">' + esc(v) + '</option>').join("");
+    select.value = keep;
+    if (![...select.options].some(o => o.value === keep)) select.value = "";
+  };
+  fill("filterSleeve", orderBy("sleeve"), "全部袖型");
+  fill("filterSeason", orderBy("season"), "全部季节");
+  fill("filterStyle", orderBy("style"), "全部风格");
 }
 
 function loadLocalStyleTags() {
@@ -311,10 +336,10 @@ function openStyleEditor(parent, asin) {
     + '想用别的值就点「＋ 自定义」，加过的会留下来，下次还能选。</div>'
     + rows.map(function (r) {
       const dim = r[0], label = r[1], multi = r[2], sg = suggText(dim);
-      return '<div class="sty-row"><b>' + label + '<em>' + (multi ? "可多选" : "单选") + '</em>'
-        + (sg ? '<span class="sty-sg">建议：' + esc(sg) + '</span>' : "") + '</b>'
+      return '<div class="sty-row"><b>' + label + '<em>' + (multi ? "可多选" : "单选") + '</em>' +
+        (sg ? '<span class="sty-sg">建议：' + esc(sg) + '</span>' : '<span class="sty-sg">没有建议，自己选</span>') + '</b>'
         + '<div class="sty-chips" data-dim="' + dim + '">'
-        + optionsFor(dim).map(function (v) {
+        + editOptions(dim, draft, sugg).map(function (v) {
           const on = multi ? draft[dim].indexOf(v) >= 0 : draft[dim] === v;
           const isS = !on && !!sg && (multi ? (sugg[dim] || []).indexOf(v) >= 0 : sugg[dim] === v);
           return '<button type="button" class="sty-chip' + (on ? " on" : "") + (isS ? " sugg" : "")
