@@ -43,11 +43,19 @@ header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.95);border-
 /* 就地编辑弹窗（append 到 body，避开卡片 hover transform 造成的层叠上下文） */
 .sty-mask{position:fixed;inset:0;z-index:200;background:rgba(16,32,59,.45);display:flex;
   align-items:center;justify-content:center;padding:18px}
-.sty-box{background:#fff;border-radius:14px;width:100%;max-width:560px;max-height:88vh;overflow:auto;
+.sty-box{background:#fff;border-radius:14px;width:100%;max-width:620px;max-height:88vh;overflow:auto;
   padding:15px 17px;box-shadow:0 22px 55px rgba(16,32,59,.3)}
-.sty-head{display:flex;gap:11px;align-items:flex-start;margin-bottom:13px}
-.sty-head img{width:88px;height:88px;object-fit:contain;background:#f7f9fc;border-radius:9px;flex:0 0 88px}
-.sty-head .t{font-size:12.5px;line-height:1.5;color:#475467}
+.sty-head{display:flex;gap:14px;align-items:flex-start;margin-bottom:14px}
+.sty-head a{flex:0 0 240px;width:240px;display:flex;justify-content:center;align-items:center;line-height:0;border-radius:11px}
+/* 判断款式要看版型：大图（248px 高，按原比例），点击可看 1000px 原图 */
+.sty-head img{height:264px;width:auto;max-width:240px;min-width:96px;object-fit:contain;
+  background:#f7f9fc;border:1px solid #e6ecf5;border-radius:11px;cursor:zoom-in;transition:border-color .15s}
+.sty-head a:hover img{border-color:#7aabe8}
+.sty-head img:active{opacity:.85}
+.sty-info{flex:1 1 auto;min-width:0}
+.sty-info > b{display:block;font-size:13px;line-height:1.45;margin-bottom:3px;color:#101828}
+.sty-head .t{font-size:12.5px;line-height:1.5;color:#475467;margin-bottom:11px}
+.sty-info .sty-row:last-child{margin-bottom:0}
 .sty-chip.custom{position:relative}
 .sty-del{position:absolute;top:-7px;right:-7px;width:17px;height:17px;border-radius:50%;
   background:#fff;border:1px solid #f1c0bb;color:#b42318;font-size:13px;line-height:1;
@@ -200,6 +208,8 @@ function snapshotDateLabel(date,capturedAt){const [year,month,day]=String(date).
 const rankingLabel=()=>currentRanking==="best-sellers"?"热销榜":"新品榜";
 const rankingUrl=category=>`https://www.amazon.com/gp/${currentRanking==="best-sellers"?"bestsellers":"new-releases"}/${category.departmentSlug||"fashion"}/${category.node}`;
 function safeUrl(value,kind){try{const url=new URL(String(value||""));if(url.protocol!=="https:")return "";const host=url.hostname.toLowerCase();if(kind==="product")return ["amazon.com","www.amazon.com"].includes(host)&&url.pathname.includes("/dp/")?url.href:"";const hostedSnapshotImage=host==="ziqingshui.github.io"&&url.pathname.startsWith("/amazon-womens-blouses-snapshots/data/images/");return hostedSnapshotImage||host==="images-na.ssl-images-amazon.com"||host.endsWith(".media-amazon.com")||host.endsWith(".ssl-images-amazon.com")?url.href:""}catch{return ""}}
+/* 弹窗判断款式要看细节：把卡片的 300px 缩略图换回 1000px 原图 */
+const bigImageUrl=value=>{const small=safeImageUrl(value);if(!small)return "";return small.replace("._AC_UL300_SR300,200__SR230,230_.jpg","._AC_SL1000_.jpg")};
 const safeImageUrl=value=>{const original=safeUrl(value,"image");if(!original)return "";try{const url=new URL(original),host=url.hostname.toLowerCase();if(host!=="images-na.ssl-images-amazon.com"&&!host.endsWith(".media-amazon.com")&&!host.endsWith(".ssl-images-amazon.com"))return original;const match=url.pathname.match(/^\/images\/I\/([A-Za-z0-9+_-]+)(?:\.[^/]*)?\.jpg$/i);if(!match)return original;url.hostname="images-na.ssl-images-amazon.com";url.pathname=`/images/I/${match[1]}._AC_UL300_SR300,200__SR230,230_.jpg`;url.search="";return safeUrl(url.href,"image")||original}catch{return original}},safeProductUrl=value=>safeUrl(value,"product");
 async function json(url){let error;for(let attempt=0;attempt<2;attempt++){try{const response=await fetch(url,{cache:"no-store"});if(!response.ok)throw new Error(`${response.status} ${url}`);return await response.json()}catch(cause){error=cause;if(attempt===0)await new Promise(resolve=>setTimeout(resolve,250))}}throw error}
 async function load(entry){if(!entry)return null;if(cache.has(entry.file))return cache.get(entry.file);const data=await json(entry.file);cache.set(entry.file,data);return data}
@@ -335,9 +345,12 @@ function openStyleEditor(parent, asin) {
   const idxNow = orderOf().findIndex(c => c.id === "product-" + asin);
   const posText = idxNow >= 0 ? "第 " + (idxNow + 1) + " / " + orderOf().length + " 个" : "";
 
-  const bodyHtml = () => '<div class="sty-head"><img src="' + (p.image ? safeImageUrl(p.image) : "") + '" alt="">'
-    + '<div><b style="font-size:13px">' + esc((p.title || asin).slice(0, 90)) + '</b>'
-    + '<div class="t">' + esc(asin) + (p.brand ? " · " + esc(p.brand) : "") + '</div></div></div>'
+  const shot = p.image ? bigImageUrl(p.image) : "";
+  const bodyHtml = () => '<div class="sty-head">'
+    + (shot ? '<a href="' + esc(shot) + '" target="_blank" rel="noopener" title="点击查看原图"><img src="'
+        + esc(shot) + '" alt=""></a>' : "")
+    + '<div class="sty-info"><b>' + esc((p.title || asin).slice(0, 90)) + '</b>'
+    + '<div class="t">' + esc(asin) + (p.brand ? " · " + esc(p.brand) : "") + '</div>'
     + rows.map(function (r) {
       const dim = r[0], label = r[1], multi = r[2], sg = suggText(dim);
       return '<div class="sty-row"><b>' + label + '<em>' + (multi ? "可多选" : "单选") + '</em>' +
@@ -354,6 +367,7 @@ function openStyleEditor(parent, asin) {
         + '<button type="button" class="sty-chip add" data-add="1">＋ 自定义</button>'
         + '</div></div>';
     }).join("")
+    + '</div></div>'
     + '<div class="sty-foot">'
     + '<span class="sty-count">' + posText + '</span>'
     + '<button type="button" class="sty-btn" data-act="clear">清空此项</button>'
