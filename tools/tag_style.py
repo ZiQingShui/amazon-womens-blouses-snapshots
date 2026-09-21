@@ -192,6 +192,16 @@ def main():
     out = pathlib.Path(args.out) if args.out else WORK / ("style-tags-%s.json" % args.date)
     out.write_text(json.dumps(tags, ensure_ascii=False, indent=1), encoding="utf-8")
 
+    # 同步一份到看板数据目录（index-style.html 预览版读这里；json() 带 no-store，刷新即生效）
+    dashboard = WORK.parent / "docs/data/style-tags.json"
+    if dashboard.parent.exists():
+        dashboard.write_text(json.dumps({
+            "updatedAt": args.date, "source": "tag_style.py",
+            "dimension": {"sleeve": "单值", "season": "多值", "style": "多值 + stylePrimary 单值主风格"},
+            "tags": tags,
+        }, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+        print("已同步到", dashboard)
+
     n = len(tags)
     n_manual = sum(1 for r in tags.values() if r["source"] == "manual")
     print("父体 %d 个，已打标（其中人工确认 %d 个）" % (n, n_manual))
