@@ -76,10 +76,10 @@ EDITS = [
 
     ("filteredRows 加款式过滤",
      'if(query&&!`${p.brand||""} ${p.title||""} ${p.asin||""}`.toLowerCase().includes(query))return false;',
-     'const styleTag=tagOf(p);'
-     'if(active.sleeve&&(!styleTag||styleTag.sleeve!==active.sleeve))return false;'
-     'if(active.season&&(!styleTag||!(styleTag.season||[]).includes(active.season)))return false;'
-     'if(active.style&&(!styleTag||styleTag.stylePrimary!==active.style))return false;'
+     'const styleTag=tagOf(p),styleOk=!!(styleTag&&styleTag.confirmed);'
+     'if(active.sleeve&&(!styleOk||styleTag.sleeve!==active.sleeve))return false;'
+     'if(active.season&&(!styleOk||!(styleTag.season||[]).includes(active.season)))return false;'
+     'if(active.style&&(!styleOk||styleTag.stylePrimary!==active.style))return false;'
      'if(query&&!`${p.brand||""} ${p.title||""} ${p.asin||""}`.toLowerCase().includes(query))return false;'),
 
     ("optionMeta 三个分支 + 计数映射",

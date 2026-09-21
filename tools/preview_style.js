@@ -28,21 +28,17 @@ function editOptions(dim, draft, sugg) {
   return out;
 }
 
-/* 筛选下拉：只列「实际出现过的值 ∪ 我自定义的」，预设词按原顺序排前面。
-   本机改过之后也要重跑（saveLocalStyleTags 里会调）。 */
+/* 筛选下拉：**只列「我确认过的」值**（机器建议一概不算，也不出现在这里），
+   预设词按原顺序排前面。本机改过之后要重跑（saveLocalStyleTags 里会调）。 */
 function syncStyleOptions() {
   const seen = { sleeve: new Set(), season: new Set(), style: new Set() };
-  /* 注意字段名不一致：标签库里是 stylePrimary，本机手改(localTags)里是 style —— 两个都要认，
-     否则自定义的风格值不会出现在筛选下拉里（2026-09-21 踩过） */
   const take = t => {
     if (t.sleeve) seen.sleeve.add(t.sleeve);
     (t.season || []).forEach(x => x && seen.season.add(x));
-    const s = t.stylePrimary || t.style;
+    const s = t.style;          /* localTags 里主风格字段叫 style */
     if (typeof s === "string") { if (s) seen.style.add(s); }
     else if (Array.isArray(s)) s.forEach(x => x && seen.style.add(x));
-    if (Array.isArray(t.style)) t.style.forEach(x => x && seen.style.add(x));
   };
-  Object.values(STYLE_TAGS).forEach(take);
   Object.values(localTags).forEach(take);
   const orderBy = dim => {
     const set = seen[dim];
@@ -113,7 +109,8 @@ function openStyleEditor(parent, asin) {
     + '<div><b style="font-size:13px">' + esc((p.title || asin).slice(0, 90)) + '</b>'
     + '<div class="t">' + esc(asin) + (p.brand ? " · " + esc(p.brand) : "") + '</div></div></div>'
     + '<div class="sty-note">机器只给<b>建议</b>、不替你决定：<b>选中的才算数</b>，没选的维度当作未标注。'
-    + '想用别的值就点「＋ 自定义」，加过的会留下来，下次还能选。</div>'
+    + '想用别的值就点「＋ 自定义」，加过的会留下来，下次还能选。'
+    + '筛选与计数<b>只统计你确认过的商品</b>，机器建议不参与。</div>'
     + rows.map(function (r) {
       const dim = r[0], label = r[1], multi = r[2], sg = suggText(dim);
       return '<div class="sty-row"><b>' + label + '<em>' + (multi ? "可多选" : "单选") + '</em>' +
