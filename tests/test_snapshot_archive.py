@@ -344,7 +344,7 @@ class SnapshotArchiveTests(unittest.TestCase):
         html = (ROOT / "docs/index.html").read_text(encoding="utf-8")
         self.assertIn('json("data/style-tags.json")', html)       # 加载标签库
         self.assertIn('style-chips', html)                         # 卡片上的标签行（模板里带变量后缀）
-        for sel in ("filterSleeve", "filterSeason", "filterFabric", "filterStyle"):
+        for sel in ("filterSleeve", "filterSeason", "filterFabric", "filterStyle", "filterImageType"):
             self.assertIn('id="%s"' % sel, html)                   # 第 4 组的三个下拉
         self.assertIn("openStyleEditor", html)                     # 点标签就地编辑
         self.assertIn("styleTagsCustomOptions", html)              # 自定义选项

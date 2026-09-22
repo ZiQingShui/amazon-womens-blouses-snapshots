@@ -225,7 +225,7 @@ def load_manual(date, path=None):
             continue
         tags = d.get("tags", d) if isinstance(d, dict) else {}
         for k, v in tags.items():
-            if isinstance(v, dict) and ("sleeve" in v or "season" in v or "style" in v):
+            if isinstance(v, dict) and any(k in v for k in ("sleeve", "season", "fabric", "style", "imageType")):
                 merged[k] = v
     return merged
 
@@ -272,6 +272,8 @@ def main():
             "asin": r["asin"], "brand": r.get("category") and None or None,
             "titleSample": r["title"][:170],
             "sleeve": sl, "season": se, "fabric": fb, "style": st,
+            # 主图类型：文字里没有信号（要看图），机器不给建议，只等人工确认
+            "imageType": "",
             "source": src, "confidence": conf,
         }
         # 人工确认的结果优先级最高，且永久有效（重跑不会被机器判断打回）
@@ -281,6 +283,7 @@ def main():
                 "sleeve": m.get("sleeve") or sl,
                 "season": m.get("season") or se,
                 "fabric": m.get("fabric") or fb,
+                "imageType": m.get("imageType") or "",
                 "style": m.get("style") or st,
                 "source": "manual", "confidence": 1.0,
             })
@@ -302,7 +305,7 @@ def main():
     if dashboard.parent.exists():
         dashboard.write_text(json.dumps({
             "updatedAt": args.date, "source": "tag_style.py",
-            "dimension": {"sleeve": "单值", "season": "多值", "fabric": "多值", "style": "多值 + stylePrimary 单值主风格"},
+            "dimension": {"sleeve": "单值", "season": "多值", "fabric": "多值", "style": "多值 + stylePrimary 单值主风格", "imageType": "单值/纯人工"},
             "tags": tags,
         }, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
         print("已同步到", dashboard)
