@@ -60,6 +60,14 @@ def parse_bsr(rank_info: str) -> tuple[int | None, int | None, str | None, str |
     return main_bsr, sub_bsr, main_cat, sub_cat
 
 
+def price_num(value) -> float | None:
+    """从任意价格文本里提取数字；0 或取不到返回 None（0 不是有效售价）。"""
+    import re
+    m = re.search(r"-?\d+(?:\.\d+)?", str(value or ""))
+    v = float(m.group(0)) if m else None
+    return v if v else None
+
+
 def parse_price(value: str) -> str:
     """价格转成 $XX.XX 格式。"""
     value = str(value or "").strip()
@@ -139,10 +147,18 @@ def build_item(rank_row: dict, detail: dict, snapshot_date: str, tracking: dict 
     image_id = rank_row.get("imageId", "")
     main_bsr, sub_bsr, main_cat, sub_cat = parse_bsr(detail.get("销量排名信息", ""))
 
-    # 价格：优先最终价格，其次 Buybox 价格
+    # 价格：优先最终价格，其次 Buybox 价格。
+    # ⚠ 详情接口有 ~20% 的商品所有价格字段都返回 0（2026-09-22 实测 90/400，服务端解析问题），
+    #   而榜单导出（.xls）的价格是准的 —— 详情取不到有效值时必须回退榜单价，否则看板出现 $0.00。
+    #   注意 '0.00' 这种写法不能用 != '0' 判断（曾经漏掉，导致 $0.00 上板）。
     final_price = str(detail.get("最终价格", "")).strip()
     buybox_price = str(detail.get("Buybox价格", "")).strip()
-    price_raw = final_price if final_price and final_price != "0" else buybox_price
+    if price_num(final_price):
+        price_raw, price_source = final_price, "Ecomtool MCP 商品详情"
+    elif price_num(buybox_price):
+        price_raw, price_source = buybox_price, "Ecomtool MCP 商品详情"
+    else:
+        price_raw, price_source = rank_row.get("price", ""), "Ecomtool 榜单导出（详情价格为 0，已回退）"
 
     item = {
         "rank": rank_row["rank"],
@@ -194,7 +210,7 @@ def build_item(rank_row: dict, detail: dict, snapshot_date: str, tracking: dict 
 
     # 图片来源标记
     item["imageSource"] = "Ecomtool MCP 商品详情；同一图片 ID 的高清版本"
-    item["priceSource"] = "Ecomtool MCP 商品详情"
+    item["priceSource"] = price_source
 
     return item
 
