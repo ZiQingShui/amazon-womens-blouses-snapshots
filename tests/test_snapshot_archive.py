@@ -775,5 +775,30 @@ class PromotionParsingTests(unittest.TestCase):
         self.assertIn(".history-title{margin:0 0 8px;font-size:22px", html)
 
 
+    def test_untagged_flag_and_tag_state_filter_are_wired(self):
+        """「待打标」提示与筛选项（2026-09-22 用户："没有打过标签的，能做提示吗…筛选那边还是要有可以筛选的，待打标"）。
+
+        - 卡片：`styleTodo=!(styleTag&&styleTag.confirmed)`，未确认时在照片右上角挂 `.todo-flag`「待打标」
+          （那个角落本来是空的：左上名次、右下价格）。保存后随 render 自然消失。
+        - 判定口径是**未确认**，不是"完全没标签"——只有机器建议的也算未打标。
+        - 兜底：连机器建议都没有的商品，标签行**照样渲染**，里面放 `.sty-add`「＋ 打标」，
+          否则那张卡没有任何入口能打开打标弹窗（原来 `styleChips = styleTag ? … : ""`）。
+        - 筛选：第 3 组「价格与状态」加 `filterTagState`（全部/待打标/已打标），该组因此从 `.fg-4` 改 `.fg-5`。
+        """
+        html = (ROOT / "docs/index.html").read_text(encoding="utf-8")
+        self.assertIn('id="filterTagState"', html)
+        self.assertIn('<option value="todo">待打标</option>', html)
+        self.assertIn('tagState:""', html)                                   # filters 对象
+        self.assertIn('filterTagState:"打标状态"', html)                      # enhanceSelect 的 labels
+        self.assertIn('filterTagState:"tagState"', html)                     # optionMeta / bindings
+        self.assertIn('tagState:"filterTagState"', html)                     # filterLabel
+        self.assertIn('active.tagState==="todo"&&styleOk)return false', html)
+        self.assertIn("styleTodo=!(styleTag&&styleTag.confirmed)", html)
+        self.assertIn("todo-flag", html)
+        self.assertIn("sty-add", html)                                       # 无标签时的兜底入口
+        # 第 3 组改 5 列（4 列会把这 5 个控件挤成两行）
+        self.assertIn('class="filter-grid fg-5"><label class="field price-field"', html)
+
+
 if __name__ == "__main__":
     unittest.main()
