@@ -748,5 +748,22 @@ class PromotionParsingTests(unittest.TestCase):
         self.assertGreaterEqual(html.count("safeImageUrl(p.image)"), 2)
 
 
+    def test_history_dialog_separates_fixed_header_from_scroll(self):
+        """单品历史弹窗：固定头部与滚动内容之间要有隔断。
+
+        2026-09-22 用户反馈「这个地方应该要做一个隔断，不然这样太生硬了」——
+        头部（`.product-overview`，flex:0 0 auto）与滚动区（`.history-scroll`，flex:1）原本 gap=0、
+        没有任何分隔，内容滚上来会直接贴住统计卡。
+        修法：头部加下边框 + 18px 下留白 + `position:relative;z-index:1`（保证渐隐压在滚动内容之上），
+        并用 `::after` 做 16px 白色渐隐。⚠ 渐隐必须挂头部，挂 `.history-scroll` 会被滚动容器裁掉。
+        """
+        html = (ROOT / "docs/index.html").read_text(encoding="utf-8")
+        self.assertIn("padding-bottom:18px;border-bottom:1px solid var(--line);position:relative;z-index:1", html)
+        self.assertIn(".product-overview::after", html)
+        self.assertIn("background:linear-gradient(#fff,rgba(255,255,255,0))", html)
+        # 滚动区仍是独立滚动、且不吃掉滚轮
+        self.assertIn(".history-scroll{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain", html)
+
+
 if __name__ == "__main__":
     unittest.main()
