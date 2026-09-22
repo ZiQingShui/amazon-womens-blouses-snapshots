@@ -796,6 +796,8 @@ class PromotionParsingTests(unittest.TestCase):
         self.assertIn("styleTodo=!(styleTag&&styleTag.confirmed)", html)
         self.assertIn("todo-flag", html)
         self.assertIn("sty-add", html)                                       # 无标签时的兜底入口
+        # 角标与 hover 的「点击查看历史」同占右上角 → hover 时角标必须让位（否则叠字）
+        self.assertIn(".photo:hover .todo-flag,.photo:focus-visible .todo-flag{opacity:0", html)
         # 第 3 组改 5 列（4 列会把这 5 个控件挤成两行）
         self.assertIn('class="filter-grid fg-5"><label class="field price-field"', html)
 
