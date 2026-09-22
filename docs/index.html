@@ -44,13 +44,16 @@ header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.95);border-
 /* 就地编辑弹窗（append 到 body，避开卡片 hover transform 造成的层叠上下文） */
 .sty-mask{position:fixed;inset:0;z-index:200;background:rgba(16,32,59,.45);display:flex;
   align-items:center;justify-content:center;padding:18px}
-.sty-box{background:#fff;border-radius:14px;width:100%;max-width:620px;max-height:88vh;overflow:auto;
+.sty-box{background:#fff;border-radius:14px;width:100%;max-width:720px;max-height:88vh;overflow:auto;
   padding:15px 17px;box-shadow:0 22px 55px rgba(16,32,59,.3)}
 .sty-head{display:flex;gap:14px;align-items:flex-start;margin-bottom:14px}
-.sty-head > a{flex:0 0 240px;width:240px;display:flex;justify-content:center;align-items:center;line-height:0;border-radius:11px}
-/* 判断款式要看版型：大图（248px 高，按原比例），点击可看 1000px 原图 */
-.sty-head img{height:264px;width:auto;max-width:240px;min-width:96px;object-fit:contain;
+.sty-head > a{flex:0 0 340px;width:340px;display:flex;justify-content:center;align-items:center;line-height:0;border-radius:11px}
+/* 判断款式要看版型：图片按左槽满宽显示（340px 宽 × 原比例，实测约 440px 高，正好撑满左列），点击可看 1000px 原图 */
+.sty-head img{width:100%;height:auto;max-width:340px;max-height:520px;min-width:96px;object-fit:contain;
   background:#f7f9fc;border:1px solid #e6ecf5;border-radius:11px;cursor:zoom-in;transition:border-color .15s}
+/* 窄屏时左槽跟着缩，别把右侧维度区挤扁 */
+@media(max-width:820px){.sty-head > a{flex:0 0 260px;width:260px}.sty-head img{max-width:260px;max-height:420px}}
+@media(max-width:640px){.sty-head > a{flex:0 0 190px;width:190px}.sty-head img{max-width:190px;max-height:320px}}
 .sty-head > a:hover img{border-color:#7aabe8}
 .sty-head img:active{opacity:.85}
 .sty-info{flex:1 1 auto;min-width:0}
