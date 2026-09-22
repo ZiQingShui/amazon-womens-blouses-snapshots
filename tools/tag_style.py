@@ -123,14 +123,34 @@ def primary_style(styles):
 
 
 def load_manual(date, path=None):
-    """打标工作台导出的人工确认结果；存在即覆盖规则与 AI 的判断。"""
-    p = pathlib.Path(path) if path else WORK / ("style-tags-manual-%s.json" % date)
-    if not p.exists():
-        return {}
-    d = json.loads(p.read_text(encoding="utf-8"))
-    tags = d.get("tags", d) if isinstance(d, dict) else {}
-    return {k: v for k, v in tags.items() if isinstance(v, dict) and
-            ("sleeve" in v or "season" in v or "style" in v)}
+    """打标工作台/看板导出的人工确认结果；存在即覆盖规则与 AI 的判断。
+
+    ⚠ 会合并**全部** `work/style-tags-manual-*.json`（按文件名日期升序，后写的优先）：
+    人工确认按父体存、与日期无关，昨天确认过的今天必须继续生效，
+    否则每天重跑就把用户之前的工作打回机器值（2026-09-22 修）。
+    """
+    files = []
+    if path:
+        files.append(pathlib.Path(path))
+    else:
+        target = WORK / ("style-tags-manual-%s.json" % date)
+        if target.exists():
+            files.append(target)
+        others = sorted(p for p in WORK.glob("style-tags-manual-*.json") if p != target)
+        files.extend(others)
+    merged = {}
+    for p in files:
+        if not p.exists():
+            continue
+        try:
+            d = json.loads(p.read_text(encoding="utf-8"))
+        except Exception:
+            continue
+        tags = d.get("tags", d) if isinstance(d, dict) else {}
+        for k, v in tags.items():
+            if isinstance(v, dict) and ("sleeve" in v or "season" in v or "style" in v):
+                merged[k] = v
+    return merged
 
 
 def main():

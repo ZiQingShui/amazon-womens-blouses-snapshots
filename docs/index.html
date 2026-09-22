@@ -199,7 +199,7 @@ body[data-rank="best"] .date-slider{--ds-cmp:#64748b;--ds-cmp-ink:#475467;--ds-f
 <script>
 const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const FAST_RISE_THRESHOLD=10;let fastExpanded=false;const cache=new Map(),manifestCache=new Map(),categoryLoadedNodes=new Set();let categories=[],categoryCatalog=[],currentCategory=null,currentRanking="new-releases",manifest={snapshots:[]},current=null,previous=null,compareEnabled=true,crossCategoryByAsin=new Map(),categoryBrowserPath=[],categoryBrowserNode="",categoryLoadingNode="",insightGroups={},expandedCategory="",parentView=true,parentKeyActive=false;
-let STYLE_TAGS={},STYLE_DOC_DATE="",LOCAL_KEY="styleTagsManual_",localTags={};
+let STYLE_TAGS={},STYLE_DOC_DATE="",LOCAL_KEY="styleTagsManual_v1",localTags={};
 const filters={query:"",brand:"",promo:"",movement:"",rank:"",priceMin:"",priceMax:"",mainBsr:"",subBsr:"",age:"",multiCategory:"",sleeve:"",season:"",style:""};
 const $=id=>document.getElementById(id),money=v=>{const n=parseFloat(String(v||"").replace(/[^\d.]/g,""));return Number.isFinite(n)?n:null},fmt=n=>Number(n).toLocaleString("en-US");
 $("filterMovement").querySelector('option[value="new"]').textContent="首次入榜";
@@ -295,8 +295,20 @@ function syncStyleOptions() {
 }
 
 function loadLocalStyleTags() {
-  LOCAL_KEY = "styleTagsManual_" + (STYLE_DOC_DATE || "");
-  try { localTags = JSON.parse(localStorage.getItem(LOCAL_KEY) || "{}"); } catch (e) { localTags = {}; }
+  /* 固定键：不能带 STYLE_DOC_DATE —— 标签库每天更新日期，一旦带日期，
+     昨天确认过的标签在今天就全部"消失"（用户要的是"确认一次、以后都不用重做"）。 */
+  LOCAL_KEY = "styleTagsManual_v1";
+  let raw = {};
+  try { raw = JSON.parse(localStorage.getItem(LOCAL_KEY) || "{}"); } catch (e) { raw = {}; }
+  /* 迁移：把旧版本按日期存的键（styleTagsManual_2026-09-21 等）并入新键，改版不丢东西 */
+  try {
+    const legacy = Object.keys(localStorage).filter(k => k.indexOf("styleTagsManual_") === 0 && k !== LOCAL_KEY);
+    if (legacy.length) {
+      legacy.forEach(k => { try { Object.assign(raw, JSON.parse(localStorage.getItem(k) || "{}")); } catch (e) { } });
+      localStorage.setItem(LOCAL_KEY, JSON.stringify(raw));
+    }
+  } catch (e) { }
+  localTags = raw || {};
 }
 function saveLocalStyleTags() {
   try { localStorage.setItem(LOCAL_KEY, JSON.stringify(localTags)); } catch (e) { }
