@@ -728,5 +728,25 @@ class PromotionParsingTests(unittest.TestCase):
         self.assertEqual(len(item["promoTypes"]), len(set(item["promoTypes"])))
 
 
+    def test_card_image_keeps_framing_but_raises_resolution(self):
+        """卡片商品图：按屏幕密度给档位，但**构图必须与旧的 230 方形缩略图一致**。
+
+        2026-09-22 用户报「弹窗的图明显比卡片清晰」。根因：卡片用的是 safeImageUrl 的 230×230，
+        卡片显示 221px、2x 屏要 442 物理像素 → 放大 1.9 倍。
+        修法是把原参数**整组等比放大一倍**（UL300/SR300,200/SR230,230 → UL600/SR600,400/SR460,460），
+        实测两张图内容占画布比都是 0.33、内容框 114×153 → 228×307，构图逐像素一致。
+        ⚠ 别改成 _AC_SR600,600_（贴边裁切，内容占 74%）或 _AC_SL1000_（竖版图，会把图框从
+        221×221 撑成 221×278、卡片变高）。
+        """
+        html = (ROOT / "docs/index.html").read_text(encoding="utf-8")
+        self.assertIn("function cardImageAttrs(value)", html)
+        self.assertIn('_AC_UL600_SR600,400__SR460,460_', html)     # 2x 档（等比放大）
+        self.assertIn("' 1x, '+esc(base)+' 2x\"'", html)           # srcset 两档：1x 用 230、2x 用 460
+        # 卡片 img 用的是新函数，且带上异步解码
+        self.assertIn('decoding="async" ${cardImageAttrs(p.image)}', html)
+        # 小图（快速上升/退出列表）仍走 230 档，别一起放大
+        self.assertGreaterEqual(html.count("safeImageUrl(p.image)"), 2)
+
+
 if __name__ == "__main__":
     unittest.main()
