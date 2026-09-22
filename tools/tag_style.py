@@ -56,6 +56,28 @@ SEASON_HINT = {
     "春": [r"floral", r"pastel"],
 }
 
+# 面料：多值（一衣多料很常见，如 cotton linen）
+FABRIC = [
+    ("棉",     [r"\bcotton\b", r"cotton blend", r"\bpoplin\b"]),
+    ("亚麻",   [r"\blinen\b", r"linen blend"]),
+    ("真丝",   [r"\bsilk\b", r"silky", r"mulberry"]),
+    ("缎面",   [r"\bsatin\b", r"sateen"]),
+    ("雪纺",   [r"chiffon"]),
+    ("牛仔",   [r"\bdenim\b"]),
+    ("蕾丝",   [r"\blace\b", r"crochet", r"eyellet", r"eyelet"]),
+    ("法兰绒", [r"flannel"]),
+    ("灯芯绒", [r"corduroy"]),
+    ("丝绒",   [r"\bvelvet\b", r"velour"]),
+    ("针织",   [r"\bknit\b", r"knitted", r"ribbed"]),
+    ("摇粒绒", [r"\bfleece\b", r"sherpa"]),
+    ("华夫格", [r"waffle"]),
+    ("网纱",   [r"\bmesh\b", r"\bsheer\b", r"tulle"]),
+    ("牛津纺", [r"\boxford\b"]),
+    ("纱布",   [r"\bgauze\b"]),
+    ("羊毛",   [r"\bwool\b", r"merino", r"cashmere"]),
+    ("皮/仿皮", [r"\bleather\b", r"\bfaux leather\b", r"suede", r"\bpu\b"]),
+]
+
 # 风格：多值
 STYLE = {
     "通勤":   [r"business casual", r"work outfit", r"work wear", r"office", r"business work",
@@ -103,6 +125,61 @@ def pick_season(title, sleeve=None):
     if hints:
         return sorted(hints), "rule(inferred)", 0.5
     return [], None, 0.0
+
+
+# 成分百分比 → 中文面料名（来自五点描述/产品概述，比标题里的宣传词更可靠）
+COMPOSITION = [
+    (r"cotton", "棉"), (r"polyester", "涤纶"), (r"spandex|elastane", "氨纶"),
+    (r"rayon|viscose", "粘胶"), (r"modal", "莫代尔"), (r"nylon", "锦纶"),
+    (r"acrylic", "腈纶"), (r"wool|merino|cashmere", "羊毛"), (r"silk", "真丝"),
+    (r"linen", "亚麻"), (r"lyocell|tencel|modal", "天丝"),
+]
+
+
+def pick_composition(text):
+    """解析「95% Cotton, 5% Spandex」→ 取占比 ≥20% 的纤维（按占比降序）。
+
+    只看有没有关键词不行：几乎每件都含 polyester，会被标成「涤纶」而掩盖真正的主料。
+    """
+    t = norm(text or "")
+    best = {}
+    for pat, cn in COMPOSITION:
+        pcts = []
+        w = "(?:%s)" % pat          # ⚠ 必须包成非捕获组：wool|merino 会劈开整条正则
+        for m in re.finditer(r"(\d{1,3})\s*%[^,;.\n]{0,18}" + w, t):
+            pcts.append(int(m.group(1)))
+        for m in re.finditer(w + r"[^,;.\n]{0,18}(\d{1,3})\s*%", t):
+            pcts.append(int(m.group(1)))
+        if pcts:
+            p = max(pcts)
+            if cn not in best or p > best[cn]:
+                best[cn] = p
+    ranked = sorted(best.items(), key=lambda kv: -kv[1])
+    picks = [cn for cn, pct in ranked if pct >= 20]
+    if not picks and ranked:
+        picks = [ranked[0][0]]          # 都没到 20% 就取占比最高的那个
+    return picks
+
+
+def pick_fabric(title, extra=""):
+    """面料 = 标题材质词 ∪ 成分百分比（extra 传五点描述+产品概述）。"""
+    t = norm(title)
+    desc = [name for name, pats in FABRIC if any(re.search(p, t) for p in pats)]
+    comp = pick_composition(extra or "")
+    out, seen = [], set()
+    for v in comp + desc:                # 纤维（按占比）在前，描述词（缎面/蕾丝…）在后
+        if v and v not in seen:
+            seen.add(v); out.append(v)
+    out = out[:3]                        # 最多 3 个，避免卡片上一排标签
+    if comp:
+        return out, "rule(composition)", 0.8
+    return out, ("rule" if desc else None), (0.85 if desc else 0.0)
+
+
+
+    t = norm(title)
+    hits = [name for name, pats in FABRIC if any(re.search(p, t) for p in pats)]
+    return sorted(set(hits)), ("rule" if hits else None), (0.85 if hits else 0.0)
 
 
 def pick_style(title):
@@ -162,6 +239,9 @@ def main():
     manual = load_manual(args.date, args.manual)
 
     parsed = json.loads((WORK / ("ecomtool-%s-parsed.json" % args.date)).read_text(encoding="utf-8"))
+    # 面料不只靠标题：详情里的「五点描述/产品概述」常写着成分（95% Cotton, 5% Spandex）
+    details_file = WORK / ("ecomtool-details-%s.json" % args.date)
+    details = json.loads(details_file.read_text(encoding="utf-8")) if details_file.exists() else {}
     ma = json.loads((WORK / ("market-analysis-%s.json" % args.date)).read_text(encoding="utf-8"))
 
     # 商品去重（同一 ASIN 可能同时在新品/热销榜）
@@ -174,7 +254,7 @@ def main():
                 seen.add(r["asin"])
                 items.append(r)
 
-    tags, tally_sleeve, tally_season, tally_style = {}, collections.Counter(), collections.Counter(), collections.Counter()
+    tags, tally_sleeve, tally_season, tally_style, tally_fabric = {}, collections.Counter(), collections.Counter(), collections.Counter(), collections.Counter()
     unresolved = []
     for r in items:
         parent = (ma.get(r["asin"], {}) or {}).get("parentAsin") or r["asin"]
@@ -183,12 +263,15 @@ def main():
         sl, sl_src, sl_cf = pick_sleeve(r["title"])
         se, se_src, se_cf = pick_season(r["title"], sl)
         st, st_src, st_cf = pick_style(r["title"])
-        src = "rule" if (sl_src or se_src or st_src) else "unresolved"
-        conf = round(max(sl_cf, se_cf, st_cf), 2)
+        det = details.get(r["asin"], {}) or {}
+        fb_text = " ".join(str(x or "") for x in (det.get("五点描述"), det.get("产品概述"), det.get("标题")))
+        fb, fb_src, fb_cf = pick_fabric(r["title"], fb_text)
+        src = "rule" if (sl_src or se_src or st_src or fb_src) else "unresolved"
+        conf = round(max(sl_cf, se_cf, st_cf, fb_cf), 2)
         rec = {
             "asin": r["asin"], "brand": r.get("category") and None or None,
             "titleSample": r["title"][:170],
-            "sleeve": sl, "season": se, "style": st,
+            "sleeve": sl, "season": se, "fabric": fb, "style": st,
             "source": src, "confidence": conf,
         }
         # 人工确认的结果优先级最高，且永久有效（重跑不会被机器判断打回）
@@ -197,6 +280,7 @@ def main():
             rec.update({
                 "sleeve": m.get("sleeve") or sl,
                 "season": m.get("season") or se,
+                "fabric": m.get("fabric") or fb,
                 "style": m.get("style") or st,
                 "source": "manual", "confidence": 1.0,
             })
@@ -205,6 +289,7 @@ def main():
         tally_sleeve[sl or "（未定）"] += 1
         tally_season.update(se or ["（未定）"])
         tally_style.update(st or ["（未定）"])
+        tally_fabric.update(fb or ["（未定）"])
         if not sl or not se or not st:
             unresolved.append({"parent": parent, "asin": r["asin"], "title": r["title"][:170],
                                "sleeve": sl, "season": se, "style": st})
@@ -217,7 +302,7 @@ def main():
     if dashboard.parent.exists():
         dashboard.write_text(json.dumps({
             "updatedAt": args.date, "source": "tag_style.py",
-            "dimension": {"sleeve": "单值", "season": "多值", "style": "多值 + stylePrimary 单值主风格"},
+            "dimension": {"sleeve": "单值", "season": "多值", "fabric": "多值", "style": "多值 + stylePrimary 单值主风格"},
             "tags": tags,
         }, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
         print("已同步到", dashboard)
@@ -229,6 +314,7 @@ def main():
     print("袖型:", dict(tally_sleeve.most_common()))
     print("季节:", dict(tally_season.most_common()))
     print("风格:", dict(tally_style.most_common()))
+    print("面料:", dict(tally_fabric.most_common()))
     print()
     print("完整度：袖型 %.1f%% · 季节 %.1f%% · 风格 %.1f%%" % (
         100.0 * (n - tally_sleeve["（未定）"]) / n,
