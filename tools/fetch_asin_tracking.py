@@ -143,6 +143,10 @@ def _rows_to_dict(rows, header) -> dict[str, dict]:
         m = re.search(r"-?\d+(?:\.\d+)?", str(s or ""))
         return float(m.group(0)) if m else None
 
+    def stamp(row):
+        """归一化抓取时间，用于比较新旧（返回可比较的字符串）"""
+        return str(cell(row, ica)).strip().replace("T", " ")
+
     out: dict[str, dict] = {}
     for row in body:
         asin = str(cell(row, ia)).strip().upper()
@@ -152,7 +156,7 @@ def _rows_to_dict(rows, header) -> dict[str, dict]:
         promo = str(cell(row, ip)).strip()
         deal_raw = str(cell(row, idl)).strip()
         coupon_pct = num(coupon) if coupon not in ("0", "", "-") else 0.0
-        out[asin] = {
+        rec = {
             "coupon": "" if coupon in ("0", "", "-") else coupon,
             "couponPct": coupon_pct,
             "promoDiscount": "" if promo in ("0", "", "-") else promo,
@@ -163,6 +167,12 @@ def _rows_to_dict(rows, header) -> dict[str, dict]:
             "finalPrice": num(cell(row, ifin)),
             "capturedAt": str(cell(row, ica)).strip(),
         }
+        # ⚠ 导出文件里每个 ASIN 有多行历史（按抓取时间倒序、最新在前）。
+        # 原来直接 out[asin]=rec 会一路覆盖、留下**最旧**那行 —— 今天的新数据被丢掉、
+        # 看板上显示的是几天前的促销（2026-09-22 事故）。这里只保留最新的一行。
+        prev = out.get(asin)
+        if prev is None or stamp(row) >= str(prev.get("capturedAt", "")).replace("T", " "):
+            out[asin] = rec
     return out
 
 
