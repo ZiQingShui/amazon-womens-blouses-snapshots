@@ -754,13 +754,15 @@ class PromotionParsingTests(unittest.TestCase):
         2026-09-22 用户反馈「这个地方应该要做一个隔断，不然这样太生硬了」——
         头部（`.product-overview`，flex:0 0 auto）与滚动区（`.history-scroll`，flex:1）原本 gap=0、
         没有任何分隔，内容滚上来会直接贴住统计卡。
-        修法：头部加下边框 + 18px 下留白 + `position:relative;z-index:1`（保证渐隐压在滚动内容之上），
-        并用 `::after` 做 16px 白色渐隐。⚠ 渐隐必须挂头部，挂 `.history-scroll` 会被滚动容器裁掉。
+        第一版做的是「1px 线 + 16px 白渐隐」，用户说「不是很明显」，看了 4 个方案后选了**投影隔断**：
+        1px 下边框 + `box-shadow:0 12px 20px -6px rgba(16,32,59,.22)` + 18px 下留白，
+        再加 `position:relative;z-index:1`（否则会被后面的滚动区盖住）。
+        ⚠ 试错记录：负 spread 给到 -20 时投影基本看不见；白渐隐那条路线已废弃（别再加回来）。
         """
         html = (ROOT / "docs/index.html").read_text(encoding="utf-8")
         self.assertIn("padding-bottom:18px;border-bottom:1px solid var(--line);position:relative;z-index:1", html)
-        self.assertIn(".product-overview::after", html)
-        self.assertIn("background:linear-gradient(#fff,rgba(255,255,255,0))", html)
+        self.assertIn("box-shadow:0 12px 20px -6px rgba(16,32,59,.22)", html)
+        self.assertNotIn(".product-overview::after", html)          # 渐隐方案已废弃
         # 滚动区仍是独立滚动、且不吃掉滚轮
         self.assertIn(".history-scroll{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain", html)
 
