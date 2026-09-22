@@ -749,20 +749,25 @@ class PromotionParsingTests(unittest.TestCase):
 
 
     def test_history_dialog_separates_fixed_header_from_scroll(self):
-        """单品历史弹窗：固定头部与滚动内容之间要有隔断。
+        """单品历史弹窗：固定头部与滚动内容之间要有**通栏**隔断。
 
         2026-09-22 用户反馈「这个地方应该要做一个隔断，不然这样太生硬了」——
         头部（`.product-overview`，flex:0 0 auto）与滚动区（`.history-scroll`，flex:1）原本 gap=0、
         没有任何分隔，内容滚上来会直接贴住统计卡。
-        第一版做的是「1px 线 + 16px 白渐隐」，用户说「不是很明显」，看了 4 个方案后选了**投影隔断**：
-        1px 下边框 + `box-shadow:0 12px 20px -6px rgba(16,32,59,.22)` + 18px 下留白，
-        再加 `position:relative;z-index:1`（否则会被后面的滚动区盖住）。
-        ⚠ 试错记录：负 spread 给到 -20 时投影基本看不见；白渐隐那条路线已废弃（别再加回来）。
+        演进（别再回退）：
+        1) 「1px 线 + 16px 白渐隐」→ 用户说「不是很明显」
+        2) 4 个方案（底色分区 / 投影 / 灰腰带 / 强渐隐）→ 用户选**投影隔断**
+        3) 投影挂在 `.product-overview` 上时左右各留 24px（外层 `#productHistoryContent` 有 24px padding），
+           两端断掉，用户说「这两边有点突兀」→ 改挂 `::after`，用 `left/right:-24px` 抵消外层 padding 顶到弹窗边缘
+        ⚠ `z-index:1` 不能省（否则被后面的滚动区盖住）；负 spread 要小（-6；给 -20 等于没有）
         """
         html = (ROOT / "docs/index.html").read_text(encoding="utf-8")
-        self.assertIn("padding-bottom:18px;border-bottom:1px solid var(--line);position:relative;z-index:1", html)
-        self.assertIn("box-shadow:0 12px 20px -6px rgba(16,32,59,.22)", html)
-        self.assertNotIn(".product-overview::after", html)          # 渐隐方案已废弃
+        self.assertIn("padding-bottom:18px;position:relative;z-index:1;background:#fff", html)
+        self.assertIn(".product-overview::after", html)
+        self.assertIn("left:-24px;right:-24px;bottom:0;height:1px", html)                    # 通栏：抵消外层 24px padding
+        self.assertIn("box-shadow:0 11px 18px -6px rgba(16,32,59,.22)", html)                # 投影
+        # 不能退回"只给头部加 border/box-shadow"的写法（左右会断头）
+        self.assertNotIn("padding-bottom:18px;border-bottom:1px solid var(--line)", html)
         # 滚动区仍是独立滚动、且不吃掉滚轮
         self.assertIn(".history-scroll{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain", html)
 
