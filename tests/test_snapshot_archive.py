@@ -802,5 +802,43 @@ class PromotionParsingTests(unittest.TestCase):
         self.assertIn('class="filter-grid fg-5"><label class="field price-field"', html)
 
 
+    def test_keyword_board_is_wired_and_data_published(self):
+        """关键词搜索排名板块（2026-09-22 新增，与榜单视图并列的第二个主视图）。
+
+        数据链路：tools/pick_keywords.py（挑词）→ tools/fetch_keyword_search.py（Ecomtool 抓取）
+        → tools/publish_keyword_search.py → docs/data/keyword-search/{date}.json + manifest.json。
+        ⚠ 记录口径是**自然位前 5**（`organicTop`），要按「是否广告」把广告位剔掉再排名 ——
+        Ecomtool 的「页面排名」是广告与自然位混排的。
+        ⚠ 视图切换靠 `body[data-view="keyword"]`，榜单那些区块的代码没动；
+        侧栏入口监听必须用**捕获阶段**，否则已有的平滑滚动处理器会在目标还 display:none 时算位置。
+        """
+        html = (ROOT / "docs/index.html").read_text(encoding="utf-8")
+        self.assertIn('id="keywordBoard"', html)
+        self.assertIn('id="navKeyword"', html)
+        self.assertIn('id="navRanking"', html)                       # 不能给 href="#"（querySelector 会抛错）
+        self.assertIn("function renderKeywordDetail", html)
+        self.assertIn("function setMainView", html)
+        self.assertIn("keyword-search/manifest.json", html)
+        self.assertIn('"data/keyword-search/" + date + ".json"', html)
+        self.assertIn('body:not([data-view="keyword"]) .keyword-board{display:none!important}', html)
+        self.assertIn("setMainView(\"keyword\")},true)", html)       # 捕获阶段切换视图（见上面说明）
+        # 抓取脚本要按自然位口径过滤广告
+        fetch = (ROOT / "tools/fetch_keyword_search.py").read_text(encoding="utf-8")
+        self.assertIn('"organicTop": organic[:TOP_N]', fetch)
+        self.assertIn('"isAd": "广告" in str(r.get("是否广告", ""))', fetch)
+        self.assertIn('r"^B[0-9A-Z]{9}$"', fetch)                     # 跳过重复表头行
+        # 已发布数据
+        mf = ROOT / "docs/data/keyword-search/manifest.json"
+        day = ROOT / "docs/data/keyword-search/2026-09-22.json"
+        self.assertTrue(mf.exists() and day.exists(), "关键词数据没发布")
+        doc = json.loads(day.read_text(encoding="utf-8"))
+        self.assertGreaterEqual(len(doc["keywords"]), 100)
+        sample = next(iter(doc["keywords"].values()))
+        self.assertEqual(len(sample["organicTop"]), 5)
+        self.assertEqual([x["rank"] for x in sample["organicTop"]], [1, 2, 3, 4, 5])
+        # 自然位必定在页面上更靠后（前面有广告）——这是剔除广告后的必然结果
+        self.assertTrue(all(x["pageRank"] >= x["rank"] for x in sample["organicTop"]))
+
+
 if __name__ == "__main__":
     unittest.main()

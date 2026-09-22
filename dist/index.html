@@ -221,13 +221,61 @@ body[data-rank="best"] .date-slider{--ds-cmp:#64748b;--ds-cmp-ink:#475467;--ds-f
 </style>
 
 <style>
+/* ── 关键词搜索排名视图（2026-09-22 新增，与榜单视图并列的第二个主视图）──────
+   入口在左侧导航的「关键词搜索」；用 body[data-view="keyword"] 切换显隐，
+   榜单那几块（summary/metrics/fast-risers/filters/list-panel）整体隐藏，不动它们的代码。 */
+.kw-bar{display:flex;justify-content:space-between;align-items:flex-end;gap:14px;flex-wrap:wrap;margin:14px 0 12px}
+.kw-bar h2{margin:0;font-size:19px;line-height:1.3}
+.kw-bar p{margin:3px 0 0;color:var(--muted);font-size:12.5px}
+.kw-stats{display:flex;gap:8px;flex-wrap:wrap;font-size:12px;color:var(--muted)}
+.kw-stats span{background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px 11px}
+.kw-stats b{color:var(--ink);font-weight:800}
+.kw-body{display:grid;grid-template-columns:290px minmax(0,1fr);gap:14px;align-items:start;margin-bottom:18px}
+.kw-side{background:#fff;border:1px solid var(--line);border-radius:15px;padding:12px;box-shadow:0 5px 16px rgba(16,32,59,.05)}
+.kw-words{list-style:none;margin:10px 0 0;padding:0;max-height:min(72vh,760px);overflow:auto}
+.kw-words li{display:flex;justify-content:space-between;align-items:baseline;gap:8px;padding:8px 9px;border-radius:9px;
+  cursor:pointer;font-size:13px;line-height:1.4;transition:background .13s}
+.kw-words li:hover{background:#f5f9ff}
+.kw-words li.on{background:var(--blue);color:#fff}
+.kw-words li b{font-weight:750;word-break:break-word}
+.kw-words li em{font-style:normal;font-size:11.5px;color:var(--muted);white-space:nowrap;font-weight:700}
+.kw-words li.on em{color:rgba(255,255,255,.82)}
+.kw-empty{padding:14px 9px;color:var(--muted);font-size:12.5px}
+.kw-main{background:#fff;border:1px solid var(--line);border-radius:15px;padding:15px 16px;box-shadow:0 5px 16px rgba(16,32,59,.05);min-height:320px}
+.kw-main h3{margin:0 0 4px;font-size:17px;line-height:1.35;word-break:break-word}
+.kw-main .kw-sub{color:var(--muted);font-size:12.5px}
+.kw-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin-top:14px}
+.kw-card{border:1px solid var(--line);border-radius:13px;overflow:hidden;display:flex;flex-direction:column;background:#fff}
+.kw-card .pic{position:relative;aspect-ratio:1/1;display:grid;place-items:center;background:#fff}
+.kw-card .pic img{width:100%;height:100%;object-fit:contain;padding:10px}
+.kw-card .pos{position:absolute;left:9px;top:9px;padding:4px 9px;border-radius:999px;background:var(--rank-deep);
+  color:#fff;font-size:11.5px;font-weight:850}
+.kw-card .info{padding:10px 11px 12px;border-top:1px solid #f2f5f9}
+.kw-card .info b{display:block;font-size:12.5px;line-height:1.42;margin-bottom:5px;color:var(--ink);
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.kw-card .info small{display:block;font-size:11.5px;color:var(--muted);line-height:1.6}
+.kw-card .info .pr{font-size:15.5px;font-weight:900;color:#b42318;display:block;margin:3px 0 1px}
+.kw-card:hover{border-color:#c9dcf5}
+@media(max-width:1300px){.kw-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:1100px){.kw-body{grid-template-columns:minmax(0,1fr)}.kw-side{position:static}.kw-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:650px){.kw-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.kw-words{max-height:280px}}
+body[data-view="keyword"] .summary,body[data-view="keyword"] .metrics,body[data-view="keyword"] .fast-risers,
+body[data-view="keyword"] .filters,body[data-view="keyword"] .list-panel,body[data-view="keyword"] #exitArea,
+body[data-view="keyword"] #footerText{display:none!important}
+/* 顶部那些榜单专属控件（对比/快照日期滑杆、父/子 ASIN 维度、榜单来源链接）在关键词视图下没意义 */
+body[data-view="keyword"] .controls,body[data-view="keyword"] .sub-line,body[data-view="keyword"] .rk-tag,
+body[data-view="keyword"] .header-pulse{display:none!important}
+body:not([data-view="keyword"]) .keyword-board{display:none!important}
+</style>
+
+<style>
 .card{content-visibility:auto;contain-intrinsic-size:520px}
 </style>
 </head>
 <body>
-<aside class="workbench-sidebar" aria-label="看板导航"><select class="category-native" id="categorySelect" aria-label="选择商品类目"></select><nav class="workbench-nav"><div class="category-nav"><div class="category-tree-title"><span class="cat-ico"></span><em>今日概览</em></div><div class="category-nav-menu" id="categoryMenu"></div></div><a href="#fastRisers"><span class="nav-ico"></span><em>快速上升</em></a><a href="#filterQuery"><span class="nav-ico"></span><em>商品筛选</em></a><a href="#products"><span class="nav-ico"></span><em>商品列表</em></a></nav></aside>
+<aside class="workbench-sidebar" aria-label="看板导航"><select class="category-native" id="categorySelect" aria-label="选择商品类目"></select><nav class="workbench-nav"><div class="category-nav"><div class="category-tree-title"><span class="cat-ico"></span><em>今日概览</em></div><div class="category-nav-menu" id="categoryMenu"></div></div><a href="#fastRisers"><span class="nav-ico"></span><em>快速上升</em></a><a href="#filterQuery"><span class="nav-ico"></span><em>商品筛选</em></a><a href="#products"><span class="nav-ico"></span><em>商品列表</em></a><a href="#keywordBoard" id="navKeyword" data-view="keyword"><span class="nav-ico"></span><em>关键词搜索</em></a><a href="#products" id="navRanking" data-view="ranking" hidden><span class="nav-ico"></span><em>返回榜单</em></a></nav></aside>
 <header><div class="wrap top"><div class="heading"><div class="header-block"><span class="accent-bar" id="headerAccent"></span><div class="header-text"><div class="tagline"><span class="rk-tag" id="rankingTag">New Releases</span></div><h1 id="categoryTitle"><em>正在载入类目…</em></h1><div class="sub-line"><p class="sub" id="categorySubtitle">Amazon 美国站 · 正在载入类目…</p><a class="source" href="https://www.amazon.com/gp/new-releases/fashion/2368365011" target="_blank" rel="noreferrer">Amazon 官方新品榜</a></div></div></div><div class="header-pulse" id="headerPulse" aria-hidden="true"></div></div><div class="controls"><div class="date-slider" id="dateSlider" role="group" aria-label="快照日期与对比日期"><div class="ds-head"><span class="k">对比</span><span class="v b" id="dsCmpText">不对比</span><button class="ds-cmptog" id="dsCmpToggle" type="button" aria-label="关闭对比" title="关闭对比，只看本期自身">✕</button><span class="dash"></span><span class="k">快照</span><span class="v a" id="dsSnapText">—</span><span class="cnt" id="dsCount"></span><span class="dswin"><button class="dswin-btn" id="dsWinPrev" type="button" aria-label="往前看更早的日期" title="往前看更早的日期">‹</button><span class="dswin-r" id="dsWinRange"></span><button class="dswin-btn" id="dsWinNext" type="button" aria-label="往后看更新的日期" title="往后看更新的日期">›</button></span></div><div class="ds-track" id="dsTrack"><div class="ds-line"></div><div class="ds-fill" id="dsFill"></div><span class="ds-h b" id="dsHb" role="slider" tabindex="0" aria-label="对比日期" aria-valuemin="0"></span><span class="ds-h a" id="dsHa" role="slider" tabindex="0" aria-label="快照日期" aria-valuemin="0"></span></div><div class="ds-foot"><div class="ds-ticks" id="dsTicks"></div><div class="view-tab" id="parentViewSeg" role="group" aria-label="榜单展示方式" title="父ASIN维度：同一件商品的不同颜色/尺码合并为一条展示，避免同一商品反复进出榜单"><button class="view-tab-opt" id="viewOptChild" type="button">子ASIN维度</button><button class="view-tab-opt on" id="viewOptParent" type="button">父ASIN维度</button></div></div><span class="ds-empty" id="dsEmpty"></span></div><select id="dateSelect" class="ds-native" aria-label="选择快照日期"></select><select id="compareDateSelect" class="ds-native" aria-label="选择对比日期"><option value="">不对比</option></select></div></div></header>
-<main class="wrap"><section class="summary" aria-live="polite"><div class="summary-top"><div><h2 id="summaryTitle">正在载入每日快照…</h2><p id="summaryText">请稍候</p></div><div class="quality" id="quality"></div></div></section><section class="metrics" id="metrics"></section><section class="fast-risers" id="fastRisers" hidden aria-label="快速上升商品"></section><section class="filters" aria-label="商品筛选"><div class="filter-head"><div class="filter-title">筛选商品 <span class="filter-count" id="filterCount">100 / 100</span></div></div><div class="filter-state" id="filterState" hidden><span class="fs-label">已选</span><div class="active-filters" id="activeFilters" aria-live="polite"></div><button class="fs-clear" id="clearAllFilters" type="button">全部清空</button></div><div class="fgroup"><div class="fgroup-title">关键词</div><div class="filter-grid fg-kw"><label class="field search"><input id="filterQuery" type="search" placeholder="搜索品牌、标题或 ASIN" aria-label="关键词"></label><label class="field"><select id="filterBrand" aria-label="品牌"><option value="">全部品牌</option></select></label></div></div><div class="fgroup"><div class="fgroup-title">榜单表现</div><div class="filter-grid fg-4"><label class="field compact"><span>榜单变化</span><select id="filterMovement"><option value="">全部变化</option><option value="fast">快速上升（≥ 10 位）</option><option value="new">新入榜</option><option value="up">排名上升</option><option value="down">排名下降</option><option value="same">排名不变</option></select></label><label class="field compact"><span>榜单范围</span><select id="filterRank"><option value="">Top 100</option><option value="10">Top 10</option><option value="20">Top 20</option><option value="50">Top 50</option></select></label><label class="field compact"><span>大类 BSR</span><select id="filterMainBsr"><option value="">不限</option><option value="1000">≤ 1,000</option><option value="5000">≤ 5,000</option><option value="10000">≤ 10,000</option><option value="50000">≤ 50,000</option></select></label><label class="field compact"><span>小类 BSR</span><select id="filterSubBsr"><option value="">不限</option><option value="10">≤ 10</option><option value="50">≤ 50</option><option value="100">≤ 100</option><option value="500">≤ 500</option></select></label></div></div><div class="fgroup"><div class="fgroup-title">价格与状态</div><div class="filter-grid fg-5"><label class="field price-field"><span class="inline-label">价格区间 ($)</span><span class="range"><input id="filterPriceMin" type="number" min="0" step="1" placeholder="最低"><span>—</span><input id="filterPriceMax" type="number" min="0" step="1" placeholder="最高"></span></label><label class="field compact"><span>促销</span><select id="filterPromo" aria-label="促销"><option value="">全部状态</option><option value="detected">有促销</option><option value="type:coupon">Coupon 优惠券</option><option value="type:discount">折扣 % off</option><option value="type:deal">Deal 活动</option><option value="type:lowest30">30 天最低价</option><option value="none">暂无促销</option><option value="unknown">信息未知</option></select></label><label class="field compact"><span>上架天数</span><select id="filterAge"><option value="">不限</option><option value="7">≤ 7 天</option><option value="30">≤ 30 天</option><option value="60">≤ 60 天</option><option value="90">≤ 90 天</option></select></label><label class="field compact"><span>类目覆盖</span><select id="filterMultiCategory" aria-label="类目覆盖"><option value="">全部商品</option><option value="multiple">存在多个类目</option><option value="single">仅当前类目</option></select></label><label class="field compact"><span>打标状态</span><select id="filterTagState" aria-label="打标状态"><option value="">全部打标状态</option><option value="todo">待打标</option><option value="done">已打标</option></select></label></div></div><div class="fgroup"><div class="fgroup-title">款式风格<button class="sty-export" id="styExport" type="button" hidden>导出我的修改</button><button class="sty-export danger" id="styClear" type="button" hidden>清除本机改动</button></div><div class="filter-grid fg-6"><label class="field compact"><span>袖型</span><select id="filterSleeve" aria-label="袖型"><option value="">全部袖型</option></select></label><label class="field compact"><span>季节</span><select id="filterSeason" aria-label="季节"><option value="">全部季节</option></select></label><label class="field compact"><span>面料</span><select id="filterFabric" aria-label="面料"><option value="">全部面料</option></select></label><label class="field compact"><span>图案</span><select id="filterPattern" aria-label="图案"><option value="">全部图案</option></select></label><label class="field compact"><span>主风格</span><select id="filterStyle" aria-label="主风格"><option value="">全部风格</option></select></label><label class="field compact"><span>主图类型</span><select id="filterImageType" aria-label="主图类型"><option value="">全部主图类型</option></select></label></div></div></section><section class="list-panel" aria-label="商品列表"><div class="bar"><span id="viewText"></span></div><section class="grid" id="products"><div class="empty">正在载入每日快照…</div></section></section><div id="exitArea"></div><footer id="footerText"></footer></main>
+<main class="wrap"><section class="keyword-board" id="keywordBoard" aria-label="关键词搜索排名"><div class="kw-bar"><div><h2>关键词搜索排名</h2><p id="kwSubtitle">Amazon 美国站 · 每个关键词记录<b>自然位前 5</b>（已剔除广告位）</p></div><div class="kw-stats" id="kwStats"></div></div><div class="kw-body"><div class="kw-side"><label class="field search"><input id="kwFilter" type="search" placeholder="搜索关键词（150 个）" aria-label="搜索关键词" autocomplete="off" spellcheck="false"></label><ol class="kw-words" id="kwWords"></ol></div><div class="kw-main" id="kwMain"><div class="empty">正在载入关键词数据…</div></div></div></section><section class="summary" aria-live="polite"><div class="summary-top"><div><h2 id="summaryTitle">正在载入每日快照…</h2><p id="summaryText">请稍候</p></div><div class="quality" id="quality"></div></div></section><section class="metrics" id="metrics"></section><section class="fast-risers" id="fastRisers" hidden aria-label="快速上升商品"></section><section class="filters" aria-label="商品筛选"><div class="filter-head"><div class="filter-title">筛选商品 <span class="filter-count" id="filterCount">100 / 100</span></div></div><div class="filter-state" id="filterState" hidden><span class="fs-label">已选</span><div class="active-filters" id="activeFilters" aria-live="polite"></div><button class="fs-clear" id="clearAllFilters" type="button">全部清空</button></div><div class="fgroup"><div class="fgroup-title">关键词</div><div class="filter-grid fg-kw"><label class="field search"><input id="filterQuery" type="search" placeholder="搜索品牌、标题或 ASIN" aria-label="关键词"></label><label class="field"><select id="filterBrand" aria-label="品牌"><option value="">全部品牌</option></select></label></div></div><div class="fgroup"><div class="fgroup-title">榜单表现</div><div class="filter-grid fg-4"><label class="field compact"><span>榜单变化</span><select id="filterMovement"><option value="">全部变化</option><option value="fast">快速上升（≥ 10 位）</option><option value="new">新入榜</option><option value="up">排名上升</option><option value="down">排名下降</option><option value="same">排名不变</option></select></label><label class="field compact"><span>榜单范围</span><select id="filterRank"><option value="">Top 100</option><option value="10">Top 10</option><option value="20">Top 20</option><option value="50">Top 50</option></select></label><label class="field compact"><span>大类 BSR</span><select id="filterMainBsr"><option value="">不限</option><option value="1000">≤ 1,000</option><option value="5000">≤ 5,000</option><option value="10000">≤ 10,000</option><option value="50000">≤ 50,000</option></select></label><label class="field compact"><span>小类 BSR</span><select id="filterSubBsr"><option value="">不限</option><option value="10">≤ 10</option><option value="50">≤ 50</option><option value="100">≤ 100</option><option value="500">≤ 500</option></select></label></div></div><div class="fgroup"><div class="fgroup-title">价格与状态</div><div class="filter-grid fg-5"><label class="field price-field"><span class="inline-label">价格区间 ($)</span><span class="range"><input id="filterPriceMin" type="number" min="0" step="1" placeholder="最低"><span>—</span><input id="filterPriceMax" type="number" min="0" step="1" placeholder="最高"></span></label><label class="field compact"><span>促销</span><select id="filterPromo" aria-label="促销"><option value="">全部状态</option><option value="detected">有促销</option><option value="type:coupon">Coupon 优惠券</option><option value="type:discount">折扣 % off</option><option value="type:deal">Deal 活动</option><option value="type:lowest30">30 天最低价</option><option value="none">暂无促销</option><option value="unknown">信息未知</option></select></label><label class="field compact"><span>上架天数</span><select id="filterAge"><option value="">不限</option><option value="7">≤ 7 天</option><option value="30">≤ 30 天</option><option value="60">≤ 60 天</option><option value="90">≤ 90 天</option></select></label><label class="field compact"><span>类目覆盖</span><select id="filterMultiCategory" aria-label="类目覆盖"><option value="">全部商品</option><option value="multiple">存在多个类目</option><option value="single">仅当前类目</option></select></label><label class="field compact"><span>打标状态</span><select id="filterTagState" aria-label="打标状态"><option value="">全部打标状态</option><option value="todo">待打标</option><option value="done">已打标</option></select></label></div></div><div class="fgroup"><div class="fgroup-title">款式风格<button class="sty-export" id="styExport" type="button" hidden>导出我的修改</button><button class="sty-export danger" id="styClear" type="button" hidden>清除本机改动</button></div><div class="filter-grid fg-6"><label class="field compact"><span>袖型</span><select id="filterSleeve" aria-label="袖型"><option value="">全部袖型</option></select></label><label class="field compact"><span>季节</span><select id="filterSeason" aria-label="季节"><option value="">全部季节</option></select></label><label class="field compact"><span>面料</span><select id="filterFabric" aria-label="面料"><option value="">全部面料</option></select></label><label class="field compact"><span>图案</span><select id="filterPattern" aria-label="图案"><option value="">全部图案</option></select></label><label class="field compact"><span>主风格</span><select id="filterStyle" aria-label="主风格"><option value="">全部风格</option></select></label><label class="field compact"><span>主图类型</span><select id="filterImageType" aria-label="主图类型"><option value="">全部主图类型</option></select></label></div></div></section><section class="list-panel" aria-label="商品列表"><div class="bar"><span id="viewText"></span></div><section class="grid" id="products"><div class="empty">正在载入每日快照…</div></section></section><div id="exitArea"></div><footer id="footerText"></footer></main>
 <dialog class="history-dialog" id="productHistoryDialog" aria-labelledby="historyDialogTitle"><div id="productHistoryContent" class="history-shell"><div class="history-loading">正在载入单品历史…</div></div></dialog>
 <div class="insight-mask" id="insightMask"></div>
 <aside class="insight-drawer" id="insightDrawer" aria-label="榜单变化明细"><div class="insight-head"><div><h3 id="insightTitle"></h3><p id="insightSub"></p></div><button class="insight-close" id="insightClose" type="button" aria-label="关闭明细">×</button></div><div class="insight-body" id="insightBody"></div></aside>
@@ -630,9 +678,88 @@ const forwardWheel=(surface,selector)=>surface.addEventListener("wheel",event=>{
 forwardWheel($("insightDrawer"),".insight-body");
 forwardWheel($("insightMask"),".insight-body");
 document.addEventListener("keydown",event=>{if(event.key==="Escape")closeInsightDrawer()});
+/* ── 关键词搜索排名视图（2026-09-22 新增）────────────────────────────
+   数据：docs/data/keyword-search/manifest.json（日期 + 词表）
+        docs/data/keyword-search/{date}.json（当天每个关键词的**自然位前 5**）
+   采集：tools/fetch_keyword_search.py（Ecomtool 服务端抓取，无登录态/个性化 = 等同无痕）
+   图片：构造标准 URL 后复用看板同一套清晰度档位（1x 230 / 2x 460）
+   ⚠ 与榜单视图靠 body[data-view] 切换显隐，榜单那几块的代码一行没动 */
+let kwManifest = null, kwDay = null, kwCurrent = "";
+const kwImageUrl = id => id ? "https://m.media-amazon.com/images/I/" + id + "._AC_UL300_SR300,200__SR230,230_.jpg" : "";
+
+function setMainView(view) {
+  const on = view === "keyword";
+  document.body.dataset.view = on ? "keyword" : "ranking";
+  $("navKeyword").hidden = on;
+  $("navRanking").hidden = !on;
+  if (on) loadKeywordBoard();
+}
+
+async function loadKeywordBoard() {
+  if (kwDay) return;                                   // 已经载过一次就复用
+  const words = $("kwWords"), main = $("kwMain");
+  try {
+    kwManifest = await json("data/keyword-search/manifest.json");
+    const date = (kwManifest.dates || [])[0];
+    if (!date) throw new Error("还没有关键词数据：先跑 tools/fetch_keyword_search.py");
+    kwDay = await json("data/keyword-search/" + date + ".json");
+    const all = kwManifest.keywords || [];
+    $("kwSubtitle").innerHTML = "Amazon 美国站 · 每个关键词记录<b>自然位前 5</b>（已剔除广告位）· 采集于 " + esc(date);
+    $("kwFilter").placeholder = "搜索关键词（" + all.length + " 个）";
+    $("kwStats").innerHTML = '<span>已采集 <b>' + all.length + "</b> 个关键词</span>"
+      + '<span>采集日 <b>' + esc(date) + "</b></span>"
+      + '<span>词表来源 <b>ExpandKeywords</b></span>';
+    renderKeywordWords("");
+    renderKeywordDetail(all[0] ? all[0].keyword : "");
+  } catch (e) {
+    const msg = (e && e.message) || "关键词数据载入失败";
+    words.innerHTML = '<li class="kw-empty">' + esc(msg) + "</li>";
+    main.innerHTML = '<div class="empty">' + esc(msg) + "</div>";
+  }
+}
+
+function renderKeywordWords(filter) {
+  const q = String(filter || "").trim().toLowerCase();
+  const list = ((kwManifest && kwManifest.keywords) || []).filter(x => !q || x.keyword.toLowerCase().includes(q));
+  $("kwWords").innerHTML = list.length
+    ? list.map(x => '<li data-kw="' + esc(x.keyword) + '"' + (x.keyword === kwCurrent ? ' class="on"' : "") + ">"
+        + "<b>" + esc(x.keyword) + "</b><em>" + (x.monthlyVolume ? fmt(x.monthlyVolume) + "/月" : "") + "</em></li>").join("")
+    : '<li class="kw-empty">没有匹配的关键词</li>';
+}
+
+function renderKeywordDetail(keyword) {
+  const rec = keyword && kwDay && kwDay.keywords ? kwDay.keywords[keyword] : null;
+  if (!rec) { $("kwMain").innerHTML = '<div class="empty">左侧点一个关键词看它的前 5 名</div>'; return; }
+  kwCurrent = keyword;
+  document.querySelectorAll("#kwWords li").forEach(li => li.classList.toggle("on", li.dataset.kw === keyword));
+  const rows = rec.organicTop || [];
+  $("kwMain").innerHTML = "<h3>" + esc(keyword) + "</h3>"
+    + '<p class="kw-sub">月搜索量 ' + (rec.monthlyVolume ? fmt(rec.monthlyVolume) : "未提供")
+    + " · ABA 周排名 " + (rec.abaRank ? fmt(rec.abaRank) : "未提供")
+    + " · 搜索结果 " + (rec.resultCount ? fmt(rec.resultCount) : "未记录") + " 个"
+    + " · 首屏 " + (rec.perPage || "-") + " 个位置（广告 " + (rec.adCount == null ? "-" : rec.adCount) + " 个）</p>"
+    + '<div class="kw-grid">' + rows.map(x =>
+        '<article class="kw-card"><div class="pic">'
+        + (x.imageId ? "<img loading=\"lazy\" decoding=\"async\" " + cardImageAttrs(kwImageUrl(x.imageId)) + ' alt="' + esc(x.title) + '">' : "")
+        + '<span class="pos">自然位 ' + x.rank + "</span></div>"
+        + '<div class="info"><b title="' + esc(x.title) + '">' + esc(x.title) + "</b>"
+        + '<span class="pr">$' + esc(String(x.price || "-")) + "</span>"
+        + "<small>" + esc(x.brand || "品牌未显示") + "</small>"
+        + "<small>页面第 " + x.pageRank + " 位 · ★" + esc(String(x.rating || "-")) + " · " + (x.reviews ? fmt(x.reviews) : 0) + " 条评论</small>"
+        + "<small>ASIN " + esc(x.asin) + "</small></div></article>").join("")
+    + "</div>";
+}
+
 async function init(){try{const [registry,tree,styleDoc]=await Promise.all([json("data/categories.json"),json("data/category-tree.json"),json("data/style-tags.json").catch(()=>null)]);STYLE_TAGS=(styleDoc&&styleDoc.tags)||{};STYLE_DOC_DATE=(styleDoc&&styleDoc.updatedAt)||"";loadLocalStyleTags();loadCustomOptions();syncStyleOptions();categories=registry.categories;categoryCatalog=tree.entries||[];const categorySelect=$("categorySelect"),dateSelect=$("dateSelect"),compareDateSelect=$("compareDateSelect");refreshCategorySelect();categorySelect.addEventListener("change",()=>selectCategory(categorySelect.value));dateSelect.addEventListener("change",()=>selectSnapshot(dateSelect.value));compareDateSelect.addEventListener("change",()=>selectComparison(compareDateSelect.value));const bindings={filterQuery:"query",filterBrand:"brand",filterPromo:"promo",filterMovement:"movement",filterRank:"rank",filterPriceMin:"priceMin",filterPriceMax:"priceMax",filterMainBsr:"mainBsr",filterSubBsr:"subBsr",filterAge:"age",filterMultiCategory:"multiCategory",filterTagState:"tagState",filterSleeve:"sleeve",filterSeason:"season",filterFabric:"fabric",filterPattern:"pattern",filterStyle:"style",filterImageType:"imageType"};Object.entries(bindings).forEach(([id,key])=>$(id).addEventListener(id==="filterQuery"||id.startsWith("filterPrice")?"input":"change",event=>{filters[key]=event.target.value;if(current)render()}));$("styExport").addEventListener("click",exportLocalStyleTags);$("styClear").addEventListener("click",()=>{const n=Object.keys(localTags).length;if(!n)return;if(!confirm(`清除本机这 ${n} 项改动？
 改完如果还没导出过，清除后就找不回来了。`))return;localTags={};saveLocalStyleTags();if(current)render();styFlash("已清除本机改动，现在显示的是标签库里的值")});saveLocalStyleTags();
-$("fastRisers").addEventListener("click",event=>{const item=event.target.closest("[data-fast-asin]");if(item){openProductHistory(item.dataset.fastAsin);return}if(event.target.closest("#fastMore")){fastExpanded=!fastExpanded;render();return}scrollIntoView({behavior:"smooth",block:"start"})});document.querySelectorAll(".workbench-nav a[href^='#']").forEach(link=>{link.addEventListener("click",event=>{const href=link.getAttribute("href"),target=document.querySelector(href==="#filterQuery"?"section.filters":href==="#products"?".list-panel":href);if(!target)return;event.preventDefault();smoothScrollTo(target)})});$("viewOptChild").addEventListener("click",()=>setParentView(false));$("viewOptParent").addEventListener("click",()=>setParentView(true));;function resetAllFilters(){Object.keys(filters).forEach(key=>filters[key]="");Object.entries(bindings).forEach(([id])=>$(id).value="");if(current)render()}$("clearAllFilters").addEventListener("click",resetAllFilters);$("activeFilters").addEventListener("click",event=>{const button=event.target.closest("[data-filter-key]");if(!button)return;const key=button.dataset.filterKey,entry=Object.entries(bindings).find(([,value])=>value===key);filters[key]="";if(entry)$(entry[0]).value="";if(current)render()});enhanceFilterSelects();initDateSlider();const requested=new URL(location.href).searchParams.get("category"),initial=categories.some(item=>item.node===requested)?requested:registry.default;await selectCategory(initial,false)}catch(error){$("summaryTitle").textContent="快照载入失败";$("summaryText").textContent="请稍后刷新页面重试。";$("products").innerHTML=`<div class="empty">${esc(error.message)}</div>`}}init();
+$("fastRisers").addEventListener("click",event=>{const item=event.target.closest("[data-fast-asin]");if(item){openProductHistory(item.dataset.fastAsin);return}if(event.target.closest("#fastMore")){fastExpanded=!fastExpanded;render();return}scrollIntoView({behavior:"smooth",block:"start"})});document.querySelectorAll(".workbench-nav a[href^='#']").forEach(link=>{link.addEventListener("click",event=>{const href=link.getAttribute("href"),target=document.querySelector(href==="#filterQuery"?"section.filters":href==="#products"?".list-panel":href);if(!target)return;event.preventDefault();smoothScrollTo(target)})});/* 关键词视图的入口/返回：必须用**捕获阶段**，抢在上面那个滚动处理器之前切换视图 ——
+   否则目标区块还在 display:none 里，offsetTop 为 0，smoothScrollTo 会滚到页面顶部（踩过） */
+$("navKeyword").addEventListener("click",event=>{event.preventDefault();setMainView("keyword")},true);
+$("navRanking").addEventListener("click",()=>setMainView("ranking"),true);
+document.querySelectorAll(".workbench-nav a[href='#fastRisers'],.workbench-nav a[href='#filterQuery'],.workbench-nav a[href='#products']").forEach(link=>link.addEventListener("click",()=>{if(document.body.dataset.view==="keyword")setMainView("ranking")},true));
+$("kwFilter").addEventListener("input",event=>renderKeywordWords(event.target.value));
+$("kwWords").addEventListener("click",event=>{const li=event.target.closest("li[data-kw]");if(li)renderKeywordDetail(li.dataset.kw)});
+$("viewOptChild").addEventListener("click",()=>setParentView(false));$("viewOptParent").addEventListener("click",()=>setParentView(true));;function resetAllFilters(){Object.keys(filters).forEach(key=>filters[key]="");Object.entries(bindings).forEach(([id])=>$(id).value="");if(current)render()}$("clearAllFilters").addEventListener("click",resetAllFilters);$("activeFilters").addEventListener("click",event=>{const button=event.target.closest("[data-filter-key]");if(!button)return;const key=button.dataset.filterKey,entry=Object.entries(bindings).find(([,value])=>value===key);filters[key]="";if(entry)$(entry[0]).value="";if(current)render()});enhanceFilterSelects();initDateSlider();const requested=new URL(location.href).searchParams.get("category"),initial=categories.some(item=>item.node===requested)?requested:registry.default;await selectCategory(initial,false)}catch(error){$("summaryTitle").textContent="快照载入失败";$("summaryText").textContent="请稍后刷新页面重试。";$("products").innerHTML=`<div class="empty">${esc(error.message)}</div>`}}init();
 </script>
 <script>
 window.addEventListener("focus",refreshLatestSnapshot);
