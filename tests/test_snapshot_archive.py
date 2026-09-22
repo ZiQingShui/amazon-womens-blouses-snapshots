@@ -344,8 +344,10 @@ class SnapshotArchiveTests(unittest.TestCase):
         html = (ROOT / "docs/index.html").read_text(encoding="utf-8")
         self.assertIn('json("data/style-tags.json")', html)       # 加载标签库
         self.assertIn('style-chips', html)                         # 卡片上的标签行（模板里带变量后缀）
-        for sel in ("filterSleeve", "filterSeason", "filterFabric", "filterStyle", "filterImageType"):
-            self.assertIn('id="%s"' % sel, html)                   # 第 4 组的三个下拉
+        for sel in ("filterSleeve", "filterSeason", "filterFabric", "filterPattern", "filterStyle", "filterImageType"):
+            self.assertIn('id="%s"' % sel, html)                   # 第 4 组的六个下拉
+        self.assertIn("sc-pattern", html)                          # 卡片上的图案 chip（2026-09-22 加）
+        self.assertIn('["pattern", "图案", false]', html)           # 弹窗第 4 行：图案（单选）
         self.assertIn("openStyleEditor", html)                     # 点标签就地编辑
         self.assertIn("styleTagsCustomOptions", html)              # 自定义选项
         self.assertIn("editOptions", html)                         # 只列 建议+自定义
@@ -354,7 +356,7 @@ class SnapshotArchiveTests(unittest.TestCase):
         self.assertEqual(html.count('class="sty-open"'), 1)         # 只有标题末尾一个入口
         self.assertIn("打开商品页</a>", html)                       # 标题本身不做链接
         self.assertIn(".sty-head > a{flex:0 0 340px;width:340px;height:440px", html)  # 图片框写死 340×440
-        self.assertIn("height:min(88vh,680px)", html)               # 弹窗尺寸固定（不随图片比例变）
+        self.assertIn("height:min(88vh,720px)", html)               # 弹窗尺寸固定（不随图片比例变）
 
     def test_comparison_falls_back_to_asin_when_previous_lacks_parent_asin(self):
         """对比期缺父体数据时必须回退到 ASIN 比对。

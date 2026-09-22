@@ -92,6 +92,28 @@ STYLE = {
 }
 
 
+# 图案：单值，按辨识度取第一个命中的（列表顺序 = 优先级）。
+# ⚠ 没命中就给空串，**不硬猜「纯色」** —— 很多标题根本不写图案，硬给纯色会污染筛选口径
+PATTERN = [
+    ("豹纹",   [r"leopard", r"cheetah"]),
+    ("动物纹", [r"animal print", r"zebra", r"snake ?skin", r"tiger print", r"crocodile", r"snake print"]),
+    ("迷彩",   [r"camouflage", r"\bcamo\b"]),
+    ("扎染",   [r"tie[\s-]?dye"]),
+    ("圆点",   [r"polka[\s-]?dot", r"\bdotted\b", r"dot print"]),
+    ("格纹",   [r"\bplaid\b", r"checkered", r"checked", r"gingham", r"tartan", r"windowpane", r"\bcheck\b"]),
+    ("条纹",   [r"striped", r"\bstripes?\b", r"pinstripe", r"stripes print"]),
+    ("佩斯利", [r"paisley"]),
+    ("花卉",   [r"floral", r"\bflower", r"blossom", r"ditsy", r"botanical", r"\bflora\b"]),
+    ("几何",   [r"geometric", r"abstract print", r"graphic print", r"geo print", r"aztec"]),
+    ("拼色",   [r"color ?block", r"two tone", r"contrast color", r"patchwork"]),
+    ("刺绣",   [r"embroider"]),
+    ("渐变",   [r"\bombre\b", r"gradient"]),
+    ("纯色",   [r"solid color", r"\bplain\b", r"solid blouse"]),
+]
+# 下拉里预设词排前面用的顺序
+PATTERN_ORDER = [p[0] for p in PATTERN]
+
+
 def norm(s):
     return (s or "").lower()
 
@@ -191,6 +213,15 @@ def pick_style(title):
 STYLE_PRIORITY = ["波西米亚", "西部", "度假", "复古", "优雅", "通勤", "时髦", "休闲"]
 
 
+def pick_pattern(title):
+    """图案：单值，按 PATTERN 列表顺序取第一个命中的（豹纹 > 动物纹 > 迷彩 > … > 纯色）。"""
+    t = norm(title)
+    for name, pats in PATTERN:
+        if any(re.search(p, t) for p in pats):
+            return name, "rule", 0.85
+    return "", None, 0.0
+
+
 def primary_style(styles):
     """主风格：按辨识度取优先级，都不命中则取第一个；没有就空串。"""
     for k in STYLE_PRIORITY:
@@ -225,7 +256,7 @@ def load_manual(date, path=None):
             continue
         tags = d.get("tags", d) if isinstance(d, dict) else {}
         for k, v in tags.items():
-            if isinstance(v, dict) and any(k in v for k in ("sleeve", "season", "fabric", "style", "imageType")):
+            if isinstance(v, dict) and any(k in v for k in ("sleeve", "season", "fabric", "style", "pattern", "imageType")):
                 merged[k] = v
     return merged
 
@@ -254,7 +285,7 @@ def main():
                 seen.add(r["asin"])
                 items.append(r)
 
-    tags, tally_sleeve, tally_season, tally_style, tally_fabric = {}, collections.Counter(), collections.Counter(), collections.Counter(), collections.Counter()
+    tags, tally_sleeve, tally_season, tally_style, tally_fabric, tally_pattern = {}, collections.Counter(), collections.Counter(), collections.Counter(), collections.Counter(), collections.Counter()
     unresolved = []
     for r in items:
         parent = (ma.get(r["asin"], {}) or {}).get("parentAsin") or r["asin"]
@@ -266,12 +297,18 @@ def main():
         det = details.get(r["asin"], {}) or {}
         fb_text = " ".join(str(x or "") for x in (det.get("五点描述"), det.get("产品概述"), det.get("标题")))
         fb, fb_src, fb_cf = pick_fabric(r["title"], fb_text)
-        src = "rule" if (sl_src or se_src or st_src or fb_src) else "unresolved"
-        conf = round(max(sl_cf, se_cf, st_cf, fb_cf), 2)
+        # 图案：标题优先；标题没写就看详情文本（很多商品只在描述里写 floral/solid color），置信度打折
+        pt, pt_src, pt_cf = pick_pattern(r["title"])
+        if not pt:
+            pt, pt_src, pt_cf = pick_pattern(fb_text)
+            if pt:
+                pt_src, pt_cf = "rule(desc)", 0.7
+        src = "rule" if (sl_src or se_src or st_src or fb_src or pt_src) else "unresolved"
+        conf = round(max(sl_cf, se_cf, st_cf, fb_cf, pt_cf), 2)
         rec = {
             "asin": r["asin"], "brand": r.get("category") and None or None,
             "titleSample": r["title"][:170],
-            "sleeve": sl, "season": se, "fabric": fb, "style": st,
+            "sleeve": sl, "season": se, "fabric": fb, "style": st, "pattern": pt,
             # 主图类型：文字里没有信号（要看图），机器不给建议，只等人工确认
             "imageType": "",
             "source": src, "confidence": conf,
@@ -283,6 +320,7 @@ def main():
                 "sleeve": m.get("sleeve") or sl,
                 "season": m.get("season") or se,
                 "fabric": m.get("fabric") or fb,
+                "pattern": m.get("pattern") or pt,
                 "imageType": m.get("imageType") or "",
                 "style": m.get("style") or st,
                 "source": "manual", "confidence": 1.0,
@@ -293,6 +331,7 @@ def main():
         tally_season.update(se or ["（未定）"])
         tally_style.update(st or ["（未定）"])
         tally_fabric.update(fb or ["（未定）"])
+        tally_pattern[pt or "（未定）"] += 1
         if not sl or not se or not st:
             unresolved.append({"parent": parent, "asin": r["asin"], "title": r["title"][:170],
                                "sleeve": sl, "season": se, "style": st})
@@ -305,7 +344,7 @@ def main():
     if dashboard.parent.exists():
         dashboard.write_text(json.dumps({
             "updatedAt": args.date, "source": "tag_style.py",
-            "dimension": {"sleeve": "单值", "season": "多值", "fabric": "多值", "style": "多值 + stylePrimary 单值主风格", "imageType": "单值/纯人工"},
+            "dimension": {"sleeve": "单值", "season": "多值", "fabric": "多值", "pattern": "单值", "style": "多值 + stylePrimary 单值主风格", "imageType": "单值/纯人工"},
             "tags": tags,
         }, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
         print("已同步到", dashboard)
@@ -318,11 +357,13 @@ def main():
     print("季节:", dict(tally_season.most_common()))
     print("风格:", dict(tally_style.most_common()))
     print("面料:", dict(tally_fabric.most_common()))
+    print("图案:", dict(tally_pattern.most_common()))
     print()
     print("完整度：袖型 %.1f%% · 季节 %.1f%% · 风格 %.1f%%" % (
         100.0 * (n - tally_sleeve["（未定）"]) / n,
         100.0 * (n - tally_season["（未定）"]) / n,
         100.0 * (n - tally_style["（未定）"]) / n))
+    print("图案覆盖：%.1f%%（没命中的留空，不猜「纯色」）" % (100.0 * (n - tally_pattern["（未定）"]) / n))
     print("有任一维度未定的父体：%d 个" % len(unresolved))
     if unresolved:
         (WORK / ("_unresolved_style_%s.json" % args.date)).write_text(
