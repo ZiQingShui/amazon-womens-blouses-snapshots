@@ -770,6 +770,9 @@ class PromotionParsingTests(unittest.TestCase):
         self.assertNotIn("padding-bottom:18px;border-bottom:1px solid var(--line)", html)
         # 滚动区仍是独立滚动、且不吃掉滚轮
         self.assertIn(".history-scroll{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain", html)
+        # 标题上方的品牌行已按用户要求删除（2026-09-22："这里的品牌去掉"），标题与图片顶部对齐
+        self.assertNotIn("history-kicker", html)
+        self.assertIn(".history-title{margin:0 0 8px;font-size:22px", html)
 
 
 if __name__ == "__main__":
