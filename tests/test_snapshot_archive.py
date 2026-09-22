@@ -350,8 +350,9 @@ class SnapshotArchiveTests(unittest.TestCase):
         self.assertIn("styleTagsCustomOptions", html)              # 自定义选项
         self.assertIn("editOptions", html)                         # 只列 建议+自定义
         self.assertIn("styleOk=!!(styleTag&&styleTag.confirmed)", html)  # 筛选只算已确认
-        self.assertIn("const productHref = safeProductUrl(p.url)", html)  # 弹窗标题可点开 Amazon 商品页
-        self.assertIn('class="sty-open"', html)                    # ASIN 也是商品页链接
+        self.assertIn("const productHref = safeProductUrl(p.url)", html)  # 弹窗商品页链接
+        self.assertEqual(html.count('class="sty-open"'), 1)         # 只有标题末尾一个入口
+        self.assertIn("打开商品页</a>", html)                       # 标题本身不做链接
 
     def test_comparison_falls_back_to_asin_when_previous_lacks_parent_asin(self):
         """对比期缺父体数据时必须回退到 ASIN 比对。
