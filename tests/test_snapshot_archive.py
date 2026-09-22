@@ -353,7 +353,8 @@ class SnapshotArchiveTests(unittest.TestCase):
         self.assertIn("const productHref = safeProductUrl(p.url)", html)  # 弹窗商品页链接
         self.assertEqual(html.count('class="sty-open"'), 1)         # 只有标题末尾一个入口
         self.assertIn("打开商品页</a>", html)                       # 标题本身不做链接
-        self.assertIn(".sty-head > a{flex:0 0 340px;width:340px;display:flex", html)  # 图片槽 340px 放满左列
+        self.assertIn(".sty-head > a{flex:0 0 340px;width:340px;height:440px", html)  # 图片框写死 340×440
+        self.assertIn("height:min(88vh,680px)", html)               # 弹窗尺寸固定（不随图片比例变）
 
     def test_comparison_falls_back_to_asin_when_previous_lacks_parent_asin(self):
         """对比期缺父体数据时必须回退到 ASIN 比对。
