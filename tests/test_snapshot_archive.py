@@ -808,8 +808,10 @@ class PromotionParsingTests(unittest.TestCase):
         数据链路：config/keywords-core.json（**人工指定的词表**，2026-09-23 起）
         → tools/fetch_keyword_search.py（Ecomtool 抓取）→ tools/publish_keyword_search.py
         → docs/data/keyword-search/{date}.json + manifest.json。
-        ⚠ 记录口径是**自然位前 5**（`organicTop`），要按「是否广告」把广告位剔掉再排名 ——
-        Ecomtool 的「页面排名」是广告与自然位混排的。
+        ⚠ 记录口径是**第一页全部位置**（`pageTop`，60~63 个），每条用 `isAd` 标明是广告位还是自然位、
+        用 `organicRank` 给自然位编号 —— Ecomtool 的「页面排名」是广告与自然位混排的。
+        2026-09-23 用户反馈「才 11 个位置，需要抓第一页的所有」之前，只记了「页面前 10 + 自然位前 5」，
+        而首屏广告就占 1~6 位，等于几乎看不到自然位。
         ⚠ 视图切换靠 `body[data-view="keyword"]`，榜单那些区块的代码没动；
         侧栏入口监听必须用**捕获阶段**，否则已有的平滑滚动处理器会在目标还 display:none 时算位置。
         """
@@ -823,12 +825,12 @@ class PromotionParsingTests(unittest.TestCase):
         self.assertIn('"data/keyword-search/" + date + ".json"', html)
         self.assertIn('body:not([data-view="keyword"]) .keyword-board{display:none!important}', html)
         self.assertIn("setMainView(\"keyword\")},true)", html)       # 捕获阶段切换视图（见上面说明）
-        # 抓取脚本要按自然位口径过滤广告
+        # 抓取脚本：记录**第一页全部位置**（2026-09-23 用户："才 11 个位置，需要抓第一页的所有"）
         fetch = (ROOT / "tools/fetch_keyword_search.py").read_text(encoding="utf-8")
-        self.assertIn('"organicTop": organic_top', fetch)             # 自然位前 5
-        self.assertIn('"pageTop": page_top', fetch)                   # 页面前 10（含广告）
+        self.assertIn('"pageTop": items', fetch)                      # 第一页全部，不截断
+        self.assertNotIn('PAGE_TOP_N', fetch)                         # 不再只取前 10
+        self.assertIn('MAX_PAGE = 1', fetch)                          # 但只抓第一页
         self.assertIn('x["organicRank"] = i', fetch)                  # 自然位另编名次（广告位没有）
-        self.assertIn('PAGE_TOP_N = 10', fetch)
         self.assertIn('"isAd": "广告" in str(r.get("是否广告", ""))', fetch)
         self.assertIn('r"^B[0-9A-Z]{9}$"', fetch)                     # 跳过重复表头行
         # 词表：2026-09-23 起改成**人工指定的 config/keywords-core.json**（14 词），
@@ -866,35 +868,39 @@ class PromotionParsingTests(unittest.TestCase):
             self.assertIn(mode, html)
         self.assertIn(".kw-card .pos.ad{background:#b54708}", html)   # 广告位角标颜色
         self.assertIn("function kwRows", html)
+        # 只发布一份 pageTop = **第一页全部位置**，广告位与自然位都在这份里
         for rec in doc["keywords"].values():
-            self.assertGreater(len(rec["pageTop"]), 0, "pageTop（含广告）没发布")
-            self.assertLessEqual(len(rec["pageTop"]), 10)
-            self.assertLessEqual(len(rec["organicTop"]), 5)
-            self.assertEqual([x["rank"] for x in rec["organicTop"]],
-                             list(range(1, len(rec["organicTop"]) + 1)))
+            self.assertGreater(len(rec["pageTop"]), 0, "pageTop 没发布")
+            # 第一页实测 60~63 个位置：低于 50 就说明又被截断了
+            self.assertGreater(len(rec["pageTop"]), 50,
+                               "pageTop 只记了 %d 个位置，第一页应该全记" % len(rec["pageTop"]))
+            self.assertNotIn("organicTop", rec, "不该再单独存 organicTop（同一批数据存两份）")
             self.assertEqual([x["pageRank"] for x in rec["pageTop"]],
                              sorted(x["pageRank"] for x in rec["pageTop"]))   # 按页面位置升序
-            organic_in_page = {}
+            self.assertEqual([x["pageRank"] for x in rec["pageTop"]],
+                             list(range(1, len(rec["pageTop"]) + 1)))         # 位置连续、无缺号
+            ads = [x for x in rec["pageTop"] if x["isAd"]]
+            orgs = [x for x in rec["pageTop"] if not x["isAd"]]
+            self.assertEqual(len(rec["pageTop"]) - len(ads), len(orgs))
+            # 自然位连续编号 1..N，且编号必然不晚于它的页面位置（前面压着广告）
+            self.assertEqual([x["organicRank"] for x in orgs], list(range(1, len(orgs) + 1)))
+            self.assertTrue(all(x["pageRank"] >= x["organicRank"] for x in orgs))
             for x in rec["pageTop"]:
                 self.assertRegex(x["asin"], r"^B[0-9A-Z]{9}$")
                 self.assertIn("isAd", x)                             # 每条都要能看出是不是广告
                 if x["isAd"]:
                     self.assertNotIn("organicRank", x)               # 广告位没有自然位名次
-                else:
-                    self.assertIn("organicRank", x)
-                    organic_in_page[x["pageRank"]] = x["organicRank"]
-            # pageTop 里的自然位编号必须与 organicTop 完全自洽
-            for x in rec["organicTop"]:
-                self.assertFalse(x["isAd"])
-                self.assertEqual(x["organicRank"], x["rank"])
-                self.assertGreaterEqual(x["pageRank"], x["rank"])    # 页面位置不早于自然位名次
-                if x["pageRank"] in organic_in_page:
-                    self.assertEqual(organic_in_page[x["pageRank"]], x["rank"])
+            # ⚠ 广告位**不是只堆在头部**：实测第一页 14 个广告散布到第 20 多位，
+            # 自然位第 1 落在页面第 7 位左右，但后面还夹着广告（别写成 ads 全在 orgs 前面）
+            self.assertTrue(ads, "第一页一条广告都没有？")
+            self.assertLess(ads[0]["pageRank"], orgs[0]["pageRank"])              # 头部有广告
+            self.assertTrue(any(x["pageRank"] > orgs[0]["pageRank"] for x in ads),
+                            "广告位应散布在第一页各处，而非只在头部")
         sample = next(iter(doc["keywords"].values()))
-        self.assertEqual(len(sample["organicTop"]), 5)
-        self.assertEqual([x["rank"] for x in sample["organicTop"]], [1, 2, 3, 4, 5])
-        # 自然位必定在页面上更靠后（前面有广告）——这是剔除广告后的必然结果
-        self.assertTrue(all(x["pageRank"] >= x["rank"] for x in sample["organicTop"]))
+        sample_ads = [x for x in sample["pageTop"] if x["isAd"]]
+        sample_orgs = [x for x in sample["pageTop"] if not x["isAd"]]
+        self.assertEqual(sample_orgs[0]["organicRank"], 1)       # 自然位从 1 开始编号
+        self.assertEqual(sample_ads[0]["pageRank"], 1)           # 页面第 1 位是广告（这个品类如此）
 
 
 if __name__ == "__main__":

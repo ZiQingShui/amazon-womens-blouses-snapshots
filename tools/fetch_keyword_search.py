@@ -1,17 +1,20 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""按关键词抓 Amazon 前台搜索结果，**广告位与自然位都记，并标明各是哪一种**。
+"""按关键词抓 Amazon 前台搜索结果，**第一页所有位置都记，并标明广告位 / 自然位**。
 
 数据来源：Ecomtool MCP 的 `amazon_get_search_result`（服务端抓取，没有登录态/个性化推荐，
 等同于无痕搜索；比本地开无痕浏览器稳，也没有验证码问题）。
-返回的「页面排名」是**广告位与自然位混排**的，所以这里拆成两份：
-  · `pageTop`    —— 页面位置前 PAGE_TOP_N 个（买家翻页看到的顺序，含广告），
-                    每条带 `isAd`（是否广告）与 `organicRank`（自然位第几，广告位没有这个字段）
-  · `organicTop` —— 剔除广告后的自然位前 TOP_N（TOP_N=5）
+返回的「页面排名」是**广告位与自然位混排**的，这里统一存成一份 `pageTop`：
+  · `pageTop` —— **第一页全部位置**（实测 60~63 个），买家翻页看到的顺序，含广告
+  · 每条带 `isAd`（是否广告）与 `organicRank`（自然位第几名；**广告位没有这个字段**）
+前端三种口径都从这一份派生：买家视角=全部 / 只看自然位=过滤 isAd / 只看广告位=过滤 !isAd。
+
+⚠ 2026-09-23 改：原来只记「页面前 10 + 自然位前 5」，用户反馈「才 11 个位置，需要抓第一页的所有」。
+  第一页广告实测就占 1~6 位，只取 10 个根本看不到自然位的全貌。
 
 用法：
-  python tools/fetch_keyword_search.py --date 2026-09-22 --limit 20          # 先试 20 个词
-  python tools/fetch_keyword_search.py --date 2026-09-22 --all               # 跑完清单里的词
+  python tools/fetch_keyword_search.py --date 2026-09-22 --all               # 跑完词表里的全部关键词
+  python tools/fetch_keyword_search.py --date 2026-09-22 --limit 5           # 先试 5 个词
   python tools/fetch_keyword_search.py --date 2026-09-22 --only "womens blouses"
 断点续跑：已抓过的关键词会跳过（除非加 --force），中断了直接重跑即可。
 """
@@ -31,9 +34,7 @@ WORK = ROOT / "work"
 MCP_URL = "http://127.0.0.1/mcp/index.php"
 POLL_INTERVAL = 4
 POLL_TIMEOUT = 240
-MAX_PAGE = 1              # 取自然位前 5 名，1 页足够（1 页通常 48~63 个位置）
-TOP_N = 5                 # 自然位记前几个
-PAGE_TOP_N = 10           # 页面前几个（含广告）—— 首屏广告实测占 1~6 位，取 10 才能带出 4~5 个自然位
+MAX_PAGE = 1              # 只抓第一页（第一页实测 60~63 个位置，全部记录）
 
 
 def rpc_call(method, params, timeout=90):
@@ -145,14 +146,10 @@ def fetch_one(keyword, site="US"):
 
     items = [pick(r) for r in rows if r.get("ASIN")]
     items.sort(key=lambda x: x["pageRank"] or 10 ** 6)
-    # 广告位与自然位分开数：广告位只有页面位置，自然位另有「自然位第几」
+    # 广告位与自然位分开编号：广告位只有页面位置，自然位另有「自然位第几」
     organic = [x for x in items if not x["isAd"]]
     for i, x in enumerate(organic, 1):
         x["organicRank"] = i          # 广告位没有这个字段（前端据此判断「广告」角标）
-    # 两份都留：pageTop 是买家视角（含广告），organicTop 是纯自然位。
-    # 复制一份，免得两个列表共享同一个 dict 对象导致后续改动互相影响。
-    page_top = [{k: v for k, v in x.items()} for x in items[:PAGE_TOP_N]]
-    organic_top = [{k: v for k, v in x.items()} for x in organic[:TOP_N]]
     result = {
         "keyword": keyword,
         "fetchedAt": time.strftime("%Y-%m-%dT%H:%M:%S"),
@@ -161,8 +158,8 @@ def fetch_one(keyword, site="US"):
         "perPage": to_int(rows[0].get("每页产品数")) if rows else 0,
         "totalPositions": len(items),
         "adCount": len(items) - len(organic),
-        "pageTop": page_top,                   # 页面位置前 10（含广告，带 isAd / organicRank）
-        "organicTop": organic_top,             # 自然位前 5
+        # 第一页**全部**位置（含广告），带 isAd / organicRank —— 前端三种口径都从这份派生
+        "pageTop": items,
     }
     return result
 
@@ -212,15 +209,15 @@ def main():
         rec["monthlyVolume"] = item.get("monthlyVolume")
         rec["abaRank"] = item.get("abaRank")
         done[kw] = rec
-        top = rec["organicTop"][0]["asin"] if rec["organicTop"] else "-"
-        print("  [%d/%d] %-42s ✓ 位置 %d 个 / 广告 %d / 自然位第 1 = %s"
-              % (i, len(plan), kw[:42], rec["totalPositions"], rec["adCount"], top))
+        first_organic = next((x for x in rec["pageTop"] if not x["isAd"]), None)
+        print("  [%d/%d] %-42s ✓ 第一页 %d 个位置（广告 %d / 自然位 %d）/ 自然位第 1 = %s"
+              % (i, len(plan), kw[:42], rec["totalPositions"], rec["adCount"],
+                 rec["totalPositions"] - rec["adCount"], first_organic["asin"] if first_organic else "-"))
         # 每抓一个就落盘，中断不丢进度
         out.write_text(json.dumps({
             "schemaVersion": 1, "date": args.date, "site": args.site,
             "source": "Ecomtool amazon_get_search_result（服务端抓取，等同无痕）",
-            "rankRule": "pageTop = 页面位置前 %d（含广告，带 isAd/organicRank）；"
-                        "organicTop = 排除广告位后的自然位前 %d" % (PAGE_TOP_N, TOP_N),
+            "rankRule": "pageTop = 第一页**全部**位置（含广告），每条带 isAd / organicRank",
             "keywords": done,
         }, ensure_ascii=False, indent=1), encoding="utf-8")
 
