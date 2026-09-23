@@ -757,7 +757,8 @@ class PromotionParsingTests(unittest.TestCase):
         """
         html = (ROOT / "docs/index.html").read_text(encoding="utf-8")
         self.assertIn('<span class="asin" title="${parentKeyActive?', html)
-        self.assertIn(">${esc(pk(p))}</span>", html)          # 显示值走 pk()
+        self.assertIn('${parentKeyActive?"父 ":"子 "}${esc(pk(p))}</span>', html)   # 前缀 + pk()
+        self.assertIn('${parentKeyActive?"父 ":"子 "}${esc(pk(hero))}</span>', html)  # 历史弹窗头部同款
         # 写死 p.asin 的旧写法不能回来
         self.assertNotIn('<span class="asin">${esc(p.asin)}</span>', html)
 
