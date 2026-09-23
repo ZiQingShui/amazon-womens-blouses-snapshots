@@ -748,6 +748,30 @@ class PromotionParsingTests(unittest.TestCase):
         self.assertGreaterEqual(html.count("safeImageUrl(p.image)"), 2)
 
 
+    def test_compare_slider_can_reenable_after_turning_off(self):
+        """日期滑杆：对比关掉之后必须能重新开回来（2026-09-23 用户报的 bug）。
+
+        症状：点 ✕ 关掉对比后，再点 ＋ 没反应、拖轨道也没反应 —— **两条恢复路径全死**。
+        根因有两处：
+        1. ＋ 按钮的槽位 **off-by-one**：`commitDateSlider("cmp", iSnap-from+1)` 算出来是
+           **快照自己**的位置，而 commit 里「不能和自己比」（cmpIdx>=snapIdx 直接 return）
+           会把它静默吞掉。正确的是 `iSnap-from`（= 上一期）。
+        2. 对比关闭时对比手柄（#dsHb）是 hidden 的，而 pointerdown 里有
+           `if(which==="cmp"&&$("dsHb").hidden)return;` → 整条轨道的左侧也点不了。
+           （nearestDateHandle 在 iCmp=-1 时把左端当 "cmp"，本来是合理的手势，被这个守卫挡死了。）
+        修法：＋ 按钮改为直接算「上一期」= ordered[iSnap-1]，必要时平移窗口；删掉那条拖拽守卫
+        （commit 自己会拒绝非法位置，不需要提前拦）。
+        ⚠ `dateSliderOrder()` 是 **旧→新**（manifest.snapshots 反转），所以「上一期」= iSnap-1，别写反。
+        """
+        html = (ROOT / "docs/index.html").read_text(encoding="utf-8")
+        # ＋ 按钮：直接取「上一期」ordered[iSnap-1]，且上一期不在窗口里时要先平移窗口
+        self.assertIn("const prevIdx=w.iSnap-1", html)
+        self.assertIn("if(prevIdx<w.from||prevIdx>w.end)", html)
+        # 旧的 off-by-one 写法不能回来（那是本 bug 的根因）
+        self.assertNotIn('commitDateSlider("cmp",$("compareDateSelect").value?0:(w.iSnap-w.from+1))', html)
+        # 拖拽守卫不能回来（它把对比关闭后的整条轨道锁死了）
+        self.assertNotIn('if(which==="cmp"&&$("dsHb").hidden)return;', html)
+
     def test_history_dialog_separates_fixed_header_from_scroll(self):
         """单品历史弹窗：固定头部与滚动内容之间要有**通栏**隔断。
 
