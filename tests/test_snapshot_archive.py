@@ -748,6 +748,19 @@ class PromotionParsingTests(unittest.TestCase):
         self.assertGreaterEqual(html.count("safeImageUrl(p.image)"), 2)
 
 
+    def test_card_asin_follows_parent_child_view(self):
+        """卡片底部的 ASIN 要跟父/子维度切换（2026-09-23 用户要求）。
+
+        父ASIN维度 → 显示 pk(p)（= parentAsin||asin，父视图去重键）；
+        子ASIN维度 → 显示子 ASIN。复用对比逻辑里现成的 pk()，不要另写一套。
+        「商品详情」链接保持指向子 ASIN（父体页会跳默认变体，链接不改）。
+        """
+        html = (ROOT / "docs/index.html").read_text(encoding="utf-8")
+        self.assertIn('<span class="asin" title="${parentKeyActive?', html)
+        self.assertIn(">${esc(pk(p))}</span>", html)          # 显示值走 pk()
+        # 写死 p.asin 的旧写法不能回来
+        self.assertNotIn('<span class="asin">${esc(p.asin)}</span>', html)
+
     def test_compare_slider_can_reenable_after_turning_off(self):
         """日期滑杆：对比关掉之后必须能重新开回来（2026-09-23 用户报的 bug）。
 
