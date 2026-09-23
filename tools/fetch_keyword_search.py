@@ -159,7 +159,9 @@ def fetch_one(keyword, site="US"):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--date", required=True)
-    ap.add_argument("--keywords", default=str(WORK / "keywords-core.json"))
+    ap.add_argument("--keywords", default=str(ROOT / "config" / "keywords-core.json"),
+                    help="关键词清单（默认 config/keywords-core.json —— 人工指定、参与 Git 同步；"
+                         "work/keywords-core.json 那份是早期自动挑选的，已弃用）")
     ap.add_argument("--out", help="默认 work/keyword-search-{date}.json")
     ap.add_argument("--site", default="US")
     ap.add_argument("--limit", type=int, default=0, help="只抓前 N 个（用于试点）")

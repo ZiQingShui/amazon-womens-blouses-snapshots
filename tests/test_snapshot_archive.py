@@ -805,8 +805,9 @@ class PromotionParsingTests(unittest.TestCase):
     def test_keyword_board_is_wired_and_data_published(self):
         """关键词搜索排名板块（2026-09-22 新增，与榜单视图并列的第二个主视图）。
 
-        数据链路：tools/pick_keywords.py（挑词）→ tools/fetch_keyword_search.py（Ecomtool 抓取）
-        → tools/publish_keyword_search.py → docs/data/keyword-search/{date}.json + manifest.json。
+        数据链路：config/keywords-core.json（**人工指定的词表**，2026-09-23 起）
+        → tools/fetch_keyword_search.py（Ecomtool 抓取）→ tools/publish_keyword_search.py
+        → docs/data/keyword-search/{date}.json + manifest.json。
         ⚠ 记录口径是**自然位前 5**（`organicTop`），要按「是否广告」把广告位剔掉再排名 ——
         Ecomtool 的「页面排名」是广告与自然位混排的。
         ⚠ 视图切换靠 `body[data-view="keyword"]`，榜单那些区块的代码没动；
@@ -827,12 +828,39 @@ class PromotionParsingTests(unittest.TestCase):
         self.assertIn('"organicTop": organic[:TOP_N]', fetch)
         self.assertIn('"isAd": "广告" in str(r.get("是否广告", ""))', fetch)
         self.assertIn('r"^B[0-9A-Z]{9}$"', fetch)                     # 跳过重复表头行
-        # 已发布数据
+        # 词表：2026-09-23 起改成**人工指定的 config/keywords-core.json**（14 词），
+        # ⚠ 必须在 config/ 而不是 work/ —— push_to_github.py 的 SKIP_DIRS 含 work，否则清单不进版本库
+        cfg = ROOT / "config/keywords-core.json"
+        self.assertTrue(cfg.exists(), "人工词表 config/keywords-core.json 不存在")
+        wanted = [k["keyword"] for k in json.loads(cfg.read_text(encoding="utf-8"))["keywords"]]
+        self.assertEqual(len(wanted), 14, "人工词表应是 14 个词")
+        self.assertIn("button down shirts for women", wanted)
+        self.assertIn("women's blouses & button-down shirts", wanted)   # 含撇号与 & 的词要能存进 JSON
+        self.assertIn('ROOT / "config" / "keywords-core.json"', fetch)  # 采集默认读这份
+        # ⚠ 别再按 xlsx 的「相关性」列筛词：那 3 行是**真实高搜索量关键词**，
+        # 老规则会把 12~13 万搜索量的核心词整条丢掉（2026-09-23 用户给的清单暴露出来）
+        picker = (ROOT / "tools/pick_keywords.py").read_text(encoding="utf-8")
+        self.assertNotIn('if "相关性" not in str(r[8] or "")', picker)
+
+        # 已发布数据：以 manifest 里最新的一天为准（词表会被每次发布整体替换）
         mf = ROOT / "docs/data/keyword-search/manifest.json"
-        day = ROOT / "docs/data/keyword-search/2026-09-22.json"
-        self.assertTrue(mf.exists() and day.exists(), "关键词数据没发布")
-        doc = json.loads(day.read_text(encoding="utf-8"))
-        self.assertGreaterEqual(len(doc["keywords"]), 100)
+        self.assertTrue(mf.exists(), "关键词 manifest 没发布")
+        manifest = json.loads(mf.read_text(encoding="utf-8"))
+        self.assertTrue(manifest["dates"], "manifest 没有日期")
+        # manifest 里的词表会被**按 monthlyVolume 降序重排**（看板左栏就是这么显示的），
+        # 所以只比集合、不比顺序；要改顺序就改 publish_keyword_search.py 里那个 sorted()
+        self.assertEqual(sorted(k["keyword"] for k in manifest["keywords"]), sorted(wanted),
+                         "manifest 的词表应与 config/keywords-core.json 一致")
+        doc = json.loads((ROOT / ("docs/data/keyword-search/%s.json" % manifest["dates"][0]))
+                         .read_text(encoding="utf-8"))
+        self.assertEqual(sorted(doc["keywords"]), sorted(wanted))
+        for rec in doc["keywords"].values():
+            self.assertLessEqual(len(rec["organicTop"]), 5)          # 只记自然位前 5
+            self.assertEqual([x["rank"] for x in rec["organicTop"]],
+                             list(range(1, len(rec["organicTop"]) + 1)))
+            for x in rec["organicTop"]:
+                self.assertRegex(x["asin"], r"^B[0-9A-Z]{9}$")
+                self.assertGreaterEqual(x["pageRank"], x["rank"])    # 页面排名必然不早于自然位排名
         sample = next(iter(doc["keywords"].values()))
         self.assertEqual(len(sample["organicTop"]), 5)
         self.assertEqual([x["rank"] for x in sample["organicTop"]], [1, 2, 3, 4, 5])

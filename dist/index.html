@@ -708,7 +708,7 @@ async function loadKeywordBoard() {
     $("kwFilter").placeholder = "搜索关键词（" + all.length + " 个）";
     $("kwStats").innerHTML = '<span>已采集 <b>' + all.length + "</b> 个关键词</span>"
       + '<span>采集日 <b>' + esc(date) + "</b></span>"
-      + '<span>词表来源 <b>ExpandKeywords</b></span>';
+      + '<span>词表来源 <b>人工指定</b></span>';
     renderKeywordWords("");
     renderKeywordDetail(all[0] ? all[0].keyword : "");
   } catch (e) {

@@ -1,0 +1,106 @@
+{
+ "schemaVersion": 1,
+ "source": "人工指定（用户 2026-09-23 提供），替换掉原先按规则自动挑的 150 词",
+ "rule": "固定清单，不再自动挑选；改词请直接编辑本文件",
+ "picked": 14,
+ "keywords": [
+  {
+   "keyword": "button down shirts for women",
+   "zh": "女式纽扣衬衫",
+   "monthlyVolume": 133517,
+   "abaRank": 5463,
+   "supplyDemand": 2.38
+  },
+  {
+   "keyword": "white button down shirt women",
+   "zh": "白色纽扣衬衫女士",
+   "monthlyVolume": 124753,
+   "abaRank": 6247,
+   "supplyDemand": 3.93
+  },
+  {
+   "keyword": "button up shirt women",
+   "zh": "纽扣衬衫女士",
+   "monthlyVolume": 72012,
+   "abaRank": 16897,
+   "supplyDemand": 1.44
+  },
+  {
+   "keyword": "womens button down shirt",
+   "zh": "女式纽扣衬衫",
+   "monthlyVolume": 60598,
+   "abaRank": 19942,
+   "supplyDemand": 1.08
+  },
+  {
+   "keyword": "black button up shirt women",
+   "zh": "黑色纽扣衬衫女士",
+   "monthlyVolume": 53888,
+   "abaRank": 21068,
+   "supplyDemand": 2.21
+  },
+  {
+   "keyword": "white button up shirt women",
+   "zh": "白色纽扣衬衫女士",
+   "monthlyVolume": 44293,
+   "abaRank": 27907,
+   "supplyDemand": 1.84
+  },
+  {
+   "keyword": "white button up",
+   "zh": "白色纽扣衫",
+   "monthlyVolume": 27384,
+   "abaRank": 53273,
+   "supplyDemand": 0.66
+  },
+  {
+   "keyword": "womens button up shirts",
+   "zh": "女式纽扣衬衫",
+   "monthlyVolume": 19797,
+   "abaRank": 74298,
+   "supplyDemand": 0.4
+  },
+  {
+   "keyword": "cotton button down shirts for women",
+   "zh": "女式棉质纽扣衬衫",
+   "monthlyVolume": 18680,
+   "abaRank": 87035,
+   "supplyDemand": 0.51
+  },
+  {
+   "keyword": "womens white button down shirt",
+   "zh": "女式白色纽扣衬衫",
+   "monthlyVolume": 18971,
+   "abaRank": 76929,
+   "supplyDemand": 0.6
+  },
+  {
+   "keyword": "women's blouses & button-down shirts",
+   "zh": "女士衬衫和扣领衬衫",
+   "monthlyVolume": 15590,
+   "abaRank": 125025,
+   "supplyDemand": 0.37
+  },
+  {
+   "keyword": "women button down shirt",
+   "zh": "女式系扣衬衫",
+   "monthlyVolume": 15971,
+   "abaRank": 110318,
+   "supplyDemand": 0.28
+  },
+  {
+   "keyword": "womens button down blouse",
+   "zh": "女式纽扣上衣",
+   "monthlyVolume": 14691,
+   "abaRank": 129557,
+   "supplyDemand": 0.34
+  },
+  {
+   "keyword": "women's button down shirts",
+   "zh": "女式纽扣衬衫",
+   "monthlyVolume": 14994,
+   "abaRank": 82943,
+   "supplyDemand": 0.27
+  }
+ ]
+}

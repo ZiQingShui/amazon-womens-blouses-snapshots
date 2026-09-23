@@ -2,6 +2,11 @@
 # -*- coding: utf-8 -*-
 """从 ExpandKeywords 导出表里挑「核心词」——用于每日关键词排名采集。
 
+⚠ 2026-09-23 起，**权威清单改为人工指定的 `config/keywords-core.json`（14 个词）**，
+   本脚本降级为「备选/扩充」用途：只有当用户要重新按规则扩词时才跑，产物是 work/keywords-core.json，
+   不会自动被采集脚本读取（`fetch_keyword_search.py` 已默认指向 config/）。
+   部署前请确认 `config/keywords-core.json` 才是要被采集的那份。
+
 为什么不能只按搜索量取 Top N：表里搜索量最大的词是 womens dresses / pants for women /
 sweaters for women 这类**别的品类**，抓到它们的前 5 名对本项目没有意义。所以先按女式衬衫品类
 （shirt / blouse / top / tunic / tee / button-down …）过滤，再按月搜索量排序。
@@ -56,8 +61,11 @@ def main():
     head = next(it)
     rows = [r for r in it if r and r[0]]
 
-    # 前几行是 ExpandKeywords 自带的示例/说明行（只有它们有"相关性"标注），跳过
-    rows = [r for r in rows if "相关性" not in str(r[8] or "")]
+    # ⚠ 曾有一版用「列8 是否含『相关性』」来跳过 ExpandKeywords 的示例行 —— **那是错的**：
+    # 实测列8 只有前 3 行有值，而那 3 行是**真实关键词**（`white button down shirt women` 12.5 万、
+    # `button down shirts for women` 13.4 万、`womens tops` 115 万），只是被人工加了相关性标注。
+    # 按那条规则跳会把 12~13 万搜索量的词整条丢掉（2026-09-23 由用户给的清单暴露出来）。
+    # 现在一律不丢，是否入选完全交给下面的 KEEP / DROP / 词数 / 搜索量规则。
 
     cand, dropped_kind, no_volume, too_short = [], 0, 0, 0
     for r in rows:
