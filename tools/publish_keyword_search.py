@@ -8,6 +8,10 @@
 按「一天一个文件」存（看板一次 fetch 拿到当天全部关键词，前端简单）；
 manifest 里记日期列表，供看板做日期切换。
 
+每个词的记录里有两份排名，**都要发布**（2026-09-23 用户：\"自然位置和广告位置都需要抓取，并表明\"）：
+  · `pageTop`    —— 页面位置前 10（买家视角，含广告），每条带 `isAd`
+  · `organicTop` —— 自然位前 5，另有 `rank`；广告位没有 `organicRank`
+
 用法：
   python tools/publish_keyword_search.py --date 2026-09-22
 """
@@ -38,6 +42,21 @@ def main():
         return 1
 
     # 精简：只留看板要用的字段（source 只留文件名，省体积）
+    # ⚠ 广告位与自然位**都要留**，且每条都要能看出是哪种（2026-09-23 用户：\"自然位置和广告位置都需要抓取，并表明\"）：
+    #   · pageTop    —— 页面位置（买家翻页看到的顺序，含广告），每条带 isAd
+    #   · organicTop —— 自然位，另有 rank（自然位第几）；广告位没有 organicRank
+    def slim_item(x):
+        out = {
+            "pageRank": x.get("pageRank"),           # 页面第几位（含广告）
+            "asin": x.get("asin"), "title": x.get("title"), "brand": x.get("brand"),
+            "price": x.get("price"), "rating": x.get("rating"), "reviews": x.get("reviews"),
+            "subSales": x.get("subSales"), "imageId": x.get("imageId"),
+            "isAd": bool(x.get("isAd")),             # ← 前端据此打「广告 / 自然位」角标
+        }
+        if x.get("organicRank"):
+            out["organicRank"] = x.get("organicRank")
+        return out
+
     slim = {}
     for kw, rec in kws.items():
         slim[kw] = {
@@ -48,16 +67,9 @@ def main():
             "totalPositions": rec.get("totalPositions"),
             "adCount": rec.get("adCount"),
             "fetchedAt": rec.get("fetchedAt"),
-            "organicTop": [
-                {
-                    "rank": i + 1,                       # 自然位第几名（1 起）
-                    "pageRank": x.get("pageRank"),       # 它在页面上的位置（含广告）
-                    "asin": x.get("asin"), "title": x.get("title"), "brand": x.get("brand"),
-                    "price": x.get("price"), "rating": x.get("rating"), "reviews": x.get("reviews"),
-                    "subSales": x.get("subSales"), "imageId": x.get("imageId"),
-                }
-                for i, x in enumerate(rec.get("organicTop", []))
-            ],
+            "pageTop": [slim_item(x) for x in rec.get("pageTop", [])],
+            "organicTop": [dict(slim_item(x), rank=i + 1)         # 自然位第几名（1 起）
+                           for i, x in enumerate(rec.get("organicTop", []))],
         }
 
     day = {"schemaVersion": 1, "date": args.date, "site": doc.get("site", "US"),

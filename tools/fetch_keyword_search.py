@@ -1,10 +1,13 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""按关键词抓 Amazon 前台搜索结果，记录**自然位前 N 名**（默认前 5）。
+"""按关键词抓 Amazon 前台搜索结果，**广告位与自然位都记，并标明各是哪一种**。
 
 数据来源：Ecomtool MCP 的 `amazon_get_search_result`（服务端抓取，没有登录态/个性化推荐，
 等同于无痕搜索；比本地开无痕浏览器稳，也没有验证码问题）。
-返回的「页面排名」是**广告位与自然位混排**的，所以这里额外按「是否广告」过滤出自然位排名。
+返回的「页面排名」是**广告位与自然位混排**的，所以这里拆成两份：
+  · `pageTop`    —— 页面位置前 PAGE_TOP_N 个（买家翻页看到的顺序，含广告），
+                    每条带 `isAd`（是否广告）与 `organicRank`（自然位第几，广告位没有这个字段）
+  · `organicTop` —— 剔除广告后的自然位前 TOP_N（TOP_N=5）
 
 用法：
   python tools/fetch_keyword_search.py --date 2026-09-22 --limit 20          # 先试 20 个词
@@ -29,7 +32,8 @@ MCP_URL = "http://127.0.0.1/mcp/index.php"
 POLL_INTERVAL = 4
 POLL_TIMEOUT = 240
 MAX_PAGE = 1              # 取自然位前 5 名，1 页足够（1 页通常 48~63 个位置）
-TOP_N = 5
+TOP_N = 5                 # 自然位记前几个
+PAGE_TOP_N = 10           # 页面前几个（含广告）—— 首屏广告实测占 1~6 位，取 10 才能带出 4~5 个自然位
 
 
 def rpc_call(method, params, timeout=90):
@@ -141,7 +145,14 @@ def fetch_one(keyword, site="US"):
 
     items = [pick(r) for r in rows if r.get("ASIN")]
     items.sort(key=lambda x: x["pageRank"] or 10 ** 6)
+    # 广告位与自然位分开数：广告位只有页面位置，自然位另有「自然位第几」
     organic = [x for x in items if not x["isAd"]]
+    for i, x in enumerate(organic, 1):
+        x["organicRank"] = i          # 广告位没有这个字段（前端据此判断「广告」角标）
+    # 两份都留：pageTop 是买家视角（含广告），organicTop 是纯自然位。
+    # 复制一份，免得两个列表共享同一个 dict 对象导致后续改动互相影响。
+    page_top = [{k: v for k, v in x.items()} for x in items[:PAGE_TOP_N]]
+    organic_top = [{k: v for k, v in x.items()} for x in organic[:TOP_N]]
     result = {
         "keyword": keyword,
         "fetchedAt": time.strftime("%Y-%m-%dT%H:%M:%S"),
@@ -150,8 +161,8 @@ def fetch_one(keyword, site="US"):
         "perPage": to_int(rows[0].get("每页产品数")) if rows else 0,
         "totalPositions": len(items),
         "adCount": len(items) - len(organic),
-        "pageRankTop": items[:TOP_N],          # 买家翻页看到的顺序（含广告），备查
-        "organicTop": organic[:TOP_N],         # 自然位前 N —— 板块用的就是这份
+        "pageTop": page_top,                   # 页面位置前 10（含广告，带 isAd / organicRank）
+        "organicTop": organic_top,             # 自然位前 5
     }
     return result
 
@@ -208,7 +219,8 @@ def main():
         out.write_text(json.dumps({
             "schemaVersion": 1, "date": args.date, "site": args.site,
             "source": "Ecomtool amazon_get_search_result（服务端抓取，等同无痕）",
-            "rankRule": "organicTop = 排除广告位后的自然排名前 %d" % TOP_N,
+            "rankRule": "pageTop = 页面位置前 %d（含广告，带 isAd/organicRank）；"
+                        "organicTop = 排除广告位后的自然位前 %d" % (PAGE_TOP_N, TOP_N),
             "keywords": done,
         }, ensure_ascii=False, indent=1), encoding="utf-8")
 

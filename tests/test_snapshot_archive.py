@@ -825,7 +825,10 @@ class PromotionParsingTests(unittest.TestCase):
         self.assertIn("setMainView(\"keyword\")},true)", html)       # 捕获阶段切换视图（见上面说明）
         # 抓取脚本要按自然位口径过滤广告
         fetch = (ROOT / "tools/fetch_keyword_search.py").read_text(encoding="utf-8")
-        self.assertIn('"organicTop": organic[:TOP_N]', fetch)
+        self.assertIn('"organicTop": organic_top', fetch)             # 自然位前 5
+        self.assertIn('"pageTop": page_top', fetch)                   # 页面前 10（含广告）
+        self.assertIn('x["organicRank"] = i', fetch)                  # 自然位另编名次（广告位没有）
+        self.assertIn('PAGE_TOP_N = 10', fetch)
         self.assertIn('"isAd": "广告" in str(r.get("是否广告", ""))', fetch)
         self.assertIn('r"^B[0-9A-Z]{9}$"', fetch)                     # 跳过重复表头行
         # 词表：2026-09-23 起改成**人工指定的 config/keywords-core.json**（14 词），
@@ -854,13 +857,39 @@ class PromotionParsingTests(unittest.TestCase):
         doc = json.loads((ROOT / ("docs/data/keyword-search/%s.json" % manifest["dates"][0]))
                          .read_text(encoding="utf-8"))
         self.assertEqual(sorted(doc["keywords"]), sorted(wanted))
+        # 广告位与自然位**两份都记、且每条标明是哪种**
+        # （2026-09-23 用户："自然位置和广告位置都需要抓取，并表明"）
+        self.assertIn('id="kwModes"', html)                          # 排名口径切换
+        self.assertIn("data-kwmode=\"page\"", html)
+        self.assertIn("KW_MODES", html)
+        for mode in ('"organic"', '"ads"'):
+            self.assertIn(mode, html)
+        self.assertIn(".kw-card .pos.ad{background:#b54708}", html)   # 广告位角标颜色
+        self.assertIn("function kwRows", html)
         for rec in doc["keywords"].values():
-            self.assertLessEqual(len(rec["organicTop"]), 5)          # 只记自然位前 5
+            self.assertGreater(len(rec["pageTop"]), 0, "pageTop（含广告）没发布")
+            self.assertLessEqual(len(rec["pageTop"]), 10)
+            self.assertLessEqual(len(rec["organicTop"]), 5)
             self.assertEqual([x["rank"] for x in rec["organicTop"]],
                              list(range(1, len(rec["organicTop"]) + 1)))
-            for x in rec["organicTop"]:
+            self.assertEqual([x["pageRank"] for x in rec["pageTop"]],
+                             sorted(x["pageRank"] for x in rec["pageTop"]))   # 按页面位置升序
+            organic_in_page = {}
+            for x in rec["pageTop"]:
                 self.assertRegex(x["asin"], r"^B[0-9A-Z]{9}$")
-                self.assertGreaterEqual(x["pageRank"], x["rank"])    # 页面排名必然不早于自然位排名
+                self.assertIn("isAd", x)                             # 每条都要能看出是不是广告
+                if x["isAd"]:
+                    self.assertNotIn("organicRank", x)               # 广告位没有自然位名次
+                else:
+                    self.assertIn("organicRank", x)
+                    organic_in_page[x["pageRank"]] = x["organicRank"]
+            # pageTop 里的自然位编号必须与 organicTop 完全自洽
+            for x in rec["organicTop"]:
+                self.assertFalse(x["isAd"])
+                self.assertEqual(x["organicRank"], x["rank"])
+                self.assertGreaterEqual(x["pageRank"], x["rank"])    # 页面位置不早于自然位名次
+                if x["pageRank"] in organic_in_page:
+                    self.assertEqual(organic_in_page[x["pageRank"]], x["rank"])
         sample = next(iter(doc["keywords"].values()))
         self.assertEqual(len(sample["organicTop"]), 5)
         self.assertEqual([x["rank"] for x in sample["organicTop"]], [1, 2, 3, 4, 5])
