@@ -176,6 +176,32 @@ def _rows_to_dict(rows, header) -> dict[str, dict]:
     return out
 
 
+def export_batches(batches, site="US", date_from=None, date_to=None, verbose=True):
+    """导出各批监控数据并合并成 {ASIN: rec}。"""
+    all_data: dict[str, dict] = {}
+    for i, b in enumerate(batches, 1):
+        try:
+            text = call_tool("amz_asin_tracking_export_asin_data",
+                             {"asin": ",".join(b), "site": site, "mcp_server": "local",
+                              **({"date_from": date_from} if date_from else {}),
+                              **({"date_to": date_to} if date_to else {})})
+            m = re.search(r"http://127\.0\.0\.1/downloads/[^\s\n\)\"]+\.csv", text)
+            if not m:
+                if verbose:
+                    print(f"  第 {i}/{len(batches)} 批：未取到结果链接 {text[:120]}")
+                continue
+            raw = poll_page(m.group(0), want_csv=True)
+            parsed = parse_csv(raw) or parse_html_table(raw)
+            all_data.update(parsed)
+            if verbose:
+                print(f"  第 {i}/{len(batches)} 批：{len(parsed)} 条")
+        except Exception as e:
+            if verbose:
+                print(f"  第 {i}/{len(batches)} 批失败：{e}")
+        time.sleep(2)
+    return all_data
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--asins", required=True, type=Path, help="ASIN 列表 JSON")
@@ -184,7 +210,13 @@ def main() -> None:
     parser.add_argument("--site", default="US")
     parser.add_argument("--add", action="store_true", help="先加入监控队列（不在监控里就没有数据）")
     parser.add_argument("--run", action="store_true", help="触发监控系统抓取一次")
-    parser.add_argument("--wait", type=int, default=180, help="--run 之后等待多少秒再导出（约 5 秒/ASIN）")
+    parser.add_argument("--wait", type=int, default=180, help="--run 之后固定等待多少秒再导出（约 5 秒/ASIN）")
+    parser.add_argument("--fresh-after", default=None,
+                        help="抓取的「不早于」时刻（如 2026-09-23 08:24）。给了它就**轮询导出直到全部新鲜**，"
+                             "不用 --wait 那种固定等待 —— ⚠ 监控系统一轮跑不完 258 个 ASIN，"
+                             "固定等待会静默带回前一天的促销数据（2026-09-22/23 各踩一次）")
+    parser.add_argument("--max-wait", type=int, default=2400, help="配 --fresh-after：最长轮询多少秒")
+    parser.add_argument("--poll", type=int, default=90, help="配 --fresh-after：每隔多少秒导出查一次")
     parser.add_argument("--date-from", default=None, help="导出开始日期 yyyy-mm-dd")
     parser.add_argument("--date-to", default=None, help="导出结束日期 yyyy-mm-dd")
     args = parser.parse_args()
@@ -209,6 +241,7 @@ def main() -> None:
                 print(f"  第 {i}/{len(batches)} 批失败：{e}")
             time.sleep(1)
 
+    all_data = None
     if args.run:
         print("\n=== ② 触发监控系统抓取 ===")
         try:
@@ -216,29 +249,35 @@ def main() -> None:
             print(f"  已提交：{text.strip().splitlines()[0][:100]}")
         except Exception as e:
             print(f"  提交失败：{e}")
-        print(f"  等待 {args.wait} 秒让监控系统跑完（约 5 秒/ASIN）…")
-        time.sleep(args.wait)
+        if args.fresh_after:
+            want = args.fresh_after.replace("T", " ")[:16]
+            print(f"  轮询导出，直到每个 ASIN 的抓取时间 >= {want}"
+                  f"（每 {args.poll} 秒查一次，最长 {args.max_wait} 秒）…")
+            t0 = time.time()
+            while True:
+                time.sleep(args.poll)
+                data = export_batches(batches, args.site, args.date_from, args.date_to, verbose=False)
+                if len(data) > len(all_data or {}):
+                    all_data = data
+                fresh = sum(1 for a in asins
+                            if str(data.get(a, {}).get("capturedAt", "")).replace("T", " ")[:16] >= want)
+                print(f"    [{int(time.time() - t0):4d}s] 新鲜 {fresh}/{len(asins)}"
+                      f"（还差 {len(asins) - fresh}）")
+                if fresh >= len(asins):
+                    all_data = data
+                    print("  ✅ 全部 ASIN 都是本次抓取的")
+                    break
+                if time.time() - t0 > args.max_wait:
+                    print(f"  ⚠ 已达最长等待 {args.max_wait}s，仍有 {len(asins) - fresh} 个是旧数据"
+                          f"（可再跑一次本命令继续补）")
+                    break
+        else:
+            print(f"  等待 {args.wait} 秒让监控系统跑完（约 5 秒/ASIN）…")
+            time.sleep(args.wait)
 
-    print("\n=== ③ 导出监控数据 ===")
-    all_data: dict[str, dict] = {}
-    for i, b in enumerate(batches, 1):
-        try:
-            text = call_tool("amz_asin_tracking_export_asin_data",
-                             {"asin": ",".join(b), "site": args.site, "mcp_server": "local",
-                              **({"date_from": args.date_from} if args.date_from else {}),
-                              **({"date_to": args.date_to} if args.date_to else {})})
-            m = re.search(r"http://127\.0\.0\.1/downloads/[^\s\n\)\"]+\.csv", text)
-            if not m:
-                print(f"  第 {i}/{len(batches)} 批：未取到结果链接 {text[:120]}")
-                continue
-            url = m.group(0)
-            raw = poll_page(url, want_csv=True)
-            parsed = parse_csv(raw) or parse_html_table(raw)
-            all_data.update(parsed)
-            print(f"  第 {i}/{len(batches)} 批：{len(parsed)} 条")
-        except Exception as e:
-            print(f"  第 {i}/{len(batches)} 批失败：{e}")
-        time.sleep(2)
+    if all_data is None:
+        print("\n=== ③ 导出监控数据 ===")
+        all_data = export_batches(batches, args.site, args.date_from, args.date_to)
 
     args.out.parent.mkdir(parents=True, exist_ok=True)
     args.out.write_text(json.dumps(all_data, ensure_ascii=False, indent=2), encoding="utf-8")
@@ -251,6 +290,13 @@ def main() -> None:
     missing = [a for a in asins if a not in all_data]
     if missing:
         print(f"  未出现（通常=尚未被抓到，可稍后重跑）：{len(missing)} 个，例如 {missing[:5]}")
+    if args.fresh_after:
+        want = args.fresh_after.replace("T", " ")[:16]
+        stale = [a for a in asins
+                 if str(all_data.get(a, {}).get("capturedAt", "")).replace("T", " ")[:16] < want]
+        print(f"  抓取时间 >= {want} 的：{len(asins) - len(stale)}/{len(asins)}")
+        if stale:
+            print(f"  ⚠ 仍是旧数据的 {len(stale)} 个（**别直接发布**，再跑一次补抓）：{stale[:6]}")
 
 
 if __name__ == "__main__":
