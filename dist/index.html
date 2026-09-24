@@ -230,6 +230,20 @@ body[data-rank="best"] .date-slider{--ds-cmp:#64748b;--ds-cmp-ink:#475467;--ds-f
 .kw-stats{display:flex;gap:8px;flex-wrap:wrap;font-size:12px;color:var(--muted)}
 .kw-stats span{background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px 11px}
 .kw-stats b{color:var(--ink);font-weight:800}
+/* 关键词板块的采集日期切换（2026-09-24 用户："也要做成每天可以监控的历史看板"） */
+.kw-dates{display:flex;align-items:center;gap:2px;background:#f1f5f9;border:1px solid var(--line);border-radius:10px;padding:3px}
+.kw-dates button{font:inherit;font-size:14px;line-height:1;color:#475467;background:transparent;border:0;border-radius:7px;padding:5px 8px;cursor:pointer}
+.kw-dates button:hover:not(:disabled){background:#fff;color:var(--ink)}
+.kw-dates button:disabled{opacity:.3;cursor:default}
+.kw-dates select{font:inherit;font-size:12px;font-weight:700;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:7px;padding:5px 5px;cursor:pointer}
+/* 与上一期相比的变化：详情头部一行 + 卡片角标 */
+.kw-cmp{margin:6px 0 0;font-size:12px;color:var(--muted)}
+.kw-cmp b{color:var(--ink);font-weight:800}
+.kw-cmp em{font-style:normal;color:#b54708;font-weight:800}
+.kw-delta{font-size:10.5px;font-weight:800;margin-left:4px;white-space:nowrap}
+.kw-delta.up{color:#087a55}
+.kw-delta.down{color:#b54708}
+.kw-delta.new{color:var(--blue)}
 .kw-body{display:grid;grid-template-columns:290px minmax(0,1fr);gap:14px;align-items:start;margin-bottom:18px}
 .kw-side{background:#fff;border:1px solid var(--line);border-radius:15px;padding:12px;box-shadow:0 5px 16px rgba(16,32,59,.05)}
 .kw-words{list-style:none;margin:10px 0 0;padding:0;max-height:min(72vh,760px);overflow:auto}
@@ -298,7 +312,7 @@ body:not([data-view="keyword"]) .keyword-board{display:none!important}
 <body>
 <aside class="workbench-sidebar" aria-label="看板导航"><select class="category-native" id="categorySelect" aria-label="选择商品类目"></select><nav class="workbench-nav"><div class="category-nav"><div class="category-tree-title"><span class="cat-ico"></span><em>今日概览</em></div><div class="category-nav-menu" id="categoryMenu"></div></div><a href="#fastRisers"><span class="nav-ico"></span><em>快速上升</em></a><a href="#filterQuery"><span class="nav-ico"></span><em>商品筛选</em></a><a href="#products"><span class="nav-ico"></span><em>商品列表</em></a><a href="#keywordBoard" id="navKeyword" data-view="keyword"><span class="nav-ico"></span><em>关键词搜索</em></a><a href="#products" id="navRanking" data-view="ranking" hidden><span class="nav-ico"></span><em>返回榜单</em></a></nav></aside>
 <header><div class="wrap top"><div class="heading"><div class="header-block"><span class="accent-bar" id="headerAccent"></span><div class="header-text"><div class="tagline"><span class="rk-tag" id="rankingTag">New Releases</span></div><h1 id="categoryTitle"><em>正在载入类目…</em></h1><div class="sub-line"><p class="sub" id="categorySubtitle">Amazon 美国站 · 正在载入类目…</p><a class="source" href="https://www.amazon.com/gp/new-releases/fashion/2368365011" target="_blank" rel="noreferrer">Amazon 官方新品榜</a></div></div></div><div class="header-pulse" id="headerPulse" aria-hidden="true"></div></div><div class="controls"><div class="date-slider" id="dateSlider" role="group" aria-label="快照日期与对比日期"><div class="ds-head"><span class="k">对比</span><span class="v b" id="dsCmpText">不对比</span><button class="ds-cmptog" id="dsCmpToggle" type="button" aria-label="关闭对比" title="关闭对比，只看本期自身">✕</button><span class="dash"></span><span class="k">快照</span><span class="v a" id="dsSnapText">—</span><span class="cnt" id="dsCount"></span><span class="dswin"><button class="dswin-btn" id="dsWinPrev" type="button" aria-label="往前看更早的日期" title="往前看更早的日期">‹</button><span class="dswin-r" id="dsWinRange"></span><button class="dswin-btn" id="dsWinNext" type="button" aria-label="往后看更新的日期" title="往后看更新的日期">›</button></span></div><div class="ds-track" id="dsTrack"><div class="ds-line"></div><div class="ds-fill" id="dsFill"></div><span class="ds-h b" id="dsHb" role="slider" tabindex="0" aria-label="对比日期" aria-valuemin="0"></span><span class="ds-h a" id="dsHa" role="slider" tabindex="0" aria-label="快照日期" aria-valuemin="0"></span></div><div class="ds-foot"><div class="ds-ticks" id="dsTicks"></div><div class="view-tab" id="parentViewSeg" role="group" aria-label="榜单展示方式" title="父ASIN维度：同一件商品的不同颜色/尺码合并为一条展示，避免同一商品反复进出榜单"><button class="view-tab-opt" id="viewOptChild" type="button">子ASIN维度</button><button class="view-tab-opt on" id="viewOptParent" type="button">父ASIN维度</button></div></div><span class="ds-empty" id="dsEmpty"></span></div><select id="dateSelect" class="ds-native" aria-label="选择快照日期"></select><select id="compareDateSelect" class="ds-native" aria-label="选择对比日期"><option value="">不对比</option></select></div></div></header>
-<main class="wrap"><section class="keyword-board" id="keywordBoard" aria-label="关键词搜索排名"><div class="kw-bar"><div><h2>关键词搜索排名</h2><p id="kwSubtitle">Amazon 美国站 · <b>第一页全部位置</b>，广告位与自然位都标明</p></div><div class="kw-bar-right"><div class="kw-modes" id="kwModes" role="tablist" aria-label="排名口径"><button type="button" data-kwmode="page" class="on" aria-selected="true">买家视角<em>含广告</em></button><button type="button" data-kwmode="organic" aria-selected="false">只看自然位</button><button type="button" data-kwmode="ads" aria-selected="false">只看广告位</button></div><div class="kw-stats" id="kwStats"></div></div></div><div class="kw-body"><div class="kw-side"><label class="field search"><input id="kwFilter" type="search" placeholder="搜索关键词（150 个）" aria-label="搜索关键词" autocomplete="off" spellcheck="false"></label><ol class="kw-words" id="kwWords"></ol></div><div class="kw-main" id="kwMain"><div class="empty">正在载入关键词数据…</div></div></div></section><section class="summary" aria-live="polite"><div class="summary-top"><div><h2 id="summaryTitle">正在载入每日快照…</h2><p id="summaryText">请稍候</p></div><div class="quality" id="quality"></div></div></section><section class="metrics" id="metrics"></section><section class="fast-risers" id="fastRisers" hidden aria-label="快速上升商品"></section><section class="filters" aria-label="商品筛选"><div class="filter-head"><div class="filter-title">筛选商品 <span class="filter-count" id="filterCount">100 / 100</span></div></div><div class="filter-state" id="filterState" hidden><span class="fs-label">已选</span><div class="active-filters" id="activeFilters" aria-live="polite"></div><button class="fs-clear" id="clearAllFilters" type="button">全部清空</button></div><div class="fgroup"><div class="fgroup-title">关键词</div><div class="filter-grid fg-kw"><label class="field search"><input id="filterQuery" type="search" placeholder="搜索品牌、标题或 ASIN" aria-label="关键词"></label><label class="field"><select id="filterBrand" aria-label="品牌"><option value="">全部品牌</option></select></label></div></div><div class="fgroup"><div class="fgroup-title">榜单表现</div><div class="filter-grid fg-4"><label class="field compact"><span>榜单变化</span><select id="filterMovement"><option value="">全部变化</option><option value="fast">快速上升（≥ 10 位）</option><option value="new">新入榜</option><option value="up">排名上升</option><option value="down">排名下降</option><option value="same">排名不变</option></select></label><label class="field compact"><span>榜单范围</span><select id="filterRank"><option value="">Top 100</option><option value="10">Top 10</option><option value="20">Top 20</option><option value="50">Top 50</option></select></label><label class="field compact"><span>大类 BSR</span><select id="filterMainBsr"><option value="">不限</option><option value="1000">≤ 1,000</option><option value="5000">≤ 5,000</option><option value="10000">≤ 10,000</option><option value="50000">≤ 50,000</option></select></label><label class="field compact"><span>小类 BSR</span><select id="filterSubBsr"><option value="">不限</option><option value="10">≤ 10</option><option value="50">≤ 50</option><option value="100">≤ 100</option><option value="500">≤ 500</option></select></label></div></div><div class="fgroup"><div class="fgroup-title">价格与状态</div><div class="filter-grid fg-5"><label class="field price-field"><span class="inline-label">价格区间 ($)</span><span class="range"><input id="filterPriceMin" type="number" min="0" step="1" placeholder="最低"><span>—</span><input id="filterPriceMax" type="number" min="0" step="1" placeholder="最高"></span></label><label class="field compact"><span>促销</span><select id="filterPromo" aria-label="促销"><option value="">全部状态</option><option value="detected">有促销</option><option value="type:coupon">Coupon 优惠券</option><option value="type:discount">折扣 % off</option><option value="type:deal">Deal 活动</option><option value="type:lowest30">30 天最低价</option><option value="none">暂无促销</option><option value="unknown">信息未知</option></select></label><label class="field compact"><span>上架天数</span><select id="filterAge"><option value="">不限</option><option value="7">≤ 7 天</option><option value="30">≤ 30 天</option><option value="60">≤ 60 天</option><option value="90">≤ 90 天</option></select></label><label class="field compact"><span>类目覆盖</span><select id="filterMultiCategory" aria-label="类目覆盖"><option value="">全部商品</option><option value="multiple">存在多个类目</option><option value="single">仅当前类目</option></select></label><label class="field compact"><span>打标状态</span><select id="filterTagState" aria-label="打标状态"><option value="">全部打标状态</option><option value="todo">待打标</option><option value="done">已打标</option></select></label></div></div><div class="fgroup"><div class="fgroup-title">款式风格<button class="sty-export" id="styExport" type="button" hidden>导出我的修改</button><button class="sty-export danger" id="styClear" type="button" hidden>清除本机改动</button></div><div class="filter-grid fg-6"><label class="field compact"><span>袖型</span><select id="filterSleeve" aria-label="袖型"><option value="">全部袖型</option></select></label><label class="field compact"><span>季节</span><select id="filterSeason" aria-label="季节"><option value="">全部季节</option></select></label><label class="field compact"><span>面料</span><select id="filterFabric" aria-label="面料"><option value="">全部面料</option></select></label><label class="field compact"><span>图案</span><select id="filterPattern" aria-label="图案"><option value="">全部图案</option></select></label><label class="field compact"><span>主风格</span><select id="filterStyle" aria-label="主风格"><option value="">全部风格</option></select></label><label class="field compact"><span>主图类型</span><select id="filterImageType" aria-label="主图类型"><option value="">全部主图类型</option></select></label></div></div></section><section class="list-panel" aria-label="商品列表"><div class="bar"><span id="viewText"></span></div><section class="grid" id="products"><div class="empty">正在载入每日快照…</div></section></section><div id="exitArea"></div><footer id="footerText"></footer></main>
+<main class="wrap"><section class="keyword-board" id="keywordBoard" aria-label="关键词搜索排名"><div class="kw-bar"><div><h2>关键词搜索排名</h2><p id="kwSubtitle">Amazon 美国站 · <b>第一页全部位置</b>，广告位与自然位都标明</p></div><div class="kw-bar-right"><div class="kw-dates" role="group" aria-label="采集日期"><button type="button" id="kwPrev" title="更早一期">‹</button><select id="kwDate" aria-label="采集日期"></select><button type="button" id="kwNext" title="更近一期">›</button></div><div class="kw-modes" id="kwModes" role="tablist" aria-label="排名口径"><button type="button" data-kwmode="page" class="on" aria-selected="true">买家视角<em>含广告</em></button><button type="button" data-kwmode="organic" aria-selected="false">只看自然位</button><button type="button" data-kwmode="ads" aria-selected="false">只看广告位</button></div><div class="kw-stats" id="kwStats"></div></div></div><div class="kw-body"><div class="kw-side"><label class="field search"><input id="kwFilter" type="search" placeholder="搜索关键词（150 个）" aria-label="搜索关键词" autocomplete="off" spellcheck="false"></label><ol class="kw-words" id="kwWords"></ol></div><div class="kw-main" id="kwMain"><div class="empty">正在载入关键词数据…</div></div></div></section><section class="summary" aria-live="polite"><div class="summary-top"><div><h2 id="summaryTitle">正在载入每日快照…</h2><p id="summaryText">请稍候</p></div><div class="quality" id="quality"></div></div></section><section class="metrics" id="metrics"></section><section class="fast-risers" id="fastRisers" hidden aria-label="快速上升商品"></section><section class="filters" aria-label="商品筛选"><div class="filter-head"><div class="filter-title">筛选商品 <span class="filter-count" id="filterCount">100 / 100</span></div></div><div class="filter-state" id="filterState" hidden><span class="fs-label">已选</span><div class="active-filters" id="activeFilters" aria-live="polite"></div><button class="fs-clear" id="clearAllFilters" type="button">全部清空</button></div><div class="fgroup"><div class="fgroup-title">关键词</div><div class="filter-grid fg-kw"><label class="field search"><input id="filterQuery" type="search" placeholder="搜索品牌、标题或 ASIN" aria-label="关键词"></label><label class="field"><select id="filterBrand" aria-label="品牌"><option value="">全部品牌</option></select></label></div></div><div class="fgroup"><div class="fgroup-title">榜单表现</div><div class="filter-grid fg-4"><label class="field compact"><span>榜单变化</span><select id="filterMovement"><option value="">全部变化</option><option value="fast">快速上升（≥ 10 位）</option><option value="new">新入榜</option><option value="up">排名上升</option><option value="down">排名下降</option><option value="same">排名不变</option></select></label><label class="field compact"><span>榜单范围</span><select id="filterRank"><option value="">Top 100</option><option value="10">Top 10</option><option value="20">Top 20</option><option value="50">Top 50</option></select></label><label class="field compact"><span>大类 BSR</span><select id="filterMainBsr"><option value="">不限</option><option value="1000">≤ 1,000</option><option value="5000">≤ 5,000</option><option value="10000">≤ 10,000</option><option value="50000">≤ 50,000</option></select></label><label class="field compact"><span>小类 BSR</span><select id="filterSubBsr"><option value="">不限</option><option value="10">≤ 10</option><option value="50">≤ 50</option><option value="100">≤ 100</option><option value="500">≤ 500</option></select></label></div></div><div class="fgroup"><div class="fgroup-title">价格与状态</div><div class="filter-grid fg-5"><label class="field price-field"><span class="inline-label">价格区间 ($)</span><span class="range"><input id="filterPriceMin" type="number" min="0" step="1" placeholder="最低"><span>—</span><input id="filterPriceMax" type="number" min="0" step="1" placeholder="最高"></span></label><label class="field compact"><span>促销</span><select id="filterPromo" aria-label="促销"><option value="">全部状态</option><option value="detected">有促销</option><option value="type:coupon">Coupon 优惠券</option><option value="type:discount">折扣 % off</option><option value="type:deal">Deal 活动</option><option value="type:lowest30">30 天最低价</option><option value="none">暂无促销</option><option value="unknown">信息未知</option></select></label><label class="field compact"><span>上架天数</span><select id="filterAge"><option value="">不限</option><option value="7">≤ 7 天</option><option value="30">≤ 30 天</option><option value="60">≤ 60 天</option><option value="90">≤ 90 天</option></select></label><label class="field compact"><span>类目覆盖</span><select id="filterMultiCategory" aria-label="类目覆盖"><option value="">全部商品</option><option value="multiple">存在多个类目</option><option value="single">仅当前类目</option></select></label><label class="field compact"><span>打标状态</span><select id="filterTagState" aria-label="打标状态"><option value="">全部打标状态</option><option value="todo">待打标</option><option value="done">已打标</option></select></label></div></div><div class="fgroup"><div class="fgroup-title">款式风格<button class="sty-export" id="styExport" type="button" hidden>导出我的修改</button><button class="sty-export danger" id="styClear" type="button" hidden>清除本机改动</button></div><div class="filter-grid fg-6"><label class="field compact"><span>袖型</span><select id="filterSleeve" aria-label="袖型"><option value="">全部袖型</option></select></label><label class="field compact"><span>季节</span><select id="filterSeason" aria-label="季节"><option value="">全部季节</option></select></label><label class="field compact"><span>面料</span><select id="filterFabric" aria-label="面料"><option value="">全部面料</option></select></label><label class="field compact"><span>图案</span><select id="filterPattern" aria-label="图案"><option value="">全部图案</option></select></label><label class="field compact"><span>主风格</span><select id="filterStyle" aria-label="主风格"><option value="">全部风格</option></select></label><label class="field compact"><span>主图类型</span><select id="filterImageType" aria-label="主图类型"><option value="">全部主图类型</option></select></label></div></div></section><section class="list-panel" aria-label="商品列表"><div class="bar"><span id="viewText"></span></div><section class="grid" id="products"><div class="empty">正在载入每日快照…</div></section></section><div id="exitArea"></div><footer id="footerText"></footer></main>
 <dialog class="history-dialog" id="productHistoryDialog" aria-labelledby="historyDialogTitle"><div id="productHistoryContent" class="history-shell"><div class="history-loading">正在载入单品历史…</div></div></dialog>
 <div class="insight-mask" id="insightMask"></div>
 <aside class="insight-drawer" id="insightDrawer" aria-label="榜单变化明细"><div class="insight-head"><div><h3 id="insightTitle"></h3><p id="insightSub"></p></div><button class="insight-close" id="insightClose" type="button" aria-label="关闭明细">×</button></div><div class="insight-body" id="insightBody"></div></aside>
@@ -730,7 +744,12 @@ document.addEventListener("keydown",event=>{if(event.key==="Escape")closeInsight
    采集：tools/fetch_keyword_search.py（Ecomtool 服务端抓取，无登录态/个性化 = 等同无痕）
    图片：构造标准 URL 后复用看板同一套清晰度档位（1x 230 / 2x 460）
    ⚠ 与榜单视图靠 body[data-view] 切换显隐，榜单那几块的代码一行没动 */
+/* 历史看板（2026-09-24 用户："也要做成每天可以监控的历史看板"）：
+   kwDate 是当前查看的采集日，kwPrevDay/kwPrevDate 是它的上一期（用于标注变化），
+   kwCache 按日期缓存当天 JSON（切回已看过的日期不再重新下载） */
 let kwManifest = null, kwDay = null, kwCurrent = "", kwMode = "page";
+let kwDate = "", kwPrevDate = "", kwPrevDay = null, kwPrevRankMap = null;
+const kwCache = new Map();
 /* 排名口径（2026-09-23 用户："自然位置和广告位置都需要抓取，并表明"）
    page    = 买家视角，页面位置前 10（含广告）
    organic = 只看自然位（前 5）
@@ -751,22 +770,48 @@ async function loadKeywordBoard() {
   const words = $("kwWords"), main = $("kwMain");
   try {
     kwManifest = await json("data/keyword-search/manifest.json");
-    const date = (kwManifest.dates || [])[0];
-    if (!date) throw new Error("还没有关键词数据：先跑 tools/fetch_keyword_search.py");
-    kwDay = await json("data/keyword-search/" + date + ".json");
-    const all = kwManifest.keywords || [];
-    $("kwSubtitle").innerHTML = "Amazon 美国站 · <b>第一页全部位置</b>，广告位与自然位都标明 · 采集于 " + esc(date);
-    $("kwFilter").placeholder = "搜索关键词（" + all.length + " 个）";
-    $("kwStats").innerHTML = '<span>已采集 <b>' + all.length + "</b> 个关键词</span>"
-      + '<span>采集日 <b>' + esc(date) + "</b></span>"
-      + '<span>词表来源 <b>人工指定</b></span>';
-    renderKeywordWords("");
-    renderKeywordDetail(all[0] ? all[0].keyword : "");
+    const dates = kwManifest.dates || [];
+    if (!dates.length) throw new Error("还没有关键词数据：先跑 tools/fetch_keyword_search.py");
+    $("kwDate").innerHTML = dates.map(d => '<option value="' + esc(d) + '">' + esc(d) + "</option>").join("");
+    await selectKwDate(dates[0]);
   } catch (e) {
     const msg = (e && e.message) || "关键词数据载入失败";
     words.innerHTML = '<li class="kw-empty">' + esc(msg) + "</li>";
     main.innerHTML = '<div class="empty">' + esc(msg) + "</div>";
   }
+}
+
+async function loadKwDay(date) {
+  if (kwCache.has(date)) return kwCache.get(date);
+  const doc = await json("data/keyword-search/" + date + ".json");
+  kwCache.set(date, doc);
+  return doc;
+}
+
+/* 切换采集日：重载当天数据 + 载入上一期（只用于算变化），全部走 kwCache */
+async function selectKwDate(date) {
+  const dates = (kwManifest && kwManifest.dates) || [];
+  const index = dates.indexOf(date);
+  if (index < 0) return;
+  kwDate = date;
+  $("kwDate").value = date;
+  $("kwPrev").disabled = index >= dates.length - 1;     // dates 是倒序：+1 是更早一期
+  $("kwNext").disabled = index <= 0;
+  kwDay = await loadKwDay(date);
+  kwPrevDate = index + 1 < dates.length ? dates[index + 1] : "";
+  kwPrevDay = kwPrevDate ? await loadKwDay(kwPrevDate).catch(() => null) : null;
+  const all = kwManifest.keywords || [];
+  const dayCount = Object.keys(kwDay.keywords || {}).length;
+  $("kwSubtitle").innerHTML = "Amazon 美国站 · <b>第一页全部位置</b>，广告位与自然位都标明 · 采集于 " + esc(date)
+    + (kwPrevDate ? "（可与 " + esc(kwPrevDate) + " 对比）" : "");
+  $("kwFilter").placeholder = "搜索关键词（" + all.length + " 个）";
+  $("kwStats").innerHTML = '<span>已采集 <b>' + all.length + "</b> 个关键词</span>"
+    + '<span>当天记录 <b>' + dayCount + "</b> 个</span>"
+    + '<span>历史 <b>' + dates.length + "</b> 天</span>"
+    + '<span>词表来源 <b>人工指定</b></span>';
+  renderKeywordWords("");
+  if (!kwCurrent || !(kwDay.keywords || {})[kwCurrent]) kwCurrent = all[0] ? all[0].keyword : "";
+  renderKeywordDetail(kwCurrent);
 }
 
 function renderKeywordWords(filter) {
@@ -786,7 +831,7 @@ function kwRows(rec) {
   return page;
 }
 
-function kwCard(x) {
+function kwCard(x, index) {
   const ad = !!x.isAd;
   /* 每条都标明是广告位还是自然位，并给出它在页面上的位置 */
   const badge = ad ? '<span class="pos ad">广告 ' + x.pageRank + "</span>"
@@ -794,13 +839,24 @@ function kwCard(x) {
   const tag = ad ? '<span class="tag ad">广告</span>' : '<span class="tag org">自然位</span>';
   const pos = ad ? "页面第 " + x.pageRank + " 位（广告）"
                  : "页面第 " + x.pageRank + " 位 · 自然位第 " + (x.organicRank || x.rank);
+  /* 与上一期同口径相比的位次变化（位次数字变小 = 上升） */
+  let delta = "";
+  if (kwPrevRankMap && typeof index === "number") {
+    const before = kwPrevRankMap.get(x.asin);
+    if (before == null) delta = '<span class="kw-delta new">新进</span>';
+    else {
+      const diff = before - (index + 1);
+      if (diff > 0) delta = '<span class="kw-delta up">↑' + diff + "</span>";
+      else if (diff < 0) delta = '<span class="kw-delta down">↓' + Math.abs(diff) + "</span>";
+    }
+  }
   return '<article class="kw-card' + (ad ? " ad" : "") + '"><div class="pic">'
     + (x.imageId ? '<img loading="lazy" decoding="async" ' + cardImageAttrs(kwImageUrl(x.imageId)) + ' alt="' + esc(x.title || "") + '">' : "")
     + badge + "</div>"
     + '<div class="info"><b title="' + esc(x.title || "") + '">' + esc(x.title || "") + "</b>"
     + '<span class="pr">$' + esc(String(x.price || "-")) + "</span>"
     + "<small>" + tag + esc(x.brand || "品牌未显示") + "</small>"
-    + "<small>" + pos + " · ★" + esc(String(x.rating || "-")) + " · " + (x.reviews ? fmt(x.reviews) : 0) + " 条评论</small>"
+    + "<small>" + pos + " · ★" + esc(String(x.rating || "-")) + " · " + (x.reviews ? fmt(x.reviews) : 0) + " 条评论" + delta + "</small>"
     + "<small>ASIN " + esc(x.asin || "") + "</small></div></article>";
 }
 
@@ -814,7 +870,30 @@ function renderKeywordDetail(keyword) {
   const ads = page.filter(x => x.isAd).length;
   const org = page.length - ads;
   const firstOrg = page.find(x => !x.isAd);
+  /* 上一期同口径的位次表（ASIN → 位次，1 起），供卡片标注 ↑↓/新进 */
+  kwPrevRankMap = null;
+  let prevRows = null;
+  const prevRec = kwPrevDay && kwPrevDay.keywords ? kwPrevDay.keywords[keyword] : null;
+  if (prevRec) {
+    prevRows = kwRows(prevRec);
+    const map = new Map();
+    prevRows.forEach((x, i) => map.set(x.asin, i + 1));
+    kwPrevRankMap = map;
+  }
   const rows = kwRows(rec);
+  /* 与上一期相比的进出情况（同口径） */
+  let compare = "";
+  if (prevRec && prevRows) {
+    const nowAsins = rows.map(x => x.asin);
+    const nowSet = new Set(nowAsins);
+    const entered = nowAsins.filter(a => !kwPrevRankMap.has(a)).length;
+    const left = prevRows.filter(x => !nowSet.has(x.asin)).length;
+    const firstNow = nowAsins[0] || "", firstBefore = (prevRows[0] || {}).asin || "";
+    compare = '<p class="kw-cmp">对比 ' + esc(kwPrevDate) + "（同口径 " + KW_MODES[kwMode] + "）：新进 <b>"
+      + entered + "</b> · 掉出 <b>" + left + "</b>"
+      + (firstNow && firstBefore && firstNow !== firstBefore ? " · <em>首位易主</em>" : "")
+      + "</p>";
+  }
   const counts = '<span class="kw-chip ads">广告位 <b>' + ads + "</b></span>"
     + '<span class="kw-chip org">自然位 <b>' + org + "</b></span>";
   $("kwMain").innerHTML = "<h3>" + esc(keyword) + "</h3>"
@@ -825,7 +904,8 @@ function renderKeywordDetail(keyword) {
     + (firstOrg ? firstOrg.pageRank : "-") + " 位）</p>"
     + '<div class="kw-count">' + counts
     + "<span>当前显示 <b>" + rows.length + "</b> 条 · 口径 <b>" + KW_MODES[kwMode] + "</b></span></div>"
-    + (rows.length ? '<div class="kw-grid">' + rows.map(kwCard).join("") + "</div>"
+    + compare
+    + (rows.length ? '<div class="kw-grid">' + rows.map((x, i) => kwCard(x, i)).join("") + "</div>"
                    : '<div class="empty">这个词当前口径下没有记录</div>');
 }
 
@@ -837,6 +917,10 @@ $("navKeyword").addEventListener("click",event=>{event.preventDefault();setMainV
 $("navRanking").addEventListener("click",()=>setMainView("ranking"),true);
 document.querySelectorAll(".workbench-nav a[href='#fastRisers'],.workbench-nav a[href='#filterQuery'],.workbench-nav a[href='#products']").forEach(link=>link.addEventListener("click",()=>{if(document.body.dataset.view==="keyword")setMainView("ranking")},true));
 $("kwFilter").addEventListener("input",event=>renderKeywordWords(event.target.value));
+/* 关键词板块的日期切换（dates 是倒序：+1 = 更早一期，-1 = 更近一期） */
+$("kwDate").addEventListener("change",event=>guardAsync("关键词日期切换",selectKwDate(event.target.value)));
+$("kwPrev").addEventListener("click",()=>{const d=(kwManifest&&kwManifest.dates)||[],i=d.indexOf(kwDate);if(i>=0&&i+1<d.length)guardAsync("关键词日期切换",selectKwDate(d[i+1]))});
+$("kwNext").addEventListener("click",()=>{const d=(kwManifest&&kwManifest.dates)||[],i=d.indexOf(kwDate);if(i>0)guardAsync("关键词日期切换",selectKwDate(d[i-1]))});
 $("kwModes").addEventListener("click",event=>{
   const btn=event.target.closest("button[data-kwmode]");
   if(!btn||!KW_MODES[btn.dataset.kwmode])return;

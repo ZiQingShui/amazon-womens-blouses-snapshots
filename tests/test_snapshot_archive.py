@@ -940,6 +940,18 @@ class PromotionParsingTests(unittest.TestCase):
         self.assertEqual(sample_orgs[0]["organicRank"], 1)       # 自然位从 1 开始编号
         self.assertEqual(sample_ads[0]["pageRank"], 1)           # 页面第 1 位是广告（这个品类如此）
 
+        # 历史看板（2026-09-24 用户："也要做成每天可以监控的历史看板"）：
+        # 关键词板块要有自己的日期切换（不跟榜单的滑杆耦合），并标注与上一期的变化
+        self.assertIn('id="kwDate"', html)
+        self.assertIn('id="kwPrev"', html)
+        self.assertIn('id="kwNext"', html)
+        self.assertIn("async function selectKwDate(date)", html)
+        self.assertIn("async function loadKwDay(date)", html)
+        self.assertIn("const kwCache = new Map();", html)         # 按日期缓存，切回不重下
+        self.assertIn('guardAsync("关键词日期切换",selectKwDate(', html)
+        self.assertIn("kw-delta", html)                           # 卡片上的 ↑↓/新进
+        self.assertIn("kw-cmp", html)                             # 详情头部的进出汇总
+
 
     def test_code_review_fixes_stay_fixed(self):
         """2026-09-24 代码审查所修缺陷的守门断言。
