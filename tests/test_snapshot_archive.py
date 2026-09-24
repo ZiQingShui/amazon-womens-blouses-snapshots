@@ -1000,6 +1000,13 @@ class PromotionParsingTests(unittest.TestCase):
         ft = (ROOT / "tools/fetch_asin_tracking.py").read_text(encoding="utf-8")
         self.assertIn("--run 必须配 --fresh-after", ft)
         self.assertIn("拒绝写出成品", ft)
+        # ⑮b 轮询时必须**按 ASIN 合并取最新**，不能按"条数多"择优：
+        #     否则某一轮条数多但内容陈旧时会整份覆盖掉新值
+        #     （2026-09-24 实测：写出的 259 条里 175 条是昨天的，脚本却自报有 179 条新鲜）
+        self.assertIn("def merge_latest(base, fresh):", ft)
+        self.assertIn("all_data = merge_latest(all_data, data)", ft)
+        # ⑮c build_enriched 只采用**当天**的促销数据（监控系统一轮跑不完，会混进昨天的 Deal/Coupon）
+        self.assertIn("已剔除（这些商品回退商品详情", be)
         # ⑯ 关键词抓取：续跑缓存要辨日期；有失败/缺口要非零退出
         fk = (ROOT / "tools/fetch_keyword_search.py").read_text(encoding="utf-8")
         self.assertIn("缓存是 %s 的数据，重抓", fk)

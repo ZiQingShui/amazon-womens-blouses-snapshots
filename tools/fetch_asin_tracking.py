@@ -177,6 +177,21 @@ def _rows_to_dict(rows, header) -> dict[str, dict]:
     return out
 
 
+def merge_latest(base, fresh):
+    """按 ASIN 合并两份导出结果，各自保留 capturedAt 最新的那条。
+
+    导出里每个 ASIN 带多行历史，加上轮询会反复导出，所以"整体替换"或"按条数择优"
+    都会把更新的值丢掉（2026-09-24 实测：写出的 259 条里 175 条是昨天的，
+    而脚本自己报的是 179 条新鲜 —— 就是这里择优标准错了）。
+    """
+    out = dict(base or {})
+    for asin, rec in (fresh or {}).items():
+        current = out.get(asin)
+        if current is None or str(rec.get("capturedAt", "")) > str(current.get("capturedAt", "")):
+            out[asin] = rec
+    return out
+
+
 def export_batches(batches, site="US", date_from=None, date_to=None, verbose=True):
     """导出各批监控数据并合并成 {ASIN: rec}。"""
     all_data: dict[str, dict] = {}
@@ -258,14 +273,16 @@ def main() -> None:
             while True:
                 time.sleep(args.poll)
                 data = export_batches(batches, args.site, args.date_from, args.date_to, verbose=False)
-                if len(data) > len(all_data or {}):
-                    all_data = data
+                # ⚠ 必须**按 ASIN 合并、各自保留 capturedAt 最新的那条**。
+                #   原来是 `if len(data) > len(all_data): all_data = data` —— 用"条数多"择优，
+                #   于是某一轮导出条数多但内容陈旧时，会把后面几轮的新值整份覆盖掉
+                #   （2026-09-24 实测：最后写出的 259 条里 175 条是昨天的，而脚本却以为自己有 179 条新的）。
+                all_data = merge_latest(all_data, data)
                 fresh = sum(1 for a in asins
-                            if str(data.get(a, {}).get("capturedAt", "")).replace("T", " ")[:16] >= want)
+                            if str(all_data.get(a, {}).get("capturedAt", "")).replace("T", " ")[:16] >= want)
                 print(f"    [{int(time.time() - t0):4d}s] 新鲜 {fresh}/{len(asins)}"
                       f"（还差 {len(asins) - fresh}）")
                 if fresh >= len(asins):
-                    all_data = data
                     print("  ✅ 全部 ASIN 都是本次抓取的")
                     break
                 if time.time() - t0 > args.max_wait:

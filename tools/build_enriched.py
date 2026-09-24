@@ -266,8 +266,19 @@ def main() -> None:
     tracking: dict = {}
     if tracking_path.exists():
         tracking = json.loads(tracking_path.read_text(encoding="utf-8"))
-    print(f"促销数据源：{tracking_path.name}（{len(tracking)} 个 ASIN）" if tracking
-          else f"促销数据源：无 {tracking_path.name}，回退商品详情（Coupon 列不可靠）")
+
+    # ⚠ 促销数据**只用当天的**：监控系统一轮跑不完所有 ASIN（2026-09-24 实测第一轮只覆盖 84/259），
+    #   混进昨天的记录会把「昨天的 Deal/Coupon」当成今天的发出去。过期的当"没有监控数据"处理，
+    #   也就是回退商品详情并标注来源，而不是静默沿用旧值。
+    stale_tracking = sorted(a for a, v in tracking.items()
+                            if str((v or {}).get("capturedAt", ""))[:10] not in ("", snapshot_date))
+    if stale_tracking:
+        for a in stale_tracking:
+            tracking.pop(a, None)
+        print(f"⚠ 促销数据里有 {len(stale_tracking)} 个 ASIN 的抓取时间不是 {snapshot_date}，"
+              f"已剔除（这些商品回退商品详情，Coupon 列不可靠）：{stale_tracking[:6]}")
+    print(f"促销数据源：{tracking_path.name}（{len(tracking)} 个 ASIN，当天）" if tracking
+          else f"促销数据源：无当天 {tracking_path.name}，回退商品详情（Coupon 列不可靠）")
 
     produced = []
 
