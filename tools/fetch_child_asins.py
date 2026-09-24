@@ -64,7 +64,9 @@ def poll_html(url: str) -> str:
         try:
             with urllib.request.urlopen(url, timeout=30) as resp:
                 body = resp.read().decode("utf-8", errors="replace")
-            if len(body) > 3000 and "result_table" in body or len(body) > 3000:
+            # ⚠ 原来写成 `A and B or A`，因 and 优先于 or，等价于只看长度 —— B 是死条件，
+            #   任何 >3KB 的错误页/等待页都会被当成有效结果，解析出 0 行却退出码 0
+            if len(body) > 3000 and "result_table" in body:
                 return body
         except Exception:
             pass
@@ -115,6 +117,16 @@ def main() -> None:
         except Exception as e:  # noqa: BLE001
             print("  批次失败：%s" % e)
 
+    missing = [a for a in asins if a not in collected]
+    if missing:
+        part = Path(str(args.out) + ".partial")
+        part.write_text(json.dumps(collected, ensure_ascii=False, indent=1), encoding="utf-8")
+        print("\n✗ 缺 %d 个 ASIN 的变体组，拒绝覆盖 %s" % (len(missing), args.out))
+        print("  缺失示例：%s" % missing[:8])
+        print("  部分结果已写到 %s（排查用）" % part)
+        raise SystemExit(1)
+
+    Path(args.out).parent.mkdir(parents=True, exist_ok=True)
     Path(args.out).write_text(json.dumps(collected, ensure_ascii=False, indent=1), encoding="utf-8")
     sizes = sorted(len(v) for v in collected.values())
     print("\n完成：%d/%d 个 ASIN 拿到变体组" % (len(collected), len(asins)))

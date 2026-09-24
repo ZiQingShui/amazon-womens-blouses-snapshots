@@ -31,6 +31,7 @@ import html
 import io
 import json
 import re
+import sys
 import time
 import urllib.request
 from pathlib import Path
@@ -272,12 +273,29 @@ def main() -> None:
                           f"（可再跑一次本命令继续补）")
                     break
         else:
-            print(f"  等待 {args.wait} 秒让监控系统跑完（约 5 秒/ASIN）…")
-            time.sleep(args.wait)
+            # ⚠ 固定等待是历史事故的根因：监控系统一轮跑不完所有 ASIN，等不够就会
+            #   **静默带回前一天的促销数据**（不报错）。这条路径已禁用。
+            print("✗ --run 必须配 --fresh-after（监控系统的实际速度约 8 秒/ASIN 且一轮跑不完，"
+                  "固定等待会静默带回旧数据）", file=sys.stderr)
+            raise SystemExit(1)
 
     if all_data is None:
         print("\n=== ③ 导出监控数据 ===")
         all_data = export_batches(batches, args.site, args.date_from, args.date_to)
+
+    # ⚠ 有 ASIN 仍停在旧抓取时间时**不能产出成品文件**：下游只看文件在不在，
+    #   否则会把昨天的促销当成今天的发出去（2026-09-22 事故就是这么来的）
+    if args.fresh_after:
+        want = args.fresh_after.replace("T", " ")[:16]
+        stale = [a for a in asins
+                 if str(all_data.get(a, {}).get("capturedAt", "")).replace("T", " ")[:16] < want]
+        if stale:
+            part = args.out.parent / (args.out.name + ".stale")
+            part.write_text(json.dumps(all_data, ensure_ascii=False, indent=2), encoding="utf-8")
+            print("\n✗ 仍有 %d 个 ASIN 是旧数据，拒绝写出成品 %s" % (len(stale), args.out), file=sys.stderr)
+            print("  旧数据示例：%s" % stale[:8], file=sys.stderr)
+            print("  草稿已写到 %s（排查用），请再跑一次补抓" % part, file=sys.stderr)
+            raise SystemExit(1)
 
     args.out.parent.mkdir(parents=True, exist_ok=True)
     args.out.write_text(json.dumps(all_data, ensure_ascii=False, indent=2), encoding="utf-8")

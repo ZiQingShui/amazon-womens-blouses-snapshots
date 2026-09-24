@@ -69,15 +69,16 @@ def price_num(value) -> float | None:
 
 
 def parse_price(value: str) -> str:
-    """价格转成 $XX.XX 格式。"""
+    """价格转成 $XX.XX 格式。
+
+    ⚠ 判零必须用数值比较：只挡 `value == "0"` 会漏掉 "0.00" / "$0.00"
+    （历史事故：$0.00 被当成有效价格发上了看板）。
+    """
     value = str(value or "").strip()
-    if not value or value == "0":
+    num = price_num(value)
+    if num is None or num <= 0:
         return "未显示/无法获取"
-    try:
-        num = float(value)
-        return f"${num:.2f}"
-    except ValueError:
-        return value
+    return f"${num:.2f}"
 
 
 def parse_promotions(detail: dict, tracking: dict | None = None) -> list[str]:
@@ -247,6 +248,20 @@ def main() -> None:
     parsed = json.loads(parsed_path.read_text(encoding="utf-8"))
     details = json.loads(details_path.read_text(encoding="utf-8"))
 
+    # 新鲜度守门（历史事故：enriched 用了昨天的输入文件，发出错误快照却毫无警告）
+    meta_date = (parsed.get("_meta") or {}).get("snapshotDate")
+    if meta_date and meta_date != snapshot_date:
+        raise SystemExit(
+            f"输入新鲜度校验失败：{parsed_path.name} 的 _meta.snapshotDate={meta_date!r}"
+            f" 与 --date {snapshot_date} 不一致，先重跑 tools/parse_ecomtool_xls.py")
+    all_rows = [r for ranking in ("new-releases", "bestsellers")
+                for rows in parsed.get(ranking, {}).get("by_node", {}).values() for r in rows]
+    stale = sorted({str(r.get("capturedAt", ""))[:10] for r in all_rows} - {"", snapshot_date})
+    if stale:
+        raise SystemExit(
+            f"输入新鲜度校验失败：榜单里出现了非 {snapshot_date} 的抓取时间 {stale}，"
+            f"说明抓到的是过期榜单，先重新导出再 build")
+
     tracking_path = args.tracking or (WORK / f"asin-tracking-{snapshot_date}.json")
     tracking: dict = {}
     if tracking_path.exists():
@@ -269,7 +284,8 @@ def main() -> None:
                 items.append(build_item(row, detail, snapshot_date, tracking.get(asin)))
 
             items.sort(key=lambda x: x["rank"])
-            out_path = WORK / f"enriched-{ranking}-{node}.json"
+            # 文件名带日期：没有日期时，跑完 09-24 失败会静默复用 09-23 的旧文件发出错误快照
+            out_path = WORK / f"enriched-{ranking}-{node}-{snapshot_date}.json"
             out_path.write_text(json.dumps(items, ensure_ascii=False, indent=2), encoding="utf-8")
             produced.append((ranking, node, len(items), len(missing_detail)))
             print(f"{ranking} / {node}: {len(items)} 条商品, 缺详情 {len(missing_detail)}")
@@ -278,7 +294,7 @@ def main() -> None:
 
     print("\n生成完成：")
     for ranking, node, count, missing in produced:
-        print(f"  work/enriched-{ranking}-{node}.json ({count} 条)")
+        print(f"  work/enriched-{ranking}-{node}-{snapshot_date}.json ({count} 条)")
 
     # 汇总校验：每个文件应恰好 100 条
     print("\n=== 完整性校验 ===")
@@ -288,7 +304,10 @@ def main() -> None:
         print(f"  {status} {ranking}/{node}: {count}/100")
         if count != 100 or missing:
             ok = False
-    print("全部通过" if ok else "存在缺口！")
+    # 缺口必须以非零退出码暴露：只 print 的话，用退出码编排的上层脚本会误判成功
+    if not ok:
+        raise SystemExit("存在缺口！上面的 ✗ 项必须先补齐才能发布（详见 work/enriched-*-{date}.json）")
+    print("全部通过")
 
 
 if __name__ == "__main__":

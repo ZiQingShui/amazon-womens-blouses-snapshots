@@ -43,7 +43,10 @@ def recompute_node(public_root: Path, node: str, dry_run: bool = False) -> dict:
         if not archive_date:
             continue
         report["checked"] += 1
-        fresh = ps.validate(payload.get("items", []))
+        # ⚠ 必须把发布时记下的 detail_source 一起传进去：漏传会让 validate 返回
+        #   detailSourceValid=None，回算后归档里的这项被静默放宽（而 manifest 里算的是有值的）
+        fresh = ps.validate(payload.get("items", []),
+                            (payload.get("sources") or {}).get("productDetails"))
         # 无论是否写入，都先按当前口径规整成归一化副本，这样 dry-run 的
         # latest / manifest 差异判断才和真实写入一致。
         normalized = dict(payload, quality=fresh)

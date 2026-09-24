@@ -130,6 +130,17 @@ def main() -> None:
             print(f"  批次失败：{e}")
         time.sleep(2)
 
+    # ⚠ 有缺口时不覆盖上次成功的结果（父体/上架日期缺一个都会让覆盖率掉下来）
+    missing = [a for a in asins if a not in all_data]
+    if missing:
+        part = args.out.parent / (args.out.name + ".partial")
+        part.parent.mkdir(parents=True, exist_ok=True)
+        part.write_text(json.dumps(all_data, ensure_ascii=False, indent=2), encoding="utf-8")
+        print("\n✗ 缺 %d 个 ASIN 的父体数据，拒绝覆盖 %s" % (len(missing), args.out))
+        print("  缺失示例：%s" % missing[:8])
+        print("  部分结果已写到 %s（排查用）" % part)
+        raise SystemExit(1)
+
     args.out.parent.mkdir(parents=True, exist_ok=True)
     args.out.write_text(json.dumps(all_data, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"\n完成：成功 {len(all_data)}/{len(asins)}，保存到 {args.out}")

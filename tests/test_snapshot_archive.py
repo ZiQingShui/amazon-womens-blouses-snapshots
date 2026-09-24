@@ -941,5 +941,76 @@ class PromotionParsingTests(unittest.TestCase):
         self.assertEqual(sample_ads[0]["pageRank"], 1)           # 页面第 1 位是广告（这个品类如此）
 
 
+    def test_code_review_fixes_stay_fixed(self):
+        """2026-09-24 代码审查所修缺陷的守门断言。
+
+        这些坑要么会**静默写坏数据**、要么会让页面**不可恢复地卡死**，回退代价很高，
+        所以钉死在测试里。每条断言都写了"为什么不能改回去"。
+        """
+        html = (ROOT / "docs/index.html").read_text(encoding="utf-8")
+        # ① 打标弹窗：keydown 必须在 close() 这个唯一出口里摘。
+        #    以前只有 Escape/Enter 两个分支摘监听，点「保存/取消/清空/遮罩」关闭都会留下幽灵监听，
+        #    之后在页面任意位置按回车都会把**已取消的草稿**写进 localStorage，还会再弹出打标窗。
+        self.assertIn('const close = () => { document.removeEventListener("keydown", onKey); mask.remove(); };', html)
+        self.assertIn("function onKey(e) {", html)
+        # ② selectComparison：先判过期、再写 previous（反过来会让过期快照覆盖 previous，
+        #    入榜/退出/价格变化全算错且界面无提示）
+        self.assertIn("previous=loaded;refreshParentKey();", html)
+        self.assertNotIn("previous=await load(entry);if(request!==snapshotRequest)return;", html)
+        # ③ json 必须带超时，否则连接挂起时页面永久停在「正在载入快照…」
+        self.assertIn("signal:controller.signal", html)
+        self.assertIn("setTimeout(()=>controller.abort(),15000)", html)
+        # ④ load 要做飞行中请求去重（以前只在 resolve 后写 cache，并发会重复下载同一份 JSON）
+        self.assertIn("inflight.has(entry.file)", html)
+        # ⑤ 跨类目索引写全局前必须校验是否过期
+        self.assertIn("if(guard!==undefined&&guard!==snapshotRequest)return;", html)
+        # ⑥ 日期切换要有失败兜底
+        self.assertIn("function guardAsync(tag,promise)", html)
+        self.assertIn('guardAsync("快照载入",selectSnapshot(', html)
+        # ⑦ ageDays 必须像 age() 一样先校验格式：数据用哨兵串「未显示/无法获取」表达缺失，
+        #    不校验会得到 NaN，而三个比较全为 false → 这些商品**反而通过**「上架天数」筛选
+        self.assertIn("function ageDays(date){if(!date||!/^\\d{4}-\\d{2}-\\d{2}$/.test(String(date)))return null;", html)
+        # ⑧ CSS：注释不能插在 `.kw-main` 与 `.kw-bar-right` 之间
+        #    —— 会被解析成后代选择器 `.kw-main .kw-bar-right`，规则永不生效
+        self.assertIn(".kw-bar-right{display:flex;align-items:flex-end;gap:10px;flex-wrap:wrap}", html)
+        self.assertNotIn(".kw-main /*", html)
+
+        # ⑨ build_enriched：输入新鲜度守门 + 产物名带日期 + 缺口非零退出
+        #    （历史事故：用了昨天的输入文件，把 09-23 的数据发成 09-24 且毫无警告）
+        be = (ROOT / "tools/build_enriched.py").read_text(encoding="utf-8")
+        self.assertIn("输入新鲜度校验失败", be)
+        self.assertIn("enriched-{ranking}-{node}-{snapshot_date}.json", be)
+        self.assertIn('raise SystemExit("存在缺口', be)
+        # ⑩ 价格判零必须用数值比较：`value == "0"` 会漏掉 "0.00" / "$0.00"
+        self.assertNotIn('if not value or value == "0":', be)
+        # ⑪ 覆盖率：$0.00 不算「有价格」（否则 MIN_COVERAGE["price"]=95 形同虚设）
+        ps = (ROOT / "tools/publish_snapshot.py").read_text(encoding="utf-8")
+        self.assertIn('if field == "price":', ps)
+        # ⑫ 「只能改当天」的守门必须固定 UTC+8，不能跟本机时区走
+        self.assertIn("datetime.now(timezone(timedelta(hours=8)))", ps)
+        # ⑬ tag_style：`and None or None` 笔误（恒为 None）+ 人工文件损坏必须出声
+        ts = (ROOT / "tools/tag_style.py").read_text(encoding="utf-8")
+        self.assertNotIn('"brand": r.get("category") and None or None', ts)
+        self.assertIn("其中的人工校核不会生效", ts)
+        # ⑭ fetch_child_asins 的布尔优先级：`A and B or A` 等价于只看长度，B 是死条件
+        fc = (ROOT / "tools/fetch_child_asins.py").read_text(encoding="utf-8")
+        self.assertIn('if len(body) > 3000 and "result_table" in body:', fc)
+        self.assertNotIn('"result_table" in body or len(body) > 3000', fc)
+        # ⑮ 促销监控：固定等待路径必须封死（等不够会静默带回旧数据）；有旧数据时拒绝产出成品
+        ft = (ROOT / "tools/fetch_asin_tracking.py").read_text(encoding="utf-8")
+        self.assertIn("--run 必须配 --fresh-after", ft)
+        self.assertIn("拒绝写出成品", ft)
+        # ⑯ 关键词抓取：续跑缓存要辨日期；有失败/缺口要非零退出
+        fk = (ROOT / "tools/fetch_keyword_search.py").read_text(encoding="utf-8")
+        self.assertIn("缓存是 %s 的数据，重抓", fk)
+        self.assertIn("本次数据不完整", fk)
+        # ⑰ 关键词发布：缺词、位置数不足、日期不符都要拒绝
+        pk = (ROOT / "tools/publish_keyword_search.py").read_text(encoding="utf-8")
+        self.assertIn("拒绝发布", pk)
+        # ⑱ 回算 quality 必须把 detail_source 传进去（漏传会把 detailSourceValid 静默写成 null）
+        rq = (ROOT / "tools/recompute_quality.py").read_text(encoding="utf-8")
+        self.assertIn('(payload.get("sources") or {}).get("productDetails")', rq)
+
+
 if __name__ == "__main__":
     unittest.main()

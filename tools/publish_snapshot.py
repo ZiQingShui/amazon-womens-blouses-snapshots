@@ -3,7 +3,7 @@ from __future__ import annotations
 import argparse
 import json
 import re
-from datetime import date, datetime
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from urllib.parse import urlparse
 from urllib.request import urlopen
@@ -128,6 +128,13 @@ def has_coverage_value(row: dict, field: str) -> bool:
     if field in {"mainBsr", "subBsr"}:
         try:
             return int(value) > 0
+        except (TypeError, ValueError):
+            return False
+    if field == "price":
+        # ⚠ "$0.00" / "0.00" 是无效价格，不能算作"有覆盖率"：
+        #   走下面那个字符串分支时 MISSING_TEXT 不含它 → 曾经让 MIN_COVERAGE["price"]=95 形同虚设
+        try:
+            return float(str(value or "").replace(",", "").replace("$", "").strip()) > 0
         except (TypeError, ValueError):
             return False
     if field == "listingDate":
@@ -398,7 +405,9 @@ def publish(input_path: Path, snapshot_date: str, captured_at: str, detail_sourc
         for public_root in PUBLIC_ROOTS
         if archive_path(public_root, snapshot_date, node, ranking).exists()
     ]
-    today_beijing = datetime.now().astimezone().strftime("%Y-%m-%d")
+    # ⚠ 必须固定 UTC+8：原来用 astimezone()（本机时区），变量名却叫 beijing，
+    #   在非 UTC+8 的机器上会让「--replace-current-day 只能改当天」这条守门误判
+    today_beijing = datetime.now(timezone(timedelta(hours=8))).strftime("%Y-%m-%d")
     if replace_current_day and snapshot_date != today_beijing:
         raise SystemExit("--replace-current-day 只能用于当天快照")
     if existing_archives and not replace_current_day:

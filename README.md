@@ -50,10 +50,13 @@ python tools/add_category.py
 
 ```powershell
 python tools/capture.py `
-  --input work/enriched-2026-09-17.json `
+  --input work/enriched-new-releases-2368365011-2026-09-17.json `
   --date 2026-09-17 `
   --node 2368365011
 ```
+
+> `build_enriched.py` 产出的文件名自带**日期与榜单/节点**
+> （`enriched-{ranking}-{node}-{date}.json`），这样不会误用上一期的产物。
 
 `capture.py` 会依次：校验名次/ASIN/详情采集完整性 → 逐项图片真实性检查（≥300px）→ 调用 `publish_snapshot.py` 落盘 `docs` + `dist` 并重建 Worker。
 

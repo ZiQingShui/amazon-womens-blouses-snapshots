@@ -120,6 +120,17 @@ def main() -> None:
         # 每批之间休息，避免给 Ecomtool 太大压力
         time.sleep(3)
 
+    # ⚠ 有缺口时**不覆盖**上次成功的结果：以前批失败也照写，把好数据冲掉且退出码仍是 0
+    missing = [a for a in asins if a not in all_details]
+    if missing:
+        part = args.out.parent / (args.out.name + ".partial")
+        part.parent.mkdir(parents=True, exist_ok=True)
+        part.write_text(json.dumps(all_details, ensure_ascii=False, indent=2), encoding="utf-8")
+        print("\n✗ 缺 %d 个 ASIN 的详情，拒绝覆盖 %s" % (len(missing), args.out))
+        print("  缺失示例：%s" % missing[:8])
+        print("  部分结果已写到 %s（排查用）" % part)
+        raise SystemExit(1)
+
     args.out.parent.mkdir(parents=True, exist_ok=True)
     args.out.write_text(json.dumps(all_details, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"\n完成：成功抓取 {len(all_details)}/{len(asins)} 个 ASIN 详情")

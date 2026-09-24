@@ -7,9 +7,9 @@ from __future__ import annotations
 2. 逐项图片真实性检查（check_snapshot_images）
 3. 调用 publish_snapshot 做完整校验并落盘 docs/dist、重建 Worker
 
-用法：
-  python tools/capture.py --input work/enriched-2026-09-17.json --date 2026-09-17
-  python tools/capture.py --input ... --node 2368383011 --ranking best-sellers
+用法（enriched 文件名自带日期与榜单/节点，`build_enriched.py` 产出）：
+  python tools/capture.py --input work/enriched-new-releases-2368365011-2026-09-17.json --date 2026-09-17
+  python tools/capture.py --input work/enriched-bestsellers-2368383011-2026-09-17.json --date 2026-09-17 --node 2368383011 --ranking best-sellers
 """
 
 import argparse

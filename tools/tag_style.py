@@ -198,12 +198,6 @@ def pick_fabric(title, extra=""):
     return out, ("rule" if desc else None), (0.85 if desc else 0.0)
 
 
-
-    t = norm(title)
-    hits = [name for name, pats in FABRIC if any(re.search(p, t) for p in pats)]
-    return sorted(set(hits)), ("rule" if hits else None), (0.85 if hits else 0.0)
-
-
 def pick_style(title):
     t = norm(title)
     hits = [k for k, pats in STYLE.items() if any(re.search(p, t) for p in pats)]
@@ -252,7 +246,9 @@ def load_manual(date, path=None):
             continue
         try:
             d = json.loads(p.read_text(encoding="utf-8"))
-        except Exception:
+        except Exception as e:
+            # ⚠ 不能静默跳过：人工确认的优先级最高，跳过等于把用户已确认的标签打回机器值
+            print("  ⚠ 跳过人工文件 %s（%s）—— 其中的人工校核不会生效！" % (p.name, e))
             continue
         tags = d.get("tags", d) if isinstance(d, dict) else {}
         for k, v in tags.items():
@@ -306,7 +302,9 @@ def main():
         src = "rule" if (sl_src or se_src or st_src or fb_src or pt_src) else "unresolved"
         conf = round(max(sl_cf, se_cf, st_cf, fb_cf, pt_cf), 2)
         rec = {
-            "asin": r["asin"], "brand": r.get("category") and None or None,
+            # ⚠ 原来是 `r.get("category") and None or None`（短路求值恒为 None）的笔误；
+            #   榜单解析行里也没有 brand，品牌只能从详情表取
+            "asin": r["asin"], "brand": (details.get(r["asin"]) or {}).get("品牌") or None,
             "titleSample": r["title"][:170],
             "sleeve": sl, "season": se, "fabric": fb, "style": st, "pattern": pt,
             # 主图类型：文字里没有信号（要看图），机器不给建议，只等人工确认
@@ -337,6 +335,12 @@ def main():
                                "sleeve": sl, "season": se, "style": st})
 
     out = pathlib.Path(args.out) if args.out else WORK / ("style-tags-%s.json" % args.date)
+
+    # ⚠ 必须在**写文件之前**判空：原来空输入会在写完文件、同步到 docs/data/style-tags.json
+    #   之后才因除零崩溃，留下一个空的标签库（看板会读它）
+    if not tags:
+        raise SystemExit("没有可打标的父体（检查上面的输入文件），已中止，不写出空的标签库")
+
     out.write_text(json.dumps(tags, ensure_ascii=False, indent=1), encoding="utf-8")
 
     # 同步一份到看板数据目录（index-style.html 预览版读这里；json() 带 no-store，刷新即生效）

@@ -28,7 +28,7 @@
   },
   "quality": {
     "count": 100,
-    "publishable": true,
+    "publishable": false,
     "missingRanks": [],
     "duplicateRanks": [],
     "duplicateAsins": [],
@@ -45,7 +45,7 @@
       "title": 100,
       "image": 100,
       "brand": 100,
-      "price": 100,
+      "price": 94,
       "mainBsr": 100,
       "subBsr": 100,
       "listingDate": 79,
@@ -53,7 +53,12 @@
     },
     "detailChecked": 100,
     "detailSourceValid": true,
-    "coverageFailures": {},
+    "coverageFailures": {
+      "price": {
+        "actual": 94,
+        "required": 95
+      }
+    },
     "provenance": {
       "fallbackRows": 0,
       "reusedRows": 0,

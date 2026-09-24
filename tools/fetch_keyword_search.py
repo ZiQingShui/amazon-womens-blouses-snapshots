@@ -199,7 +199,12 @@ def main():
     for i, item in enumerate(plan, 1):
         kw = item["keyword"]
         if kw in done and not args.force:
-            continue
+            # ⚠ 缓存必须**辨日期**：只看"关键词在不在"，会把昨天的结果直接当今天的发布
+            stamp = str((done[kw] or {}).get("fetchedAt") or "")[:10]
+            if stamp == args.date:
+                continue
+            print("  [%d/%d] %-42s 缓存是 %s 的数据，重抓" % (i, len(plan), kw[:42], stamp or "未知日期"))
+            done.pop(kw, None)
         try:
             rec = fetch_one(kw, args.site)
         except Exception as e:
@@ -229,6 +234,12 @@ def main():
         for f in failed:
             print("  %s → %s" % (f["keyword"], f["error"]))
     print("已写出", out)
+    # ⚠ 有失败或缺口必须以非零退出码暴露（原来无条件 return 0，14 个词全失败也算成功）
+    leftover = [p["keyword"] for p in plan if p["keyword"] not in done]
+    if failed or leftover:
+        print("✗ 失败 %d 个、缺 %d 个，本次数据不完整（已写的 %s 请勿直接发布）"
+              % (len(failed), len(leftover), out.name), file=sys.stderr)
+        return 1
     return 0
 
 

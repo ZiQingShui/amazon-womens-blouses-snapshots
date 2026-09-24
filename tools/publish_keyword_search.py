@@ -41,6 +41,31 @@ def main():
         print("⚠ %s 里没有关键词数据" % src)
         return 1
 
+    # === 发布前守门（缺一条都拒绝发布，避免残缺/过期数据上看板）===
+    source_date = str(doc.get("date") or "")
+    if source_date and source_date != args.date:
+        print("✗ 源文件记录的是 %s，与 --date %s 不一致" % (source_date, args.date), file=sys.stderr)
+        return 1
+    config_path = ROOT / "config" / "keywords-core.json"
+    want = []
+    if config_path.exists():
+        want = [k["keyword"] for k in
+                json.loads(config_path.read_text(encoding="utf-8"))["keywords"]]
+    missing_kw = sorted(set(want) - set(kws))
+    if missing_kw:
+        print("✗ 缺 %d 个关键词（对比 config/keywords-core.json），拒绝发布：%s"
+              % (len(missing_kw), missing_kw), file=sys.stderr)
+        return 1
+    for kw, rec in kws.items():
+        rows = rec.get("pageTop") or []
+        if len(rows) < 50:
+            print("✗ %s 只有 %d 个位置（第一页应 60+），拒绝发布" % (kw, len(rows)), file=sys.stderr)
+            return 1
+        if not str(rec.get("fetchedAt") or "").startswith(args.date):
+            print("✗ %s 的 fetchedAt=%r 不是 %s，拒绝发布"
+                  % (kw, rec.get("fetchedAt"), args.date), file=sys.stderr)
+            return 1
+
     # 精简：只留看板要用的字段（source 只留文件名，省体积）
     # ⚠ **只发布一份 `pageTop` = 第一页全部位置**（2026-09-23 用户："需要抓第一页的所有"）。
     #   广告位与自然位都在这一份里，靠 `isAd` 区分、`organicRank` 给自然位编号，
@@ -87,15 +112,20 @@ def main():
     if mf.exists():
         try:
             manifest.update(json.loads(mf.read_text(encoding="utf-8")))
-        except Exception:
-            pass
+        except (OSError, json.JSONDecodeError) as e:
+            # ⚠ 以前是 except: pass —— 损坏时静默从零重建，历史日期列表全部丢失
+            print("✗ manifest.json 无法解析，请人工修复后再发布：%s" % e, file=sys.stderr)
+            return 1
     dates = sorted(set(manifest.get("dates", []) + [args.date]), reverse=True)
     manifest["dates"] = dates
     manifest["updatedAt"] = args.date
     # 关键词元信息按当前这次为准（词表可能增减）
     manifest["keywords"] = [
+        # ⚠ organicTop1 取的是**自然位第 1**：slim 里只有 pageTop（含广告），
+        #   以前写 (v.get("organicTop") or [{}])[0] 恒为空串（该字段早已不再产出）
         {"keyword": k, "monthlyVolume": v.get("monthlyVolume"), "abaRank": v.get("abaRank"),
-         "organicTop1": (v.get("organicTop") or [{}])[0].get("asin", "")}
+         "organicTop1": next((x.get("asin", "") for x in (v.get("pageTop") or [])
+                              if not x.get("isAd")), "")}
         for k, v in sorted(slim.items(), key=lambda kv: -(kv[1].get("monthlyVolume") or 0))
     ]
     blob = json.dumps(manifest, ensure_ascii=False, separators=(",", ":"))
